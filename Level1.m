@@ -11,6 +11,8 @@
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
+//andre check
+
 //auxiliares slowmotion
 bool enableSlowMotion=false;
 
