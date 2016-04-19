@@ -29,7 +29,7 @@
     [self setCanJump:true];
     
     //sem acao inicial
-    [self setAction:-1];
+    [self setAction:IDDLE];
 }
 
 /*
@@ -41,10 +41,8 @@
     {
         //set force and direction
         CGPoint launchDirection = ccp(1, angleY/-90);
-        CGPoint force = ccpMult(launchDirection, -angleX * 2100);
+        CGPoint force = ccpMult(launchDirection, -angleX * 2200);
         [self.physicsBody applyForce:force];
-        
-        //[self setAction:-1];
     }
 }
 
@@ -69,7 +67,11 @@
 
 - (void) updateAim:(float)rotation withScale:(float)scale
 {
-    aim.rotation = rotation;
+    if(scale > 0)
+        aim.rotation = rotation;
+    else
+        aim.rotation = -rotation;
+    
     aim.scaleX = scale;
 }
 
@@ -86,15 +88,15 @@
 - (void) action:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY
 {
     //se for SALTO
-    if([self action] == 0)
+    if([self action] == JUMP)
         [self jump:angleX withAngleY:angleY];
         
     //se for FACA
-    else if([self action] == 1)
+    else if([self action] == KNIFE)
         [self shootKnife:physicsWorld withAngleX:angleX withAngleY:angleY];
     
     //se for BOMBA
-    else if([self action] == 2)
+    else if([self action] == BOMB)
         [self shootBomb:physicsWorld withAngleX:angleX withAngleY:angleY];
 }
 
@@ -119,7 +121,7 @@
     CGPoint force = ccpMult(launchDirection, -angleX * 200);
     [knife.physicsBody applyForce:force];
     
-    [self setAction:-1];
+    [self setAction:IDDLE];
 }
 
 //recebe mundo fisico + força + angulo
@@ -143,7 +145,7 @@
     CGPoint force = ccpMult(launchDirection, -angleX * 200);
     [bomb.physicsBody applyForce:force];
     
-    [self setAction:-1];
+    [self setAction:IDDLE];
 }
 
 @end

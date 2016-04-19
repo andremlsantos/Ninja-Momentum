@@ -10,12 +10,13 @@
 
 @interface Ninja : CCSprite
 
-/*
- ACAO -1 - nada
- ACAO 0 - salto
- ACAO 1 - faca
- ACAO 2 - bomba
- */
+typedef enum ninjaActions
+{
+    IDDLE,
+    JUMP,
+    KNIFE,
+    BOMB,
+} ninjaActions;
 @property int action;
 
 @property bool canJump;
@@ -29,7 +30,6 @@
 - (void) shootKnife:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
 //acao 2
 - (void) shootBomb:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
-
 
 /* 
  MIRA

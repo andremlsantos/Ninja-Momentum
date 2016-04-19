@@ -11,8 +11,6 @@
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
-//andre check
-
 //auxiliares slowmotion
 bool enableSlowMotion=false;
 
@@ -34,6 +32,7 @@ float scaleAim = 5.0f;
     CCButton *knifeButton;
     CCButton *bombButton;
     CCButton *jumpButton;
+    CCButton *resetButton;
 }
 
 // default config
@@ -74,12 +73,12 @@ float scaleAim = 5.0f;
     if (CGRectContainsPoint([ninja boundingBox], touchLocation))
     {
         //acao default = salto
-        if ([ninja action] == -1 && [ninja canJump]) {
-            [ninja setAction:0];
+        if ([ninja action] == IDDLE && [ninja canJump]) {
+            [ninja setAction:JUMP];
         }
         
         //activar mira
-        if([ninja action] != -1 && [ninja canJump]){
+        if([ninja action] != IDDLE && [ninja canJump]){
             [ninja positionAimAt:ccp(10, 0)];
             enableSlowMotion = true;
         }
@@ -92,21 +91,22 @@ float scaleAim = 5.0f;
         }
         
     }
-    else
-    {
+    else {
     	[ninja resetAim];
-        [ninja setAction:-1];
+        [ninja setAction:IDDLE];
     }
 }
 
 //update touch and rotation
 - (void) touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    //ver se cliqeui ninja
+    //localizacao toque
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     
-    angleYY = clampf(touchLocation.y - ninja.boundingBox.origin.y, -60, 50);
-    angleXX = clampf(touchLocation.x - ninja.boundingBox.origin.x, -10, 10);
+    angleYY = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -40, 40);
+    angleXX = clampf(touchLocation.x - (ninja.boundingBox.origin.x + ninja.boundingBox.size.width/2), -10, 10);
+    
+    CCLOG(@"x: %lf y: %lf", angleXX, angleYY);
     
     [ninja updateAim:angleYY withScale:-angleXX/scaleAim];
 }
@@ -124,7 +124,7 @@ float scaleAim = 5.0f;
     [ninja resetAim];
     
     //desactivar salto
-    if([ninja action] == 0 && [ninja canJump])
+    if([ninja action] == JUMP && [ninja canJump])
         [ninja setCanJump:false];
 }
 
@@ -152,12 +152,18 @@ float scaleAim = 5.0f;
  */
 -(void) selectKnife
 {
-    [ninja setAction:1];
+    [ninja setAction:KNIFE];
 }
 
 -(void) selectBomb
 {
-    [ninja setAction:2];
+    [ninja setAction:BOMB];
+}
+
+-(void) selectReset
+{
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level1"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
 // ENABLE/DISABLE buttons
