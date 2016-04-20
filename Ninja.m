@@ -46,6 +46,17 @@
     }
 }
 
+- (void) verticalJump:(int)forceX withforceY:(int)forceY
+{
+    if([self canJump])
+    {
+        //cancelar velocidade actual
+        self.physicsBody.velocity = ccp(0, 0);
+        
+        //adicionar impulso
+        [self.physicsBody applyImpulse:ccp(forceX, forceY)];
+    }
+}
 
 /*
  AIM

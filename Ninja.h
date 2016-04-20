@@ -24,11 +24,13 @@ typedef enum ninjaActions
 
 //ACOES
 - (void) action:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
-//acao 0
+
 - (void) jump:(float)angleX withAngleY:(float)angleY;
-//acao 1
+
+-(void) verticalJump:(int)forceX withforceY:(int)force;
+
 - (void) shootKnife:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
-//acao 2
+
 - (void) shootBomb:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
 
 /* 

@@ -19,6 +19,11 @@ float angleXX = 0.f, angleYY = 0.f;
 float multForce = 200.0f;
 float scaleAim = 5.0f;
 
+//auxiliares slow motiom
+float slowVelocity = 0.0f;
+float ninjaCircleOpacity = 0.15f;
+float overlayLayerOpacity = 0.3f;
+
 @implementation Level1
 {
     //physic world
@@ -27,8 +32,12 @@ float scaleAim = 5.0f;
     //fix camera
     CCNode *_contentNode;
     
+    //ninja
     Ninja *ninja;
+    CCNode * ninjaCircle;
+    CCNodeColor * overlayLayer;
     
+    //botoes
     CCButton *knifeButton;
     CCButton *bombButton;
     CCButton *jumpButton;
@@ -60,6 +69,7 @@ float scaleAim = 5.0f;
     [self setupSlowMotion];
 }
 
+
 /*
  TOUCH
  */
@@ -86,7 +96,7 @@ float scaleAim = 5.0f;
         //activar mira
         if([ninja action] > 0)
         {
-            [ninja positionAimAt:ccp(10, 0)];
+            [ninja positionAimAt:ccp(0, 0)];
             enableSlowMotion = true;
         }
         
@@ -105,8 +115,6 @@ float scaleAim = 5.0f;
     
     angleYY = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -40, 40);
     angleXX = clampf(touchLocation.x - (ninja.boundingBox.origin.x + ninja.boundingBox.size.width/2), -10, 10);
-    
-    CCLOG(@"x: %lf y: %lf", angleXX, angleYY);
     
     [ninja updateAim:angleYY withScale:-angleXX/scaleAim];
 }
@@ -169,7 +177,7 @@ float scaleAim = 5.0f;
 // ENABLE/DISABLE buttons
 -(void) updateButtons
 {
-    /*
+    
     if([ninja canJump])
     {
         knifeButton.background.opacity = 0.2;
@@ -185,7 +193,6 @@ float scaleAim = 5.0f;
         jumpButton.userInteractionEnabled=NO;
     }
     else {
-     */
         knifeButton.background.opacity = 0.8;
         knifeButton.label.opacity = 0.8;
         knifeButton.userInteractionEnabled = YES;
@@ -197,7 +204,7 @@ float scaleAim = 5.0f;
         jumpButton.background.opacity = 0.8;
         jumpButton.label.opacity = 0.8;
         jumpButton.userInteractionEnabled = YES;
-    //}
+    }
 }
 
 
@@ -213,7 +220,7 @@ float scaleAim = 5.0f;
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
-    CCLOG(@"morri");
+    ninja.physicsBody.velocity= ccp(0, 0);
 }
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
@@ -228,13 +235,8 @@ float scaleAim = 5.0f;
         
         //ninja pode saltar
         [ninja setCanJump:true];
-        
-        //salto vertical
-        ninja.physicsBody.velocity = ccp(0, 0);
-        [ninja.physicsBody applyImpulse:ccp(0, 300)];
+        [ninja verticalJump:0 withforceY:300];
     }
-    
-    
     [self killEnemy:nodeB];
 }
 
@@ -252,10 +254,15 @@ float scaleAim = 5.0f;
 {
     if(enableSlowMotion)
     {
-        [[[CCDirector sharedDirector] scheduler] setTimeScale:0.1f];
+        [[[CCDirector sharedDirector] scheduler] setTimeScale:slowVelocity];
+        ninjaCircle.opacity = ninjaCircleOpacity;
+        overlayLayer.opacity = overlayLayerOpacity;
     } else {
         [[[CCDirector sharedDirector] scheduler] setTimeScale:1.0f];
+        ninjaCircle.opacity = 0.0f;
+        overlayLayer.opacity = 0.0f;
     }
+    ninjaCircle.position = [_contentNode convertToWorldSpace:ninja.position];
 }
 
 @end
