@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>NinjaAssets/1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{363, 831}, {77, 109}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {77, 109}}</string>
+			<key>sourceSize</key>
+			<string>{77, 109}</string>
+		</dict>
+		<key>NinjaAssets/2.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{363, 720}, {77, 109}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {77, 109}}</string>
+			<key>sourceSize</key>
+			<string>{77, 109}</string>
+		</dict>
+		<key>NinjaAssets/Ground.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1003}, {284, 15}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {284, 15}}</string>
+			<key>sourceSize</key>
+			<string>{284, 15}</string>
+		</dict>
+		<key>NinjaAssets/HigherGround.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{973, 79}, {35, 50}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {35, 50}}</string>
+			<key>sourceSize</key>
+			<string>{35, 50}</string>
+		</dict>
+		<key>NinjaAssets/arrow.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{442, 824}, {64, 64}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {64, 64}}</string>
+			<key>sourceSize</key>
+			<string>{64, 64}</string>
+		</dict>
+		<key>NinjaAssets/arrow2.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{508, 824}, {64, 64}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {64, 64}}</string>
+			<key>sourceSize</key>
+			<string>{64, 64}</string>
+		</dict>
+		<key>NinjaAssets/bomb.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{973, 116}, {27, 27}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {27, 27}}</string>
+			<key>sourceSize</key>
+			<string>{27, 27}</string>
+		</dict>
+		<key>NinjaAssets/button.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{363, 551}, {167, 152}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {167, 152}}</string>
+			<key>sourceSize</key>
+			<string>{167, 152}</string>
+		</dict>
+		<key>NinjaAssets/circle.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{442, 720}, {102, 102}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {102, 102}}</string>
+			<key>sourceSize</key>
+			<string>{102, 102}</string>
+		</dict>
+		<key>NinjaAssets/enemy.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{973, 40}, {37, 50}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {37, 50}}</string>
+			<key>sourceSize</key>
+			<string>{37, 50}</string>
+		</dict>
+		<key>NinjaAssets/knife.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{465, 890}, {64, 64}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {64, 64}}</string>
+			<key>sourceSize</key>
+			<string>{64, 64}</string>
+		</dict>
+		<key>NinjaAssets/level1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {970, 548}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {970, 548}}</string>
+			<key>sourceSize</key>
+			<string>{970, 548}</string>
+		</dict>
+		<key>NinjaAssets/main_background.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 551}, {450, 360}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {450, 360}}</string>
+			<key>sourceSize</key>
+			<string>{450, 360}</string>
+		</dict>
+		<key>NinjaAssets/ninja.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{973, 1}, {37, 50}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {37, 50}}</string>
+			<key>sourceSize</key>
+			<string>{37, 50}</string>
+		</dict>
+		<key>NinjaAssets/ninja_n.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{363, 942}, {74, 100}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {74, 100}}</string>
+			<key>sourceSize</key>
+			<string>{74, 100}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+		<key>textureFileName</key>
+		<string>NinjaAssets.png</string>
+	</dict>
+</dict>
+</plist>

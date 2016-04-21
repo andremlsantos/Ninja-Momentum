@@ -21,17 +21,27 @@ typedef enum ninjaActions
 
 @property bool canJump;
 
+//FORCES
+@property float jumpForce;
+@property float verticalJumpForce;
+@property float waterJumpForce;
+
+@property float knifeForce;
+@property float waterForce;
 
 //ACOES
 - (void) action:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
 
 - (void) jump:(float)angleX withAngleY:(float)angleY;
 
--(void) verticalJump:(int)forceX withforceY:(int)force;
+-(void) verticalJump;
 
 - (void) shootKnife:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
 
 - (void) shootBomb:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
+
+- (bool) canShoot;
+
 
 /* 
  MIRA
@@ -39,6 +49,7 @@ typedef enum ninjaActions
 - (void) initAim:(CCPhysicsNode *)physicsWorld;
 - (void) positionAimAt:(CGPoint) point;
 - (void) updateAim:(float)rotation withScale:(float)scale;
+- (void) enableAim:(BOOL) value;
 - (void) resetAim;
 
 

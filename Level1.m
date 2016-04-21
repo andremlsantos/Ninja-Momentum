@@ -16,7 +16,6 @@ bool enableSlowMotion=false;
 
 //auxiliares mira
 float angleXX = 0.f, angleYY = 0.f;
-float multForce = 200.0f;
 float scaleAim = 5.0f;
 
 //auxiliares slow motiom
@@ -44,6 +43,7 @@ float overlayLayerOpacity = 0.3f;
     CCButton *resetButton;
 }
 
+
 // default config
 - (void)didLoadFromCCB
 {
@@ -62,11 +62,11 @@ float overlayLayerOpacity = 0.3f;
     //camera
     [self camera:ninja];
     
-    //estado buttoes
-    [self updateButtons];
-    
     //slow motion
     [self setupSlowMotion];
+    
+    //reposicionar mira ninja
+    [ninja positionAimAt:ccp(0, 0)];
 }
 
 
@@ -88,20 +88,13 @@ float overlayLayerOpacity = 0.3f;
         }
         
         //activar mira
-        if([ninja action] != IDDLE && [ninja canJump]){
-            [ninja positionAimAt:ccp(10, 0)];
+        if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
+            [ninja enableAim:true];
             enableSlowMotion = true;
         }
-        
-        //activar mira
-        if([ninja action] > 0)
-        {
-            [ninja positionAimAt:ccp(0, 0)];
-            enableSlowMotion = true;
-        }
-        
     }
-    else {
+    else
+    {
     	[ninja resetAim];
         [ninja setAction:IDDLE];
     }
@@ -116,20 +109,27 @@ float overlayLayerOpacity = 0.3f;
     angleYY = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -40, 40);
     angleXX = clampf(touchLocation.x - (ninja.boundingBox.origin.x + ninja.boundingBox.size.width/2), -10, 10);
     
+    //actualizar angulo e escala mira
     [ninja updateAim:angleYY withScale:-angleXX/scaleAim];
 }
 
 - (void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     //desactivar slowmotion
-    if([ninja action]>=0)
+    if([ninja action] != IDDLE)
         enableSlowMotion = false;
+    
+    //DESACTIVAR BUTOES
+    if([ninja action] == KNIFE)
+        [self disableKnifeButton:YES];
+    else if([ninja action] == BOMB)
+        [self disableBombButton:YES];
     
     //fazer acao ninja
     [ninja action:_physicsNode withAngleX:angleXX withAngleY:angleYY];
     
     //apagar mira
-    [ninja resetAim];
+    [ninja enableAim:false];
     
     //desactivar salto
     if([ninja action] == JUMP && [ninja canJump])
@@ -155,9 +155,10 @@ float overlayLayerOpacity = 0.3f;
     [_contentNode runAction:follow];
 }
 
-/*
- BUTTONS
- */
+
+//----------------------------------------------------------------------------------------------------
+//-------------------------------------------------BUTTONS--------------------------------------------
+//----------------------------------------------------------------------------------------------------
 -(void) selectKnife
 {
     [ninja setAction:KNIFE];
@@ -174,43 +175,58 @@ float overlayLayerOpacity = 0.3f;
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
-// ENABLE/DISABLE buttons
--(void) updateButtons
+- (void) enableKnifeButton
 {
+    //parar tempo
+    [self unschedule:_cmd];
     
-    if([ninja canJump])
-    {
-        knifeButton.background.opacity = 0.2;
-        knifeButton.label.opacity = 0.2;
-        knifeButton.userInteractionEnabled = NO;
-        
-        bombButton.background.opacity = 0.2;
-        bombButton.label.opacity = 0.2;
-        bombButton.userInteractionEnabled = NO;
-        
-        jumpButton.background.opacity = 0.2;
-        jumpButton.label.opacity = 0.2;
-        jumpButton.userInteractionEnabled=NO;
+    //activar
+    knifeButton.background.opacity = 0.8;
+    knifeButton.label.opacity = 0.8;
+    knifeButton.userInteractionEnabled = YES;
+}
+
+- (void) disableKnifeButton:(BOOL)isTimer
+{
+    //disale button
+    knifeButton.background.opacity = 0.2;
+    knifeButton.label.opacity = 0.2;
+    knifeButton.userInteractionEnabled = NO;
+    
+    if (isTimer) {
+        //setup timer
+        [self schedule:@selector(enableKnifeButton) interval:1.0];
     }
-    else {
-        knifeButton.background.opacity = 0.8;
-        knifeButton.label.opacity = 0.8;
-        knifeButton.userInteractionEnabled = YES;
-        
-        bombButton.background.opacity = 0.8;
-        bombButton.label.opacity = 0.8;
-        bombButton.userInteractionEnabled = YES;
-        
-        jumpButton.background.opacity = 0.8;
-        jumpButton.label.opacity = 0.8;
-        jumpButton.userInteractionEnabled = YES;
+}
+
+- (void) enableBombButton
+{
+    //parar tempo
+    [self unschedule:_cmd];
+    
+    //activar
+    bombButton.background.opacity = 0.8;
+    bombButton.label.opacity = 0.8;
+    bombButton.userInteractionEnabled = YES;
+}
+
+- (void) disableBombButton:(BOOL)isTimer
+{
+    //disale button
+    bombButton.background.opacity = 0.2;
+    bombButton.label.opacity = 0.2;
+    bombButton.userInteractionEnabled = NO;
+    
+    if (isTimer) {
+        //setup timer
+        [self schedule:@selector(enableBombButton) interval:1.0];
     }
 }
 
 
-/*
- COLISIONS
- */
+//----------------------------------------------------------------------------------------------------
+//-------------------------------------------------COLISIONS------------------------------------------
+//----------------------------------------------------------------------------------------------------
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair knife:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
     [[_physicsNode space] addPostStepBlock:^{
@@ -235,7 +251,7 @@ float overlayLayerOpacity = 0.3f;
         
         //ninja pode saltar
         [ninja setCanJump:true];
-        [ninja verticalJump:0 withforceY:300];
+        [ninja verticalJump];
     }
     [self killEnemy:nodeB];
 }

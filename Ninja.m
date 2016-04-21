@@ -21,6 +21,14 @@
 //pode saltar
 @synthesize canJump = _canJump;
 
+//FORCES
+@synthesize jumpForce;
+@synthesize verticalJumpForce;
+@synthesize waterJumpForce;
+@synthesize knifeForce;
+@synthesize waterForce;
+
+
 - (void)didLoadFromCCB
 {
     self.physicsBody.collisionType = @"ninja";
@@ -30,6 +38,13 @@
     
     //sem acao inicial
     [self setAction:IDDLE];
+    
+    //RESET FORCES
+    jumpForce = 2200;
+    verticalJumpForce = 300;
+    waterForce = 50;
+    waterJumpForce = 50;
+    knifeForce = 200;
 }
 
 /*
@@ -41,12 +56,12 @@
     {
         //set force and direction
         CGPoint launchDirection = ccp(1, angleY/-90);
-        CGPoint force = ccpMult(launchDirection, -angleX * 2200);
+        CGPoint force = ccpMult(launchDirection, -angleX * jumpForce);
         [self.physicsBody applyForce:force];
     }
 }
 
-- (void) verticalJump:(int)forceX withforceY:(int)forceY
+- (void) verticalJump
 {
     if([self canJump])
     {
@@ -54,7 +69,7 @@
         self.physicsBody.velocity = ccp(0, 0);
         
         //adicionar impulso
-        [self.physicsBody applyImpulse:ccp(forceX, forceY)];
+        [self.physicsBody applyImpulse:ccp(0, verticalJumpForce)];
     }
 }
 
@@ -64,7 +79,7 @@
 - (void) initAim:(CCPhysicsNode *)physicsWorld
 {
     aim = (Aim*)[CCBReader load:@"Aim"];
-    aim.position = ccpAdd(self.position, ccp(10, 0));
+    aim.position = ccpAdd(self.position, ccp(0, 0));
     
     [physicsWorld addChild:aim];
     aim.visible = false;
@@ -72,7 +87,6 @@
 
 - (void) positionAimAt:(CGPoint) point
 {
-    aim.visible = true;
     aim.position = ccpAdd(self.position, point);
 }
 
@@ -86,10 +100,16 @@
     aim.scaleX = scale;
 }
 
+- (void) enableAim:(BOOL) value
+{
+    aim.visible = value;
+    aim.rotation = 0;
+}
+
 - (void) resetAim
 {
-    aim.visible = false;
-    aim.rotation = 0;
+    //aim.visible = false;
+    //aim.rotation = 0;
 }
 
 /* 
@@ -129,7 +149,7 @@
     
     //set force and direction
     CGPoint launchDirection = ccp(1, angleY/-90);
-    CGPoint force = ccpMult(launchDirection, -angleX * 200);
+    CGPoint force = ccpMult(launchDirection, -angleX * knifeForce);
     [knife.physicsBody applyForce:force];
     
     [self setAction:IDDLE];
@@ -153,10 +173,21 @@
     
     //set force and direction
     CGPoint launchDirection = ccp(1, angleY/-90);
-    CGPoint force = ccpMult(launchDirection, -angleX * 200);
+    CGPoint force = ccpMult(launchDirection, -angleX * knifeForce);
     [bomb.physicsBody applyForce:force];
     
     [self setAction:IDDLE];
+}
+
+// faca
+// bomba
+- (bool) canShoot
+{
+    if([self action]==KNIFE || [self action]==BOMB)
+    {
+        return true;
+    }
+    return false;
 }
 
 @end
