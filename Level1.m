@@ -23,6 +23,9 @@ float slowVelocity = 0.0f;
 float ninjaCircleOpacity = 0.15f;
 float overlayLayerOpacity = 0.3f;
 
+bool enteredWater = false;
+bool collidedWithWaterEnd = false;
+
 @implementation Level1
 {
     //physic world
@@ -55,6 +58,9 @@ float overlayLayerOpacity = 0.3f;
     
     //enable ninja aim
     [self initNinja];
+    enteredWater = false;
+    collidedWithWaterEnd = false;
+
 }
 
 - (void) update:(CCTime)delta
@@ -85,6 +91,11 @@ float overlayLayerOpacity = 0.3f;
         //acao default = salto
         if ([ninja action] == IDDLE && [ninja canJump]) {
             [ninja setAction:JUMP];
+        }
+        
+        //Deslizar na agua
+        if(enteredWater){
+            [ninja action:_physicsNode withAngleX:angleXX withAngleY:angleYY];
         }
         
         //activar mira
@@ -132,7 +143,7 @@ float overlayLayerOpacity = 0.3f;
     [ninja enableAim:false];
     
     //desactivar salto
-    if([ninja action] == JUMP && [ninja canJump])
+    if(([ninja action] == JUMP || [ninja action] == JUMPONWATER) && [ninja canJump])
         [ninja setCanJump:false];
 }
 
@@ -254,6 +265,41 @@ float overlayLayerOpacity = 0.3f;
         [ninja verticalJump];
     }
     [self killEnemy:nodeB];
+}
+
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA water:(CCNode *)nodeB
+{
+    if(!collidedWithWaterEnd){
+        //enteredWater = true;
+        //ninja.physicsBody.velocity = ccp(0, 0);
+        //[ninja setCanJump:false];
+        [ninja setAction:WATER];
+    }
+    else
+    {
+        [ninja setAction:JUMPONWATER];
+        [ninja setCanJump:true];
+        //[ninja verticalJump];
+        collidedWithWaterEnd = false;
+    }
+}
+
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA waterEnd:(CCNode *)nodeB
+{
+    
+    if(!collidedWithWaterEnd){
+        collidedWithWaterEnd = true;
+        
+        enteredWater = false;
+        //enableSlowMotion = true;
+        
+        [ninja setCanJump:true];
+        [ninja setAction:JUMPONWATER];
+    }
+    
+    collidedWithWaterEnd = true;
+    [self killEnemy:nodeB];
+    
 }
 
 //matar inimigo

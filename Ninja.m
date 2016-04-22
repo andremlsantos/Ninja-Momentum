@@ -43,7 +43,7 @@
     jumpForce = 2200;
     verticalJumpForce = 300;
     waterForce = 50;
-    waterJumpForce = 50;
+    waterJumpForce = 3000;
     knifeForce = 200;
 }
 
@@ -57,6 +57,17 @@
         //set force and direction
         CGPoint launchDirection = ccp(1, angleY/-90);
         CGPoint force = ccpMult(launchDirection, -angleX * jumpForce);
+        [self.physicsBody applyForce:force];
+    }
+}
+
+- (void) jumpInWater:(float)angleX withAngleY:(float)angleY withPower:(float)power
+{
+    if([self canJump])
+    {
+        //set force and direction
+        CGPoint launchDirection = ccp(0.5, angleY/-90);
+        CGPoint force = ccpMult(launchDirection, -angleX * waterJumpForce);
         [self.physicsBody applyForce:force];
     }
 }
@@ -129,7 +140,22 @@
     //se for BOMBA
     else if([self action] == BOMB)
         [self shootBomb:physicsWorld withAngleX:angleX withAngleY:angleY];
+    //se aterrar na WATER
+    else if([self action] == WATER)
+        [self pushNinjaInWater:physicsWorld];
+    
+    else if ([self action] == JUMPONWATER){
+        [self jumpInWater: angleX withAngleY:angleY withPower: self.physicsBody.velocity.x];
+    }
+
 }
+
+//recebe mundo fisico
+- (void) pushNinjaInWater:(CCPhysicsNode *)physicsWorld
+{
+    [self.physicsBody applyImpulse:ccp(20, 0)];
+}
+
 
 //recebe mundo fisico + força + angulo
 - (void) shootKnife:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY

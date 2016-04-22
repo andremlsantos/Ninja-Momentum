@@ -101,6 +101,8 @@
 		BC5399DA1A44DCC90063F482 /* GLActivityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5399D51A44DCC90063F482 /* GLActivityKit.framework */; };
 		BC5399DB1A44DCC90063F482 /* JavaFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5399D61A44DCC90063F482 /* JavaFoundation.framework */; };
 		BC5399DC1A44DCC90063F482 /* JavaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5399D71A44DCC90063F482 /* JavaKit.framework */; };
+		EF5395381CCA3C88008E1DCF /* Water.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5395351CCA3C88008E1DCF /* Water.m */; };
+		EF5395391CCA3C88008E1DCF /* WaterEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5395371CCA3C88008E1DCF /* WaterEnd.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +236,10 @@
 		BC5399D61A44DCC90063F482 /* JavaFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaFoundation.framework; path = "../../../../Library/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaFoundation.framework"; sourceTree = "<group>"; };
 		BC5399D71A44DCC90063F482 /* JavaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaKit.framework; path = "../../../../Library/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaKit.framework"; sourceTree = "<group>"; };
 		D352B48019EC608A00829775 /* MetalShaders */ = {isa = PBXFileReference; lastKnownFileType = folder; name = MetalShaders; path = Source/MetalShaders; sourceTree = "<group>"; };
+		EF5395341CCA3C88008E1DCF /* Water.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Water.h; sourceTree = "<group>"; };
+		EF5395351CCA3C88008E1DCF /* Water.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Water.m; sourceTree = "<group>"; };
+		EF5395361CCA3C88008E1DCF /* WaterEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterEnd.h; sourceTree = "<group>"; };
+		EF5395371CCA3C88008E1DCF /* WaterEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterEnd.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -475,6 +481,10 @@
 				65B088061CA5499E005A8586 /* Enemy.m */,
 				65F6E7D71CBAC12900649A18 /* Ground.h */,
 				65F6E7D81CBAC12900649A18 /* Ground.m */,
+				EF5395341CCA3C88008E1DCF /* Water.h */,
+				EF5395351CCA3C88008E1DCF /* Water.m */,
+				EF5395361CCA3C88008E1DCF /* WaterEnd.h */,
+				EF5395371CCA3C88008E1DCF /* WaterEnd.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -859,6 +869,8 @@
 				65B088001CA5498C005A8586 /* Ninja.m in Sources */,
 				6564A1A51CA59FC90046F5FE /* Knife.m in Sources */,
 				65F6E7D91CBAC12900649A18 /* Ground.m in Sources */,
+				EF5395391CCA3C88008E1DCF /* WaterEnd.m in Sources */,
+				EF5395381CCA3C88008E1DCF /* Water.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				6564A1A21CA595920046F5FE /* Aim.m in Sources */,
 				65B0880A1CA54DFB005A8586 /* Level1.m in Sources */,
