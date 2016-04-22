@@ -17,7 +17,8 @@ typedef enum ninjaActions
     KNIFE,
     BOMB,
     WATER,
-    JUMPONWATER
+    JUMPONWATER,
+    GRAPPLING,
 } ninjaActions;
 @property int action;
 

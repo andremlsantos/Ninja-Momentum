@@ -39,11 +39,17 @@ bool collidedWithWaterEnd = false;
     CCNode * ninjaCircle;
     CCNodeColor * overlayLayer;
     
+    CCNode *_platformGH;
+    
     //botoes
     CCButton *knifeButton;
     CCButton *bombButton;
     CCButton *jumpButton;
     CCButton *resetButton;
+    CCButton *grapplingHookButton;
+   
+    CCPhysicsJoint *joint;
+    
 }
 
 
@@ -60,7 +66,6 @@ bool collidedWithWaterEnd = false;
     [self initNinja];
     enteredWater = false;
     collidedWithWaterEnd = false;
-
 }
 
 - (void) update:(CCTime)delta
@@ -73,6 +78,16 @@ bool collidedWithWaterEnd = false;
     
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
+    
+    
+    /*
+    if([ninja action] != JUMP){
+        disableGrapplingButton:YES;
+    }
+    else{
+        enableGrapplingHookButton:;
+    }
+     */
 }
 
 
@@ -103,6 +118,16 @@ bool collidedWithWaterEnd = false;
             [ninja enableAim:true];
             enableSlowMotion = true;
         }
+    }
+    else if(CGRectContainsPoint([_platformGH boundingBox],touchLocation)){
+
+        if([ninja action] == GRAPPLING){
+            joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody bodyB:_platformGH.physicsBody anchorA:ninja.anchorPointInPoints anchorB:_platformGH.anchorPointInPoints];
+        }
+        
+    }
+    else if([ninja action] == GRAPPLING){
+        [joint invalidate];
     }
     else
     {
@@ -135,6 +160,8 @@ bool collidedWithWaterEnd = false;
         [self disableKnifeButton:YES];
     else if([ninja action] == BOMB)
         [self disableBombButton:YES];
+    else if([ninja action] == GRAPPLING)
+        [self disableGrapplingButton:YES];
     
     //fazer acao ninja
     [ninja action:_physicsNode withAngleX:angleXX withAngleY:angleYY];
@@ -175,6 +202,11 @@ bool collidedWithWaterEnd = false;
     [ninja setAction:KNIFE];
 }
 
+-(void) selectGrapplingHook{
+    if([ninja action] == JUMP)
+        [ninja setAction:GRAPPLING];
+}
+
 -(void) selectBomb
 {
     [ninja setAction:BOMB];
@@ -185,6 +217,31 @@ bool collidedWithWaterEnd = false;
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level1"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
+
+- (void) enableGrapplingHookButton
+{
+    //parar tempo
+    [self unschedule:_cmd];
+    
+    //activar
+    grapplingHookButton.background.opacity = 0.8;
+    grapplingHookButton.label.opacity = 0.8;
+    grapplingHookButton.userInteractionEnabled = YES;
+}
+
+- (void) disableGrapplingButton:(BOOL)isTimer
+{
+    //disale button
+    grapplingHookButton.background.opacity = 0.2;
+    grapplingHookButton.label.opacity = 0.2;
+    grapplingHookButton.userInteractionEnabled = NO;
+    
+    if (isTimer) {
+        //setup timer
+        [self schedule:@selector(enableGrapplingHookButton) interval:1.0];
+    }
+}
+
 
 - (void) enableKnifeButton
 {
@@ -279,7 +336,7 @@ bool collidedWithWaterEnd = false;
     {
         [ninja setAction:JUMPONWATER];
         [ninja setCanJump:true];
-        //[ninja verticalJump];
+        [ninja verticalJump];
         collidedWithWaterEnd = false;
     }
 }
