@@ -297,7 +297,6 @@ bool collidedWithWaterEnd = false;
         [ninja setAction:JUMPONWATER];
     }
     
-    collidedWithWaterEnd = true;
     [self killEnemy:nodeB];
     
 }
