@@ -36,7 +36,7 @@ typedef enum ninjaActions
 
 - (void) jump:(float)angleX withAngleY:(float)angleY;
 
--(void) verticalJump;
+- (void) verticalJump;
 
 - (void) shootKnife:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
 
