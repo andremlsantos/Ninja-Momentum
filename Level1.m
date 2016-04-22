@@ -304,7 +304,7 @@ bool collidedWithWaterEnd = false;
 
 //matar inimigo
 - (void)killEnemy:(CCNode *)enemy {
-    //remover pai
+    //remover pair
     [enemy removeFromParent];
 }
 
