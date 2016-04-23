@@ -9,6 +9,7 @@
 	</dict>
 	<key>spriteFrameFiles</key>
 	<array>
+		<string>CodexAssets.plist</string>
 		<string>ccbResources.plist</string>
 		<string>NinjaAssets.plist</string>
 	</array>

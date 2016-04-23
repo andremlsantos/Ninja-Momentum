@@ -56,23 +56,10 @@
 			<key>sourceSize</key>
 			<string>{140, 200}</string>
 		</dict>
-		<key>NinjaAssets/arrow.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{2055, 2597}, {256, 256}}</string>
-			<key>offset</key>
-			<string>{0, 0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0, 0}, {256, 256}}</string>
-			<key>sourceSize</key>
-			<string>{256, 256}</string>
-		</dict>
 		<key>NinjaAssets/arrow2.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1755, 3535}, {256, 256}}</string>
+			<string>{{2055, 2453}, {256, 256}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -137,7 +124,7 @@
 		<key>NinjaAssets/knife.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1755, 3277}, {256, 256}}</string>
+			<string>{{2055, 2195}, {256, 256}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -185,19 +172,6 @@
 			<string>{{0, 0}, {148, 200}}</string>
 			<key>sourceSize</key>
 			<string>{148, 200}</string>
-		</dict>
-		<key>NinjaAssets/ninja_n.png</key>
-		<dict>
-			<key>frame</key>
-			<string>{{2055, 2195}, {296, 400}}</string>
-			<key>offset</key>
-			<string>{0, 0}</string>
-			<key>rotated</key>
-			<false/>
-			<key>sourceColorRect</key>
-			<string>{{0, 0}, {296, 400}}</string>
-			<key>sourceSize</key>
-			<string>{296, 400}</string>
 		</dict>
 		<key>NinjaAssets/water.png</key>
 		<dict>

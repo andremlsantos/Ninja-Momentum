@@ -78,12 +78,17 @@
 			<key>previewFolderHidden</key>
 			<true/>
 		</dict>
+		<key>CodexAssets</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>NinjaAssets</key>
 		<dict>
 			<key>format_android</key>
 			<integer>2</integer>
-			<key>isDirty</key>
-			<true/>
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>

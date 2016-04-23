@@ -8,4 +8,10 @@
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
+- (void) goToCodex
+{
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"WeaponsCodex"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+}
+
 @end
