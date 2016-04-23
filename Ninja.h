@@ -16,15 +16,21 @@ typedef enum ninjaActions
     JUMP,
     KNIFE,
     BOMB,
-    WATER,
-    JUMPONWATER,
+    WATER,          // TIRAR
+    JUMPONWATER,    // TIRAR
     GRAPPLING,
 } ninjaActions;
+
+/*
+ PROPRIEDADES
+ */
 @property int action;
-
 @property bool canJump;
+@property bool initialJump;
 
-//FORCES
+/*
+ FORCAS
+ */
 @property float jumpForce;
 @property float verticalJumpForce;
 @property float waterJumpForce;
@@ -32,19 +38,18 @@ typedef enum ninjaActions
 @property float knifeForce;
 @property float waterForce;
 
-//ACOES
+/*
+ ACOES
+ */
 - (void) action:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
 
 - (void) jump:(float)angleX withAngleY:(float)angleY;
-
 - (void) verticalJump;
 
 - (void) shootKnife:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
-
 - (void) shootBomb:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY;
 
 - (void) pushNinjaInWater:(CCPhysicsNode *)physicsWorld;
-
 - (void) jumpInWater:(float)angleX withAngleY:(float)angleY withPower:(float) maxPower;
 
 - (bool) canShoot;
@@ -57,7 +62,7 @@ typedef enum ninjaActions
 - (void) positionAimAt:(CGPoint) point;
 - (void) updateAim:(float)rotation withScale:(float)scale;
 - (void) enableAim:(BOOL) value;
-- (void) resetAim;
+//- (void) resetAim;
 
 
 @end

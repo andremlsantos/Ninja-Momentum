@@ -84,13 +84,13 @@
 			<integer>2</integer>
 			<key>isDirty</key>
 			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
 		</dict>
 		<key>Sprites</key>
 		<dict/>
 		<key>ccbResources</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>

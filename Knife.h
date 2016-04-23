@@ -10,5 +10,4 @@
 
 @interface Knife : CCSprite
 
-
 @end

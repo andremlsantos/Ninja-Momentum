@@ -13,6 +13,9 @@
 - (void)didLoadFromCCB
 {
     self.physicsBody.collisionType = @"bomb";
+    
+    self.scaleX = 0.6f;
+    self.scaleY = 0.6f;
 }
 
 @end

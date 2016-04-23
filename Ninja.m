@@ -21,6 +21,9 @@
 //pode saltar
 @synthesize canJump = _canJump;
 
+//bloquear armas no inicio
+@synthesize initialJump = _initialJump;
+
 //FORCES
 @synthesize jumpForce;
 @synthesize verticalJumpForce;
@@ -38,6 +41,9 @@
     
     //sem acao inicial
     [self setAction:IDDLE];
+    
+    //block weapons
+    [self setInitialJump:true];
     
     //RESET FORCES
     jumpForce = 2200;
@@ -117,11 +123,11 @@
     aim.rotation = 0;
 }
 
-- (void) resetAim
-{
+//- (void) resetAim
+//{
     //aim.visible = false;
     //aim.rotation = 0;
-}
+//}
 
 /* 
  ACOES NINJA
@@ -140,10 +146,12 @@
     //se for BOMBA
     else if([self action] == BOMB)
         [self shootBomb:physicsWorld withAngleX:angleX withAngleY:angleY];
+    
     //se aterrar na WATER
     else if([self action] == WATER)
         [self pushNinjaInWater:physicsWorld];
     
+    //se quero saltar agua
     else if ([self action] == JUMPONWATER){
         [self jumpInWater: angleX withAngleY:angleY withPower: self.physicsBody.velocity.x];
     }
@@ -205,8 +213,6 @@
     [self setAction:IDDLE];
 }
 
-// faca
-// bomba
 - (bool) canShoot
 {
     if([self action]==KNIFE || [self action]==BOMB)

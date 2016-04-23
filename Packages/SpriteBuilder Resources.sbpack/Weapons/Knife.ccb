@@ -137,7 +137,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>NinjaAssets/bomb.png</string>
+					<string>NinjaAssets/knife.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -148,7 +148,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string></string>
+					<string>NinjaAssets/knife.png</string>
 				</array>
 			</dict>
 			<dict>

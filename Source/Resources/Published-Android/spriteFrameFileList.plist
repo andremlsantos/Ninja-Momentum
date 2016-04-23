@@ -10,6 +10,7 @@
 	<key>spriteFrameFiles</key>
 	<array>
 		<string>ccbResources.plist</string>
+		<string>NinjaAssets.plist</string>
 	</array>
 </dict>
 </plist>

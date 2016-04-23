@@ -13,6 +13,14 @@
 - (void)didLoadFromCCB
 {
     self.physicsBody.collisionType = @"knife";
+    
+    self.scaleX = 0.29f;
+    self.scaleY = 0.29f;
+}
+
+- (void) update:(CCTime)delta
+{
+    self.rotation += 50.0f;
 }
 
 @end

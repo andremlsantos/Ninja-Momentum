@@ -7,7 +7,7 @@
 		<key>NinjaAssets/1.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{363, 831}, {77, 109}}</string>
+			<string>{{474, 551}, {77, 109}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -20,11 +20,11 @@
 		<key>NinjaAssets/2.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{363, 720}, {77, 109}}</string>
+			<string>{{363, 551}, {77, 109}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
-			<false/>
+			<true/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {77, 109}}</string>
 			<key>sourceSize</key>
@@ -33,7 +33,7 @@
 		<key>NinjaAssets/Ground.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{1, 1003}, {284, 15}}</string>
+			<string>{{287, 1003}, {284, 15}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -59,7 +59,7 @@
 		<key>NinjaAssets/arrow.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{442, 824}, {64, 64}}</string>
+			<string>{{363, 734}, {64, 64}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -72,7 +72,7 @@
 		<key>NinjaAssets/arrow2.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{508, 824}, {64, 64}}</string>
+			<string>{{363, 866}, {64, 64}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -98,11 +98,11 @@
 		<key>NinjaAssets/button.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{363, 551}, {167, 152}}</string>
+			<string>{{573, 551}, {167, 152}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
-			<true/>
+			<false/>
 			<key>sourceColorRect</key>
 			<string>{{0, 0}, {167, 152}}</string>
 			<key>sourceSize</key>
@@ -111,7 +111,7 @@
 		<key>NinjaAssets/circle.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{442, 720}, {102, 102}}</string>
+			<string>{{363, 630}, {102, 102}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -137,7 +137,7 @@
 		<key>NinjaAssets/knife.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{465, 890}, {64, 64}}</string>
+			<string>{{363, 800}, {64, 64}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -189,7 +189,7 @@
 		<key>NinjaAssets/ninja_n.png</key>
 		<dict>
 			<key>frame</key>
-			<string>{{363, 942}, {74, 100}}</string>
+			<string>{{467, 662}, {74, 100}}</string>
 			<key>offset</key>
 			<string>{0, 0}</string>
 			<key>rotated</key>
@@ -198,6 +198,19 @@
 			<string>{{0, 0}, {74, 100}}</string>
 			<key>sourceSize</key>
 			<string>{74, 100}</string>
+		</dict>
+		<key>NinjaAssets/water.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1003}, {284, 15}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {284, 15}}</string>
+			<key>sourceSize</key>
+			<string>{284, 15}</string>
 		</dict>
 	</dict>
 	<key>metadata</key>
