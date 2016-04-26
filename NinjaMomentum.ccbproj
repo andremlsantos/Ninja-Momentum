@@ -89,7 +89,7 @@
 		<dict>
 			<key>format_android</key>
 			<integer>2</integer>
-			<key>isSmartSpriteSheet</key>
+			<key>isDirty</key>
 			<true/>
 		</dict>
 		<key>Sprites</key>

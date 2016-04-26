@@ -27,10 +27,11 @@
 //FORCES
 @synthesize jumpForce;
 @synthesize verticalJumpForce;
-@synthesize waterJumpForce;
 @synthesize knifeForce;
+/*
+@synthesize waterJumpForce;
 @synthesize waterForce;
-
+*/
 
 - (void)didLoadFromCCB
 {
@@ -48,9 +49,11 @@
     //RESET FORCES
     jumpForce = 2200;
     verticalJumpForce = 300;
+    knifeForce = 200;
+    /*
     waterForce = 50;
     waterJumpForce = 3000;
-    knifeForce = 200;
+    */
 }
 
 /*
@@ -67,6 +70,7 @@
     }
 }
 
+/*
 - (void) jumpInWater:(float)angleX withAngleY:(float)angleY withPower:(float)power
 {
     if([self canJump])
@@ -77,6 +81,7 @@
         [self.physicsBody applyForce:force];
     }
 }
+ */
 
 - (void) verticalJump
 {
@@ -146,7 +151,7 @@
     //se for BOMBA
     else if([self action] == BOMB)
         [self shootBomb:physicsWorld withAngleX:angleX withAngleY:angleY];
-    
+    /*
     //se aterrar na WATER
     else if([self action] == WATER)
         [self pushNinjaInWater:physicsWorld];
@@ -155,14 +160,17 @@
     else if ([self action] == JUMPONWATER){
         [self jumpInWater: angleX withAngleY:angleY withPower: self.physicsBody.velocity.x];
     }
+     */
 
 }
 
-//recebe mundo fisico
+/*
+ //recebe mundo fisico
 - (void) pushNinjaInWater:(CCPhysicsNode *)physicsWorld
 {
     [self.physicsBody applyImpulse:ccp(20, 0)];
 }
+ */
 
 
 //recebe mundo fisico + força + angulo
@@ -215,7 +223,7 @@
 
 - (bool) canShoot
 {
-    if([self action]==KNIFE || [self action]==BOMB)
+    if([self action] == KNIFE || [self action] == BOMB)
     {
         return true;
     }

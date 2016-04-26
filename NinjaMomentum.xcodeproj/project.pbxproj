@@ -481,16 +481,7 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
-				2ECA7A4B1CCBF66C0052C0DE /* WeaponsCodex.h */,
-				2ECA7A4C1CCBF66C0052C0DE /* WeaponsCodex.m */,
-				2ECA7A561CCBFD980052C0DE /* GranadeEntry.h */,
-				2ECA7A571CCBFD980052C0DE /* GranadeEntry.m */,
-				2ECA7A591CCBFE060052C0DE /* HookEntry.h */,
-				2ECA7A5A1CCBFE060052C0DE /* HookEntry.m */,
-				2ECA7A5C1CCBFE290052C0DE /* KunaiEntry.h */,
-				2ECA7A5D1CCBFE290052C0DE /* KunaiEntry.m */,
-				2ECA7A5F1CCBFE600052C0DE /* NinjatoEntry.h */,
-				2ECA7A601CCBFE600052C0DE /* NinjatoEntry.m */,
+				EF9E101B1CCFB4D500877E0E /* Codex */,
 				65B088081CA54DFB005A8586 /* Level1.h */,
 				65B088091CA54DFB005A8586 /* Level1.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
@@ -607,6 +598,23 @@
 				B73789861807631A0076A88C /* Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EF9E101B1CCFB4D500877E0E /* Codex */ = {
+			isa = PBXGroup;
+			children = (
+				2ECA7A4B1CCBF66C0052C0DE /* WeaponsCodex.h */,
+				2ECA7A4C1CCBF66C0052C0DE /* WeaponsCodex.m */,
+				2ECA7A561CCBFD980052C0DE /* GranadeEntry.h */,
+				2ECA7A571CCBFD980052C0DE /* GranadeEntry.m */,
+				2ECA7A591CCBFE060052C0DE /* HookEntry.h */,
+				2ECA7A5A1CCBFE060052C0DE /* HookEntry.m */,
+				2ECA7A5C1CCBFE290052C0DE /* KunaiEntry.h */,
+				2ECA7A5D1CCBFE290052C0DE /* KunaiEntry.m */,
+				2ECA7A5F1CCBFE600052C0DE /* NinjatoEntry.h */,
+				2ECA7A601CCBFE600052C0DE /* NinjatoEntry.m */,
+			);
+			name = Codex;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
