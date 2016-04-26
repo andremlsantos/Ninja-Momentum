@@ -20,12 +20,9 @@ float overlayLayerOpacity = 0.3f;
 float angleXX = 0.f, angleYY = 0.f;
 float scaleAim = 5.0f;
 
-/*
 //auxiliares agua
 bool enteredWater = false;
 bool collidedWithWaterEnd = false;
-
-*/
 
 @implementation Level1
 {
@@ -88,7 +85,7 @@ bool collidedWithWaterEnd = false;
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
-        
+    
     // NINJA
     if (CGRectContainsPoint([ninja boundingBox], touchLocation))
     {
@@ -97,12 +94,10 @@ bool collidedWithWaterEnd = false;
             [ninja setAction:JUMP];
         }
         
-        /*
         //Deslizar na agua
         if(enteredWater){
             [ninja action:_physicsNode withAngleX:angleXX withAngleY:angleYY];
         }
-         */
         
         //activar mira
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
@@ -176,7 +171,7 @@ bool collidedWithWaterEnd = false;
     [self resetCircle];
     
     //desactivar salto
-    if([ninja action] == JUMP /*|| [ninja action] == JUMPONWATER)*/ && [ninja canJump])
+    if(([ninja action] == JUMP) && [ninja canJump])
     {
         [ninja setCanJump:false];
         
@@ -218,7 +213,7 @@ bool collidedWithWaterEnd = false;
 -(void) selectGrapplingHook
 {
     //if([ninja action] == JUMP)
-        [ninja setAction:GRAPPLING];
+    [ninja setAction:GRAPPLING];
     
     if([ninja action] == BOMB || [ninja action] == KNIFE)
     {
@@ -335,10 +330,8 @@ bool collidedWithWaterEnd = false;
     slowVelocity = 0.3f;
     ninjaCircleOpacity = 0.15f;
     overlayLayerOpacity = 0.3f;
-    /*
     enteredWater = false;
     collidedWithWaterEnd = false;
-     */
 }
 
 - (void) enableAllButtons:(BOOL)isEnable
@@ -369,15 +362,6 @@ bool collidedWithWaterEnd = false;
     } key:nodeB];
 }
 
-/*
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair knife:(CCNode *)nodeA wildcard:(CCNode *)nodeB
-{
-    //matar faca
-    [[_physicsNode space] addPostStepBlock:^{
-        [self killNode:nodeA];
-    } key:nodeB];
-}*/
-
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair bomb:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
     //matar inimigo
@@ -386,16 +370,6 @@ bool collidedWithWaterEnd = false;
         [self killNode:nodeA];
     } key:nodeB];
 }
-
-/*
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair bomb:(CCNode *)nodeA wildcard:(CCNode *)nodeB
-{
-    //matar faca
-    [[_physicsNode space] addPostStepBlock:^{
-        [self killNode:nodeA];
-    } key:nodeB];
-}
- */
 
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
@@ -416,47 +390,18 @@ bool collidedWithWaterEnd = false;
         //ninja pode saltar
         [ninja setCanJump:true];
         [ninja verticalJump];
-    }
-    [self killNode:nodeB];
-}
-
-/*
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA water:(CCNode *)nodeB
-{
-    if(!collidedWithWaterEnd)
-    {
-        [ninja setAction:WATER];
-    }
-    else
-    {
-        [ninja setAction:JUMPONWATER];
-        [ninja setCanJump:true];
-        [ninja verticalJump];
-        collidedWithWaterEnd = false;
-    }
-}
-
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA waterEnd:(CCNode *)nodeB
-{
-    if(!collidedWithWaterEnd)
-    {
-        collidedWithWaterEnd = true;
-        enteredWater = false;
         
-        [ninja setCanJump:true];
-        [ninja setAction:JUMPONWATER];
+        [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+        
     }
     [self killNode:nodeB];
 }
- */
 
 //matar inimigo
 //matar water end
 - (void)killNode:(CCNode *)enemy {
     [enemy removeFromParent];
 }
-
-
 //----------------------------------------------------------------------------------------------------
 //---------------------------------------------SLOW MOTION--------------------------------------------
 //----------------------------------------------------------------------------------------------------
