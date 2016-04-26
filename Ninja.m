@@ -82,6 +82,7 @@
     }
 }
 
+/*
 - (void) jumpInWater:(float)angleX withAngleY:(float)angleY withPower:(float)power
 {
     if([self canJump])
@@ -92,6 +93,7 @@
         [self.physicsBody applyForce:force];
     }
 }
+ */
 
 - (void) verticalJump
 {
@@ -162,6 +164,7 @@
     else if([self action] == BOMB)
         [self shootBomb:physicsWorld withAngleX:angleX withAngleY:angleY];
     
+    /*
     //se aterrar na WATER
     else if([self action] == WATER)
         [self pushNinjaInWater:physicsWorld];
@@ -170,14 +173,17 @@
     else if ([self action] == JUMPONWATER){
         [self jumpInWater: angleX withAngleY:angleY withPower: self.physicsBody.velocity.x];
     }
+     */
 
 }
 
+/*
 //recebe mundo fisico
 - (void) pushNinjaInWater:(CCPhysicsNode *)physicsWorld
 {
     [self.physicsBody applyImpulse:ccp(20, 0)];
 }
+ */
 
 
 //recebe mundo fisico + força + angulo

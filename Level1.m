@@ -20,10 +20,11 @@ float overlayLayerOpacity = 0.3f;
 float angleXX = 0.f, angleYY = 0.f;
 float scaleAim = 5.0f;
 
+/*
 //auxiliares agua
 bool enteredWater = false;
 bool collidedWithWaterEnd = false;
-
+*/
 @implementation Level1
 {
     //physic world
@@ -94,10 +95,12 @@ bool collidedWithWaterEnd = false;
             [ninja setAction:JUMP];
         }
         
+        /*
         //Deslizar na agua
         if(enteredWater){
             [ninja action:_physicsNode withAngleX:angleXX withAngleY:angleYY];
         }
+         */
         
         //activar mira
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
@@ -330,8 +333,8 @@ bool collidedWithWaterEnd = false;
     slowVelocity = 0.3f;
     ninjaCircleOpacity = 0.15f;
     overlayLayerOpacity = 0.3f;
-    enteredWater = false;
-    collidedWithWaterEnd = false;
+    //enteredWater = false;
+    //collidedWithWaterEnd = false;
 }
 
 - (void) enableAllButtons:(BOOL)isEnable
