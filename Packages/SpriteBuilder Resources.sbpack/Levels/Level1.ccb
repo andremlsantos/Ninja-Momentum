@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>161</integer>
+	<integer>166</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -57,8 +57,6 @@
 						<string></string>
 						<key>displayName</key>
 						<string>background</string>
-						<key>locked</key>
-						<true/>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>
@@ -174,8 +172,6 @@
 								<string></string>
 								<key>displayName</key>
 								<string>Ground</string>
-								<key>locked</key>
-								<true/>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -238,8 +234,6 @@
 								<string></string>
 								<key>displayName</key>
 								<string>Ground</string>
-								<key>locked</key>
-								<true/>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -302,8 +296,6 @@
 								<string></string>
 								<key>displayName</key>
 								<string>Ground</string>
-								<key>locked</key>
-								<true/>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -366,8 +358,6 @@
 								<string></string>
 								<key>displayName</key>
 								<string>HigherGround</string>
-								<key>locked</key>
-								<true/>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -389,7 +379,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>5.7768244743347168</real>
+											<real>34.001216888427734</real>
 											<real>58.616630554199219</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -430,8 +420,6 @@
 								<string></string>
 								<key>displayName</key>
 								<string>PlataformaGH</string>
-								<key>locked</key>
-								<true/>
 								<key>memberVarAssignmentName</key>
 								<string>_platformGH</string>
 								<key>memberVarAssignmentType</key>
@@ -559,8 +547,6 @@
 								<string></string>
 								<key>displayName</key>
 								<string>OverlayLayer</string>
-								<key>locked</key>
-								<true/>
 								<key>memberVarAssignmentName</key>
 								<string>overlayLayer</string>
 								<key>memberVarAssignmentType</key>
@@ -583,7 +569,7 @@
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>-66.525657653808594</real>
+											<real>-65.159042358398438</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -660,8 +646,6 @@
 								<string></string>
 								<key>displayName</key>
 								<string>Enemy</string>
-								<key>locked</key>
-								<true/>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -724,8 +708,6 @@
 								<string></string>
 								<key>displayName</key>
 								<string>Enemy</string>
-								<key>locked</key>
-								<true/>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -788,8 +770,6 @@
 								<string></string>
 								<key>displayName</key>
 								<string>Ninja</string>
-								<key>locked</key>
-								<true/>
 								<key>memberVarAssignmentName</key>
 								<string>ninja</string>
 								<key>memberVarAssignmentType</key>
@@ -876,7 +856,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>29.276826858520508</real>
+											<real>49.502433776855469</real>
 											<real>142.23326110839844</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -905,14 +885,14 @@
 										<string>Ninja.ccb</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
 						<string>CCPhysicsNode</string>
-						<key>locked</key>
-						<true/>
 						<key>memberVarAssignmentName</key>
 						<string>_physicsNode</string>
 						<key>memberVarAssignmentType</key>
@@ -1004,8 +984,6 @@
 				<string></string>
 				<key>displayName</key>
 				<string>CCNode</string>
-				<key>locked</key>
-				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>_contentNode</string>
 				<key>memberVarAssignmentType</key>

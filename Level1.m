@@ -20,6 +20,9 @@ float overlayLayerOpacity = 0.3f;
 float angleXX = 0.f, angleYY = 0.f;
 float scaleAim = 5.0f;
 
+//auxiliares grappling hook
+bool drawGrapplingHook = false;
+
 /*
 //auxiliares agua
 bool enteredWater = false;
@@ -41,7 +44,8 @@ bool collidedWithWaterEnd = false;
     //graping hook
     CCNode *_platformGH;
     CCPhysicsJoint *joint;
-    
+    CCDrawNode *myDrawNode;
+
     //botoes
     CCButton *knifeButton;
     CCButton *bombButton;
@@ -64,6 +68,10 @@ bool collidedWithWaterEnd = false;
     [self initNinja];
     
     [self enableAllButtons:false];
+    
+    myDrawNode = [CCDrawNode node];
+
+    [self addChild: myDrawNode];
 }
 
 - (void) update:(CCTime)delta
@@ -76,6 +84,11 @@ bool collidedWithWaterEnd = false;
     
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
+    
+    [myDrawNode clear];
+    if (drawGrapplingHook){
+        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+    }
 }
 
 
@@ -86,7 +99,7 @@ bool collidedWithWaterEnd = false;
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
-    
+
     // NINJA
     if (CGRectContainsPoint([ninja boundingBox], touchLocation))
     {
@@ -116,11 +129,12 @@ bool collidedWithWaterEnd = false;
     {
         if([ninja action] == GRAPPLING)
         {
+            
             joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
                                                               bodyB:_platformGH.physicsBody
                                                             anchorA:ninja.anchorPointInPoints
                                                             anchorB:_platformGH.anchorPointInPoints];
-            
+            drawGrapplingHook = true;
             [self unschedule:@selector(reduceCircle)];
             [self resetCircle];
         }
@@ -129,6 +143,7 @@ bool collidedWithWaterEnd = false;
     //cliquei FORA
     else if([ninja action] == GRAPPLING)
     {
+        drawGrapplingHook = false;
         [joint invalidate];
         [self enableGrapplingHookButton];
         [ninja setAction:IDDLE];
