@@ -84,6 +84,7 @@ bool collidedWithWaterEnd = false;
     
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
+    //what
     
     [myDrawNode clear];
     if (drawGrapplingHook){
