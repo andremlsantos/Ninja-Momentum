@@ -45,6 +45,7 @@
     //block weapons
     [self setInitialJump:true];
     
+    
     //RESET FORCES
     jumpForce = 2200;
     verticalJumpForce = 300;
@@ -66,18 +67,15 @@
         
         if(angleX  < 0)
         {
-            CCLOG(@"aaa");
-            
             launchDirection = ccp(1, angleY/-90);
             force = ccpMult(launchDirection, -angleX * jumpForce);
         }
         else
         {
-            CCLOG(@"bbb");
-            
             launchDirection = ccp(1, angleY/90);
             force = ccpMult(launchDirection, -angleX * jumpForce);
         }
+        
         [self.physicsBody applyForce:force];
     }
 }
@@ -113,10 +111,15 @@
 - (void) initAim:(CCPhysicsNode *)physicsWorld
 {
     aim = (Aim*)[CCBReader load:@"Aim"];
-    aim.position = ccpAdd(self.position, ccp(0, 0));
+    aim.position = ccpMult(self.position, 3);
     
     [physicsWorld addChild:aim];
     aim.visible = false;
+    aim.scaleX = 0.1;
+    for (CCNode* currentNode in aim.children)
+    {
+        [currentNode setColor:[CCColor colorWithRed:0 green:200 blue:0]];
+    }
 }
 
 - (void) positionAimAt:(CGPoint) point
@@ -131,7 +134,15 @@
     else
         aim.rotation = -rotation;
     
-    aim.scaleX = scale;
+    aim.scaleX = scale/2;
+    
+    float redComponent = scale;
+    float greenComponent = 1/scale;
+    
+    for (CCNode* currentNode in aim.children)
+    {
+        [currentNode setColor:[CCColor colorWithRed:redComponent green:greenComponent blue:0]];
+    }
 }
 
 - (void) enableAim:(BOOL) value

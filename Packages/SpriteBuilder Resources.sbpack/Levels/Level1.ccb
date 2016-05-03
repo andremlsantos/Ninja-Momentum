@@ -885,8 +885,6 @@
 										<string>Ninja.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -1146,10 +1144,10 @@
 						<key>value</key>
 						<array>
 							<real>409.64407348632812</real>
-							<real>203.16670227050781</real>
+							<real>0.634895920753479</real>
 							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>1</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -1471,11 +1469,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>409.64407348632812</real>
-							<real>159.85186767578125</real>
+							<real>0.42450162768363953</real>
+							<real>0.49953708052635193</real>
 							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -1797,11 +1795,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>409.64407348632812</real>
-							<real>116.83478546142578</real>
+							<real>0.42450162768363953</real>
+							<real>0.36510869860649109</real>
 							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
+							<integer>2</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -2090,6 +2088,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

@@ -85,18 +85,18 @@ bool collidedWithWaterEnd = false;
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
     
-    
     [myDrawNode clear];
     if (drawGrapplingHook){
         [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
     }
 }
 
-
 //----------------------------------------------------------------------------------------------------
 //-------------------------------------------------TOUCH----------------------------------------------
 //----------------------------------------------------------------------------------------------------
+
 // called on every touch in this scene
+
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
@@ -114,7 +114,7 @@ bool collidedWithWaterEnd = false;
         if(enteredWater){
             [ninja action:_physicsNode withAngleX:angleXX withAngleY:angleYY];
         }
-         */
+        */
         
         //activar mira
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
@@ -135,6 +135,7 @@ bool collidedWithWaterEnd = false;
                                                               bodyB:_platformGH.physicsBody
                                                             anchorA:ninja.anchorPointInPoints
                                                             anchorB:_platformGH.anchorPointInPoints];
+            
             drawGrapplingHook = true;
             [self unschedule:@selector(reduceCircle)];
             [self resetCircle];
@@ -161,7 +162,7 @@ bool collidedWithWaterEnd = false;
     //localizacao toque
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     
-    angleYY = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -40, 40);
+    angleYY = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -80, 80);
     angleXX = clampf(touchLocation.x - (ninja.boundingBox.origin.x + ninja.boundingBox.size.width/2), -10, 10);
     
     //actualizar angulo e escala mira
@@ -345,7 +346,7 @@ bool collidedWithWaterEnd = false;
     //reset variaveis
     enableSlowMotion=false;
     angleXX = 0.f, angleYY = 0.f;
-    scaleAim = 5.0f;
+    scaleAim = 3.0f;
     slowVelocity = 0.3f;
     ninjaCircleOpacity = 0.15f;
     overlayLayerOpacity = 0.3f;

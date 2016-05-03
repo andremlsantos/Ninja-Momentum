@@ -110,7 +110,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>NinjaAssets/arrow2.png</string>
+							<string>NinjaAssets/Aim_w.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -151,7 +151,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>Aim</string>
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>
