@@ -52,6 +52,8 @@
     waterForce = 50;
     waterJumpForce = 3000;
     knifeForce = 200;
+    
+  
 }
 
 /*
@@ -77,6 +79,7 @@
         }
         
         [self.physicsBody applyForce:force];
+        [self performSelector:@selector(startJumpAnimation) withObject:nil afterDelay:0.0f];
     }
 }
 
@@ -253,5 +256,14 @@
     }
     return false;
 }
-
+- (void)startJumpAnimation{
+    CCAnimationManager* animationManager = self.animationManager;
+    
+    [animationManager runAnimationsForSequenceNamed:@"Jump"];
+}
+- (void)idleAnimation{
+    CCAnimationManager* animationManager = self.animationManager;
+    
+    [animationManager runAnimationsForSequenceNamed:@"Idle"];
+}
 @end
