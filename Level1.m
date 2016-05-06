@@ -81,7 +81,7 @@ bool collidedWithWaterEnd = false;
     
     //slow motion
     [self setupSlowMotion];
-    
+
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
     
@@ -118,7 +118,7 @@ bool collidedWithWaterEnd = false;
         
         //activar mira
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
-            [ninja enableAim:true];
+            //[ninja enableAim:true];
             
             if(![ninja initialJump])
                 [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
@@ -158,7 +158,8 @@ bool collidedWithWaterEnd = false;
 
 //update touch and rotation
 - (void) touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
-{
+{    [ninja enableAim:true];
+
     //localizacao toque
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     
@@ -346,7 +347,7 @@ bool collidedWithWaterEnd = false;
     //reset variaveis
     enableSlowMotion=false;
     angleXX = 0.f, angleYY = 0.f;
-    scaleAim = 3.0f;
+    scaleAim = 5.0f;
     slowVelocity = 0.3f;
     ninjaCircleOpacity = 0.15f;
     overlayLayerOpacity = 0.3f;

@@ -31,6 +31,10 @@
 @synthesize knifeForce;
 @synthesize waterForce;
 
+float initialRed = 0.0f;
+float initialGreen = 0.9;
+
+float oldScale = 0.0f;
 
 - (void)didLoadFromCCB
 {
@@ -118,7 +122,7 @@
     aim.scaleX = 0.1;
     for (CCNode* currentNode in aim.children)
     {
-        [currentNode setColor:[CCColor colorWithRed:0 green:200 blue:0]];
+        [currentNode setColor:[CCColor colorWithRed:initialRed green:initialGreen blue:0]];
     }
 }
 
@@ -136,12 +140,29 @@
     
     aim.scaleX = scale/2;
     
-    float redComponent = scale;
-    float greenComponent = 1/scale;
+    if(scale > oldScale){
+        initialRed += 0.07f;
+        initialGreen -= 0.07f;
+
+    }
+    else if (scale < oldScale){
+        initialRed -= 0.07f;
+        initialGreen += 0.07f;
+    }
+    if(initialRed > 1.0f)
+        initialRed = 1.0f;
+    if(initialGreen> 1.0f)
+        initialGreen = 1.0f;
+    if(initialGreen < 0.0f)
+        initialGreen = 0.0f;
+    if(initialRed < 0.0f)
+        initialRed = 0.0f;
+    
+    oldScale = scale;
     
     for (CCNode* currentNode in aim.children)
     {
-        [currentNode setColor:[CCColor colorWithRed:redComponent green:greenComponent blue:0]];
+        [currentNode setColor:[CCColor colorWithRed:initialRed green:initialGreen blue:0]];
     }
 }
 
