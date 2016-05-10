@@ -350,6 +350,22 @@ bool drawGrapplingHook = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
 }
+-(void) nextLevel
+{
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level1"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+    
+    //reset variaveis
+    enableSlowMotion=false;
+    angleXX = 0.f, angleYY = 0.f;
+    scaleAim = 5.0f;
+    slowVelocity = 0.3f;
+    ninjaCircleOpacity = 0.15f;
+    overlayLayerOpacity = 0.3f;
+    //enteredWater = false;
+    //collidedWithWaterEnd = false;
+    
+}
 
 - (void) enableAllButtons:(BOOL)isEnable
 {
