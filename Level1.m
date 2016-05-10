@@ -16,6 +16,8 @@ float slowVelocity = 0.3f;
 float ninjaCircleOpacity = 0.15f;
 float overlayLayerOpacity = 0.3f;
 
+bool throwKnifeType = false;
+
 //auxiliares mira
 float angleXX = 0.f, angleYY = 0.f;
 float scaleAim = 5.0f;
@@ -23,11 +25,6 @@ float scaleAim = 5.0f;
 //auxiliares grappling hook
 bool drawGrapplingHook = false;
 
-/*
-//auxiliares agua
-bool enteredWater = false;
-bool collidedWithWaterEnd = false;
-*/
 @implementation Level1
 {
     //physic world
@@ -109,13 +106,6 @@ bool collidedWithWaterEnd = false;
             [ninja setAction:JUMP];
         }
         
-        /*
-        //Deslizar na agua
-        if(enteredWater){
-            [ninja action:_physicsNode withAngleX:angleXX withAngleY:angleYY];
-        }
-        */
-        
         //activar mira
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
             //[ninja enableAim:true];
@@ -147,6 +137,7 @@ bool collidedWithWaterEnd = false;
     {
         drawGrapplingHook = false;
         [joint invalidate];
+        joint = nil;
         [self enableGrapplingHookButton];
         [ninja setAction:IDDLE];
     }
@@ -158,16 +149,20 @@ bool collidedWithWaterEnd = false;
 
 //update touch and rotation
 - (void) touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
-{    [ninja enableAim:true];
+{
+    if ([ninja action] == JUMP){
 
-    //localizacao toque
-    CGPoint touchLocation = [touch locationInNode:_contentNode];
+        [ninja enableAim:true];
     
-    angleYY = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -80, 80);
-    angleXX = clampf(touchLocation.x - (ninja.boundingBox.origin.x + ninja.boundingBox.size.width/2), -10, 10);
-    
-    //actualizar angulo e escala mira
-    [ninja updateAim:angleYY withScale:-angleXX/scaleAim];
+        //localizacao toque
+        CGPoint touchLocation = [touch locationInNode:_contentNode];
+        
+        angleYY = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -80, 80);
+        angleXX = clampf(touchLocation.x - (ninja.boundingBox.origin.x + ninja.boundingBox.size.width/2), -10, 10);
+
+        //actualizar angulo e escala mira
+        [ninja updateAim:angleYY withScale:-angleXX/scaleAim];
+    }
 }
 
 - (void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
@@ -272,6 +267,7 @@ bool collidedWithWaterEnd = false;
     }
     
     [ninja setAction:KNIFE];
+    //if (throwKnifeType)
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
