@@ -6,7 +6,10 @@
 //  Copyright © 2016 Apportable. All rights reserved.
 //
 
-@interface Level1 : CCNode <CCPhysicsCollisionDelegate>
+@interface Level1 : CCNode <CCPhysicsCollisionDelegate>{
+   
+}
 
+    
 @end
 

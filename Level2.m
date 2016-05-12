@@ -5,30 +5,31 @@
 //  Created by andre on 25/03/16.
 //  Copyright © 2016 Apportable. All rights reserved.
 //
-#import "Level1.h"
+#import "Level2.h"
 #import "Ninja.h"
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 
 
 //auxiliares slowmotion
-bool enableSlowMotion = false;
-float slowVelocity = 0.3f;
-float ninjaCircleOpacity = 0.15f;
-float overlayLayerOpacity = 0.3f;
+bool enableSlowMotion2 = false;
+float slowVelocity2 = 0.3f;
+float ninjaCircleOpacity2 = 0.15f;
+float overlayLayerOpacity2 = 0.3f;
 
-int numberOfEnemies = 3;
+int numberOfEnemies2 = 5;
 
 //auxiliares mira
-float angleXX = 0.f, angleYY = 0.f;
-float scaleAim = 5.0f;
+float angleXX2 = 0.f, angleYY2 = 0.f;
+float scaleAim2 = 5.0f;
 
 
 //auxiliares grappling hook
-//bool drawGrapplingHook = false;
-//int minDistanceToUseGrappling = 250;
+bool drawGrapplingHook2 = false;
+int minDistanceToUseGrappling2 = 250;
+int touchedPlatform;
 
-@implementation Level1
+@implementation Level2
 {
     //physic world
     CCPhysicsNode *_physicsNode;
@@ -42,10 +43,12 @@ float scaleAim = 5.0f;
     CCNodeColor * overlayLayer;
     
     //graping hook
-    //CCNode *_platformGH;
-    //CCPhysicsJoint *joint;
-    //CCDrawNode *myDrawNode;
-
+    CCNode *_platformGH1;
+    CCNode *_platformGH2;
+    CCNode *_platformGH3;
+    CCPhysicsJoint *joint;
+    CCDrawNode *myDrawNode;
+    
     //botoes
     CCButton *knifeButton;
     CCButton *bombButton;
@@ -54,7 +57,6 @@ float scaleAim = 5.0f;
     CCButton *grapplingHookButton;
     
 }
-
 
 
 // default config
@@ -71,10 +73,9 @@ float scaleAim = 5.0f;
     
     [self enableAllButtons:false];
     
-    //myDrawNode = [CCDrawNode node];
-
-    //[self addChild: myDrawNode];
+    myDrawNode = [CCDrawNode node];
     
+    [self addChild: myDrawNode];
     
 }
 
@@ -85,26 +86,35 @@ float scaleAim = 5.0f;
     
     //slow motion
     [self setupSlowMotion];
-
+    
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
-   
-    /*
-   if(ccpDistance(ninja.positionInPoints, _platformGH.positionInPoints) < minDistanceToUseGrappling){
-       [self enableGrapplingHookButton];
-   }
-   else{
-       [self disableGrapplingButton];
-
-   }
-
-    [myDrawNode clear];
-    if (drawGrapplingHook){
-            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
-
-    }
-     */
     
+    
+     if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling2
+        || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) < minDistanceToUseGrappling2
+        || ccpDistance(ninja.positionInPoints, _platformGH3.positionInPoints) < minDistanceToUseGrappling2){
+         [self enableGrapplingHookButton];
+     }
+     else{
+         [self disableGrapplingButton];
+     
+     }
+     
+     [myDrawNode clear];
+     if (drawGrapplingHook2){
+         if(touchedPlatform == 1){
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+         }
+         else if(touchedPlatform == 2){
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+         }
+         else if(touchedPlatform == 3){
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+         }
+
+     
+     }
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -116,7 +126,7 @@ float scaleAim = 5.0f;
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
-
+    
     // NINJA
     if (CGRectContainsPoint([ninja boundingBox], touchLocation))
     {
@@ -134,35 +144,71 @@ float scaleAim = 5.0f;
         }
     }
     
-    /*
-    //vou ver se cliquei dentro GH
-    else if(CGRectContainsPoint([_platformGH boundingBox],touchLocation))
-    {
-        if([ninja action] == GRAPPLING)
-        {
-            
-            joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
-                                                              bodyB:_platformGH.physicsBody
-                                                            anchorA:ninja.anchorPointInPoints
-                                                            anchorB:_platformGH.anchorPointInPoints];
-            
-            drawGrapplingHook = true;
-            [self unschedule:@selector(reduceCircle)];
-            [self resetCircle];
-        }
-    }
+    
+     //vou ver se cliquei dentro GH
+     else if(CGRectContainsPoint([_platformGH1 boundingBox],touchLocation))
+     {
+         if([ninja action] == GRAPPLING)
+         {
      
-    //cliquei FORA
-    else if([ninja action] == GRAPPLING)
-    {
-        drawGrapplingHook = false;
-        [joint invalidate];
-        joint = nil;
-        [self enableGrapplingHookButton];
-        [ninja setAction:IDDLE];
-    }
-     */
-
+             joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
+                                                               bodyB:_platformGH1.physicsBody
+                                                             anchorA:ninja.anchorPointInPoints
+                                                             anchorB:_platformGH1.anchorPointInPoints];
+     
+             drawGrapplingHook2 = true;
+             [self unschedule:@selector(reduceCircle)];
+             [self resetCircle];
+             touchedPlatform = 1;
+         }
+     }
+    
+     else if(CGRectContainsPoint([_platformGH2 boundingBox],touchLocation))
+     {
+         if([ninja action] == GRAPPLING)
+         {
+             
+             joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
+                                                               bodyB:_platformGH2.physicsBody
+                                                             anchorA:ninja.anchorPointInPoints
+                                                             anchorB:_platformGH2.anchorPointInPoints];
+             
+             drawGrapplingHook2 = true;
+             [self unschedule:@selector(reduceCircle)];
+             [self resetCircle];
+             touchedPlatform = 2;
+         }
+     }
+    
+     else if(CGRectContainsPoint([_platformGH3 boundingBox],touchLocation))
+     {
+         if([ninja action] == GRAPPLING)
+         {
+             
+             joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
+                                                               bodyB:_platformGH3.physicsBody
+                                                             anchorA:ninja.anchorPointInPoints
+                                                             anchorB:_platformGH3.anchorPointInPoints];
+             
+             drawGrapplingHook2 = true;
+             [self unschedule:@selector(reduceCircle)];
+             [self resetCircle];
+             touchedPlatform = 3;
+         }
+     }
+    
+     
+     //cliquei FORA
+     else if([ninja action] == GRAPPLING)
+     {
+         drawGrapplingHook2 = false;
+         [joint invalidate];
+         joint = nil;
+         [self enableGrapplingHookButton];
+         [ninja setAction:IDDLE];
+     }
+    
+    
     else
     {
         [ninja setAction:IDDLE];
@@ -173,17 +219,17 @@ float scaleAim = 5.0f;
 - (void) touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     if ([ninja action] == JUMP || [ninja action] == KNIFE){
-
+        
         [ninja enableAim:true];
-    
+        
         //localizacao toque
         CGPoint touchLocation = [touch locationInNode:_contentNode];
         
-        angleYY = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -80, 80);
-        angleXX = clampf(touchLocation.x - (ninja.boundingBox.origin.x + ninja.boundingBox.size.width/2), -10, 10);
-
+        angleYY2 = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -80, 80);
+        angleXX2 = clampf(touchLocation.x - (ninja.boundingBox.origin.x + ninja.boundingBox.size.width/2), -10, 10);
+        
         //actualizar angulo e escala mira
-        [ninja updateAim:angleYY withScale:-angleXX/scaleAim];
+        [ninja updateAim:angleYY2 withScale:-angleXX2/scaleAim2];
     }
 }
 
@@ -196,11 +242,11 @@ float scaleAim = 5.0f;
     else if([ninja action] == BOMB)
         [self disableBombButton:YES];
     
-    //else if([ninja action] == GRAPPLING)
-      //  [self disableGrapplingButton];
+    else if([ninja action] == GRAPPLING)
+      [self disableGrapplingButton];
     
     //fazer acao ninja
-    [ninja action:_physicsNode withAngleX:angleXX withAngleY:angleYY];
+    [ninja action:_physicsNode withAngleX:angleXX2 withAngleY:angleYY2];
     
     //apagar mira
     [ninja enableAim:false];
@@ -359,43 +405,41 @@ float scaleAim = 5.0f;
 
 -(void) selectReset
 {
-    /*
-    if(joint != nil){
-        [joint invalidate];
-        joint = nil;
-        
-    }
-     */
     
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level1"];
+     if(joint != nil){
+         [joint invalidate];
+         joint = nil;
+     }
+    
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level2"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
     //reset variaveis
-    enableSlowMotion=false;
-    angleXX = 0.f, angleYY = 0.f;
-    scaleAim = 5.0f;
-    slowVelocity = 0.3f;
-    ninjaCircleOpacity = 0.15f;
-    overlayLayerOpacity = 0.3f;
-    numberOfEnemies = 3;
-    //drawGrapplingHook = false;
+    enableSlowMotion2=false;
+    angleXX2 = 0.f, angleYY2 = 0.f;
+    scaleAim2 = 5.0f;
+    slowVelocity2 = 0.3f;
+    ninjaCircleOpacity2 = 0.15f;
+    overlayLayerOpacity2 = 0.3f;
+    numberOfEnemies2 = 5;
+    drawGrapplingHook2 = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
 }
 -(void) nextLevel
 {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level2"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level3"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
     //reset variaveis
-    enableSlowMotion=false;
-    angleXX = 0.f, angleYY = 0.f;
-    scaleAim = 5.0f;
-    slowVelocity = 0.3f;
-    ninjaCircleOpacity = 0.15f;
-    overlayLayerOpacity = 0.3f;
-    numberOfEnemies = 3;
-
+    enableSlowMotion2=false;
+    angleXX2 = 0.f, angleYY2 = 0.f;
+    scaleAim2 = 5.0f;
+    slowVelocity2 = 0.3f;
+    ninjaCircleOpacity2 = 0.15f;
+    overlayLayerOpacity2 = 0.3f;
+    numberOfEnemies2 = 5;
+    drawGrapplingHook2 = false;
 }
 
 - (void) enableAllButtons:(BOOL)isEnable
@@ -404,7 +448,7 @@ float scaleAim = 5.0f;
     {
         //disale button
         [self enableBombButton];
-        //[self enableGrapplingHookButton];
+        [self enableGrapplingHookButton];
         [self enableKnifeButton];
     }
     else
@@ -425,8 +469,8 @@ float scaleAim = 5.0f;
         [self killNode:nodeB];
     } key:nodeB];
     
-    numberOfEnemies--;
-    if (numberOfEnemies == 0){
+    numberOfEnemies2--;
+    if (numberOfEnemies2 == 0){
         [self nextLevel];
     }
 }
@@ -443,14 +487,14 @@ float scaleAim = 5.0f;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
-    /*
-    if(joint != nil){
-        [joint invalidate];
-        joint = nil;
-        drawGrapplingHook = false;
-    }
-     */
-
+    
+     if(joint != nil){
+         [joint invalidate];
+         joint = nil;
+         drawGrapplingHook2 = false;
+     }
+    
+    
     [self selectReset];
 }
 
@@ -473,8 +517,8 @@ float scaleAim = 5.0f;
     }
     [self killNode:nodeB];
     
-    numberOfEnemies--;
-    if (numberOfEnemies == 0){
+    numberOfEnemies2--;
+    if (numberOfEnemies2 == 0){
         [self nextLevel];
     }
 }
@@ -489,11 +533,11 @@ float scaleAim = 5.0f;
 //----------------------------------------------------------------------------------------------------
 -(void)setupSlowMotion
 {
-    if(enableSlowMotion)
+    if(enableSlowMotion2)
     {
-        [[[CCDirector sharedDirector] scheduler] setTimeScale:slowVelocity];
-        ninjaCircle.opacity = ninjaCircleOpacity;
-        overlayLayer.opacity = overlayLayerOpacity;
+        [[[CCDirector sharedDirector] scheduler] setTimeScale:slowVelocity2];
+        ninjaCircle.opacity = ninjaCircleOpacity2;
+        overlayLayer.opacity = overlayLayerOpacity2;
     } else {
         [[[CCDirector sharedDirector] scheduler] setTimeScale:1.0f];
         ninjaCircle.opacity = 0.0f;
@@ -521,7 +565,7 @@ float scaleAim = 5.0f;
         
         i++;
         
-        enableSlowMotion = true;
+        enableSlowMotion2 = true;
     }
 }
 
@@ -532,7 +576,7 @@ float scaleAim = 5.0f;
     ninjaCircle.scaleY = 1.0f;
     
     //parar slow motion
-    enableSlowMotion = false;
+    enableSlowMotion2 = false;
     
     [self unschedule:_cmd];
 }
