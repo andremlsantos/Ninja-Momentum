@@ -13,5 +13,10 @@
     CCScene *gameplayScene = [CCBReader loadAsScene:@"WeaponsCodex"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
+- (void) goToLater
+{
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/LevelLater"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+}
 
 @end

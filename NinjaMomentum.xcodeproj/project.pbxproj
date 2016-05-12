@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E47431E1CE5375B006BE8DC /* LevelLater.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E47431D1CE5375B006BE8DC /* LevelLater.m */; };
 		2ECA7A4D1CCBF66C0052C0DE /* WeaponsCodex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A4C1CCBF66C0052C0DE /* WeaponsCodex.m */; };
 		2ECA7A581CCBFD980052C0DE /* GranadeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A571CCBFD980052C0DE /* GranadeEntry.m */; };
 		2ECA7A5B1CCBFE060052C0DE /* HookEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A5A1CCBFE060052C0DE /* HookEntry.m */; };
@@ -162,6 +163,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E47431C1CE5375B006BE8DC /* LevelLater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLater.h; sourceTree = "<group>"; };
+		2E47431D1CE5375B006BE8DC /* LevelLater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLater.m; sourceTree = "<group>"; };
 		2ECA7A4B1CCBF66C0052C0DE /* WeaponsCodex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponsCodex.h; sourceTree = "<group>"; };
 		2ECA7A4C1CCBF66C0052C0DE /* WeaponsCodex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeaponsCodex.m; sourceTree = "<group>"; };
 		2ECA7A561CCBFD980052C0DE /* GranadeEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GranadeEntry.h; sourceTree = "<group>"; };
@@ -483,6 +486,8 @@
 				65B088091CA54DFB005A8586 /* Level1.m */,
 				3FBB3ADF1CE4E8BC0080E9F4 /* Level2.h */,
 				3FBB3AE01CE4E8BC0080E9F4 /* Level2.m */,
+				2E47431C1CE5375B006BE8DC /* LevelLater.h */,
+				2E47431D1CE5375B006BE8DC /* LevelLater.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 				65B087FE1CA5498C005A8586 /* Ninja.h */,
 				65B087FF1CA5498C005A8586 /* Ninja.m */,
@@ -903,6 +908,7 @@
 				2ECA7A5B1CCBFE060052C0DE /* HookEntry.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				6564A1A21CA595920046F5FE /* Aim.m in Sources */,
+				2E47431E1CE5375B006BE8DC /* LevelLater.m in Sources */,
 				3FBB3AE11CE4E8BC0080E9F4 /* Level2.m in Sources */,
 				65B0880A1CA54DFB005A8586 /* Level1.m in Sources */,
 				2ECA7A611CCBFE600052C0DE /* NinjatoEntry.m in Sources */,

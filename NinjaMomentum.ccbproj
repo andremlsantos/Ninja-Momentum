@@ -80,6 +80,37 @@
 		</dict>
 		<key>CodexAssets</key>
 		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>IndoorLevelAssets</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+		</dict>
+		<key>IndoorLevelAssets/Lamps</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>IndoorLevelAssets/Platforms</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>IndoorLevelAssets/Scenary</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>IndoorLevelAssets/Structs</key>
+		<dict>
 			<key>isDirty</key>
 			<true/>
 			<key>isSmartSpriteSheet</key>
@@ -89,8 +120,6 @@
 		<dict>
 			<key>format_android</key>
 			<integer>2</integer>
-			<key>isDirty</key>
-			<true/>
 		</dict>
 		<key>Sprites</key>
 		<dict/>
