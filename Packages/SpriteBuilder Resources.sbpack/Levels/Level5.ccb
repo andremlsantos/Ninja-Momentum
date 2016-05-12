@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>180</integer>
+	<integer>185</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -442,7 +442,7 @@
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>-65.159042358398438</real>
+											<real>-65.04254150390625</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -507,6 +507,8 @@
 										<real>0.30000001192092896</real>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -540,8 +542,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>437.3780517578125</real>
-											<real>172.70866394042969</real>
+											<real>449.93157958984375</real>
+											<real>257.889892578125</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -602,7 +604,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>248.93157958984375</real>
+											<real>262.75201416015625</real>
 											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -791,8 +793,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>427.77804565429688</real>
-											<real>142.31492614746094</real>
+											<real>464.5867919921875</real>
+											<real>227.49613952636719</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -853,8 +855,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>672.778076171875</real>
-											<real>172.70866394042969</real>
+											<real>582.778076171875</real>
+											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -915,8 +917,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>672.778076171875</real>
-											<real>142.31492614746094</real>
+											<real>752.778076171875</real>
+											<real>227.49613952636719</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -977,8 +979,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>856.778076171875</real>
-											<real>40</real>
+											<real>738.12286376953125</real>
+											<real>257.889892578125</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1004,68 +1006,6 @@
 										<string>CCBFile</string>
 										<key>value</key>
 										<string>Enemy.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>174</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>Ground</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1036.778076171875</real>
-											<real>147.70866394042969</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>0.23348751664161682</real>
-											<real>0.71916508674621582</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>Platform/Ground.ccb</string>
 									</dict>
 								</array>
 							</dict>
@@ -1128,68 +1068,6 @@
 										<string>CCBFile</string>
 										<key>value</key>
 										<string>Platform/Ground.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>178</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>Enemy</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1036.778076171875</real>
-											<real>178.10240173339844</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1</real>
-											<real>1</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>Enemy.ccb</string>
 									</dict>
 								</array>
 							</dict>
@@ -2724,7 +2602,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Level3</string>
+		<string>Level5</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -2793,8 +2671,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

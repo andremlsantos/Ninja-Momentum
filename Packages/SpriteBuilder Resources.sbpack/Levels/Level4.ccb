@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>180</integer>
+	<integer>185</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -540,7 +540,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>437.3780517578125</real>
+											<real>300.5867919921875</real>
 											<real>172.70866394042969</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -602,7 +602,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>248.93157958984375</real>
+											<real>820.75201416015625</real>
 											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -791,7 +791,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>427.77804565429688</real>
+											<real>300.5867919921875</real>
 											<real>142.31492614746094</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -977,7 +977,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>856.778076171875</real>
+											<real>1003.6228637695312</real>
 											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1039,8 +1039,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>1036.778076171875</real>
-											<real>147.70866394042969</real>
+											<real>1328.3487548828125</real>
+											<real>153.10240173339844</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1163,8 +1163,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>1036.778076171875</real>
-											<real>178.10240173339844</real>
+											<real>1328.3487548828125</real>
+											<real>183.49613952636719</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1190,6 +1190,192 @@
 										<string>CCBFile</string>
 										<key>value</key>
 										<string>Enemy.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>180</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>CCBFile</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>494.13226318359375</real>
+											<real>273</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>0.2274601012468338</real>
+											<real>2.1578028202056885</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>PlataformaGH.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>181</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>CCBFile</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>494.13226318359375</real>
+											<real>273</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>0.2274601012468338</real>
+											<real>2.1578028202056885</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>PlataformaGH.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>183</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>CCBFile</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>1153.1322021484375</real>
+											<real>256.81646728515625</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>0.2274601012468338</real>
+											<real>2.1578028202056885</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>PlataformaGH.ccb</string>
 									</dict>
 								</array>
 							</dict>
@@ -2724,7 +2910,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Level3</string>
+		<string>Level4</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
