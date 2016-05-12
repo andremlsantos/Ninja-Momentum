@@ -24,6 +24,7 @@ float scaleAim = 5.0f;
 
 //auxiliares grappling hook
 bool drawGrapplingHook = false;
+int minDistanceToUseGrappling = 250;
 
 @implementation Level1
 {
@@ -69,6 +70,8 @@ bool drawGrapplingHook = false;
     myDrawNode = [CCDrawNode node];
 
     [self addChild: myDrawNode];
+    
+
 }
 
 - (void) update:(CCTime)delta
@@ -82,10 +85,20 @@ bool drawGrapplingHook = false;
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
     
+   if(ccpDistance(ninja.positionInPoints, _platformGH.positionInPoints) < minDistanceToUseGrappling){
+       [self enableGrapplingHookButton];
+   }
+   else{
+       [self disableGrapplingButton];
+
+   }
+
     [myDrawNode clear];
     if (drawGrapplingHook){
-        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+
     }
+    
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -150,7 +163,7 @@ bool drawGrapplingHook = false;
 //update touch and rotation
 - (void) touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    if ([ninja action] == JUMP){
+    if ([ninja action] == JUMP || [ninja action] == KNIFE){
 
         [ninja enableAim:true];
     
@@ -245,6 +258,7 @@ bool drawGrapplingHook = false;
     grapplingHookButton.background.opacity = 0.8;
     grapplingHookButton.label.opacity = 0.8;
     grapplingHookButton.userInteractionEnabled = YES;
+    
 }
 
 - (void) disableGrapplingButton
@@ -267,7 +281,6 @@ bool drawGrapplingHook = false;
     }
     
     [ninja setAction:KNIFE];
-    //if (throwKnifeType)
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -337,6 +350,11 @@ bool drawGrapplingHook = false;
 
 -(void) selectReset
 {
+    if(joint != nil){
+        [joint invalidate];
+        joint = nil;
+        
+    }
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level1"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
@@ -347,6 +365,7 @@ bool drawGrapplingHook = false;
     slowVelocity = 0.3f;
     ninjaCircleOpacity = 0.15f;
     overlayLayerOpacity = 0.3f;
+    drawGrapplingHook = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
 }
@@ -391,6 +410,13 @@ bool drawGrapplingHook = false;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+    if(joint != nil){
+        [joint invalidate];
+        joint = nil;
+        drawGrapplingHook = false;
+    }
+    CCLOG(@" HELLO %f", ccpDistance(nodeB.positionInPoints,_platformGH.positionInPoints));
+
     [self selectReset];
 }
 

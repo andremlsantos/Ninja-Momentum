@@ -169,28 +169,8 @@ float oldScale = 0.0f;
     //se for BOMBA
     else if([self action] == BOMB)
         [self shootBomb:physicsWorld withAngleX:angleX withAngleY:angleY];
-    
-    /*
-    //se aterrar na WATER
-    else if([self action] == WATER)
-        [self pushNinjaInWater:physicsWorld];
-    
-    //se quero saltar agua
-    else if ([self action] == JUMPONWATER){
-        [self jumpInWater: angleX withAngleY:angleY withPower: self.physicsBody.velocity.x];
-    }
-     */
 
 }
-
-/*
-//recebe mundo fisico
-- (void) pushNinjaInWater:(CCPhysicsNode *)physicsWorld
-{
-    [self.physicsBody applyImpulse:ccp(20, 0)];
-}
- */
-
 
 //recebe mundo fisico + força + angulo
 - (void) shootKnife:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY
@@ -207,10 +187,22 @@ float oldScale = 0.0f;
     
     //add to physic world
     [physicsWorld addChild:knife];
+    CGPoint launchDirection;
     
-    //set force and direction
-    CGPoint launchDirection = ccp(1, angleY/-90);
-    CGPoint force = ccpMult(launchDirection, -angleX * knifeForce);
+    if(angleY < 0){
+        launchDirection = ccp(cosf(GLKMathDegreesToRadians(-angleY)),sinf(GLKMathDegreesToRadians(-angleY)));
+    }
+    else{
+        launchDirection = ccp(cosf(GLKMathDegreesToRadians(angleY)),sinf(GLKMathDegreesToRadians(angleY)));
+    }
+    
+    if(angleX > 0)
+        launchDirection.x = -launchDirection.x;
+    
+    if (angleY > 0)
+        launchDirection.y = -launchDirection.y;
+    
+    CGPoint force = ccpMult(launchDirection, fabsf(angleX) * knifeForce);
     [knife.physicsBody applyForce:force];
     
     [self setAction:IDDLE];
