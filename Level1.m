@@ -17,12 +17,15 @@ float slowVelocity = 0.3f;
 float ninjaCircleOpacity = 0.15f;
 float overlayLayerOpacity = 0.3f;
 
+bool asRetryLocation = false;
 int numberOfEnemies = 3;
 
 //auxiliares mira
 float angleXX = 0.f, angleYY = 0.f;
 float scaleAim = 5.0f;
 
+CGPoint retryLocation;
+bool isPaused = false;
 
 //auxiliares grappling hook
 //bool drawGrapplingHook = false;
@@ -52,10 +55,10 @@ float scaleAim = 5.0f;
     CCButton *jumpButton;
     CCButton *resetButton;
     CCButton *grapplingHookButton;
-    
+    CCButton *retryButton;
+    CCButton *startAgainButton;
+
 }
-
-
 
 // default config
 - (void)didLoadFromCCB
@@ -71,11 +74,13 @@ float scaleAim = 5.0f;
     
     [self enableAllButtons:false];
     
+    retryButton.visible = false;
+    startAgainButton.visible = false;
+    startAgainButton.enabled = false;
+    retryButton.enabled = false;
     //myDrawNode = [CCDrawNode node];
 
     //[self addChild: myDrawNode];
-    
-    
 }
 
 - (void) update:(CCTime)delta
@@ -277,6 +282,34 @@ float scaleAim = 5.0f;
     grapplingHookButton.userInteractionEnabled = NO;
 }
 
+-(void) selectRetry
+{
+    [[CCDirector sharedDirector] resume];
+    retryButton.visible = false;
+    startAgainButton.visible = false;
+    startAgainButton.enabled = false;
+    retryButton.enabled = false;
+    
+    if(asRetryLocation){
+        ninja.positionInPoints = retryLocation;
+        [ninja setCanJump:true];
+        [ninja verticalJump];
+    }
+    else{
+        [self selectReset];
+    }
+}
+
+-(void) startAgainSelected
+{
+    [[CCDirector sharedDirector] resume];
+    retryButton.visible = false;
+    startAgainButton.visible = false;
+    startAgainButton.enabled = false;
+    retryButton.enabled = false;
+    [self selectReset];
+}
+
 /*
  KNIFE
  */
@@ -378,6 +411,7 @@ float scaleAim = 5.0f;
     ninjaCircleOpacity = 0.15f;
     overlayLayerOpacity = 0.3f;
     numberOfEnemies = 3;
+    asRetryLocation = false;
     //drawGrapplingHook = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
@@ -395,7 +429,7 @@ float scaleAim = 5.0f;
     ninjaCircleOpacity = 0.15f;
     overlayLayerOpacity = 0.3f;
     numberOfEnemies = 3;
-
+    asRetryLocation = false;
 }
 
 - (void) enableAllButtons:(BOOL)isEnable
@@ -450,33 +484,52 @@ float scaleAim = 5.0f;
         drawGrapplingHook = false;
     }
      */
+    //CGPoint mult = ccp(1,1);
+    //retryButton.center = ccpCompMult(mult, ninja.positionInPoints);
+    //mult = ccp (1,1);
+    //startAgainButton.center =  ccpCompMult(mult, ninja.positionInPoints);
+    
+    retryButton.visible = true;
+    startAgainButton.visible = true;
+    retryButton.enabled = true;
+    startAgainButton.enabled = true;
 
-    [self selectReset];
+    [[CCDirector sharedDirector] pause];
+
 }
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
-    float energy = [pair totalKineticEnergy];
+    //float energy = [pair totalKineticEnergy];
     
+    /*
     // if energy is large enough, remove the seal
     if (energy > 5000.f) {
         [[_physicsNode space] addPostStepBlock:^{
             [self killNode:nodeB];
         } key:nodeB];
         
-        //ninja pode saltar
-        [ninja setCanJump:true];
-        [ninja verticalJump];
-        
-        [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
-        
+     
     }
-    [self killNode:nodeB];
+     */
+    retryLocation = nodeB.positionInPoints;
+    CGPoint mult = ccp(1,1.5);
+    retryLocation = ccpCompMult(retryLocation, mult);
+    asRetryLocation = true;
+
+    [self killNode:nodeB];// matar inimigo
+   
+    //ninja pode saltar
+    [ninja setCanJump:true];
+    [ninja verticalJump];
     
     numberOfEnemies--;
     if (numberOfEnemies == 0){
         [self nextLevel];
     }
+    
+    [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+
 }
 
 //matar inimigo

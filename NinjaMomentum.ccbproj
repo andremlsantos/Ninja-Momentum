@@ -84,38 +84,15 @@
 			<true/>
 		</dict>
 		<key>IndoorLevelAssets</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>IndoorLevelAssets/Lamps</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-			<key>isSmartSpriteSheet</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>IndoorLevelAssets/Platforms</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-			<key>isSmartSpriteSheet</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>IndoorLevelAssets/Scenary</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-			<key>isSmartSpriteSheet</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>IndoorLevelAssets/Structs</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-			<key>isSmartSpriteSheet</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>NinjaAssets</key>
 		<dict>
 			<key>format_android</key>

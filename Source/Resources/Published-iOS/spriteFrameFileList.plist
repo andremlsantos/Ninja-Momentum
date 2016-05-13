@@ -9,12 +9,8 @@
 	</dict>
 	<key>spriteFrameFiles</key>
 	<array>
-		<string>IndoorLevelAssets/Scenary.plist</string>
-		<string>IndoorLevelAssets/Structs.plist</string>
-		<string>IndoorLevelAssets/Platforms.plist</string>
-		<string>IndoorLevelAssets/Lamps.plist</string>
-		<string>ccbResources.plist</string>
 		<string>CodexAssets.plist</string>
+		<string>ccbResources.plist</string>
 	</array>
 </dict>
 </plist>

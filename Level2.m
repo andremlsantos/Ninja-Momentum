@@ -426,6 +426,7 @@ int touchedPlatform;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
 }
+
 -(void) nextLevel
 {
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level3"];
