@@ -93,6 +93,34 @@
 		<dict/>
 		<key>IndoorLevelAssets/Structs</key>
 		<dict/>
+		<key>IndoorScene/Backgrounds</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>IndoorScene/Lamps</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>IndoorScene/Platforms</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>IndoorScene/Structs</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>NinjaAssets</key>
 		<dict>
 			<key>format_android</key>
