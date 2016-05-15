@@ -74,76 +74,76 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>54.9140625</real>
-					<real>6.6640625</real>
+					<real>54.859375</real>
+					<real>5.125030517578125</real>
 				</array>
 				<array>
 					<real>0.0</real>
 					<real>199</real>
 				</array>
 				<array>
-					<real>68.890625</real>
-					<real>168.41018676757812</real>
+					<real>92.28125</real>
+					<real>169.38674926757812</real>
 				</array>
 				<array>
-					<real>188.1015625</real>
-					<real>166.45315551757812</real>
+					<real>198.421875</real>
+					<real>173.06643676757812</real>
 				</array>
 				<array>
 					<real>269</real>
 					<real>199</real>
 				</array>
 				<array>
-					<real>213.5234375</real>
-					<real>5.886749267578125</real>
+					<real>215.87109375</real>
+					<real>7.417999267578125</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>213.5234375</real>
-						<real>5.886749267578125</real>
+						<real>215.87109375</real>
+						<real>7.417999267578125</real>
 					</array>
 					<array>
 						<real>269</real>
 						<real>199</real>
 					</array>
 					<array>
-						<real>188.1015625</real>
-						<real>166.45315551757812</real>
+						<real>198.421875</real>
+						<real>173.06643676757812</real>
 					</array>
 				</array>
 				<array>
 					<array>
-						<real>68.890625</real>
-						<real>168.41018676757812</real>
+						<real>92.28125</real>
+						<real>169.38674926757812</real>
 					</array>
 					<array>
 						<real>0.0</real>
 						<real>199</real>
 					</array>
 					<array>
-						<real>54.9140625</real>
-						<real>6.6640625</real>
+						<real>54.859375</real>
+						<real>5.125030517578125</real>
 					</array>
 				</array>
 				<array>
 					<array>
-						<real>54.9140625</real>
-						<real>6.6640625</real>
+						<real>54.859375</real>
+						<real>5.125030517578125</real>
 					</array>
 					<array>
-						<real>213.5234375</real>
-						<real>5.886749267578125</real>
+						<real>215.87109375</real>
+						<real>7.417999267578125</real>
 					</array>
 					<array>
-						<real>188.1015625</real>
-						<real>166.45315551757812</real>
+						<real>198.421875</real>
+						<real>173.06643676757812</real>
 					</array>
 					<array>
-						<real>68.890625</real>
-						<real>168.41018676757812</real>
+						<real>92.28125</real>
+						<real>169.38674926757812</real>
 					</array>
 				</array>
 			</array>

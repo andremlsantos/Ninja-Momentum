@@ -10,10 +10,11 @@
 	<key>spriteFrameFiles</key>
 	<array>
 		<string>RuralScene/Background2.plist</string>
-		<string>IndoorScene/Backgrounds.plist</string>
 		<string>IndoorScene/Lamps.plist</string>
 		<string>IndoorScene/Structs.plist</string>
 		<string>ccbResources.plist</string>
+		<string>CityScene/Assets.plist</string>
+		<string>CityScene/Background2.plist</string>
 		<string>IndoorScene/Platforms.plist</string>
 		<string>CodexAssets.plist</string>
 		<string>RuralScene/Assets.plist</string>

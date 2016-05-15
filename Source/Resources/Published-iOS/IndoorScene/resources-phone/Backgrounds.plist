@@ -9,7 +9,7 @@
 		<key>format</key>
 		<integer>2</integer>
 		<key>size</key>
-		<string>{8, 8}</string>
+		<string>{2048, 16}</string>
 		<key>textureFileName</key>
 		<string>Backgrounds.png</string>
 	</dict>

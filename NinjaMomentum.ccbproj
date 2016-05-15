@@ -78,6 +78,18 @@
 			<key>previewFolderHidden</key>
 			<true/>
 		</dict>
+		<key>CityScene/Assets</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>CityScene/Background</key>
+		<dict/>
+		<key>CityScene/Background2</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>CodexAssets</key>
 		<dict>
 			<key>isSmartSpriteSheet</key>
@@ -93,9 +105,19 @@
 		<dict/>
 		<key>IndoorLevelAssets/Structs</key>
 		<dict/>
-		<key>IndoorScene/Backgrounds</key>
+		<key>IndoorScene/Background</key>
 		<dict>
-			<key>isSmartSpriteSheet</key>
+			<key>isDirty</key>
+			<true/>
+		</dict>
+		<key>IndoorScene/Background2</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+		</dict>
+		<key>IndoorScene/Background3</key>
+		<dict>
+			<key>isDirty</key>
 			<true/>
 		</dict>
 		<key>IndoorScene/Lamps</key>
@@ -125,8 +147,6 @@
 		</dict>
 		<key>RuralScene/Background</key>
 		<dict>
-			<key>isDirty</key>
-			<true/>
 			<key>trimSprites</key>
 			<true/>
 		</dict>
