@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>RuralScene/Assets/Arc.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {539, 399}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {539, 399}}</string>
+			<key>sourceSize</key>
+			<string>{539, 399}</string>
+		</dict>
+		<key>RuralScene/Assets/arvore.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{542, 1}, {516, 455}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {516, 455}}</string>
+			<key>sourceSize</key>
+			<string>{516, 455}</string>
+		</dict>
+		<key>RuralScene/Assets/watchtower.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{163, 402}, {371, 509}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {371, 509}}</string>
+			<key>sourceSize</key>
+			<string>{371, 509}</string>
+		</dict>
+		<key>RuralScene/Assets/watchtower2.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 519}, {160, 502}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {160, 502}}</string>
+			<key>sourceSize</key>
+			<string>{160, 502}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+		<key>textureFileName</key>
+		<string>Assets.png</string>
+	</dict>
+</dict>
+</plist>

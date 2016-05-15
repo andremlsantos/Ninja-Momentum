@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>RuralScene/Background/3plano background.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 2565}, {3840, 1160}}</string>
+			<key>offset</key>
+			<string>{0, -60}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 120}, {3840, 1160}}</string>
+			<key>sourceSize</key>
+			<string>{3840, 1280}</string>
+		</dict>
+		<key>RuralScene/Background/ceu.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1283}, {3840, 1280}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {3840, 1280}}</string>
+			<key>sourceSize</key>
+			<string>{3840, 1280}</string>
+		</dict>
+		<key>RuralScene/Background/playground.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {3840, 1280}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {3840, 1280}}</string>
+			<key>sourceSize</key>
+			<string>{3840, 1280}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{8192, 4096}</string>
+		<key>textureFileName</key>
+		<string>Background.png</string>
+	</dict>
+</dict>
+</plist>
