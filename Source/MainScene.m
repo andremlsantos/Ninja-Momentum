@@ -4,7 +4,7 @@
 
 - (void) play
 {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level1"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"MapLevels"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
@@ -18,5 +18,11 @@
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/LevelLater"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
+
+
+/*
+ NIVEIS
+ */
+
 
 @end

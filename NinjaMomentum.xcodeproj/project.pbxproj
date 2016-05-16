@@ -13,6 +13,8 @@
 		2ECA7A5B1CCBFE060052C0DE /* HookEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A5A1CCBFE060052C0DE /* HookEntry.m */; };
 		2ECA7A5E1CCBFE290052C0DE /* KunaiEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A5D1CCBFE290052C0DE /* KunaiEntry.m */; };
 		2ECA7A611CCBFE600052C0DE /* NinjatoEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A601CCBFE600052C0DE /* NinjatoEntry.m */; };
+		3F8989F61CEA78C6001C68CC /* MapLevels.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8989F51CEA78C6001C68CC /* MapLevels.m */; };
+		3F8989FB1CEA79B2001C68CC /* LevelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8989FA1CEA79B2001C68CC /* LevelItem.m */; };
 		3FBB3AE11CE4E8BC0080E9F4 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB3AE01CE4E8BC0080E9F4 /* Level2.m */; };
 		5B121030197484FA004C1E1D /* NinjaMomentumActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* NinjaMomentumActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
@@ -175,6 +177,10 @@
 		2ECA7A5D1CCBFE290052C0DE /* KunaiEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KunaiEntry.m; sourceTree = "<group>"; };
 		2ECA7A5F1CCBFE600052C0DE /* NinjatoEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinjatoEntry.h; sourceTree = "<group>"; };
 		2ECA7A601CCBFE600052C0DE /* NinjatoEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinjatoEntry.m; sourceTree = "<group>"; };
+		3F8989F41CEA78C6001C68CC /* MapLevels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLevels.h; sourceTree = "<group>"; };
+		3F8989F51CEA78C6001C68CC /* MapLevels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLevels.m; sourceTree = "<group>"; };
+		3F8989F91CEA79B2001C68CC /* LevelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelItem.h; sourceTree = "<group>"; };
+		3F8989FA1CEA79B2001C68CC /* LevelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelItem.m; sourceTree = "<group>"; };
 		3FBB3ADF1CE4E8BC0080E9F4 /* Level2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
 		3FBB3AE01CE4E8BC0080E9F4 /* Level2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level2.m; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
@@ -485,6 +491,10 @@
 				65B088081CA54DFB005A8586 /* Level1.h */,
 				65B088091CA54DFB005A8586 /* Level1.m */,
 				3FBB3ADF1CE4E8BC0080E9F4 /* Level2.h */,
+				3F8989F41CEA78C6001C68CC /* MapLevels.h */,
+				3F8989F51CEA78C6001C68CC /* MapLevels.m */,
+				3F8989F91CEA79B2001C68CC /* LevelItem.h */,
+				3F8989FA1CEA79B2001C68CC /* LevelItem.m */,
 				3FBB3AE01CE4E8BC0080E9F4 /* Level2.m */,
 				2E47431C1CE5375B006BE8DC /* LevelLater.h */,
 				2E47431D1CE5375B006BE8DC /* LevelLater.m */,
@@ -902,10 +912,12 @@
 				65B088071CA5499E005A8586 /* Enemy.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				2ECA7A581CCBFD980052C0DE /* GranadeEntry.m in Sources */,
+				3F8989F61CEA78C6001C68CC /* MapLevels.m in Sources */,
 				65B088001CA5498C005A8586 /* Ninja.m in Sources */,
 				6564A1A51CA59FC90046F5FE /* Knife.m in Sources */,
 				65F6E7D91CBAC12900649A18 /* Ground.m in Sources */,
 				2ECA7A5B1CCBFE060052C0DE /* HookEntry.m in Sources */,
+				3F8989FB1CEA79B2001C68CC /* LevelItem.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				6564A1A21CA595920046F5FE /* Aim.m in Sources */,
 				2E47431E1CE5375B006BE8DC /* LevelLater.m in Sources */,
