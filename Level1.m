@@ -9,6 +9,7 @@
 #import "Ninja.h"
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
+#import "MainScene.h"
 
 
 //auxiliares slowmotion
@@ -65,7 +66,6 @@ bool isPaused = false;
 {
     // enable touch
     self.userInteractionEnabled = TRUE;
-    
     //enable delegate colision
     _physicsNode.collisionDelegate = self;
     
@@ -477,17 +477,10 @@ bool isPaused = false;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
-    /*
-    if(joint != nil){
-        [joint invalidate];
-        joint = nil;
-        drawGrapplingHook = false;
-    }
-     */
-    //CGPoint mult = ccp(1,1);
-    //retryButton.center = ccpCompMult(mult, ninja.positionInPoints);
-    //mult = ccp (1,1);
-    //startAgainButton.center =  ccpCompMult(mult, ninja.positionInPoints);
+    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
+    NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    [MainScene writeAtEndOfFile:@"/n1 Death" withFilePath:finalFilePath];
     
     retryButton.visible = true;
     startAgainButton.visible = true;
@@ -495,7 +488,6 @@ bool isPaused = false;
     startAgainButton.enabled = true;
 
     [[CCDirector sharedDirector] pause];
-
 }
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB

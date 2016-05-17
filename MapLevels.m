@@ -50,7 +50,6 @@ int tries[30];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *resultURL = [fileManager URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-    NSLog(@"%@",resultURL);
 }
 
 - (void) update:(CCTime)delta
