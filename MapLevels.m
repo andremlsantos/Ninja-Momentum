@@ -11,8 +11,13 @@
 #import "LevelItem.h"
 
 //TENTATIVAS
-int numberLevels = 30;
-int tries[30];
+int numberLevels = 5;
+NSArray *levels;
+
+//templates nomes
+NSString * templateTries = @"triesLevel";
+NSString * templateEnded = @"endedLevel";
+NSString * templateUNBlocked = @"unblockedLevel";
 
 @implementation MapLevels
 {
@@ -27,20 +32,16 @@ int tries[30];
 //inicializar tentativas ao maximo para nao ter estrelas
 - (void)didLoadFromCCB
 {
-    for(int i=0; i<numberLevels; i++)
-    {
-        tries[i] = -1;
-    }
+    int index = 1;
     
-    [level1 setOneStar];
-    [level1 setTitle:@"1"];
+    levels = [NSArray arrayWithObjects:level1, level2, level3, level4, level5, nil];
     
-    [level2 setTitle:@"2"];
-    [level2 disable];
+    //METER NIVEL1 DESBLOQUEADO
+    NSString *unbloqued1 = @"YES";
+    [[NSUserDefaults standardUserDefaults] setObject:unbloqued1 forKey:@"unblockedLevel1"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
-    [level3 setTitle:@"3"];
-    [level3 disable];
-    
+<<<<<<< Updated upstream
     [level4 setTitle:@"4"];
     [level4 disable];
 
@@ -50,10 +51,53 @@ int tries[30];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *resultURL = [fileManager URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+=======
+    for(LevelItem * level in levels)
+    {
+        [self configLevel:level withIndex:index];
+        index++;
+    }
+>>>>>>> Stashed changes
 }
 
 - (void) update:(CCTime)delta
 {
+}
+
+- (void) configLevel:(LevelItem*) level withIndex:(int) index
+{
+    [level setTitle:[NSString stringWithFormat:@"%d", index]];
+    
+    NSString * unbloqued = [[NSUserDefaults standardUserDefaults] stringForKey:[NSString stringWithFormat:@"unblockedLevel%d", index]];
+    if(unbloqued)
+        [level enable];
+    else
+        [level disable];
+    
+    NSString * ended = [[NSUserDefaults standardUserDefaults] stringForKey:[NSString stringWithFormat:@"endedLevel%d", index]];
+    if (ended)
+    {
+        //ver tries
+        CCLOG(@"nivel %d esta acabado", index);
+        NSString * triesString = [[NSUserDefaults standardUserDefaults] stringForKey:[NSString stringWithFormat:@"triesLevel%d", index]];
+        
+        int triesLevel = [triesString intValue];
+        
+        CCLOG(@"nivel %d tem %d tries", index, triesLevel);
+        
+        if(triesLevel == 0)
+        {
+            [level setThreeStar];
+        }
+        else if(triesLevel >= 1 && triesLevel <=4)
+        {
+            [level setTwoStar];
+        }
+        else if(triesLevel >= 5)
+        {
+            [level setOneStar];
+        }
+    }
 }
 
 @end

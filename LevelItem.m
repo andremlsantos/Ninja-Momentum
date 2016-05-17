@@ -117,6 +117,8 @@
 {
     level_item.label.opacity = 1.0;
     level_item.userInteractionEnabled = YES;
+    
+    [self setZeroStar];
 }
 
 @end

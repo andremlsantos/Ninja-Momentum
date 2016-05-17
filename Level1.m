@@ -28,9 +28,8 @@ float scaleAim = 5.0f;
 CGPoint retryLocation;
 bool isPaused = false;
 
-//auxiliares grappling hook
-//bool drawGrapplingHook = false;
-//int minDistanceToUseGrappling = 250;
+//TRIES
+int numberTries = 0;
 
 @implementation Level1
 {
@@ -58,7 +57,13 @@ bool isPaused = false;
     CCButton *grapplingHookButton;
     CCButton *retryButton;
     CCButton *startAgainButton;
-
+    CCButton *nextButton;
+    
+    CCNodeColor *layerEnd;
+    CCLabelTTF * textEnd;
+    CCNode *star1;
+    CCNode *star2;
+    CCNode *star3;
 }
 
 // default config
@@ -78,9 +83,17 @@ bool isPaused = false;
     startAgainButton.visible = false;
     startAgainButton.enabled = false;
     retryButton.enabled = false;
-    //myDrawNode = [CCDrawNode node];
-
-    //[self addChild: myDrawNode];
+    
+    //desactivar proximo nivel
+    layerEnd.opacity = 0.0f;
+    textEnd.opacity = 0.0f;
+    
+    resetButton.visible = false;
+    nextButton.visible = false;
+    
+    star1.opacity = 0.0f;
+    star2.opacity = 0.0f;
+    star3.opacity = 0.0f;
 }
 
 - (void) update:(CCTime)delta
@@ -93,23 +106,8 @@ bool isPaused = false;
 
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
-   
-    /*
-   if(ccpDistance(ninja.positionInPoints, _platformGH.positionInPoints) < minDistanceToUseGrappling){
-       [self enableGrapplingHookButton];
-   }
-   else{
-       [self disableGrapplingButton];
-
-   }
-
-    [myDrawNode clear];
-    if (drawGrapplingHook){
-            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
-
-    }
-     */
     
+    [self outsideRoom];
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -290,7 +288,8 @@ bool isPaused = false;
     startAgainButton.enabled = false;
     retryButton.enabled = false;
     
-    if(asRetryLocation){
+    if(asRetryLocation)
+    {
         ninja.positionInPoints = retryLocation;
         [ninja setCanJump:true];
         [ninja verticalJump];
@@ -298,6 +297,13 @@ bool isPaused = false;
     else{
         [self selectReset];
     }
+    
+    
+    numberTries++;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    CCLOG(@"tries %d", numberTries);
 }
 
 -(void) startAgainSelected
@@ -392,6 +398,8 @@ bool isPaused = false;
 
 -(void) selectReset
 {
+    [[CCDirector sharedDirector] resume];
+    
     /*
     if(joint != nil){
         [joint invalidate];
@@ -415,6 +423,12 @@ bool isPaused = false;
     //drawGrapplingHook = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
+    
+    numberTries=0;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    CCLOG(@"tries %d", numberTries);
 }
 -(void) nextLevel
 {
@@ -430,6 +444,8 @@ bool isPaused = false;
     overlayLayerOpacity = 0.3f;
     numberOfEnemies = 3;
     asRetryLocation = false;
+    
+    [[CCDirector sharedDirector] resume];
 }
 
 - (void) enableAllButtons:(BOOL)isEnable
@@ -461,7 +477,14 @@ bool isPaused = false;
     
     numberOfEnemies--;
     if (numberOfEnemies == 0){
-        [self nextLevel];
+        //[self nextLevel];
+        
+        layerEnd.opacity = 1.0f;
+        textEnd.opacity = 1.0f;
+        resetButton.visible = true;
+        nextButton.visible = true;
+        
+        [[CCDirector sharedDirector] pause];
     }
 }
 
@@ -477,11 +500,14 @@ bool isPaused = false;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+<<<<<<< Updated upstream
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
     NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     [MainScene writeAtEndOfFile:@"/n1 Death" withFilePath:finalFilePath];
     
+=======
+>>>>>>> Stashed changes
     retryButton.visible = true;
     startAgainButton.visible = true;
     retryButton.enabled = true;
@@ -492,18 +518,6 @@ bool isPaused = false;
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
-    //float energy = [pair totalKineticEnergy];
-    
-    /*
-    // if energy is large enough, remove the seal
-    if (energy > 5000.f) {
-        [[_physicsNode space] addPostStepBlock:^{
-            [self killNode:nodeB];
-        } key:nodeB];
-        
-     
-    }
-     */
     retryLocation = nodeB.positionInPoints;
     CGPoint mult = ccp(1,1.5);
     retryLocation = ccpCompMult(retryLocation, mult);
@@ -516,8 +530,49 @@ bool isPaused = false;
     [ninja verticalJump];
     
     numberOfEnemies--;
-    if (numberOfEnemies == 0){
-        [self nextLevel];
+    if (numberOfEnemies == 0)
+    {
+        //salvar tries
+        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        //acabei nivel
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"endedLevel1"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        //desbloquei proximo
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel2"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        CCLOG(@"tries %d", numberTries);
+        
+        //[self nextLevel];
+        
+        layerEnd.opacity = 1.0f;
+        textEnd.opacity = 1.0f;
+        resetButton.visible = true;
+        nextButton.visible = true;
+        
+        [[CCDirector sharedDirector] pause];
+        
+        if(numberTries == 0)
+        {
+            star1.opacity = 1.0f;
+            star2.opacity = 1.0f;
+            star3.opacity = 1.0f;
+        }
+        else if(numberTries >= 1 && numberTries <=4)
+        {
+            star1.opacity = 1.0f;
+            star2.opacity = 1.0f;
+            star3.opacity = 0.0f;
+        }
+        else if(numberTries >= 5)
+        {
+            star1.opacity = 1.0f;
+            star2.opacity = 0.0f;
+            star3.opacity = 0.0f;
+        }
     }
     
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
@@ -583,5 +638,20 @@ bool isPaused = false;
 }
 
 
+//SAIR ECRA
+-(void) outsideRoom
+{
+    if(ninja.position.x > [self contentSize].width || ninja.position.y > [self contentSize].height)
+    {
+        CCLOG(@"ninja fora bounds");
+        
+        retryButton.visible = true;
+        startAgainButton.visible = true;
+        retryButton.enabled = true;
+        startAgainButton.enabled = true;
+        
+        [[CCDirector sharedDirector] pause];
+    }
+}
 
 @end
