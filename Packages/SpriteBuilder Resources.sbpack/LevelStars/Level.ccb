@@ -364,8 +364,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -424,8 +422,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.15000000596046448</real>
+							<real>0.15000000596046448</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -438,7 +436,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbParticleMagic.png</string>
+							<string>LevelStars/star-128.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -532,8 +530,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.15000000596046448</real>
+							<real>0.15000000596046448</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -546,7 +544,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbParticleMagic.png</string>
+							<string>LevelStars/star-128.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -640,8 +638,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.15000000596046448</real>
+							<real>0.15000000596046448</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -654,7 +652,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbParticleMagic.png</string>
+							<string>LevelStars/star-128.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -690,6 +688,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

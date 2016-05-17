@@ -490,7 +490,7 @@ int numberTries = 0;
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair bomb:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
-    //matar inimigo
+    //matar inimigo  
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
         [self killNode:nodeA];
@@ -500,14 +500,12 @@ int numberTries = 0;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
-<<<<<<< Updated upstream
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
     NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     [MainScene writeAtEndOfFile:@"/n1 Death" withFilePath:finalFilePath];
     
-=======
->>>>>>> Stashed changes
+
     retryButton.visible = true;
     startAgainButton.visible = true;
     retryButton.enabled = true;

@@ -41,23 +41,11 @@ NSString * templateUNBlocked = @"unblockedLevel";
     [[NSUserDefaults standardUserDefaults] setObject:unbloqued1 forKey:@"unblockedLevel1"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-<<<<<<< Updated upstream
-    [level4 setTitle:@"4"];
-    [level4 disable];
-
-    [level5 setTitle:@"5"];
-    [level5 disable];
-    
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *resultURL = [fileManager URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-=======
     for(LevelItem * level in levels)
     {
         [self configLevel:level withIndex:index];
         index++;
     }
->>>>>>> Stashed changes
 }
 
 - (void) update:(CCTime)delta
