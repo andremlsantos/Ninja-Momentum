@@ -17,6 +17,7 @@
     {
         [[NSFileManager defaultManager] removeItemAtPath:fileName error:nil];
     }
+    
     //save content to the documents directory
     [writedStr writeToFile:fileName
                 atomically:YES

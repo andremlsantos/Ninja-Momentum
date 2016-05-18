@@ -30,6 +30,15 @@ bool isPaused = false;
 //TRIES
 int numberTries = 0;
 
+//LOG VARIABLES
+int numberOfDeaths = 0;
+int numberOfJumps = 0;
+int numberOfWeaponsFired = 0;
+int numberOfGrapplingHook = 0;
+int numberOfTouches = 0;
+int numberOfRetriesPerLevel = 0;
+
+
 @implementation Level1
 {
     //physic world
@@ -121,7 +130,7 @@ int numberTries = 0;
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
-
+    numberOfTouches++;
     // NINJA
     if (CGRectContainsPoint([ninja boundingBox], touchLocation))
     {
@@ -195,8 +204,10 @@ int numberTries = 0;
 - (void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     //DESACTIVAR BUTOES / TEMPO
-    if([ninja action] == KNIFE)
+    if([ninja action] == KNIFE){
+        numberOfWeaponsFired++;
         [self disableKnifeButton:YES];
+    }
     
     else if([ninja action] == BOMB)
         [self disableBombButton:YES];
@@ -283,6 +294,7 @@ int numberTries = 0;
 -(void) selectRetry
 {
     [[CCDirector sharedDirector] resume];
+    numberOfRetriesPerLevel ++;
     retryButton.visible = false;
     startAgainButton.visible = false;
     startAgainButton.enabled = false;
@@ -485,6 +497,7 @@ int numberTries = 0;
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
     } key:nodeB];
+    numberOfJumps ++;
     
     numberOfEnemies--;
     if (numberOfEnemies == 0){
@@ -511,11 +524,7 @@ int numberTries = 0;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
-    NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    [MainScene writeAtEndOfFile:@"/n1 Death" withFilePath:finalFilePath];
-
+    numberOfDeaths++;
     retryButton.visible = true;
     startAgainButton.visible = true;
     retryButton.enabled = true;
@@ -530,8 +539,6 @@ int numberTries = 0;
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
     float energy = [pair totalKineticEnergy];
-    
-    CCLOG(@"energia %lf", energy);
     
     if (energy > 5000.0f) {
         retryLocation = nodeB.positionInPoints;
@@ -548,6 +555,9 @@ int numberTries = 0;
         numberOfEnemies--;
         if (numberOfEnemies == 0)
         {
+            //log
+            [self writeToLog];
+            
             //salvar tries
             [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
             [[NSUserDefaults standardUserDefaults] synchronize];
@@ -594,6 +604,41 @@ int numberTries = 0;
         
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     }
+}
+
+- (void) writeToLog{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
+    NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
+    NSString* deathNumberString = @"/nNumber of deaths in Level 1 = ";
+    
+    deathNumberString = [deathNumberString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfDeaths]];
+    [MainScene writeAtEndOfFile:deathNumberString withFilePath:finalFilePath];
+    
+    NSString* numberOfJumpsString = @"/nNumber of jumps in Level 1 = ";
+    
+    numberOfJumpsString = [numberOfJumpsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfJumps]];
+    [MainScene writeAtEndOfFile:numberOfJumpsString withFilePath:finalFilePath];
+    
+    NSString* numberOfTouchesString = @"/nNumber of touches in Level 1 = ";
+    
+    numberOfTouchesString = [numberOfTouchesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfTouches]];
+    [MainScene writeAtEndOfFile:numberOfTouchesString withFilePath:finalFilePath];
+    
+    NSString* numberOfRetriesString = @"/nNumber of retries in Level 1 = ";
+    
+    numberOfRetriesString = [numberOfRetriesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfRetriesPerLevel]];
+    [MainScene writeAtEndOfFile:numberOfRetriesString withFilePath:finalFilePath];
+    
+    NSString* numberOfGrapplingString = @"/nNumber of Grappling Hook used in Level 1 = 0";
+    [MainScene writeAtEndOfFile:numberOfGrapplingString withFilePath:finalFilePath];
+    
+    NSString* numberOfWeaponsString = @"/nNumber of Knifes used in Level 1 = ";
+    
+    numberOfWeaponsString = [numberOfWeaponsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired]];
+    [MainScene writeAtEndOfFile:numberOfWeaponsString withFilePath:finalFilePath];
+
 }
 
 //matar inimigo
