@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>270</integer>
+	<integer>256</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -41,7 +41,7 @@
 		<array>
 			<dict>
 				<key>UUID</key>
-				<integer>204</integer>
+				<integer>255</integer>
 				<key>baseClass</key>
 				<string>CCSprite</string>
 				<key>children</key>
@@ -49,7 +49,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>ceu</string>
+				<string>indoor cor hipotese</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -71,8 +71,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>660.1221923828125</real>
-							<real>216.62718200683594</real>
+							<real>750</real>
+							<real>235.54437255859375</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -96,9 +96,9 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1.3335801362991333</real>
-							<real>1.3335801362991333</real>
-							<true/>
+							<real>1</real>
+							<real>1</real>
+							<false/>
 							<integer>0</integer>
 						</array>
 					</dict>
@@ -110,7 +110,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>CityScene/Background/ceu.png</string>
+							<string>IndoorScene/Background2/indoor cor hipotese.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -146,114 +146,8 @@
 						<array/>
 					</dict>
 				</array>
-			</dict>
-			<dict>
-				<key>UUID</key>
-				<integer>205</integer>
-				<key>baseClass</key>
-				<string>CCSprite</string>
-				<key>children</key>
-				<array/>
-				<key>customClass</key>
-				<string></string>
-				<key>displayName</key>
-				<string>lua</string>
-				<key>memberVarAssignmentName</key>
-				<string></string>
-				<key>memberVarAssignmentType</key>
-				<integer>1</integer>
-				<key>properties</key>
-				<array>
-					<dict>
-						<key>name</key>
-						<string>name</string>
-						<key>type</key>
-						<string>StringSimple</string>
-						<key>value</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>position</string>
-						<key>type</key>
-						<string>Position</string>
-						<key>value</key>
-						<array>
-							<real>662.04486083984375</real>
-							<real>216.00570678710938</real>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>anchorPoint</string>
-						<key>type</key>
-						<string>Point</string>
-						<key>value</key>
-						<array>
-							<real>0.5</real>
-							<real>0.5</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>scale</string>
-						<key>type</key>
-						<string>ScaleLock</string>
-						<key>value</key>
-						<array>
-							<real>1.3374643325805664</real>
-							<real>1.3374643325805664</real>
-							<true/>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>spriteFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string></string>
-							<string>CityScene/Background/lua.png</string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>normalMapSpriteFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string></string>
-							<string></string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>color</string>
-						<key>type</key>
-						<string>Color3</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>effects</string>
-						<key>type</key>
-						<string>EffectControl</string>
-						<key>value</key>
-						<array/>
-					</dict>
-				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -262,438 +156,6 @@
 				<string>CCNode</string>
 				<key>children</key>
 				<array>
-					<dict>
-						<key>UUID</key>
-						<integer>206</integer>
-						<key>baseClass</key>
-						<string>CCSprite</string>
-						<key>children</key>
-						<array/>
-						<key>customClass</key>
-						<string></string>
-						<key>displayName</key>
-						<string>1palno back</string>
-						<key>memberVarAssignmentName</key>
-						<string></string>
-						<key>memberVarAssignmentType</key>
-						<integer>1</integer>
-						<key>properties</key>
-						<array>
-							<dict>
-								<key>name</key>
-								<string>name</string>
-								<key>type</key>
-								<string>StringSimple</string>
-								<key>value</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>position</string>
-								<key>type</key>
-								<string>Position</string>
-								<key>value</key>
-								<array>
-									<real>670.694091796875</real>
-									<real>213.20999145507812</real>
-									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>anchorPoint</string>
-								<key>type</key>
-								<string>Point</string>
-								<key>value</key>
-								<array>
-									<real>0.5</real>
-									<real>0.5</real>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>scale</string>
-								<key>type</key>
-								<string>ScaleLock</string>
-								<key>value</key>
-								<array>
-									<real>1.3549375534057617</real>
-									<real>1.3549375534057617</real>
-									<true/>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>spriteFrame</string>
-								<key>type</key>
-								<string>SpriteFrame</string>
-								<key>value</key>
-								<array>
-									<string></string>
-									<string>CityScene/Background2/1palno back.png</string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>normalMapSpriteFrame</string>
-								<key>type</key>
-								<string>SpriteFrame</string>
-								<key>value</key>
-								<array>
-									<string></string>
-									<string></string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>color</string>
-								<key>type</key>
-								<string>Color3</string>
-								<key>value</key>
-								<array>
-									<real>1</real>
-									<real>1</real>
-									<real>1</real>
-									<real>1</real>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>effects</string>
-								<key>type</key>
-								<string>EffectControl</string>
-								<key>value</key>
-								<array/>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>UUID</key>
-						<integer>209</integer>
-						<key>baseClass</key>
-						<string>CCSprite</string>
-						<key>children</key>
-						<array/>
-						<key>customClass</key>
-						<string></string>
-						<key>displayName</key>
-						<string>1palno back</string>
-						<key>memberVarAssignmentName</key>
-						<string></string>
-						<key>memberVarAssignmentType</key>
-						<integer>1</integer>
-						<key>properties</key>
-						<array>
-							<dict>
-								<key>name</key>
-								<string>name</string>
-								<key>type</key>
-								<string>StringSimple</string>
-								<key>value</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>position</string>
-								<key>type</key>
-								<string>Position</string>
-								<key>value</key>
-								<array>
-									<real>2007.1134033203125</real>
-									<real>213.20999145507812</real>
-									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>anchorPoint</string>
-								<key>type</key>
-								<string>Point</string>
-								<key>value</key>
-								<array>
-									<real>0.5</real>
-									<real>0.5</real>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>scale</string>
-								<key>type</key>
-								<string>ScaleLock</string>
-								<key>value</key>
-								<array>
-									<real>-1.3550000190734863</real>
-									<real>1.3549375534057617</real>
-									<false/>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>spriteFrame</string>
-								<key>type</key>
-								<string>SpriteFrame</string>
-								<key>value</key>
-								<array>
-									<string></string>
-									<string>CityScene/Background2/1palno back.png</string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>normalMapSpriteFrame</string>
-								<key>type</key>
-								<string>SpriteFrame</string>
-								<key>value</key>
-								<array>
-									<string></string>
-									<string></string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>color</string>
-								<key>type</key>
-								<string>Color3</string>
-								<key>value</key>
-								<array>
-									<real>1</real>
-									<real>1</real>
-									<real>1</real>
-									<real>1</real>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>effects</string>
-								<key>type</key>
-								<string>EffectControl</string>
-								<key>value</key>
-								<array/>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>UUID</key>
-						<integer>207</integer>
-						<key>baseClass</key>
-						<string>CCSprite</string>
-						<key>children</key>
-						<array/>
-						<key>customClass</key>
-						<string></string>
-						<key>displayName</key>
-						<string>2palno back</string>
-						<key>memberVarAssignmentName</key>
-						<string></string>
-						<key>memberVarAssignmentType</key>
-						<integer>1</integer>
-						<key>properties</key>
-						<array>
-							<dict>
-								<key>name</key>
-								<string>name</string>
-								<key>type</key>
-								<string>StringSimple</string>
-								<key>value</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>position</string>
-								<key>type</key>
-								<string>Position</string>
-								<key>value</key>
-								<array>
-									<real>679.032958984375</real>
-									<real>210.51460266113281</real>
-									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>anchorPoint</string>
-								<key>type</key>
-								<string>Point</string>
-								<key>value</key>
-								<array>
-									<real>0.5</real>
-									<real>0.5</real>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>scale</string>
-								<key>type</key>
-								<string>ScaleLock</string>
-								<key>value</key>
-								<array>
-									<real>1.3717837333679199</real>
-									<real>1.3717837333679199</real>
-									<true/>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>spriteFrame</string>
-								<key>type</key>
-								<string>SpriteFrame</string>
-								<key>value</key>
-								<array>
-									<string></string>
-									<string>CityScene/Background2/2palno back.png</string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>normalMapSpriteFrame</string>
-								<key>type</key>
-								<string>SpriteFrame</string>
-								<key>value</key>
-								<array>
-									<string></string>
-									<string></string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>color</string>
-								<key>type</key>
-								<string>Color3</string>
-								<key>value</key>
-								<array>
-									<real>1</real>
-									<real>1</real>
-									<real>1</real>
-									<real>1</real>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>effects</string>
-								<key>type</key>
-								<string>EffectControl</string>
-								<key>value</key>
-								<array/>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>UUID</key>
-						<integer>210</integer>
-						<key>baseClass</key>
-						<string>CCSprite</string>
-						<key>children</key>
-						<array/>
-						<key>customClass</key>
-						<string></string>
-						<key>displayName</key>
-						<string>2palno back</string>
-						<key>memberVarAssignmentName</key>
-						<string></string>
-						<key>memberVarAssignmentType</key>
-						<integer>1</integer>
-						<key>properties</key>
-						<array>
-							<dict>
-								<key>name</key>
-								<string>name</string>
-								<key>type</key>
-								<string>StringSimple</string>
-								<key>value</key>
-								<string></string>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>position</string>
-								<key>type</key>
-								<string>Position</string>
-								<key>value</key>
-								<array>
-									<real>2015.5281982421875</real>
-									<real>219.51998901367188</real>
-									<integer>0</integer>
-									<integer>0</integer>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>anchorPoint</string>
-								<key>type</key>
-								<string>Point</string>
-								<key>value</key>
-								<array>
-									<real>0.5</real>
-									<real>0.5</real>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>scale</string>
-								<key>type</key>
-								<string>ScaleLock</string>
-								<key>value</key>
-								<array>
-									<real>-1.371999979019165</real>
-									<real>1.371999979019165</real>
-									<false/>
-									<integer>0</integer>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>spriteFrame</string>
-								<key>type</key>
-								<string>SpriteFrame</string>
-								<key>value</key>
-								<array>
-									<string></string>
-									<string>CityScene/Background2/2palno back.png</string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>normalMapSpriteFrame</string>
-								<key>type</key>
-								<string>SpriteFrame</string>
-								<key>value</key>
-								<array>
-									<string></string>
-									<string></string>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>color</string>
-								<key>type</key>
-								<string>Color3</string>
-								<key>value</key>
-								<array>
-									<real>1</real>
-									<real>1</real>
-									<real>1</real>
-									<real>1</real>
-								</array>
-							</dict>
-							<dict>
-								<key>name</key>
-								<string>effects</string>
-								<key>type</key>
-								<string>EffectControl</string>
-								<key>value</key>
-								<array/>
-							</dict>
-						</array>
-					</dict>
 					<dict>
 						<key>UUID</key>
 						<integer>6</integer>
@@ -920,7 +382,7 @@
 										<key>value</key>
 										<array>
 											<real>0.0</real>
-											<real>-65.159042358398438</real>
+											<real>-65.04254150390625</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -957,8 +419,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>19.348064422607422</real>
-											<real>4.9527454376220703</real>
+											<real>13.615039825439453</real>
+											<real>4.3628988265991211</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -1018,8 +480,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>550.97802734375</real>
-											<real>121.31492614746094</real>
+											<real>359.93157958984375</real>
+											<real>257.889892578125</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1080,8 +542,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>1028.02294921875</real>
-											<real>136.23260498046875</real>
+											<real>315.75201416015625</real>
+											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1207,8 +669,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>58.278045654296875</real>
-											<real>182.47822570800781</real>
+											<real>77.000030517578125</real>
+											<real>153.10240173339844</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1234,6 +696,130 @@
 										<string>CCBFile</string>
 										<key>value</key>
 										<string>Ninja.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>168</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>Enemy</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>513.778076171875</real>
+											<real>40</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1</real>
+											<real>1</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>Enemy.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>172</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>Enemy</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>693.12286376953125</real>
+											<real>257.889892578125</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1</real>
+											<real>1</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>Enemy.ccb</string>
 									</dict>
 								</array>
 							</dict>
@@ -1270,7 +856,7 @@
 										<key>value</key>
 										<array>
 											<real>1189.97802734375</real>
-											<real>0.0</real>
+											<real>7.5</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1301,7 +887,7 @@
 							</dict>
 							<dict>
 								<key>UUID</key>
-								<integer>230</integer>
+								<integer>223</integer>
 								<key>baseClass</key>
 								<string>CCBFile</string>
 								<key>children</key>
@@ -1309,76 +895,11 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>PlataformaGH1</string>
+								<string>platform</string>
 								<key>memberVarAssignmentName</key>
-								<string>_platformGH1</string>
+								<string></string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
-								<key>physicsBody</key>
-								<dict>
-									<key>affectedByGravity</key>
-									<true/>
-									<key>allowsRotation</key>
-									<true/>
-									<key>bodyShape</key>
-									<integer>0</integer>
-									<key>collisionCategories</key>
-									<array/>
-									<key>collisionMask</key>
-									<array/>
-									<key>collisionType</key>
-									<string></string>
-									<key>cornerRadius</key>
-									<real>0.0</real>
-									<key>density</key>
-									<real>1</real>
-									<key>dynamic</key>
-									<false/>
-									<key>elasticity</key>
-									<real>0.30000001192092896</real>
-									<key>friction</key>
-									<real>0.30000001192092896</real>
-									<key>points</key>
-									<array>
-										<array>
-											<real>0.0</real>
-											<real>0.0</real>
-										</array>
-										<array>
-											<real>0.0</real>
-											<real>15</real>
-										</array>
-										<array>
-											<real>284</real>
-											<real>15</real>
-										</array>
-										<array>
-											<real>284</real>
-											<real>0.0</real>
-										</array>
-									</array>
-									<key>polygons</key>
-									<array>
-										<array>
-											<array>
-												<real>284</real>
-												<real>0.0</real>
-											</array>
-											<array>
-												<real>284</real>
-												<real>15</real>
-											</array>
-											<array>
-												<real>0.0</real>
-												<real>15</real>
-											</array>
-											<array>
-												<real>0.0</real>
-												<real>0.0</real>
-											</array>
-										</array>
-									</array>
-								</dict>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -1396,8 +917,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>300.27804565429688</real>
-											<real>296.8538818359375</real>
+											<real>752.6007080078125</real>
+											<real>147.99337768554688</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1410,8 +931,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.30354845523834229</real>
-											<real>2.3070893287658691</real>
+											<real>1.0459462404251099</real>
+											<real>1.4873706102371216</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -1422,394 +943,137 @@
 										<key>type</key>
 										<string>CCBFile</string>
 										<key>value</key>
-										<string>PlataformaGH.ccb</string>
+										<string>CityAssets/arc.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>222</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>platform</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>373.25048828125</real>
+											<real>147.99337768554688</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1.0459462404251099</real>
+											<real>1.4873706102371216</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>CityAssets/arc.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>221</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>door</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>41.600181579589844</real>
+											<real>84.869682312011719</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>0.81558334827423096</real>
+											<real>0.63531535863876343</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>CityAssets/door.ccb</string>
 									</dict>
 								</array>
 							</dict>
 							<dict>
 								<key>UUID</key>
 								<integer>232</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>PlataformaGH2</string>
-								<key>memberVarAssignmentName</key>
-								<string>_platformGH2</string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>physicsBody</key>
-								<dict>
-									<key>affectedByGravity</key>
-									<true/>
-									<key>allowsRotation</key>
-									<true/>
-									<key>bodyShape</key>
-									<integer>0</integer>
-									<key>collisionCategories</key>
-									<array/>
-									<key>collisionMask</key>
-									<array/>
-									<key>collisionType</key>
-									<string></string>
-									<key>cornerRadius</key>
-									<real>0.0</real>
-									<key>density</key>
-									<real>1</real>
-									<key>dynamic</key>
-									<false/>
-									<key>elasticity</key>
-									<real>0.30000001192092896</real>
-									<key>friction</key>
-									<real>0.30000001192092896</real>
-									<key>points</key>
-									<array>
-										<array>
-											<real>0.0</real>
-											<real>0.0</real>
-										</array>
-										<array>
-											<real>0.0</real>
-											<real>15</real>
-										</array>
-										<array>
-											<real>284</real>
-											<real>15</real>
-										</array>
-										<array>
-											<real>284</real>
-											<real>0.0</real>
-										</array>
-									</array>
-									<key>polygons</key>
-									<array>
-										<array>
-											<array>
-												<real>284</real>
-												<real>0.0</real>
-											</array>
-											<array>
-												<real>284</real>
-												<real>15</real>
-											</array>
-											<array>
-												<real>0.0</real>
-												<real>15</real>
-											</array>
-											<array>
-												<real>0.0</real>
-												<real>0.0</real>
-											</array>
-										</array>
-									</array>
-								</dict>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>776.0322265625</real>
-											<real>287.8538818359375</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>0.30354845523834229</real>
-											<real>2.3070893287658691</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>PlataformaGH.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>257</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>PlataformaGH3</string>
-								<key>memberVarAssignmentName</key>
-								<string>_platformGH3</string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>physicsBody</key>
-								<dict>
-									<key>affectedByGravity</key>
-									<true/>
-									<key>allowsRotation</key>
-									<true/>
-									<key>bodyShape</key>
-									<integer>0</integer>
-									<key>collisionCategories</key>
-									<array/>
-									<key>collisionMask</key>
-									<array/>
-									<key>collisionType</key>
-									<string></string>
-									<key>cornerRadius</key>
-									<real>0.0</real>
-									<key>density</key>
-									<real>1</real>
-									<key>dynamic</key>
-									<false/>
-									<key>elasticity</key>
-									<real>0.30000001192092896</real>
-									<key>friction</key>
-									<real>0.30000001192092896</real>
-									<key>points</key>
-									<array>
-										<array>
-											<real>0.0</real>
-											<real>0.0</real>
-										</array>
-										<array>
-											<real>0.0</real>
-											<real>15</real>
-										</array>
-										<array>
-											<real>284</real>
-											<real>15</real>
-										</array>
-										<array>
-											<real>284</real>
-											<real>0.0</real>
-										</array>
-									</array>
-									<key>polygons</key>
-									<array>
-										<array>
-											<array>
-												<real>284</real>
-												<real>0.0</real>
-											</array>
-											<array>
-												<real>284</real>
-												<real>15</real>
-											</array>
-											<array>
-												<real>0.0</real>
-												<real>15</real>
-											</array>
-											<array>
-												<real>0.0</real>
-												<real>0.0</real>
-											</array>
-										</array>
-									</array>
-								</dict>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1245.0322265625</real>
-											<real>287.8538818359375</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>0.30354845523834229</real>
-											<real>2.3070893287658691</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>PlataformaGH.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>259</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>PlataformaGH4</string>
-								<key>memberVarAssignmentName</key>
-								<string>_platformGH4</string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>physicsBody</key>
-								<dict>
-									<key>affectedByGravity</key>
-									<true/>
-									<key>allowsRotation</key>
-									<true/>
-									<key>bodyShape</key>
-									<integer>0</integer>
-									<key>collisionCategories</key>
-									<array/>
-									<key>collisionMask</key>
-									<array/>
-									<key>collisionType</key>
-									<string></string>
-									<key>cornerRadius</key>
-									<real>0.0</real>
-									<key>density</key>
-									<real>1</real>
-									<key>dynamic</key>
-									<false/>
-									<key>elasticity</key>
-									<real>0.30000001192092896</real>
-									<key>friction</key>
-									<real>0.30000001192092896</real>
-									<key>points</key>
-									<array>
-										<array>
-											<real>0.0</real>
-											<real>0.0</real>
-										</array>
-										<array>
-											<real>0.0</real>
-											<real>15</real>
-										</array>
-										<array>
-											<real>284</real>
-											<real>15</real>
-										</array>
-										<array>
-											<real>284</real>
-											<real>0.0</real>
-										</array>
-									</array>
-									<key>polygons</key>
-									<array>
-										<array>
-											<array>
-												<real>284</real>
-												<real>0.0</real>
-											</array>
-											<array>
-												<real>284</real>
-												<real>15</real>
-											</array>
-											<array>
-												<real>0.0</real>
-												<real>15</real>
-											</array>
-											<array>
-												<real>0.0</real>
-												<real>0.0</real>
-											</array>
-										</array>
-									</array>
-								</dict>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1505.0322265625</real>
-											<real>287.8538818359375</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>0.30354845523834229</real>
-											<real>2.3070893287658691</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>PlataformaGH.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>178</integer>
 								<key>baseClass</key>
 								<string>CCBFile</string>
 								<key>children</key>
@@ -1839,8 +1103,70 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>1765.16015625</real>
-											<real>136.23260498046875</real>
+											<real>711.62286376953125</real>
+											<real>40</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1</real>
+											<real>1</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>Enemy.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>234</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>Enemy</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>887.62286376953125</real>
+											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1879,192 +1205,6 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>Ground</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1544.97802734375</real>
-											<real>0.0</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1</real>
-											<real>1</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>Platform/Ground.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>253</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>Ground</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1828.97802734375</real>
-											<real>0.0</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1</real>
-											<real>1</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>Platform/Ground.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>255</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>Ground</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>2127.177978515625</real>
-											<real>0.0</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1.1000000238418579</real>
-											<real>1</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>Platform/Ground.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>250</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
 								<string>platform</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
@@ -2087,8 +1227,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>1767</real>
-											<real>121.07061004638672</real>
+											<real>1072.1591796875</real>
+											<real>147.99337768554688</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -2101,70 +1241,8 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>0.82827168703079224</real>
-											<real>0.82827168703079224</real>
-											<true/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>CityAssets/platform.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>248</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>arc</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1516.7568359375</real>
-											<real>193.86968994140625</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1.1030681133270264</real>
-											<real>1.8304617404937744</real>
+											<real>1.0459462404251099</real>
+											<real>1.4873706102371216</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2176,316 +1254,6 @@
 										<string>CCBFile</string>
 										<key>value</key>
 										<string>CityAssets/arc.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>246</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>arc</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1259.7568359375</real>
-											<real>193.86968994140625</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1.1030681133270264</real>
-											<real>1.8304617404937744</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>CityAssets/arc.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>243</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>platform</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1033</real>
-											<real>118.80172729492188</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>0.82827168703079224</real>
-											<real>0.82827168703079224</real>
-											<true/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>CityAssets/platform.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>241</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>arc</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>796.75689697265625</real>
-											<real>188.46368408203125</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1.1030681133270264</real>
-											<real>1.8304617404937744</real>
-											<false/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>CityAssets/arc.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>240</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>door</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>34.000030517578125</real>
-											<real>100.77718353271484</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>0.77276742458343506</real>
-											<real>0.77276742458343506</real>
-											<true/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>CityAssets/door.ccb</string>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>239</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>platform</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>551</real>
-											<real>109.33186340332031</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>0.82827168703079224</real>
-											<real>0.82827168703079224</real>
-											<true/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>CityAssets/platform.ccb</string>
 									</dict>
 								</array>
 							</dict>
@@ -2499,7 +1267,7 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>arc</string>
+								<string>Enemy</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -2521,8 +1289,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>313.75686645507812</real>
-											<real>197.13095092773438</real>
+											<real>1026.122802734375</real>
+											<real>257.889892578125</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -2535,8 +1303,194 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>1.1030681133270264</real>
-											<real>1.8304617404937744</real>
+											<real>1</real>
+											<real>1</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>Enemy.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>241</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>Enemy</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>1114.622802734375</real>
+											<real>40</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1</real>
+											<real>1</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>Enemy.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>243</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>Enemy</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>1301.622802734375</real>
+											<real>40</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1</real>
+											<real>1</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>Enemy.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>245</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>platform</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>1490.1591796875</real>
+											<real>155.38969421386719</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1.0459462404251099</real>
+											<real>1.4873706102371216</real>
 											<false/>
 											<integer>0</integer>
 										</array>
@@ -2553,7 +1507,7 @@
 							</dict>
 							<dict>
 								<key>UUID</key>
-								<integer>268</integer>
+								<integer>247</integer>
 								<key>baseClass</key>
 								<string>CCBFile</string>
 								<key>children</key>
@@ -2561,7 +1515,7 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>Ground</string>
+								<string>Enemy</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -2583,8 +1537,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>-102.22195434570312</real>
-											<real>7.5</real>
+											<real>1448.122802734375</real>
+											<real>266.889892578125</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -2609,13 +1563,13 @@
 										<key>type</key>
 										<string>CCBFile</string>
 										<key>value</key>
-										<string>Platform/Ground.ccb</string>
+										<string>Enemy.ccb</string>
 									</dict>
 								</array>
 							</dict>
 							<dict>
 								<key>UUID</key>
-								<integer>261</integer>
+								<integer>249</integer>
 								<key>baseClass</key>
 								<string>CCBFile</string>
 								<key>children</key>
@@ -2623,7 +1577,7 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>Lamp</string>
+								<string>Enemy</string>
 								<key>memberVarAssignmentName</key>
 								<string></string>
 								<key>memberVarAssignmentType</key>
@@ -2645,8 +1599,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>429.35284423828125</real>
-											<real>126.33124542236328</real>
+											<real>1512.622802734375</real>
+											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -2659,9 +1613,9 @@
 										<string>ScaleLock</string>
 										<key>value</key>
 										<array>
-											<real>1.1471976041793823</real>
-											<real>1.1471976041793823</real>
-											<true/>
+											<real>1</real>
+											<real>1</real>
+											<false/>
 											<integer>0</integer>
 										</array>
 									</dict>
@@ -2671,201 +1625,9 @@
 										<key>type</key>
 										<string>CCBFile</string>
 										<key>value</key>
-										<string>CityAssets/lamp.ccb</string>
+										<string>Enemy.ccb</string>
 									</dict>
 								</array>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>266</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>Lamp</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1677.352783203125</real>
-											<real>137.26368713378906</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1.1471976041793823</real>
-											<real>1.1471976041793823</real>
-											<true/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>CityAssets/lamp.ccb</string>
-									</dict>
-								</array>
-								<key>selected</key>
-								<true/>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>264</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>Lamp</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>1365.352783203125</real>
-											<real>137.26368713378906</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1.1471976041793823</real>
-											<real>1.1471976041793823</real>
-											<true/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>CityAssets/lamp.ccb</string>
-									</dict>
-								</array>
-								<key>selected</key>
-								<true/>
-							</dict>
-							<dict>
-								<key>UUID</key>
-								<integer>262</integer>
-								<key>baseClass</key>
-								<string>CCBFile</string>
-								<key>children</key>
-								<array/>
-								<key>customClass</key>
-								<string></string>
-								<key>displayName</key>
-								<string>Lamp</string>
-								<key>memberVarAssignmentName</key>
-								<string></string>
-								<key>memberVarAssignmentType</key>
-								<integer>1</integer>
-								<key>properties</key>
-								<array>
-									<dict>
-										<key>name</key>
-										<string>name</string>
-										<key>type</key>
-										<string>StringSimple</string>
-										<key>value</key>
-										<string></string>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>position</string>
-										<key>type</key>
-										<string>Position</string>
-										<key>value</key>
-										<array>
-											<real>914.35284423828125</real>
-											<real>137.26368713378906</real>
-											<integer>0</integer>
-											<integer>0</integer>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>scale</string>
-										<key>type</key>
-										<string>ScaleLock</string>
-										<key>value</key>
-										<array>
-											<real>1.1471976041793823</real>
-											<real>1.1471976041793823</real>
-											<true/>
-											<integer>0</integer>
-										</array>
-									</dict>
-									<dict>
-										<key>name</key>
-										<string>ccbFile</string>
-										<key>type</key>
-										<string>CCBFile</string>
-										<key>value</key>
-										<string>CityAssets/lamp.ccb</string>
-									</dict>
-								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
@@ -2958,6 +1720,532 @@
 							</dict>
 						</array>
 					</dict>
+					<dict>
+						<key>UUID</key>
+						<integer>225</integer>
+						<key>baseClass</key>
+						<string>CCBFile</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>lamp</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>name</string>
+								<key>type</key>
+								<string>StringSimple</string>
+								<key>value</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>205</real>
+									<real>124</real>
+									<integer>0</integer>
+									<integer>0</integer>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ccbFile</string>
+								<key>type</key>
+								<string>CCBFile</string>
+								<key>value</key>
+								<string>CityAssets/lamp.ccb</string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>UUID</key>
+						<integer>198</integer>
+						<key>baseClass</key>
+						<string>CCSprite</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>playground</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>name</string>
+								<key>type</key>
+								<string>StringSimple</string>
+								<key>value</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>495</real>
+									<real>140</real>
+									<integer>0</integer>
+									<integer>0</integer>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.5</real>
+									<real>0.5</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>spriteFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string>CityScene/Background2/playground.png</string>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>normalMapSpriteFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string></string>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>color</string>
+								<key>type</key>
+								<string>Color3</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>effects</string>
+								<key>type</key>
+								<string>EffectControl</string>
+								<key>value</key>
+								<array/>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>UUID</key>
+						<integer>240</integer>
+						<key>baseClass</key>
+						<string>CCSprite</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>playground</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>name</string>
+								<key>type</key>
+								<string>StringSimple</string>
+								<key>value</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>1479</real>
+									<real>140</real>
+									<integer>0</integer>
+									<integer>0</integer>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>anchorPoint</string>
+								<key>type</key>
+								<string>Point</string>
+								<key>value</key>
+								<array>
+									<real>0.5</real>
+									<real>0.5</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>spriteFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string>CityScene/Background2/playground.png</string>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>normalMapSpriteFrame</string>
+								<key>type</key>
+								<string>SpriteFrame</string>
+								<key>value</key>
+								<array>
+									<string></string>
+									<string></string>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>color</string>
+								<key>type</key>
+								<string>Color3</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
+									<real>1</real>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>effects</string>
+								<key>type</key>
+								<string>EffectControl</string>
+								<key>value</key>
+								<array/>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>UUID</key>
+						<integer>226</integer>
+						<key>baseClass</key>
+						<string>CCBFile</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>lamp</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>name</string>
+								<key>type</key>
+								<string>StringSimple</string>
+								<key>value</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>615</real>
+									<real>124</real>
+									<integer>0</integer>
+									<integer>0</integer>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ccbFile</string>
+								<key>type</key>
+								<string>CCBFile</string>
+								<key>value</key>
+								<string>CityAssets/lamp.ccb</string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>UUID</key>
+						<integer>228</integer>
+						<key>baseClass</key>
+						<string>CCBFile</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>lamp</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>name</string>
+								<key>type</key>
+								<string>StringSimple</string>
+								<key>value</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>925</real>
+									<real>124</real>
+									<integer>0</integer>
+									<integer>0</integer>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ccbFile</string>
+								<key>type</key>
+								<string>CCBFile</string>
+								<key>value</key>
+								<string>CityAssets/lamp.ccb</string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>UUID</key>
+						<integer>251</integer>
+						<key>baseClass</key>
+						<string>CCBFile</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>lamp</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>name</string>
+								<key>type</key>
+								<string>StringSimple</string>
+								<key>value</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>1252</real>
+									<real>124</real>
+									<integer>0</integer>
+									<integer>0</integer>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ccbFile</string>
+								<key>type</key>
+								<string>CCBFile</string>
+								<key>value</key>
+								<string>CityAssets/lamp.ccb</string>
+							</dict>
+						</array>
+					</dict>
+					<dict>
+						<key>UUID</key>
+						<integer>253</integer>
+						<key>baseClass</key>
+						<string>CCBFile</string>
+						<key>children</key>
+						<array/>
+						<key>customClass</key>
+						<string></string>
+						<key>displayName</key>
+						<string>lamp</string>
+						<key>memberVarAssignmentName</key>
+						<string></string>
+						<key>memberVarAssignmentType</key>
+						<integer>1</integer>
+						<key>properties</key>
+						<array>
+							<dict>
+								<key>name</key>
+								<string>name</string>
+								<key>type</key>
+								<string>StringSimple</string>
+								<key>value</key>
+								<string></string>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>position</string>
+								<key>type</key>
+								<string>Position</string>
+								<key>value</key>
+								<array>
+									<real>1712</real>
+									<real>124</real>
+									<integer>0</integer>
+									<integer>0</integer>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>scale</string>
+								<key>type</key>
+								<string>ScaleLock</string>
+								<key>value</key>
+								<array>
+									<real>1</real>
+									<real>1</real>
+									<false/>
+									<integer>0</integer>
+								</array>
+							</dict>
+							<dict>
+								<key>name</key>
+								<string>ccbFile</string>
+								<key>type</key>
+								<string>CCBFile</string>
+								<key>value</key>
+								<string>CityAssets/lamp.ccb</string>
+							</dict>
+						</array>
+					</dict>
 				</array>
 				<key>customClass</key>
 				<string></string>
@@ -3027,114 +2315,6 @@
 							<false/>
 							<integer>0</integer>
 						</array>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>UUID</key>
-				<integer>208</integer>
-				<key>baseClass</key>
-				<string>CCSprite</string>
-				<key>children</key>
-				<array/>
-				<key>customClass</key>
-				<string></string>
-				<key>displayName</key>
-				<string>playground</string>
-				<key>memberVarAssignmentName</key>
-				<string></string>
-				<key>memberVarAssignmentType</key>
-				<integer>1</integer>
-				<key>properties</key>
-				<array>
-					<dict>
-						<key>name</key>
-						<string>name</string>
-						<key>type</key>
-						<string>StringSimple</string>
-						<key>value</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>position</string>
-						<key>type</key>
-						<string>Position</string>
-						<key>value</key>
-						<array>
-							<real>495</real>
-							<real>137.26368713378906</real>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>anchorPoint</string>
-						<key>type</key>
-						<string>Point</string>
-						<key>value</key>
-						<array>
-							<real>0.5</real>
-							<real>0.5</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>scale</string>
-						<key>type</key>
-						<string>ScaleLock</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<true/>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>spriteFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string></string>
-							<string>CityScene/Background2/playground.png</string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>normalMapSpriteFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string></string>
-							<string></string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>color</string>
-						<key>type</key>
-						<string>Color3</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>effects</string>
-						<key>type</key>
-						<string>EffectControl</string>
-						<key>value</key>
-						<array/>
 					</dict>
 				</array>
 			</dict>
@@ -3219,14 +2399,6 @@
 				<array>
 					<dict>
 						<key>name</key>
-						<string>visible</string>
-						<key>type</key>
-						<string>Check</string>
-						<key>value</key>
-						<false/>
-					</dict>
-					<dict>
-						<key>name</key>
 						<string>name</string>
 						<key>type</key>
 						<string>StringSimple</string>
@@ -3241,7 +2413,7 @@
 						<key>value</key>
 						<array>
 							<real>409.64407348632812</real>
-							<real>0.634895920753479</real>
+							<real>0.36743426322937012</real>
 							<integer>0</integer>
 							<integer>1</integer>
 							<integer>2</integer>
@@ -3553,6 +2725,14 @@
 				<array>
 					<dict>
 						<key>name</key>
+						<string>visible</string>
+						<key>type</key>
+						<string>Check</string>
+						<key>value</key>
+						<false/>
+					</dict>
+					<dict>
+						<key>name</key>
 						<string>name</string>
 						<key>type</key>
 						<string>StringSimple</string>
@@ -3566,8 +2746,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.1359812468290329</real>
-							<real>0.4382876455783844</real>
+							<real>0.42450162768363953</real>
+							<real>0.49953708052635193</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -3871,8 +3051,6 @@
 				<string></string>
 				<key>displayName</key>
 				<string>BombButton</string>
-				<key>hidden</key>
-				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>bombButton</string>
 				<key>memberVarAssignmentType</key>
@@ -3903,7 +3081,7 @@
 						<key>value</key>
 						<array>
 							<real>0.42450162768363953</real>
-							<real>0.36510869860649109</real>
+							<real>0.36743426322937012</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -4198,7 +3376,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>211</integer>
+				<integer>199</integer>
 				<key>baseClass</key>
 				<string>CCNodeColor</string>
 				<key>children</key>
@@ -4299,7 +3477,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>212</integer>
+				<integer>200</integer>
 				<key>baseClass</key>
 				<string>CCLabelTTF</string>
 				<key>children</key>
@@ -4508,7 +3686,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>213</integer>
+				<integer>201</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -4836,7 +4014,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>216</integer>
+				<integer>204</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -5164,7 +4342,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>219</integer>
+				<integer>207</integer>
 				<key>baseClass</key>
 				<string>CCSprite</string>
 				<key>children</key>
@@ -5274,7 +4452,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>220</integer>
+				<integer>208</integer>
 				<key>baseClass</key>
 				<string>CCSprite</string>
 				<key>children</key>
@@ -5384,7 +4562,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>221</integer>
+				<integer>209</integer>
 				<key>baseClass</key>
 				<string>CCSprite</string>
 				<key>children</key>
@@ -5494,7 +4672,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>222</integer>
+				<integer>210</integer>
 				<key>baseClass</key>
 				<string>CCNodeColor</string>
 				<key>children</key>
@@ -5595,7 +4773,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>223</integer>
+				<integer>211</integer>
 				<key>baseClass</key>
 				<string>CCLabelTTF</string>
 				<key>children</key>
@@ -5804,7 +4982,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>224</integer>
+				<integer>215</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -5836,7 +5014,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.10919825732707977</real>
+							<real>0.18238341808319092</real>
 							<real>0.30074024200439453</real>
 							<integer>0</integer>
 							<integer>2</integer>
@@ -6132,7 +5310,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>227</integer>
+				<integer>218</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -6458,225 +5636,9 @@
 					</dict>
 				</array>
 			</dict>
-			<dict>
-				<key>UUID</key>
-				<integer>245</integer>
-				<key>baseClass</key>
-				<string>CCSprite</string>
-				<key>children</key>
-				<array/>
-				<key>customClass</key>
-				<string></string>
-				<key>displayName</key>
-				<string>playground</string>
-				<key>memberVarAssignmentName</key>
-				<string></string>
-				<key>memberVarAssignmentType</key>
-				<integer>1</integer>
-				<key>properties</key>
-				<array>
-					<dict>
-						<key>name</key>
-						<string>name</string>
-						<key>type</key>
-						<string>StringSimple</string>
-						<key>value</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>position</string>
-						<key>type</key>
-						<string>Position</string>
-						<key>value</key>
-						<array>
-							<real>1453</real>
-							<real>137.26368713378906</real>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>anchorPoint</string>
-						<key>type</key>
-						<string>Point</string>
-						<key>value</key>
-						<array>
-							<real>0.5</real>
-							<real>0.5</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>scale</string>
-						<key>type</key>
-						<string>ScaleLock</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<true/>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>spriteFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string></string>
-							<string>CityScene/Background2/playground.png</string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>normalMapSpriteFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string></string>
-							<string></string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>color</string>
-						<key>type</key>
-						<string>Color3</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>effects</string>
-						<key>type</key>
-						<string>EffectControl</string>
-						<key>value</key>
-						<array/>
-					</dict>
-				</array>
-			</dict>
-			<dict>
-				<key>UUID</key>
-				<integer>252</integer>
-				<key>baseClass</key>
-				<string>CCSprite</string>
-				<key>children</key>
-				<array/>
-				<key>customClass</key>
-				<string></string>
-				<key>displayName</key>
-				<string>playground</string>
-				<key>memberVarAssignmentName</key>
-				<string></string>
-				<key>memberVarAssignmentType</key>
-				<integer>1</integer>
-				<key>properties</key>
-				<array>
-					<dict>
-						<key>name</key>
-						<string>name</string>
-						<key>type</key>
-						<string>StringSimple</string>
-						<key>value</key>
-						<string></string>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>position</string>
-						<key>type</key>
-						<string>Position</string>
-						<key>value</key>
-						<array>
-							<real>2437</real>
-							<real>137.26368713378906</real>
-							<integer>0</integer>
-							<integer>0</integer>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>anchorPoint</string>
-						<key>type</key>
-						<string>Point</string>
-						<key>value</key>
-						<array>
-							<real>0.5</real>
-							<real>0.5</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>scale</string>
-						<key>type</key>
-						<string>ScaleLock</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<true/>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>spriteFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string></string>
-							<string>CityScene/Background2/playground.png</string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>normalMapSpriteFrame</string>
-						<key>type</key>
-						<string>SpriteFrame</string>
-						<key>value</key>
-						<array>
-							<string></string>
-							<string></string>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>color</string>
-						<key>type</key>
-						<string>Color3</string>
-						<key>value</key>
-						<array>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
-							<real>1</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>effects</string>
-						<key>type</key>
-						<string>EffectControl</string>
-						<key>value</key>
-						<array/>
-					</dict>
-				</array>
-			</dict>
 		</array>
 		<key>customClass</key>
-		<string>Level4</string>
+		<string>Level7</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>
@@ -6714,7 +5676,7 @@
 				<string>Size</string>
 				<key>value</key>
 				<array>
-					<real>2300</real>
+					<real>1930</real>
 					<real>430</real>
 					<integer>0</integer>
 					<integer>0</integer>
