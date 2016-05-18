@@ -1,8 +1,8 @@
 //
-//  LevelLater.h
+//  Level5.h
 //  NinjaMomentum
 //
-//  Created by Gonçalo Delgado on 12/05/16.
+//  Created by andre on 18/05/16.
 //  Copyright © 2016 Apportable. All rights reserved.
 //
 
@@ -10,6 +10,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface LevelTest : CCNode
+@interface Level5 : CCNode <CCPhysicsCollisionDelegate>
+{
+    
+}
+
 
 @end
+

@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>228</integer>
+	<integer>230</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -802,8 +802,8 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>511.3780517578125</real>
-											<real>40</real>
+											<real>437.3780517578125</real>
+											<real>44</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -831,6 +831,8 @@
 										<string>Enemy.ccb</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -991,7 +993,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>905.778076171875</real>
+											<real>727.778076171875</real>
 											<real>40</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1307,7 +1309,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>710.96124267578125</real>
+											<real>600.96124267578125</real>
 											<real>244.65386962890625</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1336,8 +1338,6 @@
 										<string>PlataformaGH.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -1694,7 +1694,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>714.00006103515625</real>
+									<real>599.00006103515625</real>
 									<real>221.79595947265625</real>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -1828,8 +1828,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>771.1041259765625</real>
-							<real>434.54437255859375</real>
+							<real>921.1041259765625</real>
+							<real>391.54437255859375</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>

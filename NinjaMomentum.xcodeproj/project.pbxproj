@@ -26,6 +26,8 @@
 		6564A1A21CA595920046F5FE /* Aim.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564A1A11CA595920046F5FE /* Aim.m */; };
 		6564A1A51CA59FC90046F5FE /* Knife.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564A1A41CA59FC90046F5FE /* Knife.m */; };
 		6564A1A81CA59FD60046F5FE /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564A1A71CA59FD60046F5FE /* Bomb.m */; };
+		657BBCCC1CEC8F24002A69B1 /* Level4.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BBCCB1CEC8F24002A69B1 /* Level4.m */; };
+		657BBCD11CEC980E002A69B1 /* Level5.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BBCD01CEC980E002A69B1 /* Level5.m */; };
 		65B088001CA5498C005A8586 /* Ninja.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B087FF1CA5498C005A8586 /* Ninja.m */; };
 		65B088071CA5499E005A8586 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B088061CA5499E005A8586 /* Enemy.m */; };
 		65B0880A1CA54DFB005A8586 /* Level1.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B088091CA54DFB005A8586 /* Level1.m */; };
@@ -206,6 +208,10 @@
 		6564A1A41CA59FC90046F5FE /* Knife.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Knife.m; sourceTree = "<group>"; };
 		6564A1A61CA59FD60046F5FE /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bomb.h; sourceTree = "<group>"; };
 		6564A1A71CA59FD60046F5FE /* Bomb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bomb.m; sourceTree = "<group>"; };
+		657BBCCA1CEC8F24002A69B1 /* Level4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level4.h; sourceTree = "<group>"; };
+		657BBCCB1CEC8F24002A69B1 /* Level4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level4.m; sourceTree = "<group>"; };
+		657BBCCF1CEC980E002A69B1 /* Level5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level5.h; sourceTree = "<group>"; };
+		657BBCD01CEC980E002A69B1 /* Level5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level5.m; sourceTree = "<group>"; };
 		65B087FE1CA5498C005A8586 /* Ninja.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ninja.h; sourceTree = "<group>"; };
 		65B087FF1CA5498C005A8586 /* Ninja.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ninja.m; sourceTree = "<group>"; };
 		65B088051CA5499E005A8586 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
@@ -501,6 +507,10 @@
 				654D2D891CEBED95003174F9 /* Level2.m */,
 				654D2D8D1CEBF3E7003174F9 /* Level3.h */,
 				654D2D8E1CEBF3E7003174F9 /* Level3.m */,
+				657BBCCA1CEC8F24002A69B1 /* Level4.h */,
+				657BBCCB1CEC8F24002A69B1 /* Level4.m */,
+				657BBCCF1CEC980E002A69B1 /* Level5.h */,
+				657BBCD01CEC980E002A69B1 /* Level5.m */,
 				3F8989F41CEA78C6001C68CC /* MapLevels.h */,
 				3F8989F51CEA78C6001C68CC /* MapLevels.m */,
 				3F8989F91CEA79B2001C68CC /* LevelItem.h */,
@@ -928,7 +938,9 @@
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				2ECA7A581CCBFD980052C0DE /* GranadeEntry.m in Sources */,
 				3F8989F61CEA78C6001C68CC /* MapLevels.m in Sources */,
+				657BBCCC1CEC8F24002A69B1 /* Level4.m in Sources */,
 				65B088001CA5498C005A8586 /* Ninja.m in Sources */,
+				657BBCD11CEC980E002A69B1 /* Level5.m in Sources */,
 				6564A1A51CA59FC90046F5FE /* Knife.m in Sources */,
 				65F6E7D91CBAC12900649A18 /* Ground.m in Sources */,
 				2ECA7A5B1CCBFE060052C0DE /* HookEntry.m in Sources */,

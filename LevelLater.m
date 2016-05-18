@@ -30,7 +30,7 @@ bool drawGrapplingHookL = false;
 int minDistanceToUseGrapplingL = 250;
 int touchedPlatform;
 
-@implementation LevelLater
+@implementation LevelTest
 {
     //physic world
     CCPhysicsNode *_physicsNode;
@@ -44,9 +44,9 @@ int touchedPlatform;
     CCNodeColor * overlayLayer;
     
     //graping hook
-    CCNode *_platformGH1;
-    CCNode *_platformGH2;
-    CCNode *_platformGH3;
+    CCNode *_platformGH;
+   // CCNode *_platformGH2;
+   // CCNode *_platformGH3;
     CCPhysicsJoint *joint;
     CCDrawNode *myDrawNode;
     
@@ -92,9 +92,11 @@ int touchedPlatform;
     [ninja positionAimAt:ccp(0, 0)];
     
     
-    if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrapplingL
-       || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) < minDistanceToUseGrapplingL
-       || ccpDistance(ninja.positionInPoints, _platformGH3.positionInPoints) < minDistanceToUseGrapplingL){
+    if(ccpDistance(ninja.positionInPoints, _platformGH.positionInPoints) < minDistanceToUseGrapplingL
+    //   || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) < minDistanceToUseGrapplingL
+    //   || ccpDistance(ninja.positionInPoints, _platformGH3.positionInPoints) < minDistanceToUseGrapplingL
+       )
+    {
         [self enableGrapplingHookButton];
     }
     else{
@@ -105,14 +107,14 @@ int touchedPlatform;
     [myDrawNode clear];
     if (drawGrapplingHookL){
         if(touchedPlatform == 1){
-            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
         }
-        else if(touchedPlatform == 2){
+       /* else if(touchedPlatform == 2){
             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
         }
         else if(touchedPlatform == 3){
             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
-        }
+        }*/
         
         
     }
@@ -147,15 +149,15 @@ int touchedPlatform;
     
     
     //vou ver se cliquei dentro GH
-    else if(CGRectContainsPoint([_platformGH1 boundingBox],touchLocation))
+    else if(CGRectContainsPoint([_platformGH boundingBox],touchLocation))
     {
         if([ninja action] == GRAPPLING)
         {
             
             joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
-                                                              bodyB:_platformGH1.physicsBody
+                                                              bodyB:_platformGH.physicsBody
                                                             anchorA:ninja.anchorPointInPoints
-                                                            anchorB:_platformGH1.anchorPointInPoints];
+                                                            anchorB:_platformGH.anchorPointInPoints];
             
             drawGrapplingHookL = true;
             [self unschedule:@selector(reduceCircle)];
@@ -163,7 +165,7 @@ int touchedPlatform;
             touchedPlatform = 1;
         }
     }
-    
+    /*
     else if(CGRectContainsPoint([_platformGH2 boundingBox],touchLocation))
     {
         if([ninja action] == GRAPPLING)
@@ -197,7 +199,7 @@ int touchedPlatform;
             touchedPlatform = 3;
         }
     }
-    
+    */
     
     //cliquei FORA
     else if([ninja action] == GRAPPLING)
@@ -412,7 +414,7 @@ int touchedPlatform;
         joint = nil;
     }
     
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level2"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/LevelTest"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
     //reset variaveis
