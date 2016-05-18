@@ -61,47 +61,56 @@
     //level 2
     else if([level_item.title  isEqual: @"2"])
     {
-        
+        CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level2"];
+        [[CCDirector sharedDirector] replaceScene:gameplayScene];
     }
     //level 3
     else if([level_item.title  isEqual: @"3"])
     {
-        
+        CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level3"];
+        [[CCDirector sharedDirector] replaceScene:gameplayScene];
     }
     //level 4
     else if([level_item.title  isEqual: @"4"])
     {
-        
+        CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level4"];
+        [[CCDirector sharedDirector] replaceScene:gameplayScene];
     }
     //level 5
     else if([level_item.title  isEqual: @"5"])
     {
-        
+        CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level5"];
+        [[CCDirector sharedDirector] replaceScene:gameplayScene];
     }
     //level 6
     else if([level_item.title  isEqual: @"6"])
     {
-        
+        CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level6"];
+        [[CCDirector sharedDirector] replaceScene:gameplayScene];
     }
     //level 7
     else if([level_item.title  isEqual: @"7"])
     {
-        
+        CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level7"];
+        [[CCDirector sharedDirector] replaceScene:gameplayScene];
     }
     //level 8
     else if([level_item.title  isEqual: @"8"])
     {
-        
+        CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level8"];
+        [[CCDirector sharedDirector] replaceScene:gameplayScene];
     }
     //level 9
     else if([level_item.title  isEqual: @"9"])
     {
-        
+        CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level9"];
+        [[CCDirector sharedDirector] replaceScene:gameplayScene];
     }
     //level 10
     else if([level_item.title  isEqual: @"10"])
     {
-        
+        CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level10"];
+        [[CCDirector sharedDirector] replaceScene:gameplayScene];
     }
 }
 

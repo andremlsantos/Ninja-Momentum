@@ -145,12 +145,6 @@ float oldScale = 0.0f;
     aim.rotation = 0;
 }
 
-//- (void) resetAim
-//{
-    //aim.visible = false;
-    //aim.rotation = 0;
-//}
-
 /* 
  ACOES NINJA
  */
@@ -240,11 +234,13 @@ float oldScale = 0.0f;
     }
     return false;
 }
+
 - (void)startJumpAnimation{
     CCAnimationManager* animationManager = self.animationManager;
     
     [animationManager runAnimationsForSequenceNamed:@"Jump"];
 }
+
 - (void)idleAnimation{
     CCAnimationManager* animationManager = self.animationManager;
     

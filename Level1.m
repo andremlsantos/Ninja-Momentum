@@ -11,7 +11,6 @@
 #import "CCPhysics+ObjectiveChipmunk.h"
 #import "MainScene.h"
 
-
 //auxiliares slowmotion
 bool enableSlowMotion = false;
 float slowVelocity = 0.3f;
@@ -44,11 +43,6 @@ int numberTries = 0;
     CCNode * ninjaCircle;
     CCNodeColor * overlayLayer;
     
-    //graping hook
-    //CCNode *_platformGH;
-    //CCPhysicsJoint *joint;
-    //CCDrawNode *myDrawNode;
-
     //botoes
     CCButton *knifeButton;
     CCButton *bombButton;
@@ -59,11 +53,16 @@ int numberTries = 0;
     CCButton *startAgainButton;
     CCButton *nextButton;
     
+    //scrore
     CCNodeColor *layerEnd;
     CCLabelTTF * textEnd;
     CCNode *star1;
     CCNode *star2;
     CCNode *star3;
+    
+    //dark souls
+    CCNodeColor * overlayLayer2;
+    CCLabelTTF * textMomentum;
 }
 
 // default config
@@ -94,6 +93,9 @@ int numberTries = 0;
     star1.opacity = 0.0f;
     star2.opacity = 0.0f;
     star3.opacity = 0.0f;
+    
+    overlayLayer2.opacity = 0.0f;
+    textMomentum.opacity = 0.0f;
 }
 
 - (void) update:(CCTime)delta
@@ -130,7 +132,7 @@ int numberTries = 0;
         
         //activar mira
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
-            //[ninja enableAim:true];
+            [ninja enableAim:true];
             
             if(![ninja initialJump])
                 [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
@@ -175,9 +177,9 @@ int numberTries = 0;
 //update touch and rotation
 - (void) touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
-    if ([ninja action] == JUMP || [ninja action] == KNIFE){
-
-        [ninja enableAim:true];
+    if ([ninja action] == JUMP || [ninja action] == KNIFE)
+    {
+        //[ninja enableAim:true];
     
         //localizacao toque
         CGPoint touchLocation = [touch locationInNode:_contentNode];
@@ -248,9 +250,7 @@ int numberTries = 0;
 //----------------------------------------------------------------------------------------------------
 //-------------------------------------------------BUTTONS--------------------------------------------
 //----------------------------------------------------------------------------------------------------
-/*
- GH
- */
+
 -(void) selectGrapplingHook
 {
     //if([ninja action] == JUMP)
@@ -300,10 +300,13 @@ int numberTries = 0;
     
     
     numberTries++;
-    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
+    //[[NSUserDefaults standardUserDefaults] synchronize];
     
     CCLOG(@"tries %d", numberTries);
+    
+    overlayLayer2.opacity = 0.0f;
+    textMomentum.opacity = 0.0f;
 }
 
 -(void) startAgainSelected
@@ -313,6 +316,10 @@ int numberTries = 0;
     startAgainButton.visible = false;
     startAgainButton.enabled = false;
     retryButton.enabled = false;
+    
+    overlayLayer2.opacity = 0.0f;
+    textMomentum.opacity = 0.0f;
+    
     [self selectReset];
 }
 
@@ -425,8 +432,12 @@ int numberTries = 0;
     //collidedWithWaterEnd = false;
     
     numberTries=0;
-    [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
+    //[[NSUserDefaults standardUserDefaults] synchronize];
+    
+    overlayLayer2.opacity = 0.0f;
+    textMomentum.opacity = 0.0f;
     
     CCLOG(@"tries %d", numberTries);
 }
@@ -504,77 +515,85 @@ int numberTries = 0;
     NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
     NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     [MainScene writeAtEndOfFile:@"/n1 Death" withFilePath:finalFilePath];
-    
 
     retryButton.visible = true;
     startAgainButton.visible = true;
     retryButton.enabled = true;
     startAgainButton.enabled = true;
 
+    textMomentum.opacity = 1.0f;
+    overlayLayer2.opacity = 0.9f;
+    
     [[CCDirector sharedDirector] pause];
 }
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
-    retryLocation = nodeB.positionInPoints;
-    CGPoint mult = ccp(1,1.5);
-    retryLocation = ccpCompMult(retryLocation, mult);
-    asRetryLocation = true;
-
-    [self killNode:nodeB];// matar inimigo
-   
-    //ninja pode saltar
-    [ninja setCanJump:true];
-    [ninja verticalJump];
+    float energy = [pair totalKineticEnergy];
     
-    numberOfEnemies--;
-    if (numberOfEnemies == 0)
-    {
-        //salvar tries
-        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+    CCLOG(@"energia %lf", energy);
+    
+    if (energy > 5000.0f) {
+        retryLocation = nodeB.positionInPoints;
+        CGPoint mult = ccp(1,1.5);
+        retryLocation = ccpCompMult(retryLocation, mult);
+        asRetryLocation = true;
         
-        //acabei nivel
-        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"endedLevel1"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self killNode:nodeB];// matar inimigo
         
-        //desbloquei proximo
-        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel2"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
+        //ninja pode saltar
+        [ninja setCanJump:true];
+        [ninja verticalJump];
         
-        CCLOG(@"tries %d", numberTries);
-        
-        //[self nextLevel];
-        
-        layerEnd.opacity = 1.0f;
-        textEnd.opacity = 1.0f;
-        resetButton.visible = true;
-        nextButton.visible = true;
-        
-        [[CCDirector sharedDirector] pause];
-        
-        if(numberTries == 0)
+        numberOfEnemies--;
+        if (numberOfEnemies == 0)
         {
-            star1.opacity = 1.0f;
-            star2.opacity = 1.0f;
-            star3.opacity = 1.0f;
+            //salvar tries
+            [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            //acabei nivel
+            [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"endedLevel1"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            //desbloquei proximo
+            [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel2"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            CCLOG(@"tries %d", numberTries);
+            
+            //[self nextLevel];
+            
+            layerEnd.opacity = 1.0f;
+            textEnd.opacity = 1.0f;
+            resetButton.visible = true;
+            nextButton.visible = true;
+            
+            [[CCDirector sharedDirector] pause];
+            
+            if(numberTries == 0)
+            {
+                star1.opacity = 1.0f;
+                star2.opacity = 1.0f;
+                star3.opacity = 1.0f;
+            }
+            else if(numberTries >= 1 && numberTries <=4)
+            {
+                star1.opacity = 1.0f;
+                star2.opacity = 1.0f;
+                star3.opacity = 0.0f;
+            }
+            else if(numberTries >= 5)
+            {
+                star1.opacity = 1.0f;
+                star2.opacity = 0.0f;
+                star3.opacity = 0.0f;
+            }
         }
-        else if(numberTries >= 1 && numberTries <=4)
-        {
-            star1.opacity = 1.0f;
-            star2.opacity = 1.0f;
-            star3.opacity = 0.0f;
-        }
-        else if(numberTries >= 5)
-        {
-            star1.opacity = 1.0f;
-            star2.opacity = 0.0f;
-            star3.opacity = 0.0f;
-        }
+        
+        
+        [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     }
-    
-    [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
-
 }
 
 //matar inimigo

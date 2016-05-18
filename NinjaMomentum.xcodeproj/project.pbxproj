@@ -15,9 +15,14 @@
 		2ECA7A611CCBFE600052C0DE /* NinjatoEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A601CCBFE600052C0DE /* NinjatoEntry.m */; };
 		3F8989F61CEA78C6001C68CC /* MapLevels.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8989F51CEA78C6001C68CC /* MapLevels.m */; };
 		3F8989FB1CEA79B2001C68CC /* LevelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8989FA1CEA79B2001C68CC /* LevelItem.m */; };
-		3FBB3AE11CE4E8BC0080E9F4 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FBB3AE01CE4E8BC0080E9F4 /* Level2.m */; };
 		5B121030197484FA004C1E1D /* NinjaMomentumActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* NinjaMomentumActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
+		654D2D8A1CEBED95003174F9 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D2D891CEBED95003174F9 /* Level2.m */; };
+		654D2D8B1CEBED95003174F9 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D2D891CEBED95003174F9 /* Level2.m */; };
+		654D2D8C1CEBED95003174F9 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D2D891CEBED95003174F9 /* Level2.m */; };
+		654D2D8F1CEBF3E7003174F9 /* Level3.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D2D8E1CEBF3E7003174F9 /* Level3.m */; };
+		654D2D901CEBF3E7003174F9 /* Level3.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D2D8E1CEBF3E7003174F9 /* Level3.m */; };
+		654D2D911CEBF3E7003174F9 /* Level3.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D2D8E1CEBF3E7003174F9 /* Level3.m */; };
 		6564A1A21CA595920046F5FE /* Aim.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564A1A11CA595920046F5FE /* Aim.m */; };
 		6564A1A51CA59FC90046F5FE /* Knife.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564A1A41CA59FC90046F5FE /* Knife.m */; };
 		6564A1A81CA59FD60046F5FE /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564A1A71CA59FD60046F5FE /* Bomb.m */; };
@@ -181,8 +186,6 @@
 		3F8989F51CEA78C6001C68CC /* MapLevels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLevels.m; sourceTree = "<group>"; };
 		3F8989F91CEA79B2001C68CC /* LevelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelItem.h; sourceTree = "<group>"; };
 		3F8989FA1CEA79B2001C68CC /* LevelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelItem.m; sourceTree = "<group>"; };
-		3FBB3ADF1CE4E8BC0080E9F4 /* Level2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
-		3FBB3AE01CE4E8BC0080E9F4 /* Level2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level2.m; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -193,6 +196,10 @@
 		5B121033197485FE004C1E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/Android/Info.plist; sourceTree = "<group>"; };
 		5B121034197485FE004C1E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/iOS/Info.plist; sourceTree = "<group>"; };
 		5BA4619E1974C88900785744 /* AndroidManifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = Platforms/Android/AndroidManifest.xml; sourceTree = "<group>"; };
+		654D2D881CEBED95003174F9 /* Level2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
+		654D2D891CEBED95003174F9 /* Level2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level2.m; sourceTree = "<group>"; };
+		654D2D8D1CEBF3E7003174F9 /* Level3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level3.h; sourceTree = "<group>"; };
+		654D2D8E1CEBF3E7003174F9 /* Level3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level3.m; sourceTree = "<group>"; };
 		6564A1A01CA595920046F5FE /* Aim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aim.h; sourceTree = "<group>"; };
 		6564A1A11CA595920046F5FE /* Aim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aim.m; sourceTree = "<group>"; };
 		6564A1A31CA59FC90046F5FE /* Knife.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Knife.h; sourceTree = "<group>"; };
@@ -490,12 +497,14 @@
 				EF9E101B1CCFB4D500877E0E /* Codex */,
 				65B088081CA54DFB005A8586 /* Level1.h */,
 				65B088091CA54DFB005A8586 /* Level1.m */,
-				3FBB3ADF1CE4E8BC0080E9F4 /* Level2.h */,
+				654D2D881CEBED95003174F9 /* Level2.h */,
+				654D2D891CEBED95003174F9 /* Level2.m */,
+				654D2D8D1CEBF3E7003174F9 /* Level3.h */,
+				654D2D8E1CEBF3E7003174F9 /* Level3.m */,
 				3F8989F41CEA78C6001C68CC /* MapLevels.h */,
 				3F8989F51CEA78C6001C68CC /* MapLevels.m */,
 				3F8989F91CEA79B2001C68CC /* LevelItem.h */,
 				3F8989FA1CEA79B2001C68CC /* LevelItem.m */,
-				3FBB3AE01CE4E8BC0080E9F4 /* Level2.m */,
 				2E47431C1CE5375B006BE8DC /* LevelLater.h */,
 				2E47431D1CE5375B006BE8DC /* LevelLater.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
@@ -887,6 +896,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A4036E819DE3F33007B6E8F /* MainScene.m in Sources */,
+				654D2D8C1CEBED95003174F9 /* Level2.m in Sources */,
+				654D2D911CEBF3E7003174F9 /* Level3.m in Sources */,
 				7A40360419DDEE84007B6E8F /* main.m in Sources */,
 				7A59498E19E3941300F65F90 /* AppDelegate.m in Sources */,
 			);
@@ -896,7 +907,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				654D2D8B1CEBED95003174F9 /* Level2.m in Sources */,
 				927F619E196C771E000F43EF /* MainScene.m in Sources */,
+				654D2D901CEBF3E7003174F9 /* Level3.m in Sources */,
 				5B121030197484FA004C1E1D /* NinjaMomentumActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -907,9 +920,11 @@
 			files = (
 				2ECA7A4D1CCBF66C0052C0DE /* WeaponsCodex.m in Sources */,
 				2ECA7A5E1CCBFE290052C0DE /* KunaiEntry.m in Sources */,
+				654D2D8F1CEBF3E7003174F9 /* Level3.m in Sources */,
 				6564A1A81CA59FD60046F5FE /* Bomb.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				65B088071CA5499E005A8586 /* Enemy.m in Sources */,
+				654D2D8A1CEBED95003174F9 /* Level2.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				2ECA7A581CCBFD980052C0DE /* GranadeEntry.m in Sources */,
 				3F8989F61CEA78C6001C68CC /* MapLevels.m in Sources */,
@@ -921,7 +936,6 @@
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				6564A1A21CA595920046F5FE /* Aim.m in Sources */,
 				2E47431E1CE5375B006BE8DC /* LevelLater.m in Sources */,
-				3FBB3AE11CE4E8BC0080E9F4 /* Level2.m in Sources */,
 				65B0880A1CA54DFB005A8586 /* Level1.m in Sources */,
 				2ECA7A611CCBFE600052C0DE /* NinjatoEntry.m in Sources */,
 			);

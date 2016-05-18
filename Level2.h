@@ -2,15 +2,14 @@
 //  Level2.h
 //  NinjaMomentum
 //
-//  Created by Student on 12/05/16.
-//  Copyright 2016 Apportable. All rights reserved.
+//  Created by andre on 18/05/16.
+//  Copyright © 2016 Apportable. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "cocos2d.h"
-
-@interface Level2 : CCNode {
+@interface Level2 : CCNode <CCPhysicsCollisionDelegate>{
     
 }
 
+
 @end
+
