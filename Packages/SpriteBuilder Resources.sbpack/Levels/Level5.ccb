@@ -5,7 +5,7 @@
 	<key>SequencerJoints</key>
 	<dict>
 		<key>hidden</key>
-		<false/>
+		<true/>
 		<key>locked</key>
 		<false/>
 	</dict>
@@ -926,7 +926,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>95.000030517578125</real>
+											<real>39.778045654296875</real>
 											<real>91.288185119628906</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1759,7 +1759,7 @@
 						<key>value</key>
 						<array>
 							<real>409.64407348632812</real>
-							<real>0.634895920753479</real>
+							<real>0.36743426322937012</real>
 							<integer>0</integer>
 							<integer>1</integer>
 							<integer>2</integer>
@@ -2719,8 +2719,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
