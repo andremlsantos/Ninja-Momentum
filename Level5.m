@@ -10,7 +10,7 @@
 #import "Ninja.h"
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
-#import "MainScene.h"
+//#import "LogUtils.h"
 
 //auxiliares slowmotion
 bool enableSlowMotion5 = false;
@@ -580,10 +580,6 @@ int touchedPlatform5;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
-    NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    [MainScene writeAtEndOfFile:@"/n1 Death" withFilePath:finalFilePath];
     
     retryButton.visible = true;
     startAgainButton.visible = true;

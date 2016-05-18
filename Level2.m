@@ -10,7 +10,7 @@
 #import "Ninja.h"
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
-#import "MainScene.h"
+#import "LogUtils.h"
 
 //auxiliares slowmotion
 bool enableSlowMotion2 = false;
@@ -30,6 +30,23 @@ bool isPaused2 = false;
 
 //TRIES
 int numberTries2 = 0;
+
+//TRIES
+int numberTries = 0;
+
+
+//LOG VARIABLES
+int numberOfDeaths2 = 0;
+int numberOfJumps2 = 0;
+int numberOfWeaponsFired2 = 0;
+int numberOfGrapplingHook2 = 0;
+int numberOfTouches2 = 0;
+int numberOfRetriesPerLevel2 = 0;
+int numberOfSucessKnifes2 = 0;
+
+NSDate *start2;
+NSTimeInterval timeInterval2;
+LogUtils *logUtils2;
 
 @implementation Level2
 {
@@ -97,6 +114,9 @@ int numberTries2 = 0;
     
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
+    
+    start2 = [NSDate date];
+    logUtils2 = [LogUtils sharedManager];
 }
 
 - (void) update:(CCTime)delta
@@ -122,6 +142,9 @@ int numberTries2 = 0;
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
+    
+    //log
+    numberOfTouches2++;
     
     // NINJA
     if (CGRectContainsPoint([ninja boundingBox], touchLocation))
@@ -196,8 +219,11 @@ int numberTries2 = 0;
 - (void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     //DESACTIVAR BUTOES / TEMPO
-    if([ninja action] == KNIFE)
+    if([ninja action] == KNIFE){
         [self disableKnifeButton:YES];
+        //log
+        numberOfWeaponsFired2++;
+    }
     
     else if([ninja action] == BOMB)
         [self disableBombButton:YES];
@@ -284,6 +310,10 @@ int numberTries2 = 0;
 -(void) selectRetry
 {
     [[CCDirector sharedDirector] resume];
+    //log
+    numberOfRetriesPerLevel2 ++;
+    logUtils2.totalRetries ++;
+
     retryButton.visible = false;
     startAgainButton.visible = false;
     startAgainButton.enabled = false;
@@ -487,10 +517,17 @@ int numberTries2 = 0;
         [self killNode:nodeB];
     } key:nodeB];
     
+    //log
+    numberOfSucessKnifes2++;
+    
     numberOfEnemies2--;
     if (numberOfEnemies2 == 0){
         //[self nextLevel];
+        //log
         
+        timeInterval2 = fabs([start2 timeIntervalSinceNow]);
+        [self writeToLog2];
+
         layerEnd.opacity = 1.0f;
         textEnd.opacity = 1.0f;
         resetButton.visible = true;
@@ -512,10 +549,9 @@ int numberTries2 = 0;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
-    NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    [MainScene writeAtEndOfFile:@"/n1 Death" withFilePath:finalFilePath];
+    //log
+    numberOfDeaths2++;
+    logUtils2.totalDeaths++;
     
     retryButton.visible = true;
     startAgainButton.visible = true;
@@ -530,10 +566,9 @@ int numberTries2 = 0;
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
-    float energy = [pair totalKineticEnergy];
-    
-    CCLOG(@"energia %lf", energy);
-    
+
+    numberOfJumps2 ++;
+
         retryLocation2 = nodeB.positionInPoints;
         CGPoint mult = ccp(1,1.5);
         retryLocation2 = ccpCompMult(retryLocation2, mult);
@@ -548,6 +583,10 @@ int numberTries2 = 0;
         numberOfEnemies2--;
         if (numberOfEnemies2 == 0)
         {
+            //log
+            timeInterval2 = fabs([start2 timeIntervalSinceNow]);
+            [self writeToLog2];
+
             //salvar tries
             [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries2] forKey:@"triesLevel2"];
             [[NSUserDefaults standardUserDefaults] synchronize];
@@ -619,6 +658,56 @@ int numberTries2 = 0;
     }
     ninjaCircle.position = [_contentNode convertToWorldSpace:ninja.position];
 }
+
+
+- (void) writeToLog2{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
+    NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
+    NSString* deathNumberString = @"\n\nNumber of deaths in Level 2 = ";
+    
+    deathNumberString = [deathNumberString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfDeaths2]];
+    [LogUtils writeAtEndOfFile:deathNumberString withFilePath:finalFilePath];
+    
+    NSString* numberOfJumpsString = @"\nNumber of jumps in Level 2 = ";
+    
+    numberOfJumpsString = [numberOfJumpsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfJumps2]];
+    [LogUtils writeAtEndOfFile:numberOfJumpsString withFilePath:finalFilePath];
+    
+    NSString* numberOfTouchesString = @"\nNumber of touches in Level 2 = ";
+    
+    numberOfTouchesString = [numberOfTouchesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfTouches2]];
+    [LogUtils writeAtEndOfFile:numberOfTouchesString withFilePath:finalFilePath];
+    
+    NSString* numberOfRetriesString = @"\nNumber of retries in Level 2 = ";
+    
+    numberOfRetriesString = [numberOfRetriesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfRetriesPerLevel2]];
+    [LogUtils writeAtEndOfFile:numberOfRetriesString withFilePath:finalFilePath];
+    
+    NSString* numberOfGrapplingString = @"\nNumber of Grappling Hook used in Level 2 = 0";
+    [LogUtils writeAtEndOfFile:numberOfGrapplingString withFilePath:finalFilePath];
+    
+    NSString* numberOfWeaponsString = @"\nNumber of Knifes used in Level 2 = ";
+    
+    numberOfWeaponsString = [numberOfWeaponsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired2]];
+    [LogUtils writeAtEndOfFile:numberOfWeaponsString withFilePath:finalFilePath];
+    
+    NSString* timeString = @"\nTime to complete Level 2 in seconds = ";
+    
+    timeString = [timeString stringByAppendingString:[NSString stringWithFormat:@"%f", timeInterval2]];
+    [LogUtils writeAtEndOfFile:timeString withFilePath:finalFilePath];
+    
+    NSString* sucessKnifesString = @"\nSucess in using knife to kill enemy ";
+    
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfSucessKnifes2]];
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:@" out of "];
+    
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired2]];
+    
+    [LogUtils writeAtEndOfFile:sucessKnifesString withFilePath:finalFilePath];    
+}
+
 
 -(void) reduceCircle
 {

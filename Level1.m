@@ -9,7 +9,7 @@
 #import "Ninja.h"
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
-#import "MainScene.h"
+#import "LogUtils.h"
 
 //auxiliares slowmotion
 bool enableSlowMotion = false;
@@ -28,7 +28,7 @@ CGPoint retryLocation;
 bool isPaused = false;
 
 //TRIES
-int numberTries = 0;
+int numberTries1 = 0;
 
 //LOG VARIABLES
 int numberOfDeaths = 0;
@@ -41,7 +41,7 @@ int numberOfSucessKnifes = 0;
 
 NSDate *start;
 NSTimeInterval timeInterval;
-
+LogUtils *logUtils;
 
 @implementation Level1
 {
@@ -110,7 +110,9 @@ NSTimeInterval timeInterval;
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
     
+    //log
     start = [NSDate date];
+    logUtils = [LogUtils sharedManager];
 
 }
 
@@ -137,7 +139,10 @@ NSTimeInterval timeInterval;
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
+    
+    //log
     numberOfTouches++;
+    
     // NINJA
     if (CGRectContainsPoint([ninja boundingBox], touchLocation))
     {
@@ -212,6 +217,7 @@ NSTimeInterval timeInterval;
 {
     //DESACTIVAR BUTOES / TEMPO
     if([ninja action] == KNIFE){
+        //log
         numberOfWeaponsFired++;
         [self disableKnifeButton:YES];
     }
@@ -301,7 +307,10 @@ NSTimeInterval timeInterval;
 -(void) selectRetry
 {
     [[CCDirector sharedDirector] resume];
+    //log
     numberOfRetriesPerLevel ++;
+    logUtils.totalRetries ++;
+    
     retryButton.visible = false;
     startAgainButton.visible = false;
     startAgainButton.enabled = false;
@@ -318,11 +327,11 @@ NSTimeInterval timeInterval;
     }
     
     
-    numberTries++;
-    //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
+    numberTries1++;
+    //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries1] forKey:@"triesLevel1"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
     
-    CCLOG(@"tries %d", numberTries);
+    CCLOG(@"tries %d", numberTries1);
     
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
@@ -450,15 +459,15 @@ NSTimeInterval timeInterval;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
     
-    numberTries=0;
+    numberTries1=0;
     
-    //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
+    //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries1] forKey:@"triesLevel1"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
     
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
     
-    CCLOG(@"tries %d", numberTries);
+    CCLOG(@"tries %d", numberTries1);
 }
 -(void) nextLevel
 {
@@ -504,7 +513,8 @@ NSTimeInterval timeInterval;
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
     } key:nodeB];
-    numberOfJumps ++;
+    
+    //log
     numberOfSucessKnifes++;
     
     numberOfEnemies--;
@@ -513,6 +523,7 @@ NSTimeInterval timeInterval;
         
         timeInterval = fabs([start timeIntervalSinceNow]);
         [self writeToLog];
+        
         //[self nextLevel];
         
         layerEnd.opacity = 1.0f;
@@ -536,7 +547,10 @@ NSTimeInterval timeInterval;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+    //log
     numberOfDeaths++;
+    logUtils.totalDeaths++;
+    
     retryButton.visible = true;
     startAgainButton.visible = true;
     retryButton.enabled = true;
@@ -553,6 +567,8 @@ NSTimeInterval timeInterval;
     float energy = [pair totalKineticEnergy];
     
     if (energy > 5000.0f) {
+        numberOfJumps ++;
+
         retryLocation = nodeB.positionInPoints;
         CGPoint mult = ccp(1,1.5);
         retryLocation = ccpCompMult(retryLocation, mult);
@@ -567,12 +583,12 @@ NSTimeInterval timeInterval;
         numberOfEnemies--;
         if (numberOfEnemies == 0)
         {
-            timeInterval = fabs([start timeIntervalSinceNow]);
             //log
+            timeInterval = fabs([start timeIntervalSinceNow]);
             [self writeToLog];
             
             //salvar tries
-            [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
+            [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries1] forKey:@"triesLevel1"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
             //acabei nivel
@@ -583,7 +599,7 @@ NSTimeInterval timeInterval;
             [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel2"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
-            CCLOG(@"tries %d", numberTries);
+            CCLOG(@"tries %d", numberTries1);
             
             //[self nextLevel];
             
@@ -594,19 +610,19 @@ NSTimeInterval timeInterval;
             
             [[CCDirector sharedDirector] pause];
             
-            if(numberTries == 0)
+            if(numberTries1 == 0)
             {
                 star1.opacity = 1.0f;
                 star2.opacity = 1.0f;
                 star3.opacity = 1.0f;
             }
-            else if(numberTries >= 1 && numberTries <=4)
+            else if(numberTries1 >= 1 && numberTries1 <=4)
             {
                 star1.opacity = 1.0f;
                 star2.opacity = 1.0f;
                 star3.opacity = 0.0f;
             }
-            else if(numberTries >= 5)
+            else if(numberTries1 >= 5)
             {
                 star1.opacity = 1.0f;
                 star2.opacity = 0.0f;
@@ -627,35 +643,35 @@ NSTimeInterval timeInterval;
     NSString* deathNumberString = @"\n\nNumber of deaths in Level 1 = ";
     
     deathNumberString = [deathNumberString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfDeaths]];
-    [MainScene writeAtEndOfFile:deathNumberString withFilePath:finalFilePath];
+    [LogUtils writeAtEndOfFile:deathNumberString withFilePath:finalFilePath];
     
     NSString* numberOfJumpsString = @"\nNumber of jumps in Level 1 = ";
     
     numberOfJumpsString = [numberOfJumpsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfJumps]];
-    [MainScene writeAtEndOfFile:numberOfJumpsString withFilePath:finalFilePath];
+    [LogUtils writeAtEndOfFile:numberOfJumpsString withFilePath:finalFilePath];
     
     NSString* numberOfTouchesString = @"\nNumber of touches in Level 1 = ";
     
     numberOfTouchesString = [numberOfTouchesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfTouches]];
-    [MainScene writeAtEndOfFile:numberOfTouchesString withFilePath:finalFilePath];
+    [LogUtils writeAtEndOfFile:numberOfTouchesString withFilePath:finalFilePath];
     
     NSString* numberOfRetriesString = @"\nNumber of retries in Level 1 = ";
     
     numberOfRetriesString = [numberOfRetriesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfRetriesPerLevel]];
-    [MainScene writeAtEndOfFile:numberOfRetriesString withFilePath:finalFilePath];
+    [LogUtils writeAtEndOfFile:numberOfRetriesString withFilePath:finalFilePath];
     
     NSString* numberOfGrapplingString = @"\nNumber of Grappling Hook used in Level 1 = 0";
-    [MainScene writeAtEndOfFile:numberOfGrapplingString withFilePath:finalFilePath];
+    [LogUtils writeAtEndOfFile:numberOfGrapplingString withFilePath:finalFilePath];
     
     NSString* numberOfWeaponsString = @"\nNumber of Knifes used in Level 1 = ";
     
     numberOfWeaponsString = [numberOfWeaponsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired]];
-    [MainScene writeAtEndOfFile:numberOfWeaponsString withFilePath:finalFilePath];
+    [LogUtils writeAtEndOfFile:numberOfWeaponsString withFilePath:finalFilePath];
     
     NSString* timeString = @"\nTime to complete Level 1 in seconds = ";
     
     timeString = [timeString stringByAppendingString:[NSString stringWithFormat:@"%f", timeInterval]];
-    [MainScene writeAtEndOfFile:timeString withFilePath:finalFilePath];
+    [LogUtils writeAtEndOfFile:timeString withFilePath:finalFilePath];
     
     NSString* sucessKnifesString = @"\nSucess in using knife to kill enemy ";
     
@@ -664,7 +680,7 @@ NSTimeInterval timeInterval;
     
     sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired]];
     
-    [MainScene writeAtEndOfFile:sucessKnifesString withFilePath:finalFilePath];
+    [LogUtils writeAtEndOfFile:sucessKnifesString withFilePath:finalFilePath];
 
 }
 

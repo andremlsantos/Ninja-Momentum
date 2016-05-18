@@ -2,29 +2,6 @@
 
 @implementation MainScene
 
-
-+(void)writeAtEndOfFile:(NSString *)appendedStr withFilePath:(NSString *)path
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *fileName = [NSString stringWithFormat:path,
-                          documentsDirectory];
-    
-    NSString *writedStr = [[NSString alloc]initWithContentsOfFile:fileName encoding:NSUTF8StringEncoding error:nil];
-    writedStr = [writedStr stringByAppendingFormat:appendedStr];
-    
-    if([[NSFileManager defaultManager] fileExistsAtPath:fileName])
-    {
-        [[NSFileManager defaultManager] removeItemAtPath:fileName error:nil];
-    }
-    
-    //save content to the documents directory
-    [writedStr writeToFile:fileName
-                atomically:YES
-                  encoding:NSStringEncodingConversionAllowLossy
-                     error:nil];
-}
-
 // default config
 - (void)didLoadFromCCB
 {
