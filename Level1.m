@@ -37,6 +37,10 @@ int numberOfWeaponsFired = 0;
 int numberOfGrapplingHook = 0;
 int numberOfTouches = 0;
 int numberOfRetriesPerLevel = 0;
+int numberOfSucessKnifes = 0;
+
+NSDate *start;
+NSTimeInterval timeInterval;
 
 
 @implementation Level1
@@ -105,6 +109,9 @@ int numberOfRetriesPerLevel = 0;
     
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
+    
+    start = [NSDate date];
+
 }
 
 - (void) update:(CCTime)delta
@@ -498,9 +505,14 @@ int numberOfRetriesPerLevel = 0;
         [self killNode:nodeB];
     } key:nodeB];
     numberOfJumps ++;
+    numberOfSucessKnifes++;
     
     numberOfEnemies--;
     if (numberOfEnemies == 0){
+        //log
+        
+        timeInterval = fabs([start timeIntervalSinceNow]);
+        [self writeToLog];
         //[self nextLevel];
         
         layerEnd.opacity = 1.0f;
@@ -555,6 +567,7 @@ int numberOfRetriesPerLevel = 0;
         numberOfEnemies--;
         if (numberOfEnemies == 0)
         {
+            timeInterval = fabs([start timeIntervalSinceNow]);
             //log
             [self writeToLog];
             
@@ -611,33 +624,47 @@ int numberOfRetriesPerLevel = 0;
     NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
     NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     
-    NSString* deathNumberString = @"/nNumber of deaths in Level 1 = ";
+    NSString* deathNumberString = @"\n\nNumber of deaths in Level 1 = ";
     
     deathNumberString = [deathNumberString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfDeaths]];
     [MainScene writeAtEndOfFile:deathNumberString withFilePath:finalFilePath];
     
-    NSString* numberOfJumpsString = @"/nNumber of jumps in Level 1 = ";
+    NSString* numberOfJumpsString = @"\nNumber of jumps in Level 1 = ";
     
     numberOfJumpsString = [numberOfJumpsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfJumps]];
     [MainScene writeAtEndOfFile:numberOfJumpsString withFilePath:finalFilePath];
     
-    NSString* numberOfTouchesString = @"/nNumber of touches in Level 1 = ";
+    NSString* numberOfTouchesString = @"\nNumber of touches in Level 1 = ";
     
     numberOfTouchesString = [numberOfTouchesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfTouches]];
     [MainScene writeAtEndOfFile:numberOfTouchesString withFilePath:finalFilePath];
     
-    NSString* numberOfRetriesString = @"/nNumber of retries in Level 1 = ";
+    NSString* numberOfRetriesString = @"\nNumber of retries in Level 1 = ";
     
     numberOfRetriesString = [numberOfRetriesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfRetriesPerLevel]];
     [MainScene writeAtEndOfFile:numberOfRetriesString withFilePath:finalFilePath];
     
-    NSString* numberOfGrapplingString = @"/nNumber of Grappling Hook used in Level 1 = 0";
+    NSString* numberOfGrapplingString = @"\nNumber of Grappling Hook used in Level 1 = 0";
     [MainScene writeAtEndOfFile:numberOfGrapplingString withFilePath:finalFilePath];
     
-    NSString* numberOfWeaponsString = @"/nNumber of Knifes used in Level 1 = ";
+    NSString* numberOfWeaponsString = @"\nNumber of Knifes used in Level 1 = ";
     
     numberOfWeaponsString = [numberOfWeaponsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired]];
     [MainScene writeAtEndOfFile:numberOfWeaponsString withFilePath:finalFilePath];
+    
+    NSString* timeString = @"\nTime to complete Level 1 in seconds = ";
+    
+    timeString = [timeString stringByAppendingString:[NSString stringWithFormat:@"%f", timeInterval]];
+    [MainScene writeAtEndOfFile:timeString withFilePath:finalFilePath];
+    
+    NSString* sucessKnifesString = @"\nSucess in using knife to kill enemy ";
+    
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfSucessKnifes]];
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:@" out of "];
+    
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired]];
+    
+    [MainScene writeAtEndOfFile:sucessKnifesString withFilePath:finalFilePath];
 
 }
 
