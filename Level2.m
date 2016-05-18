@@ -534,7 +534,6 @@ int numberTries2 = 0;
     
     CCLOG(@"energia %lf", energy);
     
-    if (energy > 5000.0f) {
         retryLocation2 = nodeB.positionInPoints;
         CGPoint mult = ccp(1,1.5);
         retryLocation2 = ccpCompMult(retryLocation2, mult);
@@ -594,7 +593,7 @@ int numberTries2 = 0;
         
         
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
-    }
+    
 }
 
 //matar inimigo
