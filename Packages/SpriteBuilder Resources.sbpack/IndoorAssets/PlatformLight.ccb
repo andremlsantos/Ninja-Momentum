@@ -74,40 +74,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>1205.98486328125</real>
-					<real>303.36663818359375</real>
+					<real>6.257843017578125</real>
+					<real>26.484375</real>
 				</array>
 				<array>
-					<real>1228.3919677734375</real>
-					<real>337.92861938476562</real>
+					<real>17.941436767578125</real>
+					<real>52.085952758789062</real>
 				</array>
 				<array>
-					<real>1727.4737548828125</real>
-					<real>340.07867431640625</real>
+					<real>523.96490478515625</real>
+					<real>53.65625</real>
 				</array>
 				<array>
-					<real>1748.4046630859375</real>
-					<real>301.5416259765625</real>
+					<real>541.1484375</real>
+					<real>26.7890625</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>1748.4046630859375</real>
-						<real>301.5416259765625</real>
+						<real>541.1484375</real>
+						<real>26.7890625</real>
 					</array>
 					<array>
-						<real>1727.4737548828125</real>
-						<real>340.07867431640625</real>
+						<real>523.96490478515625</real>
+						<real>53.65625</real>
 					</array>
 					<array>
-						<real>1228.3919677734375</real>
-						<real>337.92861938476562</real>
+						<real>17.941436767578125</real>
+						<real>52.085952758789062</real>
 					</array>
 					<array>
-						<real>1205.98486328125</real>
-						<real>303.36663818359375</real>
+						<real>6.257843017578125</real>
+						<real>26.484375</real>
 					</array>
 				</array>
 			</array>
@@ -168,7 +168,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>IndoorScene/Platforms/plataforma candeeiro1.png</string>
+					<string>IndoorScene/Assets/plataforma candeeiro1.png</string>
 				</array>
 			</dict>
 			<dict>

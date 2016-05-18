@@ -74,40 +74,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>1098.6151123046875</real>
-					<real>251.80989074707031</real>
+					<real>-0.69926375150680542</real>
+					<real>27.895061492919922</real>
 				</array>
 				<array>
-					<real>1255.1224365234375</real>
-					<real>824.08868408203125</real>
+					<real>137.9847412109375</real>
+					<real>568.90264892578125</real>
 				</array>
 				<array>
-					<real>1762.417236328125</real>
-					<real>825.858642578125</real>
+					<real>676.49920654296875</real>
+					<real>566.9310302734375</real>
 				</array>
 				<array>
-					<real>1919.388671875</real>
-					<real>252.24028015136719</real>
+					<real>817.55743408203125</real>
+					<real>32.012214660644531</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>1919.388671875</real>
-						<real>252.24028015136719</real>
+						<real>817.55743408203125</real>
+						<real>32.012214660644531</real>
 					</array>
 					<array>
-						<real>1762.417236328125</real>
-						<real>825.858642578125</real>
+						<real>676.49920654296875</real>
+						<real>566.9310302734375</real>
 					</array>
 					<array>
-						<real>1255.1224365234375</real>
-						<real>824.08868408203125</real>
+						<real>137.9847412109375</real>
+						<real>568.90264892578125</real>
 					</array>
 					<array>
-						<real>1098.6151123046875</real>
-						<real>251.80989074707031</real>
+						<real>-0.69926375150680542</real>
+						<real>27.895061492919922</real>
 					</array>
 				</array>
 			</array>
@@ -168,7 +168,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>IndoorScene/Structs/estrutura2.png</string>
+					<string>IndoorScene/Assets/estrutura2.png</string>
 				</array>
 			</dict>
 			<dict>

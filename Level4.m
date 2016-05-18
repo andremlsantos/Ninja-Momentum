@@ -73,6 +73,9 @@ int touchedPlatform4;
     //graping hook
     CCNode *_platformGH1;
     CCNode *_platformGH2;
+    CCNode *_platformGH3;
+    CCNode *_platformGH4;
+
     CCPhysicsJoint *joint;
     CCDrawNode *myDrawNode;
 }
@@ -127,7 +130,7 @@ int touchedPlatform4;
     
     [self outsideRoom];
     
-    if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling4 ){
+    if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH3.positionInPoints) <minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH4.positionInPoints) <minDistanceToUseGrappling4){
         [self enableGrapplingHookButton];
     }
     else{
@@ -207,6 +210,38 @@ int touchedPlatform4;
                                                               bodyB:_platformGH2.physicsBody
                                                             anchorA:ninja.anchorPointInPoints
                                                             anchorB:_platformGH2.anchorPointInPoints];
+            
+            drawGrapplingHook4 = true;
+            [self unschedule:@selector(reduceCircle)];
+            [self resetCircle];
+            touchedPlatform4 = 2;
+        }
+    }
+    else if(CGRectContainsPoint([_platformGH3 boundingBox],touchLocation))
+    {
+        if([ninja action] == GRAPPLING)
+        {
+            
+            joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
+                                                              bodyB:_platformGH3.physicsBody
+                                                            anchorA:ninja.anchorPointInPoints
+                                                            anchorB:_platformGH3.anchorPointInPoints];
+            
+            drawGrapplingHook4 = true;
+            [self unschedule:@selector(reduceCircle)];
+            [self resetCircle];
+            touchedPlatform4 = 2;
+        }
+    }
+    else if(CGRectContainsPoint([_platformGH4 boundingBox],touchLocation))
+    {
+        if([ninja action] == GRAPPLING)
+        {
+            
+            joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
+                                                              bodyB:_platformGH4.physicsBody
+                                                            anchorA:ninja.anchorPointInPoints
+                                                            anchorB:_platformGH4.anchorPointInPoints];
             
             drawGrapplingHook4 = true;
             [self unschedule:@selector(reduceCircle)];

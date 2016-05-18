@@ -105,25 +105,28 @@
 		<dict/>
 		<key>IndoorLevelAssets/Structs</key>
 		<dict/>
+		<key>IndoorScene/Assets</key>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>IndoorScene/Background</key>
-		<dict/>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
 		<key>IndoorScene/Background2</key>
-		<dict/>
-		<key>IndoorScene/Background3</key>
-		<dict/>
-		<key>IndoorScene/Lamps</key>
 		<dict>
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>
 		<key>IndoorScene/Platforms</key>
-		<dict>
-			<key>isSmartSpriteSheet</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>IndoorScene/Structs</key>
 		<dict>
-			<key>isSmartSpriteSheet</key>
+			<key>isDirty</key>
 			<true/>
 		</dict>
 		<key>NinjaAssets</key>
