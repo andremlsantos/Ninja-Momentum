@@ -66,7 +66,7 @@
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
-			<false/>
+			<true/>
 			<key>elasticity</key>
 			<real>0.30000001192092896</real>
 			<key>friction</key>
@@ -74,40 +74,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>1389.2490234375</real>
-					<real>433.2723388671875</real>
+					<real>225.34765625</real>
+					<real>267.20703125</real>
 				</array>
 				<array>
-					<real>1372.3968505859375</real>
-					<real>477.9014892578125</real>
+					<real>210.45703125</real>
+					<real>314.78125</real>
 				</array>
 				<array>
-					<real>1613.212158203125</real>
-					<real>478.78448486328125</real>
+					<real>447.43756103515625</real>
+					<real>314.296875</real>
 				</array>
 				<array>
-					<real>1596.9940185546875</real>
-					<real>435.87905883789062</real>
+					<real>434.19927978515625</real>
+					<real>269.4140625</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>1596.9940185546875</real>
-						<real>435.87905883789062</real>
+						<real>434.19927978515625</real>
+						<real>269.4140625</real>
 					</array>
 					<array>
-						<real>1613.212158203125</real>
-						<real>478.78448486328125</real>
+						<real>447.43756103515625</real>
+						<real>314.296875</real>
 					</array>
 					<array>
-						<real>1372.3968505859375</real>
-						<real>477.9014892578125</real>
+						<real>210.45703125</real>
+						<real>314.78125</real>
 					</array>
 					<array>
-						<real>1389.2490234375</real>
-						<real>433.2723388671875</real>
+						<real>225.34765625</real>
+						<real>267.20703125</real>
 					</array>
 				</array>
 			</array>
@@ -168,7 +168,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>IndoorScene/Structs/pendulo1.png</string>
+					<string>IndoorScene/Assets/pendulo1.png</string>
 				</array>
 			</dict>
 			<dict>
