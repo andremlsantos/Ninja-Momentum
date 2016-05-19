@@ -52,7 +52,6 @@ int touchedPlatform;
     
     //botoes
     CCButton *knifeButton;
-    CCButton *bombButton;
     CCButton *jumpButton;
     CCButton *resetButton;
     CCButton *grapplingHookButton;
@@ -242,9 +241,6 @@ int touchedPlatform;
     if([ninja action] == KNIFE)
         [self disableKnifeButton:YES];
     
-    else if([ninja action] == BOMB)
-        [self disableBombButton:YES];
-    
     else if([ninja action] == GRAPPLING)
         [self disableGrapplingButton];
     
@@ -302,7 +298,7 @@ int touchedPlatform;
     //if([ninja action] == JUMP)
     [ninja setAction:GRAPPLING];
     
-    if([ninja action] == BOMB || [ninja action] == KNIFE)
+    if([ninja action] == KNIFE)
     {
         [self unschedule:@selector(reduceCircle)];
         [self resetCircle];
@@ -332,11 +328,6 @@ int touchedPlatform;
 -(void) selectKnife
 {
     //fazer reset ao slow motion, caso tenho selecionado outra arma
-    if([ninja action] == BOMB)
-    {
-        [self unschedule:@selector(reduceCircle)];
-        [self resetCircle];
-    }
     
     [ninja setAction:KNIFE];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
@@ -363,46 +354,6 @@ int touchedPlatform;
     if (isTimer) {
         //setup timer
         [self schedule:@selector(enableKnifeButton) interval:1.0];
-    }
-}
-
-/*
- BOMB
- */
--(void) selectBomb
-{
-    //fazer reset ao slow motion, caso tenho selecionado outra arma
-    if([ninja action] == KNIFE)
-    {
-        [self unschedule:@selector(reduceCircle)];
-        [self resetCircle];
-    }
-    
-    [ninja setAction:BOMB];
-    [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
-}
-
-- (void) enableBombButton
-{
-    //parar tempo
-    [self unschedule:_cmd];
-    
-    //activar
-    bombButton.background.opacity = 0.8;
-    bombButton.label.opacity = 0.8;
-    bombButton.userInteractionEnabled = YES;
-}
-
-- (void) disableBombButton:(BOOL)isTimer
-{
-    //disale button
-    bombButton.background.opacity = 0.2;
-    bombButton.label.opacity = 0.2;
-    bombButton.userInteractionEnabled = NO;
-    
-    if (isTimer ) {
-        //setup timer
-        [self schedule:@selector(enableBombButton) interval:1.0];
     }
 }
 
@@ -450,14 +401,12 @@ int touchedPlatform;
     if(isEnable)
     {
         //disale button
-        [self enableBombButton];
         [self enableGrapplingHookButton];
         [self enableKnifeButton];
     }
     else
     {
         [self disableKnifeButton:false];
-        [self disableBombButton:false];
         [self disableGrapplingButton];
     }
 }
@@ -476,15 +425,6 @@ int touchedPlatform;
     if (numberOfEnemiesL == 0){
         [self nextLevel];
     }
-}
-
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair bomb:(CCNode *)nodeA enemy:(CCNode *)nodeB
-{
-    //matar inimigo
-    [[_physicsNode space] addPostStepBlock:^{
-        [self killNode:nodeB];
-        [self killNode:nodeA];
-    } key:nodeB];
 }
 
 //MORRER

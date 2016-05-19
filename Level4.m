@@ -10,7 +10,7 @@
 #import "Ninja.h"
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
-//#import "LogUtils.h"
+#import "LogUtils.h"
 
 //auxiliares slowmotion
 bool enableSlowMotion4 = false;
@@ -36,6 +36,21 @@ bool drawGrapplingHook4 = false;
 int minDistanceToUseGrappling4 = 250;
 int touchedPlatform4;
 
+//LOG VARIABLES
+int numberOfDeaths4 = 0;
+int numberOfJumps4 = 0;
+int numberOfWeaponsFired4 = 0;
+int numberOfGrapplingHook4 = 0;
+int numberOfTouches4 = 0;
+int numberOfRetriesPerLevel4 = 0;
+int numberOfSucessKnifes4 = 0;
+bool jumpingFromGrappling4 = false;
+int numberOfSucessGrappling4 = 0;
+
+NSDate *start4;
+NSTimeInterval timeInterval4;
+LogUtils *logUtils4;
+
 @implementation Level4
 {
     //physic world
@@ -51,7 +66,6 @@ int touchedPlatform4;
     
     //botoes
     CCButton *knifeButton;
-    CCButton *bombButton;
     CCButton *jumpButton;
     CCButton *resetButton;
     CCButton *grapplingHookButton;
@@ -115,6 +129,9 @@ int touchedPlatform4;
     //corda
     myDrawNode = [CCDrawNode node];
     [self addChild: myDrawNode];
+    
+    start4 = [NSDate date];
+    logUtils4 = [LogUtils sharedManager];
 }
 
 - (void) update:(CCTime)delta
@@ -135,21 +152,28 @@ int touchedPlatform4;
     }
     else{
         [self disableGrapplingButton];
-        
     }
     
     [myDrawNode clear];
     
-    /*
-     if (drawGrapplingHook2){
-     if(touchedPlatform == 1){
-     [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+     if (drawGrapplingHook4){
+         if(touchedPlatform4 == 1){
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+         }
+         else if(touchedPlatform4 == 2){
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+    
+         }
+         else if(touchedPlatform4 == 3){
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             
+         }
+         else if(touchedPlatform4 == 4){
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH4.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             
+         }
      }
-     else if(touchedPlatform == 2){
-     [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
-     }
-     }
-     */
+    
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -161,7 +185,8 @@ int touchedPlatform4;
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
-    
+    //log
+    numberOfTouches4++;
     // NINJA
     if (CGRectContainsPoint([ninja boundingBox], touchLocation))
     {
@@ -193,7 +218,8 @@ int touchedPlatform4;
                                                               bodyB:_platformGH1.physicsBody
                                                             anchorA:ninja.anchorPointInPoints
                                                             anchorB:_platformGH1.anchorPointInPoints];
-            
+            //log
+            numberOfGrapplingHook4++;
             drawGrapplingHook4 = true;
             [self unschedule:@selector(reduceCircle)];
             [self resetCircle];
@@ -210,7 +236,8 @@ int touchedPlatform4;
                                                               bodyB:_platformGH2.physicsBody
                                                             anchorA:ninja.anchorPointInPoints
                                                             anchorB:_platformGH2.anchorPointInPoints];
-            
+            //log
+            numberOfGrapplingHook4++;
             drawGrapplingHook4 = true;
             [self unschedule:@selector(reduceCircle)];
             [self resetCircle];
@@ -226,7 +253,8 @@ int touchedPlatform4;
                                                               bodyB:_platformGH3.physicsBody
                                                             anchorA:ninja.anchorPointInPoints
                                                             anchorB:_platformGH3.anchorPointInPoints];
-            
+            //log
+            numberOfGrapplingHook4++;
             drawGrapplingHook4 = true;
             [self unschedule:@selector(reduceCircle)];
             [self resetCircle];
@@ -242,7 +270,8 @@ int touchedPlatform4;
                                                               bodyB:_platformGH4.physicsBody
                                                             anchorA:ninja.anchorPointInPoints
                                                             anchorB:_platformGH4.anchorPointInPoints];
-            
+            //log
+            numberOfGrapplingHook4++;
             drawGrapplingHook4 = true;
             [self unschedule:@selector(reduceCircle)];
             [self resetCircle];
@@ -251,6 +280,9 @@ int touchedPlatform4;
     }
     else if([ninja action] == GRAPPLING)
     {
+        //log
+        jumpingFromGrappling4 = true;
+
         drawGrapplingHook4 = false;
         [joint invalidate];
         joint = nil;
@@ -287,12 +319,11 @@ int touchedPlatform4;
 - (void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     //DESACTIVAR BUTOES / TEMPO
-    if([ninja action] == KNIFE)
+    if([ninja action] == KNIFE){
+        //log
+        numberOfWeaponsFired4++;
         [self disableKnifeButton:YES];
-    
-    else if([ninja action] == BOMB)
-        [self disableBombButton:YES];
-    
+    }
     else if([ninja action] == GRAPPLING)
     {
         //CCLOG(@"disable GH");
@@ -357,7 +388,7 @@ int touchedPlatform4;
     //if([ninja action] == JUMP)
     [ninja setAction:GRAPPLING];
     
-    if([ninja action] == BOMB || [ninja action] == KNIFE)
+    if([ninja action] == KNIFE)
     {
         //[self unschedule:@selector(reduceCircle)];
         //[self resetCircle];
@@ -389,7 +420,10 @@ int touchedPlatform4;
     startAgainButton.visible = false;
     startAgainButton.enabled = false;
     retryButton.enabled = false;
-    
+    //log
+    numberOfRetriesPerLevel4 ++;
+    logUtils4.totalRetries ++;
+
     if(asRetryLocation4)
     {
         ninja.positionInPoints = retryLocation4;
@@ -399,7 +433,6 @@ int touchedPlatform4;
     else{
         [self selectReset];
     }
-    
     
     numberTries4++;
     //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
@@ -431,12 +464,6 @@ int touchedPlatform4;
 -(void) selectKnife
 {
     //fazer reset ao slow motion, caso tenho selecionado outra arma
-    if([ninja action] == BOMB)
-    {
-        [self unschedule:@selector(reduceCircle)];
-        [self resetCircle];
-    }
-    
     [ninja setAction:KNIFE];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
@@ -462,46 +489,6 @@ int touchedPlatform4;
     if (isTimer) {
         //setup timer
         [self schedule:@selector(enableKnifeButton) interval:1.0];
-    }
-}
-
-/*
- BOMB
- */
--(void) selectBomb
-{
-    //fazer reset ao slow motion, caso tenho selecionado outra arma
-    if([ninja action] == KNIFE)
-    {
-        [self unschedule:@selector(reduceCircle)];
-        [self resetCircle];
-    }
-    
-    [ninja setAction:BOMB];
-    [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
-}
-
-- (void) enableBombButton
-{
-    //parar tempo
-    [self unschedule:_cmd];
-    
-    //activar
-    bombButton.background.opacity = 0.8;
-    bombButton.label.opacity = 0.8;
-    bombButton.userInteractionEnabled = YES;
-}
-
-- (void) disableBombButton:(BOOL)isTimer
-{
-    //disale button
-    bombButton.background.opacity = 0.2;
-    bombButton.label.opacity = 0.2;
-    bombButton.userInteractionEnabled = NO;
-    
-    if (isTimer ) {
-        //setup timer
-        [self schedule:@selector(enableBombButton) interval:1.0];
     }
 }
 
@@ -566,14 +553,12 @@ int touchedPlatform4;
     if(isEnable)
     {
         //disale button
-        [self enableBombButton];
         //[self enableGrapplingHookButton];
         [self enableKnifeButton];
     }
     else
     {
         [self disableKnifeButton:false];
-        [self disableBombButton:false];
         [self disableGrapplingButton];
     }
 }
@@ -587,10 +572,14 @@ int touchedPlatform4;
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
     } key:nodeB];
-    
+    //log
+    numberOfSucessKnifes4++;
+
     numberOfEnemies4--;
     if (numberOfEnemies4 == 0){
-        //[self nextLevel];
+        //log
+        timeInterval4 = fabs([start4 timeIntervalSinceNow]);
+        [self writeToLog4];
         
         layerEnd.opacity = 1.0f;
         textEnd.opacity = 1.0f;
@@ -601,18 +590,12 @@ int touchedPlatform4;
     }
 }
 
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair bomb:(CCNode *)nodeA enemy:(CCNode *)nodeB
-{
-    //matar inimigo
-    [[_physicsNode space] addPostStepBlock:^{
-        [self killNode:nodeB];
-        [self killNode:nodeA];
-    } key:nodeB];
-}
-
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+    //log
+    numberOfDeaths4++;
+    logUtils4.totalDeaths++;
     
     retryButton.visible = true;
     startAgainButton.visible = true;
@@ -627,11 +610,9 @@ int touchedPlatform4;
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
-    float energy = [pair totalKineticEnergy];
-    
-    CCLOG(@"energia %lf", energy);
-    
-    if (energy > 5000.0f) {
+        //log
+        numberOfJumps4 ++;
+        
         retryLocation4 = nodeB.positionInPoints;
         CGPoint mult = ccp(1,1.5);
         retryLocation4 = ccpCompMult(retryLocation4, mult);
@@ -646,6 +627,11 @@ int touchedPlatform4;
         numberOfEnemies4--;
         if (numberOfEnemies4 == 0)
         {
+            //log
+            timeInterval4 = fabs([start4 timeIntervalSinceNow]);
+            [self writeToLog4];
+
+            
             //salvar tries
             [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries4] forKey:@"triesLevel4"];
             [[NSUserDefaults standardUserDefaults] synchronize];
@@ -693,7 +679,7 @@ int touchedPlatform4;
         [ninja setAction:-1];
         
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
-    }
+    
 }
 
 //matar inimigo
@@ -748,6 +734,64 @@ int touchedPlatform4;
         
         enableSlowMotion4 = true;
     }
+}
+
+
+- (void) writeToLog4{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
+    NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+    
+    NSString* deathNumberString = @"\n\nNumber of deaths in Level 4 = ";
+    
+    deathNumberString = [deathNumberString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfDeaths4]];
+    [LogUtils writeAtEndOfFile:deathNumberString withFilePath:finalFilePath];
+    
+    NSString* numberOfJumpsString = @"\nNumber of jumps in Level 4 = ";
+    
+    numberOfJumpsString = [numberOfJumpsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfJumps4]];
+    [LogUtils writeAtEndOfFile:numberOfJumpsString withFilePath:finalFilePath];
+    
+    NSString* numberOfTouchesString = @"\nNumber of touches in Level 4 = ";
+    
+    numberOfTouchesString = [numberOfTouchesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfTouches4]];
+    [LogUtils writeAtEndOfFile:numberOfTouchesString withFilePath:finalFilePath];
+    
+    NSString* numberOfRetriesString = @"\nNumber of retries in Level 4 = ";
+    
+    numberOfRetriesString = [numberOfRetriesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfRetriesPerLevel4]];
+    [LogUtils writeAtEndOfFile:numberOfRetriesString withFilePath:finalFilePath];
+    
+    NSString* numberOfGrapplingString = @"\nNumber of Grappling Hook used in Level 4 = ";
+    
+    numberOfGrapplingString = [numberOfGrapplingString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfGrapplingHook4]];
+    [LogUtils writeAtEndOfFile:numberOfGrapplingString withFilePath:finalFilePath];
+    
+    NSString* numberOfWeaponsString = @"\nNumber of Knifes used in Level 4 = ";
+    
+    numberOfWeaponsString = [numberOfWeaponsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired4]];
+    [LogUtils writeAtEndOfFile:numberOfWeaponsString withFilePath:finalFilePath];
+    
+    NSString* timeString = @"\nTime to complete Level 4 in seconds = ";
+    
+    timeString = [timeString stringByAppendingString:[NSString stringWithFormat:@"%f", timeInterval4]];
+    [LogUtils writeAtEndOfFile:timeString withFilePath:finalFilePath];
+    
+    NSString* sucessKnifesString = @"\nSucess in using knife to kill enemy ";
+    
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfSucessKnifes4]];
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:@" out of "];
+    
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired4]];
+    
+    NSString* sucessGrapplingsString = @"\nSucess in using grappling to kill enemy ";
+    
+    sucessGrapplingsString = [sucessGrapplingsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfSucessGrappling4]];
+    sucessGrapplingsString = [sucessGrapplingsString stringByAppendingString:@" out of "];
+    
+    sucessGrapplingsString = [sucessGrapplingsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfGrapplingHook4]];
+    
+    [LogUtils writeAtEndOfFile:sucessGrapplingsString withFilePath:finalFilePath];
 }
 
 -(void) resetCircle

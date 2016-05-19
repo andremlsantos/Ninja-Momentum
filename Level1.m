@@ -58,7 +58,6 @@ LogUtils *logUtils;
     
     //botoes
     CCButton *knifeButton;
-    CCButton *bombButton;
     CCButton *jumpButton;
     CCButton *resetButton;
     CCButton *grapplingHookButton;
@@ -222,9 +221,6 @@ LogUtils *logUtils;
         [self disableKnifeButton:YES];
     }
     
-    else if([ninja action] == BOMB)
-        [self disableBombButton:YES];
-    
     //else if([ninja action] == GRAPPLING)
       //  [self disableGrapplingButton];
     
@@ -280,7 +276,7 @@ LogUtils *logUtils;
     //if([ninja action] == JUMP)
     [ninja setAction:GRAPPLING];
     
-    if([ninja action] == BOMB || [ninja action] == KNIFE)
+    if([ninja action] == KNIFE)
     {
         [self unschedule:@selector(reduceCircle)];
         [self resetCircle];
@@ -357,12 +353,6 @@ LogUtils *logUtils;
 -(void) selectKnife
 {
     //fazer reset ao slow motion, caso tenho selecionado outra arma
-    if([ninja action] == BOMB)
-    {
-        [self unschedule:@selector(reduceCircle)];
-        [self resetCircle];
-    }
-    
     [ninja setAction:KNIFE];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
@@ -391,45 +381,6 @@ LogUtils *logUtils;
     }
 }
 
-/*
- BOMB
- */
--(void) selectBomb
-{
-    //fazer reset ao slow motion, caso tenho selecionado outra arma
-    if([ninja action] == KNIFE)
-    {
-        [self unschedule:@selector(reduceCircle)];
-        [self resetCircle];
-    }
-    
-    [ninja setAction:BOMB];
-    [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
-}
-
-- (void) enableBombButton
-{
-    //parar tempo
-    [self unschedule:_cmd];
-    
-    //activar
-    bombButton.background.opacity = 0.8;
-    bombButton.label.opacity = 0.8;
-    bombButton.userInteractionEnabled = YES;
-}
-
-- (void) disableBombButton:(BOOL)isTimer
-{
-    //disale button
-    bombButton.background.opacity = 0.2;
-    bombButton.label.opacity = 0.2;
-    bombButton.userInteractionEnabled = NO;
-    
-    if (isTimer ) {
-        //setup timer
-        [self schedule:@selector(enableBombButton) interval:1.0];
-    }
-}
 
 -(void) selectReset
 {
@@ -492,14 +443,12 @@ LogUtils *logUtils;
     if(isEnable)
     {
         //disale button
-        [self enableBombButton];
         //[self enableGrapplingHookButton];
         [self enableKnifeButton];
     }
     else
     {
         [self disableKnifeButton:false];
-        [self disableBombButton:false];
         [self disableGrapplingButton];
     }
 }
@@ -535,15 +484,6 @@ LogUtils *logUtils;
     }
 }
 
--(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair bomb:(CCNode *)nodeA enemy:(CCNode *)nodeB
-{
-    //matar inimigo  
-    [[_physicsNode space] addPostStepBlock:^{
-        [self killNode:nodeB];
-        [self killNode:nodeA];
-    } key:nodeB];
-}
-
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
@@ -564,9 +504,6 @@ LogUtils *logUtils;
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
-    float energy = [pair totalKineticEnergy];
-    
-    if (energy > 5000.0f) {
         numberOfJumps ++;
 
         retryLocation = nodeB.positionInPoints;
@@ -632,7 +569,7 @@ LogUtils *logUtils;
         
         
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
-    }
+    
 }
 
 - (void) writeToLog{

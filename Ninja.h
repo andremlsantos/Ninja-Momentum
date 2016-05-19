@@ -14,9 +14,9 @@ typedef enum ninjaActions
 {
     IDDLE,
     JUMP,
-    KNIFE,
+    KNIFE,/*
     BOMB,
-    /*
+    
     WATER,          // TIRAR
     JUMPONWATER,*/    // TIRAR
     GRAPPLING,

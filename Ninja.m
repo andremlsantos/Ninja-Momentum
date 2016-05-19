@@ -160,10 +160,6 @@ float oldScale = 0.0f;
     else if([self action] == KNIFE)
         [self shootKnife:physicsWorld withAngleX:angleX withAngleY:angleY];
     
-    //se for BOMBA
-    else if([self action] == BOMB)
-        [self shootBomb:physicsWorld withAngleX:angleX withAngleY:angleY];
-
 }
 
 //recebe mundo fisico + força + angulo
@@ -202,38 +198,6 @@ float oldScale = 0.0f;
     [self setAction:IDDLE];
 }
 
-//recebe mundo fisico + força + angulo
-- (void) shootBomb:(CCPhysicsNode *)physicsWorld withAngleX:(float)angleX withAngleY:(float)angleY
-{
-    //init bomb
-    Bomb *bomb = (Bomb*)[CCBReader load:@"Weapons/Bomb"];
-    
-    if(angleX>0)
-    {
-        bomb.position = ccpAdd(self.position, ccp(-20, 5));
-    } else {
-        bomb.position = ccpAdd(self.position, ccp(20, 5));
-    }
-    
-    //add to physic world
-    [physicsWorld addChild:bomb];
-    
-    //set force and direction
-    CGPoint launchDirection = ccp(1, angleY/-90);
-    CGPoint force = ccpMult(launchDirection, -angleX * knifeForce);
-    [bomb.physicsBody applyForce:force];
-    
-    [self setAction:IDDLE];
-}
-
-- (bool) canShoot
-{
-    if([self action]==KNIFE || [self action]==BOMB)
-    {
-        return true;
-    }
-    return false;
-}
 
 - (void)startJumpAnimation{
     CCAnimationManager* animationManager = self.animationManager;
