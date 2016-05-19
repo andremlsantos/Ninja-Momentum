@@ -13,7 +13,8 @@
 - (void)didLoadFromCCB
 {
     self.physicsBody.collisionType = @"knife";
-    
+    self.physicsBody.collisionCategories= @[@"knife"];
+    self.physicsBody.collisionMask = @[@"enemy"];
     self.scaleX = 0.29f;
     self.scaleY = 0.29f;
 }

@@ -13,6 +13,7 @@
 - (void)didLoadFromCCB
 {
     self.physicsBody.collisionType = @"enemy";
+    self.physicsBody.collisionCategories= @[@"enemy"];
 }
 
 @end

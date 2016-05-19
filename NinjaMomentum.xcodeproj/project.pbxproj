@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E47431E1CE5375B006BE8DC /* LevelLater.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E47431D1CE5375B006BE8DC /* LevelLater.m */; };
+		2E59AD9D1CEE32A600B95D18 /* Level6.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E59AD9C1CEE32A600B95D18 /* Level6.m */; };
 		2ECA7A4D1CCBF66C0052C0DE /* WeaponsCodex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A4C1CCBF66C0052C0DE /* WeaponsCodex.m */; };
 		2ECA7A581CCBFD980052C0DE /* GranadeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A571CCBFD980052C0DE /* GranadeEntry.m */; };
 		2ECA7A5B1CCBFE060052C0DE /* HookEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A5A1CCBFE060052C0DE /* HookEntry.m */; };
@@ -188,6 +189,8 @@
 /* Begin PBXFileReference section */
 		2E47431C1CE5375B006BE8DC /* LevelLater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLater.h; sourceTree = "<group>"; };
 		2E47431D1CE5375B006BE8DC /* LevelLater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLater.m; sourceTree = "<group>"; };
+		2E59AD9B1CEE32A600B95D18 /* Level6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level6.h; sourceTree = "<group>"; };
+		2E59AD9C1CEE32A600B95D18 /* Level6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level6.m; sourceTree = "<group>"; };
 		2ECA7A4B1CCBF66C0052C0DE /* WeaponsCodex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponsCodex.h; sourceTree = "<group>"; };
 		2ECA7A4C1CCBF66C0052C0DE /* WeaponsCodex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeaponsCodex.m; sourceTree = "<group>"; };
 		2ECA7A561CCBFD980052C0DE /* GranadeEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GranadeEntry.h; sourceTree = "<group>"; };
@@ -545,6 +548,12 @@
 				654D2D8D1CEBF3E7003174F9 /* Level3.h */,
 				657BBCCA1CEC8F24002A69B1 /* Level4.h */,
 				657BBCCF1CEC980E002A69B1 /* Level5.h */,
+<<<<<<< HEAD
+=======
+				657BBCD01CEC980E002A69B1 /* Level5.m */,
+				2E59AD9B1CEE32A600B95D18 /* Level6.h */,
+				2E59AD9C1CEE32A600B95D18 /* Level6.m */,
+>>>>>>> origin/master
 				3F8989F91CEA79B2001C68CC /* LevelItem.h */,
 				2E47431C1CE5375B006BE8DC /* LevelLater.h */,
 				3FB10AC61CECCF79005CB4C8 /* LogUtils.h */,
@@ -1010,6 +1019,7 @@
 				65F6E7D91CBAC12900649A18 /* Ground.m in Sources */,
 				2ECA7A5B1CCBFE060052C0DE /* HookEntry.m in Sources */,
 				3F8989FB1CEA79B2001C68CC /* LevelItem.m in Sources */,
+				2E59AD9D1CEE32A600B95D18 /* Level6.m in Sources */,
 				3FB10ACA1CECD012005CB4C8 /* LogUtils.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				6564A1A21CA595920046F5FE /* Aim.m in Sources */,
