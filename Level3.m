@@ -222,6 +222,7 @@ OALSimpleAudio *audio;
             //log
             numberOfGrapplingHook3++;
             
+            
             [self unschedule:@selector(reduceCircle)];
             [self resetCircle];
             touchedPlatform = 1;

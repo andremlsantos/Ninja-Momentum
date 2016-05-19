@@ -43,6 +43,8 @@ NSDate *start;
 NSTimeInterval timeInterval;
 LogUtils *logUtils;
 
+bool playingSoundEffect = false;
+
 // access audio object
 OALSimpleAudio *audio;
 
@@ -85,7 +87,7 @@ OALSimpleAudio *audio;
 {
     audio = [OALSimpleAudio sharedInstance];
     
-    [audio playBg:@"Level1.mp3" loop:YES];
+    [audio playBg:@"Level1.mp3" volume:0.1f pan:0.0f loop:true];
     
     // enable touch
     
@@ -162,8 +164,11 @@ OALSimpleAudio *audio;
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
             [ninja enableAim:true];
             
-            if(![ninja initialJump])
+            if(![ninja initialJump]){
+                [audio stopAllEffects];
+                [audio playEffect:@"slow_motion.mp3"];
                 [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+            }
         }
     }
     
@@ -199,6 +204,8 @@ OALSimpleAudio *audio;
     else
     {
         [ninja setAction:IDDLE];
+        [audio stopAllEffects];
+
     }
 }
 
@@ -238,6 +245,8 @@ OALSimpleAudio *audio;
     //apagar mira
     [ninja enableAim:false];
     
+    [audio stopAllEffects];
+
     [self unschedule:@selector(reduceCircle)];
     [self resetCircle];
     
@@ -289,7 +298,8 @@ OALSimpleAudio *audio;
         [self unschedule:@selector(reduceCircle)];
         [self resetCircle];
     }
-    
+    [audio stopAllEffects];
+    [audio playEffect:@"slow_motion.mp3"];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -362,6 +372,9 @@ OALSimpleAudio *audio;
 {
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     [ninja setAction:KNIFE];
+    [audio stopAllEffects];
+    [audio playEffect:@"slow_motion.mp3"];
+
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -577,8 +590,9 @@ OALSimpleAudio *audio;
                 star3.opacity = 0.0f;
             }
         }
-        
-        
+    [audio stopAllEffects];
+        [audio playEffect:@"slow_motion.mp3"];
+
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     
 }

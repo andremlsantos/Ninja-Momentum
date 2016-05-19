@@ -11,7 +11,9 @@ OALSimpleAudio *audio;
     audio = [OALSimpleAudio sharedInstance];
     // play background sound
     [audio playBg:@"main_menu.mp3" loop:YES];
-    
+    [audio preloadBg:@"throw_grappling_hook.mp3"];
+    [audio preloadBg:@"slow_motion.mp3"];
+
     NSString* dateString;
     dateString = @"";
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];

@@ -118,6 +118,16 @@ float oldScale = 0.0f;
     }
 }
 
+
+- (bool) canShoot
+{
+    if([self action]==KNIFE)
+    {
+        return true;
+    }
+    return false;
+}
+
 - (void) positionAimAt:(CGPoint) point
 {
     aim.position = ccpAdd(self.position, point);
