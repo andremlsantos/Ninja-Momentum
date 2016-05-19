@@ -1467,9 +1467,9 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>GHplatform1</string>
+								<string>PlataformaGH1</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>_platformGH1</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -1529,9 +1529,9 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>GHplatform2</string>
+								<string>PlataformaGH2</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>_platformGH2</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -1591,9 +1591,9 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>GHplatform3</string>
+								<string>PlataformaGH3</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>_platformGH3</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>

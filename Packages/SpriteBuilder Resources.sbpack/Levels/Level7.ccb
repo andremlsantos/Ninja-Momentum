@@ -261,8 +261,6 @@
 								<array/>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -371,8 +369,6 @@
 								<array/>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -2505,9 +2501,9 @@
 								<key>customClass</key>
 								<string></string>
 								<key>displayName</key>
-								<string>GHPlatform1</string>
+								<string>PlataformaGH1</string>
 								<key>memberVarAssignmentName</key>
-								<string></string>
+								<string>_platformGH1</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
 								<key>properties</key>
@@ -2556,6 +2552,8 @@
 										<string>PlataformaGH.ccb</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
