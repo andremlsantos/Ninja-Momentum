@@ -19,6 +19,13 @@
 		3F05E5F81CED4339006B0619 /* Ninja-Momentum-Greenland-Loop-II.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5F31CED4339006B0619 /* Ninja-Momentum-Greenland-Loop-II.mp3 */; };
 		3F05E5F91CED4339006B0619 /* Level1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5F41CED4339006B0619 /* Level1.mp3 */; };
 		3F05E5FA1CED4339006B0619 /* Level3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5F51CED4339006B0619 /* Level3.mp3 */; };
+		3F05E6021CED5083006B0619 /* throw_knife.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5FB1CED5083006B0619 /* throw_knife.wav */; };
+		3F05E6031CED5083006B0619 /* throw_grappling_hook.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5FC1CED5083006B0619 /* throw_grappling_hook.mp3 */; };
+		3F05E6041CED5083006B0619 /* killing1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5FD1CED5083006B0619 /* killing1.mp3 */; };
+		3F05E6051CED5083006B0619 /* killing2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5FE1CED5083006B0619 /* killing2.mp3 */; };
+		3F05E6061CED5083006B0619 /* dying.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5FF1CED5083006B0619 /* dying.mp3 */; };
+		3F05E6071CED5083006B0619 /* knife_stab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E6001CED5083006B0619 /* knife_stab.mp3 */; };
+		3F05E6081CED5083006B0619 /* slow_motion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E6011CED5083006B0619 /* slow_motion.mp3 */; };
 		3F8989F61CEA78C6001C68CC /* MapLevels.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8989F51CEA78C6001C68CC /* MapLevels.m */; };
 		3F8989FB1CEA79B2001C68CC /* LevelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8989FA1CEA79B2001C68CC /* LevelItem.m */; };
 		3FB10ACA1CECD012005CB4C8 /* LogUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB10AC91CECD012005CB4C8 /* LogUtils.m */; };
@@ -197,6 +204,13 @@
 		3F05E5F31CED4339006B0619 /* Ninja-Momentum-Greenland-Loop-II.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ninja-Momentum-Greenland-Loop-II.mp3"; sourceTree = "<group>"; };
 		3F05E5F41CED4339006B0619 /* Level1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level1.mp3; sourceTree = "<group>"; };
 		3F05E5F51CED4339006B0619 /* Level3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level3.mp3; sourceTree = "<group>"; };
+		3F05E5FB1CED5083006B0619 /* throw_knife.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = throw_knife.wav; sourceTree = "<group>"; };
+		3F05E5FC1CED5083006B0619 /* throw_grappling_hook.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = throw_grappling_hook.mp3; sourceTree = "<group>"; };
+		3F05E5FD1CED5083006B0619 /* killing1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = killing1.mp3; sourceTree = "<group>"; };
+		3F05E5FE1CED5083006B0619 /* killing2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = killing2.mp3; sourceTree = "<group>"; };
+		3F05E5FF1CED5083006B0619 /* dying.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dying.mp3; sourceTree = "<group>"; };
+		3F05E6001CED5083006B0619 /* knife_stab.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knife_stab.mp3; sourceTree = "<group>"; };
+		3F05E6011CED5083006B0619 /* slow_motion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slow_motion.mp3; sourceTree = "<group>"; };
 		3F8989F41CEA78C6001C68CC /* MapLevels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLevels.h; sourceTree = "<group>"; };
 		3F8989F51CEA78C6001C68CC /* MapLevels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLevels.m; sourceTree = "<group>"; };
 		3F8989F91CEA79B2001C68CC /* LevelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelItem.h; sourceTree = "<group>"; };
@@ -520,46 +534,53 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				6564A1A01CA595920046F5FE /* Aim.h */,
-				6564A1A11CA595920046F5FE /* Aim.m */,
-				3F05E5F11CED4339006B0619 /* Ninja-Momentum-Greenland-Add.mp3 */,
-				3F05E5F21CED4339006B0619 /* Level2.mp3 */,
-				3F05E5F31CED4339006B0619 /* Ninja-Momentum-Greenland-Loop-II.mp3 */,
-				3F05E5F51CED4339006B0619 /* Level3.mp3 */,
-				3F05E5F01CED41FA006B0619 /* Audio */,
-				6564A1A61CA59FD60046F5FE /* Bomb.h */,
-				3F05E5F41CED4339006B0619 /* Level1.mp3 */,
-				6564A1A71CA59FD60046F5FE /* Bomb.m */,
-				EF9E101B1CCFB4D500877E0E /* Codex */,
-				65B088051CA5499E005A8586 /* Enemy.h */,
-				65B088061CA5499E005A8586 /* Enemy.m */,
-				65F6E7D71CBAC12900649A18 /* Ground.h */,
-				65F6E7D81CBAC12900649A18 /* Ground.m */,
-				6564A1A31CA59FC90046F5FE /* Knife.h */,
-				6564A1A41CA59FC90046F5FE /* Knife.m */,
-				3F8989F91CEA79B2001C68CC /* LevelItem.h */,
-				3F8989FA1CEA79B2001C68CC /* LevelItem.m */,
-				2E47431C1CE5375B006BE8DC /* LevelLater.h */,
-				2E47431D1CE5375B006BE8DC /* LevelLater.m */,
-				65B088081CA54DFB005A8586 /* Level1.h */,
-				65B088091CA54DFB005A8586 /* Level1.m */,
-				654D2D881CEBED95003174F9 /* Level2.h */,
-				654D2D891CEBED95003174F9 /* Level2.m */,
-				654D2D8D1CEBF3E7003174F9 /* Level3.h */,
-				654D2D8E1CEBF3E7003174F9 /* Level3.m */,
-				657BBCCA1CEC8F24002A69B1 /* Level4.h */,
-				657BBCCB1CEC8F24002A69B1 /* Level4.m */,
-				657BBCCF1CEC980E002A69B1 /* Level5.h */,
-				657BBCD01CEC980E002A69B1 /* Level5.m */,
-				3FB10AC61CECCF79005CB4C8 /* LogUtils.h */,
-				3FB10AC91CECD012005CB4C8 /* LogUtils.m */,
-				B7378992180767190076A88C /* MainScene.h */,
-				B7378993180767190076A88C /* MainScene.m */,
-				3F8989F41CEA78C6001C68CC /* MapLevels.h */,
-				3F8989F51CEA78C6001C68CC /* MapLevels.m */,
 				D352B48019EC608A00829775 /* MetalShaders */,
+				6564A1A01CA595920046F5FE /* Aim.h */,
+				6564A1A61CA59FD60046F5FE /* Bomb.h */,
+				65B088051CA5499E005A8586 /* Enemy.h */,
+				65F6E7D71CBAC12900649A18 /* Ground.h */,
+				6564A1A31CA59FC90046F5FE /* Knife.h */,
+				65B088081CA54DFB005A8586 /* Level1.h */,
+				654D2D881CEBED95003174F9 /* Level2.h */,
+				654D2D8D1CEBF3E7003174F9 /* Level3.h */,
+				657BBCCA1CEC8F24002A69B1 /* Level4.h */,
+				657BBCCF1CEC980E002A69B1 /* Level5.h */,
+				3F8989F91CEA79B2001C68CC /* LevelItem.h */,
+				2E47431C1CE5375B006BE8DC /* LevelLater.h */,
+				3FB10AC61CECCF79005CB4C8 /* LogUtils.h */,
+				B7378992180767190076A88C /* MainScene.h */,
+				3F8989F41CEA78C6001C68CC /* MapLevels.h */,
 				65B087FE1CA5498C005A8586 /* Ninja.h */,
+				6564A1A11CA595920046F5FE /* Aim.m */,
+				6564A1A71CA59FD60046F5FE /* Bomb.m */,
+				65B088061CA5499E005A8586 /* Enemy.m */,
+				65F6E7D81CBAC12900649A18 /* Ground.m */,
+				6564A1A41CA59FC90046F5FE /* Knife.m */,
+				65B088091CA54DFB005A8586 /* Level1.m */,
+				654D2D891CEBED95003174F9 /* Level2.m */,
+				654D2D8E1CEBF3E7003174F9 /* Level3.m */,
+				657BBCCB1CEC8F24002A69B1 /* Level4.m */,
+				657BBCD01CEC980E002A69B1 /* Level5.m */,
+				3F8989FA1CEA79B2001C68CC /* LevelItem.m */,
+				2E47431D1CE5375B006BE8DC /* LevelLater.m */,
+				3FB10AC91CECD012005CB4C8 /* LogUtils.m */,
+				B7378993180767190076A88C /* MainScene.m */,
+				3F8989F51CEA78C6001C68CC /* MapLevels.m */,
 				65B087FF1CA5498C005A8586 /* Ninja.m */,
+				3F05E5FF1CED5083006B0619 /* dying.mp3 */,
+				3F05E5FD1CED5083006B0619 /* killing1.mp3 */,
+				3F05E5FE1CED5083006B0619 /* killing2.mp3 */,
+				3F05E6001CED5083006B0619 /* knife_stab.mp3 */,
+				3F05E5F41CED4339006B0619 /* Level1.mp3 */,
+				3F05E5F21CED4339006B0619 /* Level2.mp3 */,
+				3F05E5F51CED4339006B0619 /* Level3.mp3 */,
+				3F05E5F11CED4339006B0619 /* Ninja-Momentum-Greenland-Add.mp3 */,
+				3F05E5F31CED4339006B0619 /* Ninja-Momentum-Greenland-Loop-II.mp3 */,
+				3F05E6011CED5083006B0619 /* slow_motion.mp3 */,
+				3F05E5FC1CED5083006B0619 /* throw_grappling_hook.mp3 */,
+				3F05E5FB1CED5083006B0619 /* throw_knife.wav */,
+				3F05E5F01CED41FA006B0619 /* Audio */,
+				EF9E101B1CCFB4D500877E0E /* Codex */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 			);
 			name = Source;
@@ -873,20 +894,27 @@
 				3F05E5F81CED4339006B0619 /* Ninja-Momentum-Greenland-Loop-II.mp3 in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
+				3F05E6021CED5083006B0619 /* throw_knife.wav in Resources */,
+				3F05E6051CED5083006B0619 /* killing2.mp3 in Resources */,
 				3F05E5EF1CED4048006B0619 /* main_menu.mp3 in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
+				3F05E6061CED5083006B0619 /* dying.mp3 in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
+				3F05E6031CED5083006B0619 /* throw_grappling_hook.mp3 in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
+				3F05E6071CED5083006B0619 /* knife_stab.mp3 in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
 				3F05E5F61CED4339006B0619 /* Ninja-Momentum-Greenland-Add.mp3 in Resources */,
 				3F05E5F71CED4339006B0619 /* Level2.mp3 in Resources */,
+				3F05E6081CED5083006B0619 /* slow_motion.mp3 in Resources */,
 				3F05E5F91CED4339006B0619 /* Level1.mp3 in Resources */,
 				3F05E5FA1CED4339006B0619 /* Level3.mp3 in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
+				3F05E6041CED5083006B0619 /* killing1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
