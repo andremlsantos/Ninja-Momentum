@@ -52,6 +52,10 @@
 
 - (void) selectLevel
 {
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+
+    [audio stopEverything];
+
     //level 1
     if([level_item.title  isEqual: @"1"])
     {

@@ -43,6 +43,9 @@ NSDate *start;
 NSTimeInterval timeInterval;
 LogUtils *logUtils;
 
+// access audio object
+OALSimpleAudio *audio;
+
 @implementation Level1
 {
     //physic world
@@ -80,7 +83,12 @@ LogUtils *logUtils;
 // default config
 - (void)didLoadFromCCB
 {
+    audio = [OALSimpleAudio sharedInstance];
+    
+    [audio playBg:@"Level1.mp3" loop:YES];
+    
     // enable touch
+    
     self.userInteractionEnabled = TRUE;
     //enable delegate colision
     _physicsNode.collisionDelegate = self;
@@ -469,7 +477,8 @@ LogUtils *logUtils;
     numberOfEnemies--;
     if (numberOfEnemies == 0){
         //log
-        
+        [audio stopEverything];
+
         timeInterval = fabs([start timeIntervalSinceNow]);
         [self writeToLog];
         
@@ -520,6 +529,8 @@ LogUtils *logUtils;
         numberOfEnemies--;
         if (numberOfEnemies == 0)
         {
+            [audio stopEverything];
+
             //log
             timeInterval = fabs([start timeIntervalSinceNow]);
             [self writeToLog];

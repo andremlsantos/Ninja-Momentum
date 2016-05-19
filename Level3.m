@@ -53,6 +53,7 @@ NSDate *start3;
 NSTimeInterval timeInterval3;
 LogUtils *logUtils3;
 
+OALSimpleAudio *audio;
 
 @implementation Level3
 {
@@ -97,6 +98,11 @@ LogUtils *logUtils3;
 // default config
 - (void)didLoadFromCCB
 {
+    
+    audio = [OALSimpleAudio sharedInstance];
+    
+    [audio playBg:@"Level3.mp3" loop:YES];
+
     // enable touch
     self.userInteractionEnabled = TRUE;
     //enable delegate colision
@@ -545,7 +551,7 @@ LogUtils *logUtils3;
     numberOfEnemies3--;
     if (numberOfEnemies3 == 0){
         //[self nextLevel];
-        
+        [audio stopEverything];
         timeInterval3 = fabs([start3 timeIntervalSinceNow]);
         [self writeToLog3];
 
@@ -598,6 +604,8 @@ LogUtils *logUtils3;
         numberOfEnemies3--;
         if (numberOfEnemies3 == 0)
         {
+            [audio stopEverything];
+
             //log
             timeInterval3 = fabs([start3 timeIntervalSinceNow]);
             [self writeToLog3];

@@ -2,9 +2,16 @@
 
 @implementation MainScene
 
+OALSimpleAudio *audio;
+
 // default config
 - (void)didLoadFromCCB
 {
+    // access audio object
+    audio = [OALSimpleAudio sharedInstance];
+    // play background sound
+    [audio playBg:@"main_menu.mp3" loop:YES];
+    
     NSString* dateString;
     dateString = @"";
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
