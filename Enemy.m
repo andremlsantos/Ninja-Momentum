@@ -14,6 +14,7 @@
 {
     self.physicsBody.collisionType = @"enemy";
     self.physicsBody.collisionCategories= @[@"enemy"];
+    self.physicsBody.collisionMask = @[@"ground",@"ninja",@"knife"];
 }
 
 @end

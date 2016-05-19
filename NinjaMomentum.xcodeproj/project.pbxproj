@@ -189,7 +189,6 @@
 /* Begin PBXFileReference section */
 		2E47431C1CE5375B006BE8DC /* LevelLater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLater.h; sourceTree = "<group>"; };
 		2E47431D1CE5375B006BE8DC /* LevelLater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLater.m; sourceTree = "<group>"; };
-		2E59AD9B1CEE32A600B95D18 /* Level6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level6.h; sourceTree = "<group>"; };
 		2E59AD9C1CEE32A600B95D18 /* Level6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level6.m; sourceTree = "<group>"; };
 		2ECA7A4B1CCBF66C0052C0DE /* WeaponsCodex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponsCodex.h; sourceTree = "<group>"; };
 		2ECA7A4C1CCBF66C0052C0DE /* WeaponsCodex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeaponsCodex.m; sourceTree = "<group>"; };

@@ -13,6 +13,8 @@
 - (void)didLoadFromCCB
 {
     self.physicsBody.collisionType = @"ground";
+    self.physicsBody.collisionCategories= @[@"ground"];
+    self.physicsBody.collisionMask = @[@"enemy",@"ninja"];
 }
 
 @end

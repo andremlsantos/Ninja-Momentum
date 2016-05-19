@@ -36,7 +36,8 @@ float oldScale = 0.0f;
 - (void)didLoadFromCCB
 {
     self.physicsBody.collisionType = @"ninja";
-    
+    self.physicsBody.collisionCategories= @[@"ninja"];
+    self.physicsBody.collisionMask = @[@"enemy",@"ground"];
     //posso saltar inicialmente
     [self setCanJump:true];
     
@@ -48,7 +49,7 @@ float oldScale = 0.0f;
     
     
     //RESET FORCES
-    jumpForce = 1500;
+    jumpForce = 1700;
     verticalJumpForce = 200;
     waterForce = 50;
     waterJumpForce = 3000;
@@ -81,7 +82,7 @@ float oldScale = 0.0f;
         
         if (angleY > 0)
             launchDirection.y = -launchDirection.y;
-        
+        self.physicsBody.velocity=ccp(0,0);
         force = ccpMult(launchDirection, fabsf(angleX) * jumpForce);
         [self.physicsBody applyForce:force];
         [self performSelector:@selector(startJumpAnimation) withObject:nil afterDelay:0.0f];
