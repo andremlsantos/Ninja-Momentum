@@ -11,6 +11,8 @@
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 #import "LogUtils.h"
+#import "AudioUtils.h"
+
 
 //auxiliares slowmotion
 bool enableSlowMotion2 = false;
@@ -48,7 +50,7 @@ NSDate *start2;
 NSTimeInterval timeInterval2;
 LogUtils *logUtils2;
 
-OALSimpleAudio *audio;
+AudioUtils *audioUtils;
 
 @implementation Level2
 {
@@ -87,10 +89,9 @@ OALSimpleAudio *audio;
 // default config
 - (void)didLoadFromCCB
 {
-    audio = [OALSimpleAudio sharedInstance];
+    audioUtils = [AudioUtils sharedManager];
     
-    [audio playBg:@"Level2.mp3" loop:YES];
-
+    [AudioUtils playLevel2Bg];
     
     // enable touch
     self.userInteractionEnabled = TRUE;
@@ -164,8 +165,11 @@ OALSimpleAudio *audio;
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
             [ninja enableAim:true];
             
-            if(![ninja initialJump])
+            if(![ninja initialJump]){
+                [AudioUtils stopEffects];
+                [AudioUtils playSlowMotion];
                 [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+            }
         }
     }
     
@@ -201,6 +205,8 @@ OALSimpleAudio *audio;
     else
     {
         [ninja setAction:IDDLE];
+        [AudioUtils stopEffects];
+
     }
 }
 
@@ -229,6 +235,7 @@ OALSimpleAudio *audio;
         [self disableKnifeButton:YES];
         //log
         numberOfWeaponsFired2++;
+        [AudioUtils playThrowKnife];
     }
     
     //else if([ninja action] == GRAPPLING)
@@ -239,7 +246,8 @@ OALSimpleAudio *audio;
     
     //apagar mira
     [ninja enableAim:false];
-    
+    [AudioUtils stopEffects];
+
     [self unschedule:@selector(reduceCircle)];
     [self resetCircle];
     
@@ -291,6 +299,9 @@ OALSimpleAudio *audio;
         [self unschedule:@selector(reduceCircle)];
         [self resetCircle];
     }
+    
+    [AudioUtils stopEffects];
+    [AudioUtils playSlowMotion];
     
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
@@ -364,6 +375,9 @@ OALSimpleAudio *audio;
 {
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     [ninja setAction:KNIFE];
+    [AudioUtils stopEffects];
+    [AudioUtils playSlowMotion];
+
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -468,6 +482,8 @@ OALSimpleAudio *audio;
 //----------------------------------------------------------------------------------------------------
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair knife:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
+    [AudioUtils playKnifeStab];
+
     //matar inimigo
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
@@ -480,7 +496,7 @@ OALSimpleAudio *audio;
     if (numberOfEnemies2 == 0){
         //[self nextLevel];
         //log
-        [audio stopEverything];
+        [AudioUtils stopEverything];
 
         timeInterval2 = fabs([start2 timeIntervalSinceNow]);
         [self writeToLog2];
@@ -515,6 +531,9 @@ OALSimpleAudio *audio;
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
 
+    [AudioUtils stopEffects];
+    [AudioUtils playKnifeStab];
+    
     numberOfJumps2 ++;
 
         retryLocation2 = nodeB.positionInPoints;
@@ -531,7 +550,7 @@ OALSimpleAudio *audio;
         numberOfEnemies2--;
         if (numberOfEnemies2 == 0)
         {
-            [audio stopEverything];
+            [AudioUtils stopEverything];
 
             //log
             timeInterval2 = fabs([start2 timeIntervalSinceNow]);
@@ -579,12 +598,20 @@ OALSimpleAudio *audio;
                 star3.opacity = 0.0f;
             }
         }
-        
-        
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.2
+                                     target:self
+                                   selector:@selector(playSlowMotion)
+                                   userInfo:nil
+                                    repeats:NO];
+
+    
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     
 }
-
+- (void) playSlowMotion{
+    [AudioUtils playSlowMotion];
+}
 //matar inimigo
 //matar water end
 - (void)killNode:(CCNode *)enemy {

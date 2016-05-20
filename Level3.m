@@ -101,7 +101,7 @@ OALSimpleAudio *audio;
     
     audio = [OALSimpleAudio sharedInstance];
     
-    [audio playBg:@"Level3.mp3" loop:YES];
+    [audio playBg:@"Level3.mp3" volume:0.1f pan:0.0f loop:true];
 
     // enable touch
     self.userInteractionEnabled = TRUE;
@@ -203,6 +203,8 @@ OALSimpleAudio *audio;
             [ninja enableAim:true];
             
             if(![ninja initialJump])
+                [audio stopAllEffects];
+                [audio playEffect:@"slow_motion.mp3"];
                 [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
         }
     }
@@ -263,6 +265,8 @@ OALSimpleAudio *audio;
     else
     {
         [ninja setAction:IDDLE];
+        [audio stopAllEffects];
+
     }
 }
 
@@ -314,6 +318,8 @@ OALSimpleAudio *audio;
     
     //apagar mira
     [ninja enableAim:false];
+    [audio stopAllEffects];
+
     
     //desactivar salto
     if(([ninja action] == JUMP) && [ninja canJump])
@@ -364,8 +370,11 @@ OALSimpleAudio *audio;
         //[self resetCircle];
     }
     
-    if(!enableSlowMotion3)
+    if(!enableSlowMotion3){
+        [audio stopAllEffects];
+        [audio playEffect:@"slow_motion.mp3"];
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+    }
 }
 
 - (void) enableGrapplingHookButton
@@ -438,6 +447,8 @@ OALSimpleAudio *audio;
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     
     [ninja setAction:KNIFE];
+    [audio stopAllEffects];
+    [audio playEffect:@"slow_motion.mp3"];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -551,6 +562,8 @@ OALSimpleAudio *audio;
     
     numberOfEnemies3--;
     if (numberOfEnemies3 == 0){
+        [audio stopEverything];
+
         //[self nextLevel];
         [audio stopEverything];
         timeInterval3 = fabs([start3 timeIntervalSinceNow]);
@@ -656,7 +669,10 @@ OALSimpleAudio *audio;
         
        // CCLOG(@"açao ninja %d", [ninja action]);
         [ninja setAction:-1];
-        
+    
+        [audio stopAllEffects];
+        [audio playEffect:@"slow_motion.mp3"];
+
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     
 }

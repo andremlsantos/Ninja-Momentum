@@ -10,6 +10,7 @@
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 #import "LogUtils.h"
+#import "AudioUtils.h"
 
 //auxiliares slowmotion
 bool enableSlowMotion = false;
@@ -42,11 +43,7 @@ int numberOfSucessKnifes = 0;
 NSDate *start;
 NSTimeInterval timeInterval;
 LogUtils *logUtils;
-
-bool playingSoundEffect = false;
-
-// access audio object
-OALSimpleAudio *audio;
+AudioUtils *audioUtils;
 
 @implementation Level1
 {
@@ -85,9 +82,7 @@ OALSimpleAudio *audio;
 // default config
 - (void)didLoadFromCCB
 {
-    audio = [OALSimpleAudio sharedInstance];
-    
-    [audio playBg:@"Level1.mp3" volume:0.1f pan:0.0f loop:true];
+    [AudioUtils playLevel1Bg];
     
     // enable touch
     
@@ -122,6 +117,7 @@ OALSimpleAudio *audio;
     //log
     start = [NSDate date];
     logUtils = [LogUtils sharedManager];
+    audioUtils = [AudioUtils sharedManager];
 
 }
 
@@ -165,8 +161,8 @@ OALSimpleAudio *audio;
             [ninja enableAim:true];
             
             if(![ninja initialJump]){
-                [audio stopAllEffects];
-                [audio playEffect:@"slow_motion.mp3"];
+                [AudioUtils stopEffects];
+                [AudioUtils playSlowMotion];
                 [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
             }
         }
@@ -204,7 +200,7 @@ OALSimpleAudio *audio;
     else
     {
         [ninja setAction:IDDLE];
-        [audio stopAllEffects];
+        [AudioUtils stopEffects];
 
     }
 }
@@ -234,6 +230,7 @@ OALSimpleAudio *audio;
         //log
         numberOfWeaponsFired++;
         [self disableKnifeButton:YES];
+        [AudioUtils playThrowKnife];
     }
     
     //else if([ninja action] == GRAPPLING)
@@ -245,8 +242,8 @@ OALSimpleAudio *audio;
     //apagar mira
     [ninja enableAim:false];
     
-    [audio stopAllEffects];
-
+    [AudioUtils stopEffects];
+    
     [self unschedule:@selector(reduceCircle)];
     [self resetCircle];
     
@@ -298,8 +295,8 @@ OALSimpleAudio *audio;
         [self unschedule:@selector(reduceCircle)];
         [self resetCircle];
     }
-    [audio stopAllEffects];
-    [audio playEffect:@"slow_motion.mp3"];
+    [AudioUtils stopEffects];
+    [AudioUtils playSlowMotion];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -372,9 +369,8 @@ OALSimpleAudio *audio;
 {
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     [ninja setAction:KNIFE];
-    [audio stopAllEffects];
-    [audio playEffect:@"slow_motion.mp3"];
-
+    [AudioUtils stopEffects];
+    [AudioUtils playSlowMotion];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -479,6 +475,7 @@ OALSimpleAudio *audio;
 //----------------------------------------------------------------------------------------------------
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair knife:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
+    [AudioUtils playKnifeStab];
     //matar inimigo
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
@@ -488,9 +485,10 @@ OALSimpleAudio *audio;
     numberOfSucessKnifes++;
     
     numberOfEnemies--;
+
     if (numberOfEnemies == 0){
         //log
-        [audio stopEverything];
+        [AudioUtils stopEverything];
 
         timeInterval = fabs([start timeIntervalSinceNow]);
         [self writeToLog];
@@ -526,8 +524,11 @@ OALSimpleAudio *audio;
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
-        numberOfJumps ++;
+    [AudioUtils stopEffects];
+    [AudioUtils playKnifeStab];
+    
 
+        numberOfJumps ++;
         retryLocation = nodeB.positionInPoints;
         CGPoint mult = ccp(1,1.5);
         retryLocation = ccpCompMult(retryLocation, mult);
@@ -542,7 +543,7 @@ OALSimpleAudio *audio;
         numberOfEnemies--;
         if (numberOfEnemies == 0)
         {
-            [audio stopEverything];
+            [AudioUtils stopEverything];
 
             //log
             timeInterval = fabs([start timeIntervalSinceNow]);
@@ -590,11 +591,20 @@ OALSimpleAudio *audio;
                 star3.opacity = 0.0f;
             }
         }
-    [audio stopAllEffects];
-        [audio playEffect:@"slow_motion.mp3"];
-
+    
+        [NSTimer scheduledTimerWithTimeInterval:0.2
+                                     target:self
+                                   selector:@selector(playSlowMotion)
+                                   userInfo:nil
+                                    repeats:NO];
+    
+    
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     
+}
+
+- (void) playSlowMotion{
+    [AudioUtils playSlowMotion];
 }
 
 - (void) writeToLog{

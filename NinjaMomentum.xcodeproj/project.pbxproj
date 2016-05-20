@@ -24,12 +24,13 @@
 		3F05E6041CED5083006B0619 /* killing1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5FD1CED5083006B0619 /* killing1.mp3 */; };
 		3F05E6051CED5083006B0619 /* killing2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5FE1CED5083006B0619 /* killing2.mp3 */; };
 		3F05E6061CED5083006B0619 /* dying.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E5FF1CED5083006B0619 /* dying.mp3 */; };
-		3F05E6071CED5083006B0619 /* knife_stab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E6001CED5083006B0619 /* knife_stab.mp3 */; };
-		3F05E6081CED5083006B0619 /* slow_motion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F05E6011CED5083006B0619 /* slow_motion.mp3 */; };
 		3F3133701CEE3E0A00689144 /* main_menu.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3F31336F1CEE3E0A00689144 /* main_menu.mp3 */; };
 		3F8989F61CEA78C6001C68CC /* MapLevels.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8989F51CEA78C6001C68CC /* MapLevels.m */; };
 		3F8989FB1CEA79B2001C68CC /* LevelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8989FA1CEA79B2001C68CC /* LevelItem.m */; };
 		3FB10ACA1CECD012005CB4C8 /* LogUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB10AC91CECD012005CB4C8 /* LogUtils.m */; };
+		3FFBD21F1CEE9AE9008CC27E /* knife_stab.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FFBD21E1CEE9AE9008CC27E /* knife_stab.mp3 */; };
+		3FFBD2211CEE9B89008CC27E /* slow_motion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3FFBD2201CEE9B89008CC27E /* slow_motion.mp3 */; };
+		3FFBD2241CEEA0B0008CC27E /* AudioUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFBD2231CEEA0B0008CC27E /* AudioUtils.m */; };
 		5B121030197484FA004C1E1D /* NinjaMomentumActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* NinjaMomentumActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		654D2D8A1CEBED95003174F9 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D2D891CEBED95003174F9 /* Level2.m */; };
@@ -210,8 +211,6 @@
 		3F05E5FD1CED5083006B0619 /* killing1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = killing1.mp3; sourceTree = "<group>"; };
 		3F05E5FE1CED5083006B0619 /* killing2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = killing2.mp3; sourceTree = "<group>"; };
 		3F05E5FF1CED5083006B0619 /* dying.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dying.mp3; sourceTree = "<group>"; };
-		3F05E6001CED5083006B0619 /* knife_stab.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knife_stab.mp3; sourceTree = "<group>"; };
-		3F05E6011CED5083006B0619 /* slow_motion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slow_motion.mp3; sourceTree = "<group>"; };
 		3F31336F1CEE3E0A00689144 /* main_menu.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = main_menu.mp3; sourceTree = "<group>"; };
 		3F8989F41CEA78C6001C68CC /* MapLevels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLevels.h; sourceTree = "<group>"; };
 		3F8989F51CEA78C6001C68CC /* MapLevels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapLevels.m; sourceTree = "<group>"; };
@@ -219,6 +218,10 @@
 		3F8989FA1CEA79B2001C68CC /* LevelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelItem.m; sourceTree = "<group>"; };
 		3FB10AC61CECCF79005CB4C8 /* LogUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogUtils.h; sourceTree = "<group>"; };
 		3FB10AC91CECD012005CB4C8 /* LogUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogUtils.m; sourceTree = "<group>"; };
+		3FFBD21E1CEE9AE9008CC27E /* knife_stab.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = knife_stab.mp3; sourceTree = "<group>"; };
+		3FFBD2201CEE9B89008CC27E /* slow_motion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = slow_motion.mp3; sourceTree = "<group>"; };
+		3FFBD2221CEEA040008CC27E /* AudioUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioUtils.h; sourceTree = "<group>"; };
+		3FFBD2231CEEA0B0008CC27E /* AudioUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioUtils.m; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -365,14 +368,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F05E5F01CED41FA006B0619 /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				3F31336F1CEE3E0A00689144 /* main_menu.mp3 */,
-			);
-			name = Audio;
-			sourceTree = "<group>";
-		};
 		5B12100D197483EE004C1E1D /* res */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +545,7 @@
 				3F8989F91CEA79B2001C68CC /* LevelItem.h */,
 				2E47431C1CE5375B006BE8DC /* LevelLater.h */,
 				3FB10AC61CECCF79005CB4C8 /* LogUtils.h */,
+				3FFBD2221CEEA040008CC27E /* AudioUtils.h */,
 				B7378992180767190076A88C /* MainScene.h */,
 				3F8989F41CEA78C6001C68CC /* MapLevels.h */,
 				65B087FE1CA5498C005A8586 /* Ninja.h */,
@@ -566,22 +562,23 @@
 				3F8989FA1CEA79B2001C68CC /* LevelItem.m */,
 				2E47431D1CE5375B006BE8DC /* LevelLater.m */,
 				3FB10AC91CECD012005CB4C8 /* LogUtils.m */,
+				3FFBD2231CEEA0B0008CC27E /* AudioUtils.m */,
 				B7378993180767190076A88C /* MainScene.m */,
 				3F8989F51CEA78C6001C68CC /* MapLevels.m */,
 				65B087FF1CA5498C005A8586 /* Ninja.m */,
 				3F05E5FF1CED5083006B0619 /* dying.mp3 */,
 				3F05E5FD1CED5083006B0619 /* killing1.mp3 */,
 				3F05E5FE1CED5083006B0619 /* killing2.mp3 */,
-				3F05E6001CED5083006B0619 /* knife_stab.mp3 */,
 				3F05E5F41CED4339006B0619 /* Level1.mp3 */,
+				3FFBD21E1CEE9AE9008CC27E /* knife_stab.mp3 */,
+				3FFBD2201CEE9B89008CC27E /* slow_motion.mp3 */,
 				3F05E5F21CED4339006B0619 /* Level2.mp3 */,
 				3F05E5F51CED4339006B0619 /* Level3.mp3 */,
 				3F05E5F11CED4339006B0619 /* Ninja-Momentum-Greenland-Add.mp3 */,
 				3F05E5F31CED4339006B0619 /* Ninja-Momentum-Greenland-Loop-II.mp3 */,
-				3F05E6011CED5083006B0619 /* slow_motion.mp3 */,
+				3F31336F1CEE3E0A00689144 /* main_menu.mp3 */,
 				3F05E5FC1CED5083006B0619 /* throw_grappling_hook.mp3 */,
 				3F05E5FB1CED5083006B0619 /* throw_knife.wav */,
-				3F05E5F01CED41FA006B0619 /* Audio */,
 				EF9E101B1CCFB4D500877E0E /* Codex */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 			);
@@ -906,15 +903,15 @@
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
 				3F05E6031CED5083006B0619 /* throw_grappling_hook.mp3 in Resources */,
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
-				3F05E6071CED5083006B0619 /* knife_stab.mp3 in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
 				3F05E5F61CED4339006B0619 /* Ninja-Momentum-Greenland-Add.mp3 in Resources */,
 				3F05E5F71CED4339006B0619 /* Level2.mp3 in Resources */,
-				3F05E6081CED5083006B0619 /* slow_motion.mp3 in Resources */,
 				3F05E5F91CED4339006B0619 /* Level1.mp3 in Resources */,
+				3FFBD21F1CEE9AE9008CC27E /* knife_stab.mp3 in Resources */,
 				3F05E5FA1CED4339006B0619 /* Level3.mp3 in Resources */,
+				3FFBD2211CEE9B89008CC27E /* slow_motion.mp3 in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 				3F05E6041CED5083006B0619 /* killing1.mp3 in Resources */,
 			);
@@ -1000,6 +997,7 @@
 				654D2D8F1CEBF3E7003174F9 /* Level3.m in Sources */,
 				6564A1A81CA59FD60046F5FE /* Bomb.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				3FFBD2241CEEA0B0008CC27E /* AudioUtils.m in Sources */,
 				65B088071CA5499E005A8586 /* Enemy.m in Sources */,
 				654D2D8A1CEBED95003174F9 /* Level2.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
