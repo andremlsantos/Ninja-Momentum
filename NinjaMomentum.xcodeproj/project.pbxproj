@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2E47431E1CE5375B006BE8DC /* LevelLater.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E47431D1CE5375B006BE8DC /* LevelLater.m */; };
-		2E59AD9D1CEE32A600B95D18 /* Level6.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E59AD9C1CEE32A600B95D18 /* Level6.m */; };
 		2ECA7A4D1CCBF66C0052C0DE /* WeaponsCodex.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A4C1CCBF66C0052C0DE /* WeaponsCodex.m */; };
 		2ECA7A581CCBFD980052C0DE /* GranadeEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A571CCBFD980052C0DE /* GranadeEntry.m */; };
 		2ECA7A5B1CCBFE060052C0DE /* HookEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA7A5A1CCBFE060052C0DE /* HookEntry.m */; };
@@ -44,6 +43,12 @@
 		6564A1A81CA59FD60046F5FE /* Bomb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6564A1A71CA59FD60046F5FE /* Bomb.m */; };
 		657BBCCC1CEC8F24002A69B1 /* Level4.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BBCCB1CEC8F24002A69B1 /* Level4.m */; };
 		657BBCD11CEC980E002A69B1 /* Level5.m in Sources */ = {isa = PBXBuildFile; fileRef = 657BBCD01CEC980E002A69B1 /* Level5.m */; };
+		65A06EC01CEFC4420087C6AC /* Level6.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A06EBF1CEFC4420087C6AC /* Level6.m */; };
+		65A06EC11CEFC4420087C6AC /* Level6.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A06EBF1CEFC4420087C6AC /* Level6.m */; };
+		65A06EC21CEFC4420087C6AC /* Level6.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A06EBF1CEFC4420087C6AC /* Level6.m */; };
+		65A06EC51CEFCCC50087C6AC /* Level7.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A06EC41CEFCCC50087C6AC /* Level7.m */; };
+		65A06EC61CEFCCC50087C6AC /* Level7.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A06EC41CEFCCC50087C6AC /* Level7.m */; };
+		65A06EC71CEFCCC50087C6AC /* Level7.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A06EC41CEFCCC50087C6AC /* Level7.m */; };
 		65B088001CA5498C005A8586 /* Ninja.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B087FF1CA5498C005A8586 /* Ninja.m */; };
 		65B088071CA5499E005A8586 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B088061CA5499E005A8586 /* Enemy.m */; };
 		65B0880A1CA54DFB005A8586 /* Level1.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B088091CA54DFB005A8586 /* Level1.m */; };
@@ -190,7 +195,6 @@
 /* Begin PBXFileReference section */
 		2E47431C1CE5375B006BE8DC /* LevelLater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelLater.h; sourceTree = "<group>"; };
 		2E47431D1CE5375B006BE8DC /* LevelLater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelLater.m; sourceTree = "<group>"; };
-		2E59AD9C1CEE32A600B95D18 /* Level6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level6.m; sourceTree = "<group>"; };
 		2ECA7A4B1CCBF66C0052C0DE /* WeaponsCodex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeaponsCodex.h; sourceTree = "<group>"; };
 		2ECA7A4C1CCBF66C0052C0DE /* WeaponsCodex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeaponsCodex.m; sourceTree = "<group>"; };
 		2ECA7A561CCBFD980052C0DE /* GranadeEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GranadeEntry.h; sourceTree = "<group>"; };
@@ -246,6 +250,10 @@
 		657BBCCB1CEC8F24002A69B1 /* Level4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level4.m; sourceTree = "<group>"; };
 		657BBCCF1CEC980E002A69B1 /* Level5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level5.h; sourceTree = "<group>"; };
 		657BBCD01CEC980E002A69B1 /* Level5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level5.m; sourceTree = "<group>"; };
+		65A06EBE1CEFC4420087C6AC /* Level6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level6.h; sourceTree = "<group>"; };
+		65A06EBF1CEFC4420087C6AC /* Level6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level6.m; sourceTree = "<group>"; };
+		65A06EC31CEFCCC50087C6AC /* Level7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level7.h; sourceTree = "<group>"; };
+		65A06EC41CEFCCC50087C6AC /* Level7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level7.m; sourceTree = "<group>"; };
 		65B087FE1CA5498C005A8586 /* Ninja.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ninja.h; sourceTree = "<group>"; };
 		65B087FF1CA5498C005A8586 /* Ninja.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ninja.m; sourceTree = "<group>"; };
 		65B088051CA5499E005A8586 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
@@ -542,6 +550,8 @@
 				654D2D8D1CEBF3E7003174F9 /* Level3.h */,
 				657BBCCA1CEC8F24002A69B1 /* Level4.h */,
 				657BBCCF1CEC980E002A69B1 /* Level5.h */,
+				65A06EBE1CEFC4420087C6AC /* Level6.h */,
+				65A06EC31CEFCCC50087C6AC /* Level7.h */,
 				3F8989F91CEA79B2001C68CC /* LevelItem.h */,
 				2E47431C1CE5375B006BE8DC /* LevelLater.h */,
 				3FB10AC61CECCF79005CB4C8 /* LogUtils.h */,
@@ -559,6 +569,8 @@
 				654D2D8E1CEBF3E7003174F9 /* Level3.m */,
 				657BBCCB1CEC8F24002A69B1 /* Level4.m */,
 				657BBCD01CEC980E002A69B1 /* Level5.m */,
+				65A06EBF1CEFC4420087C6AC /* Level6.m */,
+				65A06EC41CEFCCC50087C6AC /* Level7.m */,
 				3F8989FA1CEA79B2001C68CC /* LevelItem.m */,
 				2E47431D1CE5375B006BE8DC /* LevelLater.m */,
 				3FB10AC91CECD012005CB4C8 /* LogUtils.m */,
@@ -969,11 +981,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65A06EC71CEFCCC50087C6AC /* Level7.m in Sources */,
 				7A4036E819DE3F33007B6E8F /* MainScene.m in Sources */,
 				654D2D8C1CEBED95003174F9 /* Level2.m in Sources */,
 				654D2D911CEBF3E7003174F9 /* Level3.m in Sources */,
 				7A40360419DDEE84007B6E8F /* main.m in Sources */,
 				7A59498E19E3941300F65F90 /* AppDelegate.m in Sources */,
+				65A06EC21CEFC4420087C6AC /* Level6.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -982,8 +996,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				654D2D8B1CEBED95003174F9 /* Level2.m in Sources */,
+				65A06EC11CEFC4420087C6AC /* Level6.m in Sources */,
 				927F619E196C771E000F43EF /* MainScene.m in Sources */,
 				654D2D901CEBF3E7003174F9 /* Level3.m in Sources */,
+				65A06EC61CEFCCC50087C6AC /* Level7.m in Sources */,
 				5B121030197484FA004C1E1D /* NinjaMomentumActivity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1002,6 +1018,7 @@
 				654D2D8A1CEBED95003174F9 /* Level2.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				2ECA7A581CCBFD980052C0DE /* GranadeEntry.m in Sources */,
+				65A06EC51CEFCCC50087C6AC /* Level7.m in Sources */,
 				3F8989F61CEA78C6001C68CC /* MapLevels.m in Sources */,
 				657BBCCC1CEC8F24002A69B1 /* Level4.m in Sources */,
 				65B088001CA5498C005A8586 /* Ninja.m in Sources */,
@@ -1010,10 +1027,10 @@
 				65F6E7D91CBAC12900649A18 /* Ground.m in Sources */,
 				2ECA7A5B1CCBFE060052C0DE /* HookEntry.m in Sources */,
 				3F8989FB1CEA79B2001C68CC /* LevelItem.m in Sources */,
-				2E59AD9D1CEE32A600B95D18 /* Level6.m in Sources */,
 				3FB10ACA1CECD012005CB4C8 /* LogUtils.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				6564A1A21CA595920046F5FE /* Aim.m in Sources */,
+				65A06EC01CEFC4420087C6AC /* Level6.m in Sources */,
 				2E47431E1CE5375B006BE8DC /* LevelLater.m in Sources */,
 				65B0880A1CA54DFB005A8586 /* Level1.m in Sources */,
 				2ECA7A611CCBFE600052C0DE /* NinjatoEntry.m in Sources */,

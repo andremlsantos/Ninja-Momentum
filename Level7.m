@@ -1,12 +1,12 @@
 //
-//  Level6.m
+//  Level7.m
 //  NinjaMomentum
 //
 //  Created by andre on 20/05/16.
 //  Copyright © 2016 Apportable. All rights reserved.
 //
 
-#import "Level6.h"
+#import "Level7.h"
 #import "Ninja.h"
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
@@ -14,48 +14,47 @@
 #import "AudioUtils.h"
 
 //auxiliares slowmotion
-bool enableSlowMotion6 = false;
-float slowVelocity6 = 0.3f;
-float ninjaCircleOpacity6 = 0.15f;
-float overlayLayerOpacity6 = 0.3f;
+bool enableSlowMotion7 = false;
+float slowVelocity7 = 0.3f;
+float ninjaCircleOpacity7 = 0.15f;
+float overlayLayerOpacity7 = 0.3f;
 
-bool asRetryLocation6 = false;
-int numberOfEnemies6 = 11;
+bool asRetryLocation7 = false;
+int numberOfEnemies7 = 11;
 
 //auxiliares mira
-float angleXX6 = 0.f, angleYY6 = 0.f;
-float scaleAim6 = 5.0f;
+float angleXX7 = 0.f, angleYY7 = 0.f;
+float scaleAim7 = 5.0f;
 
-CGPoint retryLocation6;
-bool isPaused6 = false;
+CGPoint retryLocation7;
+bool isPaused7 = false;
 
 //TRIES
-int numberTries6 = 0;
+int numberTries7 = 0;
 
 //auxiliares grappling hook
-bool drawGrapplingHook6 = false;
-int minDistanceToUseGrappling6 = 250;
-int touchedPlatform6;
+bool drawGrapplingHook7 = false;
+int minDistanceToUseGrappling7 = 250;
+int touchedPlatform7;
 
 //LOG VARIABLES
-int numberOfDeaths6 = 0;
-int numberOfJumps6 = 0;
-int numberOfWeaponsFired6 = 0;
-int numberOfGrapplingHook6 = 0;
-int numberOfTouches6 = 0;
-int numberOfRetriesPerLevel6 = 0;
-int numberOfSucessKnifes6 = 0;
-bool jumpingFromGrappling6 = false;
-int numberOfSucessGrappling6 = 0;
+int numberOfDeaths7 = 0;
+int numberOfJumps7 = 0;
+int numberOfWeaponsFired7 = 0;
+int numberOfGrapplingHook7 = 0;
+int numberOfTouches7 = 0;
+int numberOfRetriesPerLevel7 = 0;
+int numberOfSucessKnifes7 = 0;
+bool jumpingFromGrappling7 = false;
+int numberOfSucessGrappling7 = 0;
 
-NSDate *start6;
-NSTimeInterval timeInterval6;
-LogUtils *logUtils6;
+NSDate *start7;
+NSTimeInterval timeInterval7;
+LogUtils *logUtils7;
 
 AudioUtils *audioUtils;
 
-
-@implementation Level6
+@implementation Level7
 {
     //physic world
     CCPhysicsNode *_physicsNode;
@@ -89,10 +88,10 @@ AudioUtils *audioUtils;
     CCLabelTTF * textMomentum;
     
     //graping hook
-    //CCNode *_platformGH1;
+    CCNode *_platformGH1;
     //CCNode *_platformGH2;
-    //CCPhysicsJoint *joint;
-    //CCDrawNode *myDrawNode;
+    CCPhysicsJoint *joint;
+    CCDrawNode *myDrawNode;
 }
 
 // default config
@@ -130,8 +129,8 @@ AudioUtils *audioUtils;
     textMomentum.opacity = 0.0f;
     
     //log
-    start6 = [NSDate date];
-    logUtils6 = [LogUtils sharedManager];
+    start7 = [NSDate date];
+    logUtils7 = [LogUtils sharedManager];
     
     //corda
     //   myDrawNode = [CCDrawNode node];
@@ -151,8 +150,10 @@ AudioUtils *audioUtils;
     
     [self outsideRoom];
     
-    /*
-     if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling4 ){
+    
+     if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling7
+        //|| ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling4
+        ){
      [self enableGrapplingHookButton];
      }
      else{
@@ -163,16 +164,14 @@ AudioUtils *audioUtils;
      [myDrawNode clear];
      
      
-     if (drawGrapplingHook2){
-     if(touchedPlatform == 1){
+     if (drawGrapplingHook7){
+     if(touchedPlatform7 == 1){
      [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
      }
-     else if(touchedPlatform == 2){
-     [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+     //else if(touchedPlatform7 == 2){
+     //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+     //}
      }
-     }
-     */
-    
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -185,7 +184,7 @@ AudioUtils *audioUtils;
 {
     CGPoint touchLocation = [touch locationInNode:_contentNode];
     //log
-    numberOfTouches6++;
+    numberOfTouches7++;
     // NINJA
     if (CGRectContainsPoint([ninja boundingBox], touchLocation))
     {
@@ -206,7 +205,7 @@ AudioUtils *audioUtils;
             }
         }
     }
-    /*
+    
      //vou ver se cliquei dentro GH
      else if(CGRectContainsPoint([_platformGH1 boundingBox],touchLocation))
      {
@@ -218,15 +217,15 @@ AudioUtils *audioUtils;
      anchorA:ninja.anchorPointInPoints
      anchorB:_platformGH1.anchorPointInPoints];
      //log
-     numberOfGrapplingHook5++;
+     numberOfGrapplingHook7++;
      
-     drawGrapplingHook5 = true;
+     drawGrapplingHook7 = true;
      [self unschedule:@selector(reduceCircle)];
      [self resetCircle];
-     touchedPlatform5 = 1;
+     touchedPlatform7 = 1;
      }
      }
-     
+     /*
      else if(CGRectContainsPoint([_platformGH2 boundingBox],touchLocation))
      {
      if([ninja action] == GRAPPLING)
@@ -245,11 +244,12 @@ AudioUtils *audioUtils;
      touchedPlatform4 = 2;
      }
      }
+      */
      else if([ninja action] == GRAPPLING)
      {
      //log
-     jumpingFromGrappling4 = true;
-     drawGrapplingHook4 = false;
+     jumpingFromGrappling7 = true;
+     drawGrapplingHook7 = false;
      [joint invalidate];
      joint = nil;
      [self enableGrapplingHookButton];
@@ -257,7 +257,7 @@ AudioUtils *audioUtils;
      //[self unschedule:@selector(reduceCircle)];
      //[self resetCircle];
      }
-     */
+    
     else
     {
         [AudioUtils stopEffects];
@@ -275,11 +275,11 @@ AudioUtils *audioUtils;
         //localizacao toque
         CGPoint touchLocation = [touch locationInNode:_contentNode];
         
-        angleYY6 = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -80, 80);
-        angleXX6 = clampf(touchLocation.x - (ninja.boundingBox.origin.x + ninja.boundingBox.size.width/2), -10, 10);
+        angleYY7 = clampf(touchLocation.y - (ninja.boundingBox.origin.y + ninja.boundingBox.size.height/2), -80, 80);
+        angleXX7 = clampf(touchLocation.x - (ninja.boundingBox.origin.x + ninja.boundingBox.size.width/2), -10, 10);
         
         //actualizar angulo e escala mira
-        [ninja updateAim:angleYY6 withScale:-angleXX6/scaleAim6];
+        [ninja updateAim:angleYY7 withScale:-angleXX7/scaleAim7];
     }
 }
 
@@ -290,7 +290,7 @@ AudioUtils *audioUtils;
         //log
         [AudioUtils playThrowKnife];
         
-        numberOfWeaponsFired6++;
+        numberOfWeaponsFired7++;
         [self disableKnifeButton:YES];
     }
     
@@ -310,7 +310,7 @@ AudioUtils *audioUtils;
     [self resetCircle];
     
     //fazer acao ninja
-    [ninja action:_physicsNode withAngleX:angleXX6 withAngleY:angleYY6];
+    [ninja action:_physicsNode withAngleX:angleXX7 withAngleY:angleYY7];
     
     //apagar mira
     [ninja enableAim:false];
@@ -366,7 +366,7 @@ AudioUtils *audioUtils;
         //[self resetCircle];
     }
     
-    if(!enableSlowMotion6){
+    if(!enableSlowMotion7){
         [AudioUtils stopEffects];
         [AudioUtils playSlowMotion];
         
@@ -397,11 +397,11 @@ AudioUtils *audioUtils;
     startAgainButton.enabled = false;
     retryButton.enabled = false;
     //log
-    numberOfRetriesPerLevel6 ++;
-    logUtils6.totalRetries ++;
-    if(asRetryLocation6)
+    numberOfRetriesPerLevel7 ++;
+    logUtils7.totalRetries ++;
+    if(asRetryLocation7)
     {
-        ninja.positionInPoints = retryLocation6;
+        ninja.positionInPoints = retryLocation7;
         [ninja setCanJump:true];
         [ninja verticalJump];
     }
@@ -410,11 +410,11 @@ AudioUtils *audioUtils;
     }
     
     
-    numberTries6++;
+    numberTries7++;
     //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
     
-    CCLOG(@"tries %d", numberTries6);
+    CCLOG(@"tries %d", numberTries7);
     
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
@@ -483,23 +483,23 @@ AudioUtils *audioUtils;
      }
      */
     
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level6"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level7"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
     //reset variaveis
-    enableSlowMotion6=false;
-    angleXX6 = 0.f, angleYY6 = 0.f;
-    scaleAim6= 5.0f;
-    slowVelocity6 = 0.3f;
-    ninjaCircleOpacity6 = 0.15f;
-    overlayLayerOpacity6 = 0.3f;
-    numberOfEnemies6 = 11;
-    asRetryLocation6 = false;
+    enableSlowMotion7=false;
+    angleXX7 = 0.f, angleYY7 = 0.f;
+    scaleAim7= 5.0f;
+    slowVelocity7 = 0.3f;
+    ninjaCircleOpacity7 = 0.15f;
+    overlayLayerOpacity7 = 0.3f;
+    numberOfEnemies7 = 11;
+    asRetryLocation7 = false;
     //drawGrapplingHook = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
     
-    numberTries6=0;
+    numberTries7=0;
     
     //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
@@ -507,22 +507,22 @@ AudioUtils *audioUtils;
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
     
-    CCLOG(@"tries %d", numberTries6);
+    CCLOG(@"tries %d", numberTries7);
 }
 -(void) nextLevel
 {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level7"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level8"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
     //reset variaveis
-    enableSlowMotion6=false;
-    angleXX6 = 0.f, angleYY6 = 0.f;
-    scaleAim6 = 5.0f;
-    slowVelocity6 = 0.3f;
-    ninjaCircleOpacity6 = 0.15f;
-    overlayLayerOpacity6 = 0.3f;
-    numberOfEnemies6 = 11;
-    asRetryLocation6 = false;
+    enableSlowMotion7=false;
+    angleXX7 = 0.f, angleYY7 = 0.f;
+    scaleAim7 = 5.0f;
+    slowVelocity7 = 0.3f;
+    ninjaCircleOpacity7 = 0.15f;
+    overlayLayerOpacity7 = 0.3f;
+    numberOfEnemies7 = 11;
+    asRetryLocation7 = false;
     
     [[CCDirector sharedDirector] resume];
 }
@@ -555,30 +555,30 @@ AudioUtils *audioUtils;
     } key:nodeB];
     
     //log
-    numberOfSucessKnifes6++;
+    numberOfSucessKnifes7++;
     
-    numberOfEnemies6--;
-    if (numberOfEnemies6 == 0)
+    numberOfEnemies7--;
+    if (numberOfEnemies7 == 0)
     {
         [AudioUtils stopEverything];
         
         //log
-        timeInterval6 = fabs([start6 timeIntervalSinceNow]);
+        timeInterval7 = fabs([start7 timeIntervalSinceNow]);
         [self writeToLog5];
         
         //salvar tries
-        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries6] forKey:@"triesLevel6"];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries7] forKey:@"triesLevel7"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         //acabei nivel
-        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"endedLevel6"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"endedLevel7"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         //desbloquei proximo
-        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel7"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel8"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        CCLOG(@"tries %d", numberTries6);
+        CCLOG(@"tries %d", numberTries7);
         
         //[self nextLevel];
         
@@ -589,19 +589,19 @@ AudioUtils *audioUtils;
         
         [[CCDirector sharedDirector] pause];
         
-        if(numberTries6 == 0)
+        if(numberTries7 == 0)
         {
             star1.opacity = 1.0f;
             star2.opacity = 1.0f;
             star3.opacity = 1.0f;
         }
-        else if(numberTries6 >= 1 && numberTries6 <=4)
+        else if(numberTries7 >= 1 && numberTries7 <=4)
         {
             star1.opacity = 1.0f;
             star2.opacity = 1.0f;
             star3.opacity = 0.0f;
         }
-        else if(numberTries6 >= 5)
+        else if(numberTries7 >= 5)
         {
             star1.opacity = 1.0f;
             star2.opacity = 0.0f;
@@ -614,8 +614,8 @@ AudioUtils *audioUtils;
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
     //log
-    numberOfDeaths6++;
-    logUtils6.totalDeaths++;
+    numberOfDeaths7++;
+    logUtils7.totalDeaths++;
     
     retryButton.visible = true;
     startAgainButton.visible = true;
@@ -635,12 +635,12 @@ AudioUtils *audioUtils;
     
     
     //log
-    numberOfJumps6 ++;
+    numberOfJumps7 ++;
     
-    retryLocation6 = nodeB.positionInPoints;
+    retryLocation7 = nodeB.positionInPoints;
     CGPoint mult = ccp(1,1.5);
-    retryLocation6 = ccpCompMult(retryLocation6, mult);
-    asRetryLocation6 = true;
+    retryLocation7 = ccpCompMult(retryLocation7, mult);
+    asRetryLocation7 = true;
     
     [self killNode:nodeB];// matar inimigo
     
@@ -648,28 +648,28 @@ AudioUtils *audioUtils;
     [ninja setCanJump:true];
     [ninja verticalJump];
     
-    numberOfEnemies6--;
-    if (numberOfEnemies6 == 0)
+    numberOfEnemies7--;
+    if (numberOfEnemies7 == 0)
     {
         [AudioUtils stopEverything];
         
         //log
-        timeInterval6 = fabs([start6 timeIntervalSinceNow]);
+        timeInterval7 = fabs([start7 timeIntervalSinceNow]);
         [self writeToLog5];
         
         //salvar tries
-        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries6] forKey:@"triesLevel6"];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries7] forKey:@"triesLevel7"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         //acabei nivel
-        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"endedLevel6"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"endedLevel7"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         //desbloquei proximo
-        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel7"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel8"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        CCLOG(@"tries %d", numberTries6);
+        CCLOG(@"tries %d", numberTries7);
         
         //[self nextLevel];
         
@@ -680,19 +680,19 @@ AudioUtils *audioUtils;
         
         [[CCDirector sharedDirector] pause];
         
-        if(numberTries6 == 0)
+        if(numberTries7 == 0)
         {
             star1.opacity = 1.0f;
             star2.opacity = 1.0f;
             star3.opacity = 1.0f;
         }
-        else if(numberTries6 >= 1 && numberTries6 <=4)
+        else if(numberTries7 >= 1 && numberTries7 <=4)
         {
             star1.opacity = 1.0f;
             star2.opacity = 1.0f;
             star3.opacity = 0.0f;
         }
-        else if(numberTries6 >= 5)
+        else if(numberTries7 >= 5)
         {
             star1.opacity = 1.0f;
             star2.opacity = 0.0f;
@@ -721,54 +721,54 @@ AudioUtils *audioUtils;
     NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
     NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     
-    NSString* deathNumberString = @"\n\nNumber of deaths in Level 6 = ";
+    NSString* deathNumberString = @"\n\nNumber of deaths in Level 7 = ";
     
-    deathNumberString = [deathNumberString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfDeaths6]];
+    deathNumberString = [deathNumberString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfDeaths7]];
     [LogUtils writeAtEndOfFile:deathNumberString withFilePath:finalFilePath];
     
-    NSString* numberOfJumpsString = @"\nNumber of jumps in Level 6 = ";
+    NSString* numberOfJumpsString = @"\nNumber of jumps in Level 7 = ";
     
-    numberOfJumpsString = [numberOfJumpsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfJumps6]];
+    numberOfJumpsString = [numberOfJumpsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfJumps7]];
     [LogUtils writeAtEndOfFile:numberOfJumpsString withFilePath:finalFilePath];
     
-    NSString* numberOfTouchesString = @"\nNumber of touches in Level 6 = ";
+    NSString* numberOfTouchesString = @"\nNumber of touches in Level 7 = ";
     
-    numberOfTouchesString = [numberOfTouchesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfTouches6]];
+    numberOfTouchesString = [numberOfTouchesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfTouches7]];
     [LogUtils writeAtEndOfFile:numberOfTouchesString withFilePath:finalFilePath];
     
-    NSString* numberOfRetriesString = @"\nNumber of retries in Level 6 = ";
+    NSString* numberOfRetriesString = @"\nNumber of retries in Level 7 = ";
     
-    numberOfRetriesString = [numberOfRetriesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfRetriesPerLevel6]];
+    numberOfRetriesString = [numberOfRetriesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfRetriesPerLevel7]];
     [LogUtils writeAtEndOfFile:numberOfRetriesString withFilePath:finalFilePath];
     
-    NSString* numberOfGrapplingString = @"\nNumber of Grappling Hook used in Level 6 = ";
+    NSString* numberOfGrapplingString = @"\nNumber of Grappling Hook used in Level 7 = ";
     
-    numberOfGrapplingString = [numberOfGrapplingString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfGrapplingHook6]];
+    numberOfGrapplingString = [numberOfGrapplingString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfGrapplingHook7]];
     [LogUtils writeAtEndOfFile:numberOfGrapplingString withFilePath:finalFilePath];
     
-    NSString* numberOfWeaponsString = @"\nNumber of Knifes used in Level 6 = ";
+    NSString* numberOfWeaponsString = @"\nNumber of Knifes used in Level 7 = ";
     
-    numberOfWeaponsString = [numberOfWeaponsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired6]];
+    numberOfWeaponsString = [numberOfWeaponsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired7]];
     [LogUtils writeAtEndOfFile:numberOfWeaponsString withFilePath:finalFilePath];
     
     NSString* timeString = @"\nTime to complete Level 6 in seconds = ";
     
-    timeString = [timeString stringByAppendingString:[NSString stringWithFormat:@"%f", timeInterval6]];
+    timeString = [timeString stringByAppendingString:[NSString stringWithFormat:@"%f", timeInterval7]];
     [LogUtils writeAtEndOfFile:timeString withFilePath:finalFilePath];
     
     NSString* sucessKnifesString = @"\nSucess in using knife to kill enemy ";
     
-    sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfSucessKnifes6]];
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfSucessKnifes7]];
     sucessKnifesString = [sucessKnifesString stringByAppendingString:@" out of "];
     
-    sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired6]];
+    sucessKnifesString = [sucessKnifesString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired7]];
     
     NSString* sucessGrapplingsString = @"\nSucess in using grappling to kill enemy ";
     
-    sucessGrapplingsString = [sucessGrapplingsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfSucessGrappling6]];
+    sucessGrapplingsString = [sucessGrapplingsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfSucessGrappling7]];
     sucessGrapplingsString = [sucessGrapplingsString stringByAppendingString:@" out of "];
     
-    sucessGrapplingsString = [sucessGrapplingsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfGrapplingHook6]];
+    sucessGrapplingsString = [sucessGrapplingsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfGrapplingHook7]];
     
     [LogUtils writeAtEndOfFile:sucessGrapplingsString withFilePath:finalFilePath];
 }
@@ -783,11 +783,11 @@ AudioUtils *audioUtils;
 //----------------------------------------------------------------------------------------------------
 -(void)setupSlowMotion
 {
-    if(enableSlowMotion6)
+    if(enableSlowMotion7)
     {
-        [[[CCDirector sharedDirector] scheduler] setTimeScale:slowVelocity6];
-        ninjaCircle.opacity = ninjaCircleOpacity6;
-        overlayLayer.opacity = overlayLayerOpacity6;
+        [[[CCDirector sharedDirector] scheduler] setTimeScale:slowVelocity7];
+        ninjaCircle.opacity = ninjaCircleOpacity7;
+        overlayLayer.opacity = overlayLayerOpacity7;
     } else {
         [[[CCDirector sharedDirector] scheduler] setTimeScale:1.0f];
         ninjaCircle.opacity = 0.0f;
@@ -823,7 +823,7 @@ AudioUtils *audioUtils;
         
         i++;
         
-        enableSlowMotion6 = true;
+        enableSlowMotion7 = true;
     }
 }
 
@@ -834,7 +834,7 @@ AudioUtils *audioUtils;
     ninjaCircle.scaleY = 1.0f;
     
     //parar slow motion
-    enableSlowMotion6 = false;
+    enableSlowMotion7 = false;
     
     [self unschedule:_cmd];
 }

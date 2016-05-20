@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>255</integer>
+	<integer>259</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -2167,6 +2167,132 @@
 									</dict>
 								</array>
 							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>255</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>Ground</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>1167.34033203125</real>
+											<real>7.5</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1.5</real>
+											<real>1</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>Platform/Ground.ccb</string>
+									</dict>
+								</array>
+							</dict>
+							<dict>
+								<key>UUID</key>
+								<integer>257</integer>
+								<key>baseClass</key>
+								<string>CCBFile</string>
+								<key>children</key>
+								<array/>
+								<key>customClass</key>
+								<string></string>
+								<key>displayName</key>
+								<string>Ground</string>
+								<key>memberVarAssignmentName</key>
+								<string></string>
+								<key>memberVarAssignmentType</key>
+								<integer>1</integer>
+								<key>properties</key>
+								<array>
+									<dict>
+										<key>name</key>
+										<string>name</string>
+										<key>type</key>
+										<string>StringSimple</string>
+										<key>value</key>
+										<string></string>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>position</string>
+										<key>type</key>
+										<string>Position</string>
+										<key>value</key>
+										<array>
+											<real>1557.34033203125</real>
+											<real>7.5</real>
+											<integer>0</integer>
+											<integer>0</integer>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>scale</string>
+										<key>type</key>
+										<string>ScaleLock</string>
+										<key>value</key>
+										<array>
+											<real>1.5</real>
+											<real>1</real>
+											<false/>
+											<integer>0</integer>
+										</array>
+									</dict>
+									<dict>
+										<key>name</key>
+										<string>ccbFile</string>
+										<key>type</key>
+										<string>CCBFile</string>
+										<key>value</key>
+										<string>Platform/Ground.ccb</string>
+									</dict>
+								</array>
+								<key>selected</key>
+								<true/>
+							</dict>
 						</array>
 						<key>customClass</key>
 						<string></string>
@@ -2721,8 +2847,6 @@
 								<string>CityAssets/lamp.ccb</string>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -5322,8 +5446,6 @@
 				<string></string>
 				<key>displayName</key>
 				<string>youLostMomentum</string>
-				<key>hidden</key>
-				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>textMomentum</string>
 				<key>memberVarAssignmentType</key>
@@ -5531,8 +5653,6 @@
 				<string></string>
 				<key>displayName</key>
 				<string>RetryButton</string>
-				<key>hidden</key>
-				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>retryButton</string>
 				<key>memberVarAssignmentType</key>
@@ -5554,7 +5674,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.18238341808319092</real>
+							<real>0.093993350863456726</real>
 							<real>0.30074024200439453</real>
 							<integer>0</integer>
 							<integer>2</integer>
@@ -5859,8 +5979,6 @@
 				<string></string>
 				<key>displayName</key>
 				<string>StartAgainButton</string>
-				<key>hidden</key>
-				<true/>
 				<key>memberVarAssignmentName</key>
 				<string>startAgainButton</string>
 				<key>memberVarAssignmentType</key>
@@ -5882,7 +6000,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>332.22918701171875</real>
+							<real>338.35687255859375</real>
 							<real>129.31829833984375</real>
 							<integer>0</integer>
 							<integer>0</integer>

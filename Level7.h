@@ -1,5 +1,5 @@
 //
-//  Level6.h
+//  Level7.h
 //  NinjaMomentum
 //
 //  Created by andre on 20/05/16.
@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface Level6 : CCNode <CCPhysicsCollisionDelegate>
+@interface Level7 : CCNode <CCPhysicsCollisionDelegate>
 {
     
 }

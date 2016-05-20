@@ -11,7 +11,7 @@
 #import "LevelItem.h"
 
 //TENTATIVAS
-int numberLevels = 5;
+int numberLevels = 8;
 NSArray *levels;
 
 //templates nomes
@@ -27,6 +27,9 @@ NSString * templateUNBlocked = @"unblockedLevel";
     LevelItem *level3;
     LevelItem *level4;
     LevelItem *level5;
+    LevelItem *level6;
+    LevelItem *level7;
+    LevelItem *level8;
 }
 
 //inicializar tentativas ao maximo para nao ter estrelas
@@ -34,7 +37,7 @@ NSString * templateUNBlocked = @"unblockedLevel";
 {
     int index = 1;
     
-    levels = [NSArray arrayWithObjects:level1, level2, level3, level4, level5, nil];
+    levels = [NSArray arrayWithObjects:level1, level2, level3, level4, level5, level6, level7, level8, nil];
     
     //METER NIVEL1 DESBLOQUEADO
     NSString *unbloqued1 = @"YES";

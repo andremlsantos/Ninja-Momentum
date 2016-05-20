@@ -104,11 +104,12 @@ int touchedPlatform;
     }
     
     [myDrawNode clear];
+    /*
     if (drawGrapplingHookL){
         if(touchedPlatform == 1){
             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
         }
-       /* else if(touchedPlatform == 2){
+        else if(touchedPlatform == 2){
             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
         }
         else if(touchedPlatform == 3){
@@ -116,6 +117,12 @@ int touchedPlatform;
         }*/
         
         
+    //}
+    
+    if([ninja action] == GRAPPLING)
+    {
+        [self disableGrapplingButton];
+        [self disableKnifeButtonWithTimer:true];
     }
 }
 
@@ -354,6 +361,19 @@ int touchedPlatform;
     if (isTimer) {
         //setup timer
         [self schedule:@selector(enableKnifeButton) interval:1.0];
+    }
+}
+
+- (void) disableKnifeButtonWithTimer:(BOOL)isTimer
+{
+    //disale button
+    knifeButton.background.opacity = 0.2;
+    knifeButton.label.opacity = 0.2;
+    knifeButton.userInteractionEnabled = NO;
+    
+    if (isTimer) {
+        //setup timer
+        [self schedule:@selector(enableKnifeButton) interval:0.01];
     }
 }
 

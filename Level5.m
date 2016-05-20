@@ -1,4 +1,4 @@
-    //
+//
 //  Level5.m
 //  NinjaMomentum
 //
@@ -134,8 +134,8 @@ AudioUtils *audioUtils;
     logUtils5 = [LogUtils sharedManager];
     
     //corda
- //   myDrawNode = [CCDrawNode node];
- //   [self addChild: myDrawNode];
+    //   myDrawNode = [CCDrawNode node];
+    //   [self addChild: myDrawNode];
 }
 
 - (void) update:(CCTime)delta
@@ -152,17 +152,17 @@ AudioUtils *audioUtils;
     [self outsideRoom];
     
     /*
-    if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling4 ){
-        [self enableGrapplingHookButton];
-    }
-    else{
-        [self disableGrapplingButton];
-        
-    }
-    
-    [myDrawNode clear];
-    
-    
+     if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling4 ){
+     [self enableGrapplingHookButton];
+     }
+     else{
+     [self disableGrapplingButton];
+     
+     }
+     
+     [myDrawNode clear];
+     
+     
      if (drawGrapplingHook2){
      if(touchedPlatform == 1){
      [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
@@ -206,57 +206,57 @@ AudioUtils *audioUtils;
         }
     }
     /*
-    //vou ver se cliquei dentro GH
-    else if(CGRectContainsPoint([_platformGH1 boundingBox],touchLocation))
-    {
-        if([ninja action] == GRAPPLING)
-        {
-            
-            joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
-                                                              bodyB:_platformGH1.physicsBody
-                                                            anchorA:ninja.anchorPointInPoints
-                                                            anchorB:_platformGH1.anchorPointInPoints];
+     //vou ver se cliquei dentro GH
+     else if(CGRectContainsPoint([_platformGH1 boundingBox],touchLocation))
+     {
+     if([ninja action] == GRAPPLING)
+     {
+     
+     joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
+     bodyB:_platformGH1.physicsBody
+     anchorA:ninja.anchorPointInPoints
+     anchorB:_platformGH1.anchorPointInPoints];
      //log
      numberOfGrapplingHook5++;
-
-            drawGrapplingHook5 = true;
-            [self unschedule:@selector(reduceCircle)];
-            [self resetCircle];
-            touchedPlatform5 = 1;
-        }
-    }
-    
-    else if(CGRectContainsPoint([_platformGH2 boundingBox],touchLocation))
-    {
-        if([ninja action] == GRAPPLING)
-        {
-            
-            joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
-                                                              bodyB:_platformGH2.physicsBody
-                                                            anchorA:ninja.anchorPointInPoints
-                                                            anchorB:_platformGH2.anchorPointInPoints];
+     
+     drawGrapplingHook5 = true;
+     [self unschedule:@selector(reduceCircle)];
+     [self resetCircle];
+     touchedPlatform5 = 1;
+     }
+     }
+     
+     else if(CGRectContainsPoint([_platformGH2 boundingBox],touchLocation))
+     {
+     if([ninja action] == GRAPPLING)
+     {
+     
+     joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
+     bodyB:_platformGH2.physicsBody
+     anchorA:ninja.anchorPointInPoints
+     anchorB:_platformGH2.anchorPointInPoints];
      //log
      numberOfGrapplingHook5++;
-
-            drawGrapplingHook4 = true;
-            [self unschedule:@selector(reduceCircle)];
-            [self resetCircle];
-            touchedPlatform4 = 2;
-        }
-    }
-    else if([ninja action] == GRAPPLING)
-    {
+     
+     drawGrapplingHook4 = true;
+     [self unschedule:@selector(reduceCircle)];
+     [self resetCircle];
+     touchedPlatform4 = 2;
+     }
+     }
+     else if([ninja action] == GRAPPLING)
+     {
      //log
      jumpingFromGrappling4 = true;
-        drawGrapplingHook4 = false;
-        [joint invalidate];
-        joint = nil;
-        [self enableGrapplingHookButton];
-        [ninja setAction:IDDLE];
-        //[self unschedule:@selector(reduceCircle)];
-        //[self resetCircle];
-    }
-    */
+     drawGrapplingHook4 = false;
+     [joint invalidate];
+     joint = nil;
+     [self enableGrapplingHookButton];
+     [ninja setAction:IDDLE];
+     //[self unschedule:@selector(reduceCircle)];
+     //[self resetCircle];
+     }
+     */
     else
     {
         [AudioUtils stopEffects];
@@ -288,7 +288,7 @@ AudioUtils *audioUtils;
     if([ninja action] == KNIFE){
         //log
         [AudioUtils playThrowKnife];
-
+        
         numberOfWeaponsFired5++;
         [self disableKnifeButton:YES];
     }
@@ -314,7 +314,7 @@ AudioUtils *audioUtils;
     //apagar mira
     [ninja enableAim:false];
     [AudioUtils stopEffects];
-
+    
     
     //desactivar salto
     if(([ninja action] == JUMP) && [ninja canJump])
@@ -368,7 +368,7 @@ AudioUtils *audioUtils;
     if(!enableSlowMotion5){
         [AudioUtils stopEffects];
         [AudioUtils playSlowMotion];
-
+        
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     }
 }
@@ -440,7 +440,7 @@ AudioUtils *audioUtils;
 {
     [AudioUtils stopEffects];
     [AudioUtils playSlowMotion];
-
+    
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     [ninja setAction:KNIFE];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
@@ -510,7 +510,7 @@ AudioUtils *audioUtils;
 }
 -(void) nextLevel
 {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level6"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level7"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
     //reset variaveis
@@ -547,7 +547,7 @@ AudioUtils *audioUtils;
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair knife:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
     [AudioUtils playKnifeStab];
-
+    
     //matar inimigo
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
@@ -557,19 +557,55 @@ AudioUtils *audioUtils;
     numberOfSucessKnifes5++;
     
     numberOfEnemies5--;
-    if (numberOfEnemies5 == 0){
+    if (numberOfEnemies5 == 0)
+    {
         [AudioUtils stopEverything];
-
-        //[self nextLevel];
+        
         //log
         timeInterval5 = fabs([start5 timeIntervalSinceNow]);
         [self writeToLog5];
+        
+        //salvar tries
+        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries5] forKey:@"triesLevel5"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        //acabei nivel
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"endedLevel5"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        //desbloquei proximo
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel6"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        CCLOG(@"tries %d", numberTries5);
+        
+        //[self nextLevel];
+        
         layerEnd.opacity = 1.0f;
         textEnd.opacity = 1.0f;
         resetButton.visible = true;
         nextButton.visible = true;
         
         [[CCDirector sharedDirector] pause];
+        
+        if(numberTries5 == 0)
+        {
+            star1.opacity = 1.0f;
+            star2.opacity = 1.0f;
+            star3.opacity = 1.0f;
+        }
+        else if(numberTries5 >= 1 && numberTries5 <=4)
+        {
+            star1.opacity = 1.0f;
+            star2.opacity = 1.0f;
+            star3.opacity = 0.0f;
+        }
+        else if(numberTries5 >= 5)
+        {
+            star1.opacity = 1.0f;
+            star2.opacity = 0.0f;
+            star3.opacity = 0.0f;
+        }
     }
 }
 
@@ -596,83 +632,83 @@ AudioUtils *audioUtils;
     [AudioUtils stopEffects];
     [AudioUtils playKnifeStab];
     
-
+    
+    //log
+    numberOfJumps5 ++;
+    
+    retryLocation5 = nodeB.positionInPoints;
+    CGPoint mult = ccp(1,1.5);
+    retryLocation5 = ccpCompMult(retryLocation5, mult);
+    asRetryLocation5 = true;
+    
+    [self killNode:nodeB];// matar inimigo
+    
+    //ninja pode saltar
+    [ninja setCanJump:true];
+    [ninja verticalJump];
+    
+    numberOfEnemies5--;
+    if (numberOfEnemies5 == 0)
+    {
+        [AudioUtils stopEverything];
+        
         //log
-        numberOfJumps5 ++;
+        timeInterval5 = fabs([start5 timeIntervalSinceNow]);
+        [self writeToLog5];
         
-        retryLocation5 = nodeB.positionInPoints;
-        CGPoint mult = ccp(1,1.5);
-        retryLocation5 = ccpCompMult(retryLocation5, mult);
-        asRetryLocation5 = true;
+        //salvar tries
+        [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries5] forKey:@"triesLevel5"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
-        [self killNode:nodeB];// matar inimigo
+        //acabei nivel
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"endedLevel5"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
-        //ninja pode saltar
-        [ninja setCanJump:true];
-        [ninja verticalJump];
+        //desbloquei proximo
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel6"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
-        numberOfEnemies5--;
-        if (numberOfEnemies5 == 0)
+        CCLOG(@"tries %d", numberTries5);
+        
+        //[self nextLevel];
+        
+        layerEnd.opacity = 1.0f;
+        textEnd.opacity = 1.0f;
+        resetButton.visible = true;
+        nextButton.visible = true;
+        
+        [[CCDirector sharedDirector] pause];
+        
+        if(numberTries5 == 0)
         {
-            [AudioUtils stopEverything];
-
-            //log
-            timeInterval5 = fabs([start5 timeIntervalSinceNow]);
-            [self writeToLog5];
-
-            //salvar tries
-            [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries5] forKey:@"triesLevel5"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            //acabei nivel
-            [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"endedLevel5"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            //desbloquei proximo
-            [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel6"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            CCLOG(@"tries %d", numberTries5);
-            
-            //[self nextLevel];
-            
-            layerEnd.opacity = 1.0f;
-            textEnd.opacity = 1.0f;
-            resetButton.visible = true;
-            nextButton.visible = true;
-            
-            [[CCDirector sharedDirector] pause];
-            
-            if(numberTries5 == 0)
-            {
-                star1.opacity = 1.0f;
-                star2.opacity = 1.0f;
-                star3.opacity = 1.0f;
-            }
-            else if(numberTries5 >= 1 && numberTries5 <=4)
-            {
-                star1.opacity = 1.0f;
-                star2.opacity = 1.0f;
-                star3.opacity = 0.0f;
-            }
-            else if(numberTries5 >= 5)
-            {
-                star1.opacity = 1.0f;
-                star2.opacity = 0.0f;
-                star3.opacity = 0.0f;
-            }
+            star1.opacity = 1.0f;
+            star2.opacity = 1.0f;
+            star3.opacity = 1.0f;
         }
+        else if(numberTries5 >= 1 && numberTries5 <=4)
+        {
+            star1.opacity = 1.0f;
+            star2.opacity = 1.0f;
+            star3.opacity = 0.0f;
+        }
+        else if(numberTries5 >= 5)
+        {
+            star1.opacity = 1.0f;
+            star2.opacity = 0.0f;
+            star3.opacity = 0.0f;
+        }
+    }
     
     [NSTimer scheduledTimerWithTimeInterval:0.2
                                      target:self
                                    selector:@selector(playSlowMotion)
                                    userInfo:nil
                                     repeats:NO];
-        
-        // CCLOG(@"açao ninja %d", [ninja action]);
-        [ninja setAction:-1];
-        
-        [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+    
+    // CCLOG(@"açao ninja %d", [ninja action]);
+    [ninja setAction:-1];
+    
+    [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
 - (void) playSlowMotion{
