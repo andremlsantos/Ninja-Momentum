@@ -13,7 +13,6 @@
 #import "LogUtils.h"
 #import "AudioUtils.h"
 
-
 //auxiliares slowmotion
 bool enableSlowMotion2 = false;
 float slowVelocity2 = 0.3f;

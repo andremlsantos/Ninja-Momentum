@@ -21,6 +21,8 @@
 + (void) stopEffects;
 + (void) playLevel1Bg;
 + (void) playLevel2Bg;
++ (void) playLevel3Bg;
+
 
 
 @end

@@ -11,6 +11,7 @@
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 #import "LogUtils.h"
+#import "AudioUtils.h"
 
 //auxiliares slowmotion
 bool enableSlowMotion5 = false;
@@ -50,6 +51,9 @@ int numberOfSucessGrappling5 = 0;
 NSDate *start5;
 NSTimeInterval timeInterval5;
 LogUtils *logUtils5;
+
+AudioUtils *audioUtils;
+
 
 @implementation Level5
 {
@@ -94,6 +98,8 @@ LogUtils *logUtils5;
 // default config
 - (void)didLoadFromCCB
 {
+    audioUtils = [AudioUtils sharedManager];
+    
     // enable touch
     self.userInteractionEnabled = TRUE;
     //enable delegate colision
@@ -186,17 +192,17 @@ LogUtils *logUtils5;
         if (([ninja action] == IDDLE && [ninja canJump]) || ([ninja action] == -1 && [ninja canJump])) {
             
             [ninja setAction:JUMP];
-            
-            
-            
         }
         
         //activar mira
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
             [ninja enableAim:true];
             
-            if(![ninja initialJump])
+            if(![ninja initialJump]){
+                [AudioUtils stopEffects];
+                [AudioUtils playSlowMotion];
                 [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+            }
         }
     }
     /*
@@ -253,6 +259,7 @@ LogUtils *logUtils5;
     */
     else
     {
+        [AudioUtils stopEffects];
         [ninja setAction:IDDLE];
     }
 }
@@ -280,6 +287,8 @@ LogUtils *logUtils5;
     //DESACTIVAR BUTOES / TEMPO
     if([ninja action] == KNIFE){
         //log
+        [AudioUtils playThrowKnife];
+
         numberOfWeaponsFired5++;
         [self disableKnifeButton:YES];
     }
@@ -304,6 +313,8 @@ LogUtils *logUtils5;
     
     //apagar mira
     [ninja enableAim:false];
+    [AudioUtils stopEffects];
+
     
     //desactivar salto
     if(([ninja action] == JUMP) && [ninja canJump])
@@ -354,8 +365,12 @@ LogUtils *logUtils5;
         //[self resetCircle];
     }
     
-    if(!enableSlowMotion5)
+    if(!enableSlowMotion5){
+        [AudioUtils stopEffects];
+        [AudioUtils playSlowMotion];
+
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+    }
 }
 
 - (void) enableGrapplingHookButton
@@ -423,6 +438,9 @@ LogUtils *logUtils5;
  */
 -(void) selectKnife
 {
+    [AudioUtils stopEffects];
+    [AudioUtils playSlowMotion];
+
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     [ninja setAction:KNIFE];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
@@ -528,6 +546,8 @@ LogUtils *logUtils5;
 //----------------------------------------------------------------------------------------------------
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair knife:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
+    [AudioUtils playKnifeStab];
+
     //matar inimigo
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
@@ -538,6 +558,8 @@ LogUtils *logUtils5;
     
     numberOfEnemies5--;
     if (numberOfEnemies5 == 0){
+        [AudioUtils stopEverything];
+
         //[self nextLevel];
         //log
         timeInterval5 = fabs([start5 timeIntervalSinceNow]);
@@ -571,6 +593,9 @@ LogUtils *logUtils5;
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
+    [AudioUtils stopEffects];
+    [AudioUtils playKnifeStab];
+    
 
         //log
         numberOfJumps5 ++;
@@ -589,6 +614,8 @@ LogUtils *logUtils5;
         numberOfEnemies5--;
         if (numberOfEnemies5 == 0)
         {
+            [AudioUtils stopEverything];
+
             //log
             timeInterval5 = fabs([start5 timeIntervalSinceNow]);
             [self writeToLog5];
@@ -635,11 +662,21 @@ LogUtils *logUtils5;
                 star3.opacity = 0.0f;
             }
         }
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.2
+                                     target:self
+                                   selector:@selector(playSlowMotion)
+                                   userInfo:nil
+                                    repeats:NO];
         
         // CCLOG(@"açao ninja %d", [ninja action]);
         [ninja setAction:-1];
         
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+}
+
+- (void) playSlowMotion{
+    [AudioUtils playSlowMotion];
 }
 
 - (void) writeToLog5{

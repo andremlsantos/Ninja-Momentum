@@ -11,6 +11,8 @@
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
 #import "LogUtils.h"
+#import "AudioUtils.h"
+
 
 //auxiliares slowmotion
 bool enableSlowMotion4 = false;
@@ -50,6 +52,8 @@ int numberOfSucessGrappling4 = 0;
 NSDate *start4;
 NSTimeInterval timeInterval4;
 LogUtils *logUtils4;
+
+AudioUtils *audioUtils;
 
 @implementation Level4
 {
@@ -97,6 +101,9 @@ LogUtils *logUtils4;
 // default config
 - (void)didLoadFromCCB
 {
+    
+     audioUtils = [AudioUtils sharedManager];
+    
     // enable touch
     self.userInteractionEnabled = TRUE;
     //enable delegate colision
@@ -203,8 +210,12 @@ LogUtils *logUtils4;
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
             [ninja enableAim:true];
             
-            if(![ninja initialJump])
+            if(![ninja initialJump]){
+                [AudioUtils stopEffects];
+                [AudioUtils playSlowMotion];
+
                 [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+            }
         }
     }
     
@@ -295,6 +306,7 @@ LogUtils *logUtils4;
     else
     {
         [ninja setAction:IDDLE];
+        [AudioUtils stopEffects];
     }
 }
 
@@ -321,6 +333,8 @@ LogUtils *logUtils4;
     //DESACTIVAR BUTOES / TEMPO
     if([ninja action] == KNIFE){
         //log
+        [AudioUtils playThrowKnife];
+
         numberOfWeaponsFired4++;
         [self disableKnifeButton:YES];
     }
@@ -344,7 +358,8 @@ LogUtils *logUtils4;
     
     //apagar mira
     [ninja enableAim:false];
-    
+    [AudioUtils stopEffects];
+
     //desactivar salto
     if(([ninja action] == JUMP) && [ninja canJump])
     {
@@ -394,8 +409,12 @@ LogUtils *logUtils4;
         //[self resetCircle];
     }
     
-    if(!enableSlowMotion4)
+    if(!enableSlowMotion4){
+        [AudioUtils stopEffects];
+        [AudioUtils playSlowMotion];
+
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+    }
 }
 
 - (void) enableGrapplingHookButton
@@ -465,6 +484,10 @@ LogUtils *logUtils4;
 {
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     [ninja setAction:KNIFE];
+    [AudioUtils stopEffects];
+    [AudioUtils playSlowMotion];
+    
+
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -568,6 +591,8 @@ LogUtils *logUtils4;
 //----------------------------------------------------------------------------------------------------
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair knife:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
+    [AudioUtils playKnifeStab];
+
     //matar inimigo
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
@@ -577,6 +602,8 @@ LogUtils *logUtils4;
 
     numberOfEnemies4--;
     if (numberOfEnemies4 == 0){
+        [AudioUtils stopEverything];
+
         //log
         timeInterval4 = fabs([start4 timeIntervalSinceNow]);
         [self writeToLog4];
@@ -610,6 +637,10 @@ LogUtils *logUtils4;
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
+    
+    [AudioUtils stopEffects];
+    [AudioUtils playKnifeStab];
+
         //log
         numberOfJumps4 ++;
         
@@ -627,6 +658,8 @@ LogUtils *logUtils4;
         numberOfEnemies4--;
         if (numberOfEnemies4 == 0)
         {
+            [AudioUtils stopEverything];
+
             //log
             timeInterval4 = fabs([start4 timeIntervalSinceNow]);
             [self writeToLog4];
@@ -677,9 +710,20 @@ LogUtils *logUtils4;
         
         // CCLOG(@"açao ninja %d", [ninja action]);
         [ninja setAction:-1];
-        
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.2
+                                     target:self
+                                   selector:@selector(playSlowMotion)
+                                   userInfo:nil
+                                    repeats:NO];
+
+    
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     
+}
+
+- (void) playSlowMotion{
+    [AudioUtils playSlowMotion];
 }
 
 //matar inimigo

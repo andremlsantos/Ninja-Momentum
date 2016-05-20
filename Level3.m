@@ -10,9 +10,8 @@
 #import "Ninja.h"
 #import "CCDirector_Private.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
-
-
 #import "LogUtils.h"
+#import "AudioUtils.h"
 
 //auxiliares slowmotion
 bool enableSlowMotion3 = false;
@@ -53,7 +52,7 @@ NSDate *start3;
 NSTimeInterval timeInterval3;
 LogUtils *logUtils3;
 
-OALSimpleAudio *audio;
+AudioUtils *audioUtils;
 
 @implementation Level3
 {
@@ -99,9 +98,9 @@ OALSimpleAudio *audio;
 - (void)didLoadFromCCB
 {
     
-    audio = [OALSimpleAudio sharedInstance];
+    audioUtils = [AudioUtils sharedManager];
     
-    [audio playBg:@"Level3.mp3" volume:0.1f pan:0.0f loop:true];
+    [AudioUtils playLevel3Bg];
 
     // enable touch
     self.userInteractionEnabled = TRUE;
@@ -193,19 +192,18 @@ OALSimpleAudio *audio;
         if (([ninja action] == IDDLE && [ninja canJump]) || ([ninja action] == -1 && [ninja canJump])) {
             
             [ninja setAction:JUMP];
-            
-            
-            
+
         }
         
         //activar mira
         if(([ninja action] != IDDLE && [ninja canJump]) || ([ninja canShoot])){
             [ninja enableAim:true];
             
-            if(![ninja initialJump])
-                [audio stopAllEffects];
-                [audio playEffect:@"slow_motion.mp3"];
+            if(![ninja initialJump]){
+                [AudioUtils stopEffects];
+                [AudioUtils playSlowMotion];
                 [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+            }
         }
     }
     
@@ -265,7 +263,7 @@ OALSimpleAudio *audio;
     else
     {
         [ninja setAction:IDDLE];
-        [audio stopAllEffects];
+        [AudioUtils stopEffects];
 
     }
 }
@@ -295,6 +293,7 @@ OALSimpleAudio *audio;
         [self disableKnifeButton:YES];
         //log
         numberOfWeaponsFired3++;
+        [AudioUtils playThrowKnife];
 
     }
     
@@ -318,7 +317,7 @@ OALSimpleAudio *audio;
     
     //apagar mira
     [ninja enableAim:false];
-    [audio stopAllEffects];
+    [AudioUtils stopEffects];
 
     
     //desactivar salto
@@ -371,8 +370,8 @@ OALSimpleAudio *audio;
     }
     
     if(!enableSlowMotion3){
-        [audio stopAllEffects];
-        [audio playEffect:@"slow_motion.mp3"];
+        [AudioUtils stopEffects];
+        [AudioUtils playSlowMotion];
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     }
 }
@@ -447,8 +446,9 @@ OALSimpleAudio *audio;
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     
     [ninja setAction:KNIFE];
-    [audio stopAllEffects];
-    [audio playEffect:@"slow_motion.mp3"];
+    [AudioUtils stopEffects];
+    [AudioUtils playSlowMotion];
+
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -552,6 +552,8 @@ OALSimpleAudio *audio;
 //----------------------------------------------------------------------------------------------------
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair knife:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
+    [AudioUtils playKnifeStab];
+
     //matar inimigo
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
@@ -562,10 +564,9 @@ OALSimpleAudio *audio;
     
     numberOfEnemies3--;
     if (numberOfEnemies3 == 0){
-        [audio stopEverything];
+        [AudioUtils stopEverything];
 
         //[self nextLevel];
-        [audio stopEverything];
         timeInterval3 = fabs([start3 timeIntervalSinceNow]);
         [self writeToLog3];
 
@@ -599,6 +600,9 @@ OALSimpleAudio *audio;
 
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
+    [AudioUtils stopEffects];
+    [AudioUtils playKnifeStab];
+    
         numberOfJumps3 ++;
         if (jumpingFromGrappling){
             numberOfSucessGrappling3++;
@@ -618,7 +622,7 @@ OALSimpleAudio *audio;
         numberOfEnemies3--;
         if (numberOfEnemies3 == 0)
         {
-            [audio stopEverything];
+            [AudioUtils stopEverything];
 
             //log
             timeInterval3 = fabs([start3 timeIntervalSinceNow]);
@@ -670,11 +674,18 @@ OALSimpleAudio *audio;
        // CCLOG(@"açao ninja %d", [ninja action]);
         [ninja setAction:-1];
     
-        [audio stopAllEffects];
-        [audio playEffect:@"slow_motion.mp3"];
+        [NSTimer scheduledTimerWithTimeInterval:0.2
+                                     target:self
+                                   selector:@selector(playSlowMotion)
+                                   userInfo:nil
+                                    repeats:NO];
 
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     
+}
+
+- (void) playSlowMotion{
+    [AudioUtils playSlowMotion];
 }
 
 //matar inimigo
