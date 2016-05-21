@@ -22,8 +22,11 @@
 + (void) playLevel1Bg;
 + (void) playLevel2Bg;
 + (void) playLevel3Bg;
-
-
++ (void) playLevel4Bg;
++ (void) playLevel5Bg;
++ (void) playLevel6Bg;
++ (void) playLevel7Bg;
++ (void) playLevel8Bg;
 
 @end
 

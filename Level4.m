@@ -102,6 +102,13 @@ AudioUtils *audioUtils;
 
     CCPhysicsJoint *joint;
     CCDrawNode *myDrawNode;
+    
+    //pause
+    CCNodeColor * pauseLayer;
+    CCButton * pause;
+    CCButton * pause_resume;
+    CCButton * pause_menu;
+    CCButton * pause_reset;
 }
 
 // default config
@@ -109,6 +116,8 @@ AudioUtils *audioUtils;
 {
     
      audioUtils = [AudioUtils sharedManager];
+    
+    [AudioUtils playLevel4Bg];
     
     // enable touch
     self.userInteractionEnabled = TRUE;
@@ -145,6 +154,12 @@ AudioUtils *audioUtils;
     
     start4 = [NSDate date];
     logUtils4 = [LogUtils sharedManager];
+    
+    //pause
+    pause_resume. visible = false;
+    pause_menu. visible = false;
+    pause_reset. visible = false;
+    pauseLayer.opacity = 0.0f;
 }
 
 - (void) update:(CCTime)delta
@@ -466,6 +481,10 @@ AudioUtils *audioUtils;
     numberOfRetriesPerLevel4 ++;
     logUtils4.totalRetries ++;
 
+    pause.visible = true;
+    grapplingHookButton.visible = true;
+   // knifeButton.visible = true;
+    
     if(asRetryLocation4)
     {
         ninja.positionInPoints = retryLocation4;
@@ -638,6 +657,10 @@ AudioUtils *audioUtils;
 
     numberOfEnemies4--;
     if (numberOfEnemies4 == 0){
+        pause.visible = false;
+        grapplingHookButton.visible = false;
+        knifeButton.visible = false;
+        
         [AudioUtils stopEverything];
 
         //log
@@ -668,6 +691,10 @@ AudioUtils *audioUtils;
     textMomentum.opacity = 1.0f;
     overlayLayer2.opacity = 0.9f;
     
+    pause.visible = false;
+    grapplingHookButton.visible = false;
+    knifeButton.visible = false;
+    
     [[CCDirector sharedDirector] pause];
 }
 
@@ -675,7 +702,7 @@ AudioUtils *audioUtils;
 {
     
     [AudioUtils stopEffects];
-    [AudioUtils playKnifeStab];
+    //[AudioUtils playKnifeStab];
 
         //log
         numberOfJumps4 ++;
@@ -694,6 +721,10 @@ AudioUtils *audioUtils;
         numberOfEnemies4--;
         if (numberOfEnemies4 == 0)
         {
+            pause.visible = false;
+            grapplingHookButton.visible = false;
+            knifeButton.visible = false;
+            
             [AudioUtils stopEverything];
 
             //log
@@ -902,5 +933,53 @@ AudioUtils *audioUtils;
         [[CCDirector sharedDirector] pause];
     }
 }
+
+//----------------------------------------------------------------------------------------------------
+//---------------------------------------------PAUSE--------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+-(void)pause_resume
+{
+    [[CCDirector sharedDirector] resume];
+    overlayLayer.opacity = 0;
+    pauseLayer.opacity = 0;
+    pause.visible = true;
+    
+    pause_resume. visible = false;
+    pause_menu. visible = false;
+    pause_reset. visible = false;
+    
+    [self enableKnifeButton];
+    [self enableGrapplingHookButton];
+}
+
+-(void)pause_reset
+{
+    [self selectReset];
+}
+
+-(void)pause_menu
+{
+    [self pause_resume];
+    [self selectReset];
+    
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+}
+
+- (void) pause
+{
+    [[CCDirector sharedDirector] pause];
+    overlayLayer.opacity = 0.5f;
+    pauseLayer.opacity = 1.0f;
+    pause.visible = false;
+    
+    pause_resume. visible = true;
+    pause_menu. visible = true;
+    pause_reset. visible = true;
+    
+    [self disableGrapplingButton];
+    [self disableKnifeButton:false];
+}
+
 
 @end

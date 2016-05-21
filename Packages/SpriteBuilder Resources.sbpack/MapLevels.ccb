@@ -677,8 +677,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>123</real>
-							<real>66</real>
+							<real>223.84428405761719</real>
+							<real>55</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -702,8 +702,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.61047214269638062</real>
+							<real>0.71626490354537964</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -726,8 +726,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>40</real>
-							<real>40</real>
+							<real>469</real>
+							<real>57</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -760,7 +760,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Return</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -772,7 +772,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Controls/Return.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -970,8 +970,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

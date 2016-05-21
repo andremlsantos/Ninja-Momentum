@@ -56,6 +56,21 @@ OALSimpleAudio *audio;
 + (void) playLevel3Bg{
     [audio playBg:@"Level3.mp3" volume:0.1f pan:0.0f loop:true];
 }
++ (void) playLevel4Bg{
+    [audio playBg:@"Level4.mp3" volume:0.1f pan:0.0f loop:true];
+}
++ (void) playLevel5Bg{
+    [audio playBg:@"Level5.mp3" volume:0.1f pan:0.0f loop:true];
+}
++ (void) playLevel6Bg{
+    [audio playBg:@"Level6.mp3" volume:0.1f pan:0.0f loop:true];
+}
++ (void) playLevel7Bg{
+    [audio playBg:@"Level7.mp3" volume:0.1f pan:0.0f loop:true];
+}
++ (void) playLevel8Bg{
+    [audio playBg:@"Level8.mp3" volume:0.1f pan:0.0f loop:true];
+}
 
 
 

@@ -54,6 +54,11 @@
 		65B0880A1CA54DFB005A8586 /* Level1.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B088091CA54DFB005A8586 /* Level1.m */; };
 		65D0D22F1CF0C26200DAA3CF /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D22E1CF0C26200DAA3CF /* Options.m */; };
 		65D0D2341CF0C4E500DAA3CF /* Level8.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D2331CF0C4E500DAA3CF /* Level8.m */; };
+		65D0D2491CF0DD0300DAA3CF /* Level4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65D0D2441CF0DD0300DAA3CF /* Level4.mp3 */; };
+		65D0D24A1CF0DD0300DAA3CF /* Level5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65D0D2451CF0DD0300DAA3CF /* Level5.mp3 */; };
+		65D0D24B1CF0DD0300DAA3CF /* Level6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65D0D2461CF0DD0300DAA3CF /* Level6.mp3 */; };
+		65D0D24C1CF0DD0300DAA3CF /* Level7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65D0D2471CF0DD0300DAA3CF /* Level7.mp3 */; };
+		65D0D24D1CF0DD0300DAA3CF /* Level8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 65D0D2481CF0DD0300DAA3CF /* Level8.mp3 */; };
 		65F6E7D91CBAC12900649A18 /* Ground.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6E7D81CBAC12900649A18 /* Ground.m */; };
 		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
 		7A40360419DDEE84007B6E8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A40360319DDEE84007B6E8F /* main.m */; };
@@ -266,6 +271,11 @@
 		65D0D22E1CF0C26200DAA3CF /* Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Options.m; sourceTree = "<group>"; };
 		65D0D2321CF0C4E500DAA3CF /* Level8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level8.h; sourceTree = "<group>"; };
 		65D0D2331CF0C4E500DAA3CF /* Level8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level8.m; sourceTree = "<group>"; };
+		65D0D2441CF0DD0300DAA3CF /* Level4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level4.mp3; sourceTree = "<group>"; };
+		65D0D2451CF0DD0300DAA3CF /* Level5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level5.mp3; sourceTree = "<group>"; };
+		65D0D2461CF0DD0300DAA3CF /* Level6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level6.mp3; sourceTree = "<group>"; };
+		65D0D2471CF0DD0300DAA3CF /* Level7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level7.mp3; sourceTree = "<group>"; };
+		65D0D2481CF0DD0300DAA3CF /* Level8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Level8.mp3; sourceTree = "<group>"; };
 		65F6E7D71CBAC12900649A18 /* Ground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ground.h; sourceTree = "<group>"; };
 		65F6E7D81CBAC12900649A18 /* Ground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ground.m; sourceTree = "<group>"; };
 		7A4035FF19DDEE84007B6E8F /* NinjaMomentum Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NinjaMomentum Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -423,6 +433,31 @@
 				5B121015197483EE004C1E1D /* ic_launcher.png */,
 			);
 			path = "drawable-xxhdpi";
+			sourceTree = "<group>";
+		};
+		65D0D2431CF0DC1400DAA3CF /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				3F05E5FF1CED5083006B0619 /* dying.mp3 */,
+				3F05E5FD1CED5083006B0619 /* killing1.mp3 */,
+				3F05E5FE1CED5083006B0619 /* killing2.mp3 */,
+				3F05E5F41CED4339006B0619 /* Level1.mp3 */,
+				3FFBD21E1CEE9AE9008CC27E /* knife_stab.mp3 */,
+				3FFBD2201CEE9B89008CC27E /* slow_motion.mp3 */,
+				3F05E5F21CED4339006B0619 /* Level2.mp3 */,
+				3F05E5F51CED4339006B0619 /* Level3.mp3 */,
+				3F05E5F11CED4339006B0619 /* Ninja-Momentum-Greenland-Add.mp3 */,
+				3F05E5F31CED4339006B0619 /* Ninja-Momentum-Greenland-Loop-II.mp3 */,
+				3F31336F1CEE3E0A00689144 /* main_menu.mp3 */,
+				3F05E5FC1CED5083006B0619 /* throw_grappling_hook.mp3 */,
+				3F05E5FB1CED5083006B0619 /* throw_knife.wav */,
+				65D0D2441CF0DD0300DAA3CF /* Level4.mp3 */,
+				65D0D2451CF0DD0300DAA3CF /* Level5.mp3 */,
+				65D0D2461CF0DD0300DAA3CF /* Level6.mp3 */,
+				65D0D2471CF0DD0300DAA3CF /* Level7.mp3 */,
+				65D0D2481CF0DD0300DAA3CF /* Level8.mp3 */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 		7A40362019DDEF0D007B6E8F /* Platforms */ = {
@@ -588,19 +623,6 @@
 				3F8989F51CEA78C6001C68CC /* MapLevels.m */,
 				65D0D22E1CF0C26200DAA3CF /* Options.m */,
 				65B087FF1CA5498C005A8586 /* Ninja.m */,
-				3F05E5FF1CED5083006B0619 /* dying.mp3 */,
-				3F05E5FD1CED5083006B0619 /* killing1.mp3 */,
-				3F05E5FE1CED5083006B0619 /* killing2.mp3 */,
-				3F05E5F41CED4339006B0619 /* Level1.mp3 */,
-				3FFBD21E1CEE9AE9008CC27E /* knife_stab.mp3 */,
-				3FFBD2201CEE9B89008CC27E /* slow_motion.mp3 */,
-				3F05E5F21CED4339006B0619 /* Level2.mp3 */,
-				3F05E5F51CED4339006B0619 /* Level3.mp3 */,
-				3F05E5F11CED4339006B0619 /* Ninja-Momentum-Greenland-Add.mp3 */,
-				3F05E5F31CED4339006B0619 /* Ninja-Momentum-Greenland-Loop-II.mp3 */,
-				3F31336F1CEE3E0A00689144 /* main_menu.mp3 */,
-				3F05E5FC1CED5083006B0619 /* throw_grappling_hook.mp3 */,
-				3F05E5FB1CED5083006B0619 /* throw_knife.wav */,
 				EF9E101B1CCFB4D500877E0E /* Codex */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 			);
@@ -631,6 +653,7 @@
 		B77F1B2517B978D7009739AE = {
 			isa = PBXGroup;
 			children = (
+				65D0D2431CF0DC1400DAA3CF /* Sounds */,
 				B737893C1807616C0076A88C /* Source */,
 				B77F1B4617B978D7009739AE /* Resources */,
 				9222E2B918734FF800A246C7 /* libs */,
@@ -915,11 +938,13 @@
 				3F05E5F81CED4339006B0619 /* Ninja-Momentum-Greenland-Loop-II.mp3 in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
+				65D0D24B1CF0DD0300DAA3CF /* Level6.mp3 in Resources */,
 				3F05E6021CED5083006B0619 /* throw_knife.wav in Resources */,
 				3F05E6051CED5083006B0619 /* killing2.mp3 in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				3F05E6061CED5083006B0619 /* dying.mp3 in Resources */,
+				65D0D24D1CF0DD0300DAA3CF /* Level8.mp3 in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				3F3133701CEE3E0A00689144 /* main_menu.mp3 in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
@@ -927,14 +952,17 @@
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
+				65D0D24A1CF0DD0300DAA3CF /* Level5.mp3 in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
 				3F05E5F61CED4339006B0619 /* Ninja-Momentum-Greenland-Add.mp3 in Resources */,
+				65D0D24C1CF0DD0300DAA3CF /* Level7.mp3 in Resources */,
 				3F05E5F71CED4339006B0619 /* Level2.mp3 in Resources */,
 				3F05E5F91CED4339006B0619 /* Level1.mp3 in Resources */,
 				3FFBD21F1CEE9AE9008CC27E /* knife_stab.mp3 in Resources */,
 				3F05E5FA1CED4339006B0619 /* Level3.mp3 in Resources */,
 				3FFBD2211CEE9B89008CC27E /* slow_motion.mp3 in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
+				65D0D2491CF0DD0300DAA3CF /* Level4.mp3 in Resources */,
 				3F05E6041CED5083006B0619 /* killing1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

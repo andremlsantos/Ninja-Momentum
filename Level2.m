@@ -90,6 +90,13 @@ AudioUtils *audioUtils;
     //dark souls
     CCNodeColor * overlayLayer2;
     CCLabelTTF * textMomentum;
+    
+    //pause
+    CCNodeColor * pauseLayer;
+    CCButton * pause;
+    CCButton * pause_resume;
+    CCButton * pause_menu;
+    CCButton * pause_reset;
 }
 
 // default config
@@ -130,6 +137,11 @@ AudioUtils *audioUtils;
     
     start2 = [NSDate date];
     logUtils2 = [LogUtils sharedManager];
+    
+    pause_resume. visible = false;
+    pause_menu. visible = false;
+    pause_reset. visible = false;
+    pauseLayer.opacity = 0.0f;
 }
 
 - (void) update:(CCTime)delta
@@ -345,6 +357,10 @@ AudioUtils *audioUtils;
     startAgainButton.enabled = false;
     retryButton.enabled = false;
     
+    pause.visible = true;
+    //grapplingHookButton.visible = true;
+    //knifeButton.visible = true;
+    
     if(asRetryLocation2)
     {
         ninja.positionInPoints = retryLocation2;
@@ -518,6 +534,10 @@ AudioUtils *audioUtils;
         resetButton.visible = true;
         nextButton.visible = true;
         
+        pause.visible = false;
+        grapplingHookButton.visible = false;
+        knifeButton.visible = false;
+        
         [[CCDirector sharedDirector] pause];
     }
 }
@@ -537,6 +557,10 @@ AudioUtils *audioUtils;
     textMomentum.opacity = 1.0f;
     overlayLayer2.opacity = 0.9f;
     
+    pause.visible = false;
+    grapplingHookButton.visible = false;
+    knifeButton.visible = false;
+    
     [[CCDirector sharedDirector] pause];
 }
 
@@ -544,7 +568,7 @@ AudioUtils *audioUtils;
 {
 
     [AudioUtils stopEffects];
-    [AudioUtils playKnifeStab];
+    //[AudioUtils playKnifeStab];
     
     numberOfJumps2 ++;
 
@@ -562,6 +586,10 @@ AudioUtils *audioUtils;
         numberOfEnemies2--;
         if (numberOfEnemies2 == 0)
         {
+            pause.visible = false;
+            grapplingHookButton.visible = false;
+            knifeButton.visible = false;
+            
             [AudioUtils stopEverything];
 
             //log
@@ -748,5 +776,53 @@ AudioUtils *audioUtils;
         [[CCDirector sharedDirector] pause];
     }
 }
+
+//----------------------------------------------------------------------------------------------------
+//---------------------------------------------PAUSE--------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+-(void)pause_resume
+{
+    [[CCDirector sharedDirector] resume];
+    overlayLayer.opacity = 0;
+    pauseLayer.opacity = 0;
+    pause.visible = true;
+    
+    pause_resume. visible = false;
+    pause_menu. visible = false;
+    pause_reset. visible = false;
+    
+    [self enableKnifeButton];
+    [self enableGrapplingHookButton];
+}
+
+-(void)pause_reset
+{
+    [self selectReset];
+}
+
+-(void)pause_menu
+{
+    [self pause_resume];
+    [self selectReset];
+    
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+}
+
+- (void) pause
+{
+    [[CCDirector sharedDirector] pause];
+    overlayLayer.opacity = 0.5f;
+    pauseLayer.opacity = 1.0f;
+    pause.visible = false;
+    
+    pause_resume. visible = true;
+    pause_menu. visible = true;
+    pause_reset. visible = true;
+    
+    [self disableGrapplingButton];
+    [self disableKnifeButton:false];
+}
+
 
 @end

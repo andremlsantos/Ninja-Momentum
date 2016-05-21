@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>16</integer>
+	<integer>17</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -206,8 +206,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.60393363237380981</real>
+							<real>0.80550354719161987</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -230,8 +230,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>40</real>
-							<real>40</real>
+							<real>469</real>
+							<real>57</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -264,7 +264,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Play</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -276,7 +276,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Controls/play.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -287,7 +287,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonHighlighted.png</string>
+							<string></string>
 						</array>
 					</dict>
 					<dict>
@@ -311,7 +311,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string></string>
 						</array>
 					</dict>
 					<dict>
@@ -330,7 +330,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string></string>
 						</array>
 					</dict>
 					<dict>
@@ -508,7 +508,7 @@
 						<key>value</key>
 						<array>
 							<real>405.72006225585938</real>
-							<real>111.4400634765625</real>
+							<real>125.4400634765625</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -532,8 +532,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.61165893077850342</real>
+							<real>0.88770699501037598</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -556,8 +556,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>40</real>
-							<real>40</real>
+							<real>469</real>
+							<real>57</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -590,7 +590,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>Options</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -602,7 +602,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Controls/options.png</string>
 						</array>
 					</dict>
 					<dict>

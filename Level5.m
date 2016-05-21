@@ -99,12 +99,21 @@ AudioUtils *audioUtils;
     //CCNode *_platformGH2;
     //CCPhysicsJoint *joint;
     //CCDrawNode *myDrawNode;
+    
+    //pause
+    CCNodeColor * pauseLayer;
+    CCButton * pause;
+    CCButton * pause_resume;
+    CCButton * pause_menu;
+    CCButton * pause_reset;
 }
 
 // default config
 - (void)didLoadFromCCB
 {
     audioUtils = [AudioUtils sharedManager];
+    
+    [AudioUtils playLevel5Bg];
     
     // enable touch
     self.userInteractionEnabled = TRUE;
@@ -142,6 +151,13 @@ AudioUtils *audioUtils;
     //corda
     //   myDrawNode = [CCDrawNode node];
     //   [self addChild: myDrawNode];
+    
+    //pause
+    pause_resume. visible = false;
+    pause_menu. visible = false;
+    pause_reset. visible = false;
+    pauseLayer.opacity = 0.0f;
+
 }
 
 - (void) update:(CCTime)delta
@@ -407,6 +423,11 @@ AudioUtils *audioUtils;
     //log
     numberOfRetriesPerLevel5 ++;
     logUtils5.totalRetries ++;
+    
+    pause.visible = true;
+   // grapplingHookButton.visible = true;
+    knifeButton.visible = true;
+    
     if(asRetryLocation5)
     {
         ninja.positionInPoints = retryLocation5;
@@ -573,6 +594,10 @@ AudioUtils *audioUtils;
     numberOfEnemies5--;
     if (numberOfEnemies5 == 0)
     {
+        pause.visible = false;
+        grapplingHookButton.visible = false;
+        knifeButton.visible = false;
+        
         [AudioUtils stopEverything];
         
         //log
@@ -635,6 +660,10 @@ AudioUtils *audioUtils;
     retryButton.enabled = true;
     startAgainButton.enabled = true;
     
+    pause.visible = false;
+    grapplingHookButton.visible = false;
+    knifeButton.visible = false;
+    
     textMomentum.opacity = 1.0f;
     overlayLayer2.opacity = 0.9f;
     
@@ -644,8 +673,7 @@ AudioUtils *audioUtils;
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
     [AudioUtils stopEffects];
-    [AudioUtils playKnifeStab];
-    
+    //[AudioUtils playKnifeStab];
     
     //log
     numberOfJumps5 ++;
@@ -664,6 +692,10 @@ AudioUtils *audioUtils;
     numberOfEnemies5--;
     if (numberOfEnemies5 == 0)
     {
+        pause.visible = false;
+        grapplingHookButton.visible = false;
+        knifeButton.visible = false;
+        
         [AudioUtils stopEverything];
         
         //log
@@ -868,5 +900,53 @@ AudioUtils *audioUtils;
         [[CCDirector sharedDirector] pause];
     }
 }
+
+//----------------------------------------------------------------------------------------------------
+//---------------------------------------------PAUSE--------------------------------------------------
+//----------------------------------------------------------------------------------------------------
+-(void)pause_resume
+{
+    [[CCDirector sharedDirector] resume];
+    overlayLayer.opacity = 0;
+    pauseLayer.opacity = 0;
+    pause.visible = true;
+    
+    pause_resume. visible = false;
+    pause_menu. visible = false;
+    pause_reset. visible = false;
+    
+    [self enableKnifeButton];
+    [self enableGrapplingHookButton];
+}
+
+-(void)pause_reset
+{
+    [self selectReset];
+}
+
+-(void)pause_menu
+{
+    [self pause_resume];
+    [self selectReset];
+    
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+}
+
+- (void) pause
+{
+    [[CCDirector sharedDirector] pause];
+    overlayLayer.opacity = 0.5f;
+    pauseLayer.opacity = 1.0f;
+    pause.visible = false;
+    
+    pause_resume. visible = true;
+    pause_menu. visible = true;
+    pause_reset. visible = true;
+    
+    [self disableGrapplingButton];
+    [self disableKnifeButton:false];
+}
+
 
 @end
