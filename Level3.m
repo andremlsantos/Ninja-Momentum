@@ -166,7 +166,7 @@ AudioUtils *audioUtils;
     
     [myDrawNode clear];
     
-    
+    /*
     if (drawGrapplingHook2){
         if(touchedPlatform == 1){
             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
@@ -175,9 +175,17 @@ AudioUtils *audioUtils;
             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
         }
     }
+     */
+    
     //[_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
     [_2plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
     [_3plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
+    
+    if([ninja action] == GRAPPLING)
+    {
+        [self disableGrapplingButton];
+        [self disableKnifeButtonWithTimer:true];
+    }
     
 }
 
@@ -480,6 +488,19 @@ AudioUtils *audioUtils;
     if (isTimer) {
         //setup timer
         [self schedule:@selector(enableKnifeButton) interval:1.0];
+    }
+}
+
+- (void) disableKnifeButtonWithTimer:(BOOL)isTimer
+{
+    //disale button
+    knifeButton.background.opacity = 0.2;
+    knifeButton.label.opacity = 0.2;
+    knifeButton.userInteractionEnabled = NO;
+    
+    if (isTimer) {
+        //setup timer
+        [self schedule:@selector(enableKnifeButton) interval:0.01];
     }
 }
 

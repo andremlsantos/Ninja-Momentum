@@ -133,8 +133,8 @@ AudioUtils *audioUtils;
     logUtils7 = [LogUtils sharedManager];
     
     //corda
-    //   myDrawNode = [CCDrawNode node];
-    //   [self addChild: myDrawNode];
+    myDrawNode = [CCDrawNode node];
+    [self addChild: myDrawNode];
 }
 
 - (void) update:(CCTime)delta
@@ -151,27 +151,29 @@ AudioUtils *audioUtils;
     [self outsideRoom];
     
     
-     if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling7
-        //|| ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling4
-        ){
-     [self enableGrapplingHookButton];
+     if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling7 )
+     {
+         [self enableGrapplingHookButton];
      }
-     else{
-     [self disableGrapplingButton];
-     
+     else
+     {
+         [self disableGrapplingButton];
      }
-     
+    
+    /*
      [myDrawNode clear];
-     
-     
      if (drawGrapplingHook7){
-     if(touchedPlatform7 == 1){
-     [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+        if(touchedPlatform7 == 1){
+        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+        }
      }
-     //else if(touchedPlatform7 == 2){
-     //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
-     //}
-     }
+      */
+    
+    if([ninja action] == GRAPPLING)
+    {
+        [self disableGrapplingButton];
+        [self disableKnifeButtonWithTimer:true];
+    }
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -209,51 +211,31 @@ AudioUtils *audioUtils;
      //vou ver se cliquei dentro GH
      else if(CGRectContainsPoint([_platformGH1 boundingBox],touchLocation))
      {
-     if([ninja action] == GRAPPLING)
-     {
+         if([ninja action] == GRAPPLING)
+         {
+             joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
+                                                               bodyB:_platformGH1.physicsBody
+                                                             anchorA:ninja.anchorPointInPoints
+                                                             anchorB:_platformGH1.anchorPointInPoints];
+             //log
+             numberOfGrapplingHook7++;
      
-     joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
-     bodyB:_platformGH1.physicsBody
-     anchorA:ninja.anchorPointInPoints
-     anchorB:_platformGH1.anchorPointInPoints];
-     //log
-     numberOfGrapplingHook7++;
-     
-     drawGrapplingHook7 = true;
-     [self unschedule:@selector(reduceCircle)];
-     [self resetCircle];
-     touchedPlatform7 = 1;
+             drawGrapplingHook7 = true;
+             [self unschedule:@selector(reduceCircle)];
+             [self resetCircle];
+             touchedPlatform7 = 1;
+         }
      }
-     }
-     /*
-     else if(CGRectContainsPoint([_platformGH2 boundingBox],touchLocation))
-     {
-     if([ninja action] == GRAPPLING)
-     {
-     
-     joint = [CCPhysicsJoint connectedDistanceJointWithBodyA:ninja.physicsBody
-     bodyB:_platformGH2.physicsBody
-     anchorA:ninja.anchorPointInPoints
-     anchorB:_platformGH2.anchorPointInPoints];
-     //log
-     numberOfGrapplingHook5++;
-     
-     drawGrapplingHook4 = true;
-     [self unschedule:@selector(reduceCircle)];
-     [self resetCircle];
-     touchedPlatform4 = 2;
-     }
-     }
-      */
+    
      else if([ninja action] == GRAPPLING)
      {
-     //log
-     jumpingFromGrappling7 = true;
-     drawGrapplingHook7 = false;
-     [joint invalidate];
-     joint = nil;
-     [self enableGrapplingHookButton];
-     [ninja setAction:IDDLE];
+         //log
+         jumpingFromGrappling7 = true;
+         drawGrapplingHook7 = false;
+         [joint invalidate];
+         joint = nil;
+         [self enableGrapplingHookButton];
+         [ninja setAction:IDDLE];
      //[self unschedule:@selector(reduceCircle)];
      //[self resetCircle];
      }
@@ -458,6 +440,19 @@ AudioUtils *audioUtils;
     knifeButton.userInteractionEnabled = YES;
 }
 
+- (void) disableKnifeButtonWithTimer:(BOOL)isTimer
+{
+    //disale button
+    knifeButton.background.opacity = 0.2;
+    knifeButton.label.opacity = 0.2;
+    knifeButton.userInteractionEnabled = NO;
+    
+    if (isTimer) {
+        //setup timer
+        [self schedule:@selector(enableKnifeButton) interval:0.01];
+    }
+}
+
 - (void) disableKnifeButton:(BOOL)isTimer
 {
     //disale button
@@ -553,6 +548,11 @@ AudioUtils *audioUtils;
     [[_physicsNode space] addPostStepBlock:^{
         [self killNode:nodeB];
     } key:nodeB];
+    
+    //matar faca
+    [[_physicsNode space] addPostStepBlock:^{
+        [self killNode:nodeA];
+    } key:nodeA];
     
     //log
     numberOfSucessKnifes7++;
@@ -751,7 +751,7 @@ AudioUtils *audioUtils;
     numberOfWeaponsString = [numberOfWeaponsString stringByAppendingString:[NSString stringWithFormat:@"%d", numberOfWeaponsFired7]];
     [LogUtils writeAtEndOfFile:numberOfWeaponsString withFilePath:finalFilePath];
     
-    NSString* timeString = @"\nTime to complete Level 6 in seconds = ";
+    NSString* timeString = @"\nTime to complete Level 7 in seconds = ";
     
     timeString = [timeString stringByAppendingString:[NSString stringWithFormat:@"%f", timeInterval7]];
     [LogUtils writeAtEndOfFile:timeString withFilePath:finalFilePath];

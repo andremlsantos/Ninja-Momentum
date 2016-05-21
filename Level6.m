@@ -554,6 +554,11 @@ AudioUtils *audioUtils;
         [self killNode:nodeB];
     } key:nodeB];
     
+    //matar faca
+    [[_physicsNode space] addPostStepBlock:^{
+        [self killNode:nodeA];
+    } key:nodeA];
+    
     //log
     numberOfSucessKnifes6++;
     

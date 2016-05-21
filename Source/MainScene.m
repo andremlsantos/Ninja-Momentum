@@ -41,6 +41,23 @@ OALSimpleAudio *audio;
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
+- (void) reset
+{
+    NSUserDefaults * defs = [NSUserDefaults standardUserDefaults];
+    NSDictionary * dict = [defs dictionaryRepresentation];
+    for (id key in dict) {
+        [defs removeObjectForKey:key];
+    }
+    [defs synchronize];
+}
+
+- (void) unblock
+{
+    NSString *unbloquedLevels = @"YES";
+    [[NSUserDefaults standardUserDefaults] setObject:unbloquedLevels forKey:@"unbloquedLevels"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void) goToCodex
 {
     CCScene *gameplayScene = [CCBReader loadAsScene:@"WeaponsCodex"];
@@ -50,6 +67,12 @@ OALSimpleAudio *audio;
 - (void) goToLater
 {
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/LevelTest"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+}
+
+- (void) options
+{
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Options"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 

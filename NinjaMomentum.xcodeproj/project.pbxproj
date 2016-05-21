@@ -52,6 +52,8 @@
 		65B088001CA5498C005A8586 /* Ninja.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B087FF1CA5498C005A8586 /* Ninja.m */; };
 		65B088071CA5499E005A8586 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B088061CA5499E005A8586 /* Enemy.m */; };
 		65B0880A1CA54DFB005A8586 /* Level1.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B088091CA54DFB005A8586 /* Level1.m */; };
+		65D0D22F1CF0C26200DAA3CF /* Options.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D22E1CF0C26200DAA3CF /* Options.m */; };
+		65D0D2341CF0C4E500DAA3CF /* Level8.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D0D2331CF0C4E500DAA3CF /* Level8.m */; };
 		65F6E7D91CBAC12900649A18 /* Ground.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6E7D81CBAC12900649A18 /* Ground.m */; };
 		7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B7378993180767190076A88C /* MainScene.m */; };
 		7A40360419DDEE84007B6E8F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A40360319DDEE84007B6E8F /* main.m */; };
@@ -260,6 +262,10 @@
 		65B088061CA5499E005A8586 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
 		65B088081CA54DFB005A8586 /* Level1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level1.h; sourceTree = "<group>"; };
 		65B088091CA54DFB005A8586 /* Level1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level1.m; sourceTree = "<group>"; };
+		65D0D22D1CF0C26200DAA3CF /* Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Options.h; sourceTree = "<group>"; };
+		65D0D22E1CF0C26200DAA3CF /* Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Options.m; sourceTree = "<group>"; };
+		65D0D2321CF0C4E500DAA3CF /* Level8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level8.h; sourceTree = "<group>"; };
+		65D0D2331CF0C4E500DAA3CF /* Level8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level8.m; sourceTree = "<group>"; };
 		65F6E7D71CBAC12900649A18 /* Ground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ground.h; sourceTree = "<group>"; };
 		65F6E7D81CBAC12900649A18 /* Ground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ground.m; sourceTree = "<group>"; };
 		7A4035FF19DDEE84007B6E8F /* NinjaMomentum Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NinjaMomentum Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -552,12 +558,14 @@
 				657BBCCF1CEC980E002A69B1 /* Level5.h */,
 				65A06EBE1CEFC4420087C6AC /* Level6.h */,
 				65A06EC31CEFCCC50087C6AC /* Level7.h */,
+				65D0D2321CF0C4E500DAA3CF /* Level8.h */,
 				3F8989F91CEA79B2001C68CC /* LevelItem.h */,
 				2E47431C1CE5375B006BE8DC /* LevelLater.h */,
 				3FB10AC61CECCF79005CB4C8 /* LogUtils.h */,
 				3FFBD2221CEEA040008CC27E /* AudioUtils.h */,
 				B7378992180767190076A88C /* MainScene.h */,
 				3F8989F41CEA78C6001C68CC /* MapLevels.h */,
+				65D0D22D1CF0C26200DAA3CF /* Options.h */,
 				65B087FE1CA5498C005A8586 /* Ninja.h */,
 				6564A1A11CA595920046F5FE /* Aim.m */,
 				6564A1A71CA59FD60046F5FE /* Bomb.m */,
@@ -571,12 +579,14 @@
 				657BBCD01CEC980E002A69B1 /* Level5.m */,
 				65A06EBF1CEFC4420087C6AC /* Level6.m */,
 				65A06EC41CEFCCC50087C6AC /* Level7.m */,
+				65D0D2331CF0C4E500DAA3CF /* Level8.m */,
 				3F8989FA1CEA79B2001C68CC /* LevelItem.m */,
 				2E47431D1CE5375B006BE8DC /* LevelLater.m */,
 				3FB10AC91CECD012005CB4C8 /* LogUtils.m */,
 				3FFBD2231CEEA0B0008CC27E /* AudioUtils.m */,
 				B7378993180767190076A88C /* MainScene.m */,
 				3F8989F51CEA78C6001C68CC /* MapLevels.m */,
+				65D0D22E1CF0C26200DAA3CF /* Options.m */,
 				65B087FF1CA5498C005A8586 /* Ninja.m */,
 				3F05E5FF1CED5083006B0619 /* dying.mp3 */,
 				3F05E5FD1CED5083006B0619 /* killing1.mp3 */,
@@ -1031,9 +1041,11 @@
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				6564A1A21CA595920046F5FE /* Aim.m in Sources */,
 				65A06EC01CEFC4420087C6AC /* Level6.m in Sources */,
+				65D0D22F1CF0C26200DAA3CF /* Options.m in Sources */,
 				2E47431E1CE5375B006BE8DC /* LevelLater.m in Sources */,
 				65B0880A1CA54DFB005A8586 /* Level1.m in Sources */,
 				2ECA7A611CCBFE600052C0DE /* NinjatoEntry.m in Sources */,
+				65D0D2341CF0C4E500DAA3CF /* Level8.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -160,7 +160,11 @@ AudioUtils *audioUtils;
     
     [self outsideRoom];
     
-    if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH3.positionInPoints) <minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH4.positionInPoints) <minDistanceToUseGrappling4){
+    if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling4 ||
+       ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling4 ||
+       ccpDistance(ninja.positionInPoints, _platformGH3.positionInPoints) <minDistanceToUseGrappling4 ||
+       ccpDistance(ninja.positionInPoints, _platformGH4.positionInPoints) <minDistanceToUseGrappling4
+       ){
         [self enableGrapplingHookButton];
     }
     else{
@@ -169,6 +173,7 @@ AudioUtils *audioUtils;
     
     [myDrawNode clear];
     
+    /*
      if (drawGrapplingHook4){
          if(touchedPlatform4 == 1){
              [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
@@ -186,12 +191,19 @@ AudioUtils *audioUtils;
              
          }
      }
+     */
     [_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
     [_1plane2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
     [_sky runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
     [_sky2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
     [_moon runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.004f*ninja.physicsBody.velocity.x,0)]];
     
+    
+    if([ninja action] == GRAPPLING)
+    {
+        [self disableGrapplingButton];
+        [self disableKnifeButtonWithTimer:true];
+    }
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -523,6 +535,19 @@ AudioUtils *audioUtils;
     if (isTimer) {
         //setup timer
         [self schedule:@selector(enableKnifeButton) interval:1.0];
+    }
+}
+
+- (void) disableKnifeButtonWithTimer:(BOOL)isTimer
+{
+    //disale button
+    knifeButton.background.opacity = 0.2;
+    knifeButton.label.opacity = 0.2;
+    knifeButton.userInteractionEnabled = NO;
+    
+    if (isTimer) {
+        //setup timer
+        [self schedule:@selector(enableKnifeButton) interval:0.01];
     }
 }
 

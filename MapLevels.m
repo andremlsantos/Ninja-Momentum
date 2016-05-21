@@ -55,10 +55,18 @@ NSString * templateUNBlocked = @"unblockedLevel";
 {
 }
 
+- (void) _return
+{
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+    
+}
+
 - (void) configLevel:(LevelItem*) level withIndex:(int) index
 {
     [level setTitle:[NSString stringWithFormat:@"%d", index]];
     
+    NSString * unbloquedLevels = [[NSUserDefaults standardUserDefaults] stringForKey:[NSString stringWithFormat:@"unbloquedLevels", index]];
     NSString * unbloqued = [[NSUserDefaults standardUserDefaults] stringForKey:[NSString stringWithFormat:@"unblockedLevel%d", index]];
     if(unbloqued)
         [level enable];
@@ -89,6 +97,12 @@ NSString * templateUNBlocked = @"unblockedLevel";
             [level setOneStar];
         }
     }
+    else if(unbloquedLevels)
+    {
+        [level enable];
+        [level setZeroStar];
+    }
+    
 }
 
 @end
