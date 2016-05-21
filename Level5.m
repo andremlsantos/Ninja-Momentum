@@ -57,6 +57,12 @@ AudioUtils *audioUtils;
 
 @implementation Level5
 {
+    //background
+    CCSprite *_1plane;
+    
+    CCSprite *_sky;
+    
+    CCSprite *_moon;
     //physic world
     CCPhysicsNode *_physicsNode;
     
@@ -172,6 +178,9 @@ AudioUtils *audioUtils;
      }
      }
      */
+    [_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.03f*ninja.physicsBody.velocity.x,0)]];
+    [_sky runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
+    [_moon runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
 }
 
 //----------------------------------------------------------------------------------------------------

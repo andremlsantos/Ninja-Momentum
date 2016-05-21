@@ -56,6 +56,10 @@ AudioUtils *audioUtils;
 
 @implementation Level3
 {
+    //background
+    CCSprite *_1plane;
+    CCSprite *_2plane;
+    CCSprite *_3plane;
     //physic world
     CCPhysicsNode *_physicsNode;
     
@@ -171,6 +175,9 @@ AudioUtils *audioUtils;
             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
         }
     }
+    //[_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
+    [_2plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
+    [_3plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
     
 }
 

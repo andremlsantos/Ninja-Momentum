@@ -107,6 +107,8 @@
 		<dict/>
 		<key>IndoorScene/Assets</key>
 		<dict>
+			<key>isDirty</key>
+			<true/>
 			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>
@@ -123,7 +125,10 @@
 		<key>IndoorScene/Platforms</key>
 		<dict/>
 		<key>IndoorScene/Structs</key>
-		<dict/>
+		<dict>
+			<key>isDirty</key>
+			<true/>
+		</dict>
 		<key>NinjaAssets</key>
 		<dict>
 			<key>format_android</key>

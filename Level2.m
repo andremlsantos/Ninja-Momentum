@@ -53,6 +53,13 @@ AudioUtils *audioUtils;
 
 @implementation Level2
 {
+    //background
+    CCSprite *_1plane;
+    CCSprite *_2plane;
+    CCSprite *_3plane;
+    CCSprite *_1plane2;
+    CCSprite *_2plane2;
+    CCSprite *_3plane2;
     //physic world
     CCPhysicsNode *_physicsNode;
     
@@ -137,6 +144,12 @@ AudioUtils *audioUtils;
     [ninja positionAimAt:ccp(0, 0)];
     
     [self outsideRoom];
+    //[_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
+    [_2plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
+    [_3plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
+    //[_1plane2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.05f*ninja.physicsBody.velocity.x,0)]];
+    [_2plane2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
+    [_3plane2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
 }
 
 //----------------------------------------------------------------------------------------------------
