@@ -102,7 +102,6 @@ NSString * templateUNBlocked = @"unblockedLevel";
         [level enable];
         [level setZeroStar];
     }
-    
 }
 
 @end

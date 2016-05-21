@@ -587,7 +587,7 @@ AudioUtils *audioUtils;
         
         //log
         timeInterval7 = fabs([start7 timeIntervalSinceNow]);
-        [self writeToLog5];
+        [self writeToLog7];
         
         //salvar tries
         [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries7] forKey:@"triesLevel7"];
@@ -686,7 +686,7 @@ AudioUtils *audioUtils;
         
         //log
         timeInterval7 = fabs([start7 timeIntervalSinceNow]);
-        [self writeToLog5];
+        [self writeToLog7];
         
         //salvar tries
         [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries7] forKey:@"triesLevel7"];
@@ -747,7 +747,7 @@ AudioUtils *audioUtils;
     [AudioUtils playSlowMotion];
 }
 
-- (void) writeToLog5{
+- (void) writeToLog7{
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
     NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
