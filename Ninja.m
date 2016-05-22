@@ -49,7 +49,7 @@ float oldScale = 0.0f;
     
     
     //RESET FORCES
-    jumpForce = 1700;
+    jumpForce = 1800;
     verticalJumpForce = 200;
     waterForce = 50;
     waterJumpForce = 3000;

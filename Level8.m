@@ -20,7 +20,7 @@ float ninjaCircleOpacity8 = 0.15f;
 float overlayLayerOpacity8 = 0.3f;
 
 bool asRetryLocation8 = false;
-int numberOfEnemies8 = 15;
+int numberOfEnemies8 = 19;
 
 //auxiliares mira
 float angleXX8 = 0.f, angleYY8 = 0.f;
@@ -56,6 +56,22 @@ AudioUtils *audioUtils;
 
 @implementation Level8
 {
+    CCSprite *_1plane;
+    CCSprite *_1plane2;
+    CCSprite *_1plane3;
+    CCSprite *_1plane4;
+    CCSprite *_2plane;
+    CCSprite *_2plane2;
+    CCSprite *_2plane3;
+    CCSprite *_2plane4;
+    CCSprite *_3plane;
+    CCSprite *_3plane2;
+    CCSprite *_3plane3;
+    CCSprite *_3plane4;
+    CCSprite *_sky;
+    CCSprite *_sky2;
+    CCSprite *_sky3;
+    CCSprite *_sky4;
     //physic world
     CCPhysicsNode *_physicsNode;
     
@@ -164,7 +180,7 @@ AudioUtils *audioUtils;
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
     
-    [self outsideRoom];
+   // [self outsideRoom];
     
     
     if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling8
@@ -204,6 +220,24 @@ AudioUtils *audioUtils;
         [self disableGrapplingButton];
         [self disableKnifeButtonWithTimer:true];
     }
+    [_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
+    [_1plane2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
+    [_1plane3 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
+    [_1plane4 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
+    [_2plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
+    [_2plane2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
+    [_2plane3 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
+    [_2plane4 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
+    [_3plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
+    [_3plane2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
+    [_3plane3 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
+    [_3plane4 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
+    
+    
+    [_sky runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.005f*ninja.physicsBody.velocity.x,0)]];
+    [_sky2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.005f*ninja.physicsBody.velocity.x,0)]];
+    [_sky3 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.005f*ninja.physicsBody.velocity.x,0)]];
+    [_sky4 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.005f*ninja.physicsBody.velocity.x,0)]];
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -565,7 +599,7 @@ AudioUtils *audioUtils;
     slowVelocity8 = 0.3f;
     ninjaCircleOpacity8 = 0.15f;
     overlayLayerOpacity8 = 0.3f;
-    numberOfEnemies8 = 15;
+    numberOfEnemies8 = 19;
     asRetryLocation8 = false;
     //drawGrapplingHook = false;
     //enteredWater = false;
@@ -593,7 +627,7 @@ AudioUtils *audioUtils;
     slowVelocity8 = 0.3f;
     ninjaCircleOpacity8 = 0.15f;
     overlayLayerOpacity8 = 0.3f;
-    numberOfEnemies8 = 15;
+    numberOfEnemies8 = 19;
     asRetryLocation8 = false;
     
     [[CCDirector sharedDirector] resume];
