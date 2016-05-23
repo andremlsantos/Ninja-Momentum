@@ -431,6 +431,8 @@ AudioUtils *audioUtils;
     
     if(asRetryLocation6)
     {
+        [AudioUtils playLevel6Bg];
+
         ninja.positionInPoints = retryLocation6;
         [ninja setCanJump:true];
         [ninja verticalJump];
@@ -599,7 +601,8 @@ AudioUtils *audioUtils;
         grapplingHookButton.visible = false;
         knifeButton.visible = false;
         [AudioUtils stopEverything];
-        
+        [AudioUtils playLevelCompleteSoundEffect];
+
         //log
         timeInterval6 = fabs([start6 timeIntervalSinceNow]);
         [self writeToLog6];
@@ -651,6 +654,9 @@ AudioUtils *audioUtils;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+    
+    [AudioUtils stopEverything];
+    [AudioUtils playDeathSoundEffect];
     //log
     numberOfDeaths6++;
     logUtils6.totalDeaths++;
@@ -697,7 +703,8 @@ AudioUtils *audioUtils;
         grapplingHookButton.visible = false;
         knifeButton.visible = false;
         [AudioUtils stopEverything];
-        
+        [AudioUtils playLevelCompleteSoundEffect];
+
         //log
         timeInterval6 = fabs([start6 timeIntervalSinceNow]);
         [self writeToLog6];

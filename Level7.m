@@ -47,6 +47,8 @@ int numberOfRetriesPerLevel7 = 0;
 int numberOfSucessKnifes7 = 0;
 bool jumpingFromGrappling7 = false;
 int numberOfSucessGrappling7 = 0;
+CGPoint grapplingHookNinjapoint;
+
 
 NSDate *start7;
 NSTimeInterval timeInterval7;
@@ -185,20 +187,21 @@ AudioUtils *audioUtils;
          [self disableGrapplingButton];
      }
     
-    /*
+    
      [myDrawNode clear];
      if (drawGrapplingHook7){
         if(touchedPlatform7 == 1){
-        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
         }
      }
-      */
+      
     
     if([ninja action] == GRAPPLING)
     {
         [self disableGrapplingButton];
         [self disableKnifeButtonWithTimer:true];
     }
+    
     [_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
     [_1plane2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
     [_2plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
@@ -206,7 +209,6 @@ AudioUtils *audioUtils;
     [_3plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
      [_3plane2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
     
-   
 
     [_sky runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.005f*ninja.physicsBody.velocity.x,0)]];
     [_sky2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.005f*ninja.physicsBody.velocity.x,0)]];
@@ -422,9 +424,15 @@ AudioUtils *audioUtils;
     pause.visible = true;
     grapplingHookButton.visible = true;
     knifeButton.visible = true;
-    
+    drawGrapplingHook7 = false;
+    if(joint != nil){
+        [joint invalidate];
+        joint = nil;
+    }
     if(asRetryLocation7)
     {
+        [AudioUtils playLevel7Bg];
+
         ninja.positionInPoints = retryLocation7;
         [ninja setCanJump:true];
         [ninja verticalJump];
@@ -512,13 +520,12 @@ AudioUtils *audioUtils;
 {
     [[CCDirector sharedDirector] resume];
     
-    /*
+    
      if(joint != nil){
-     [joint invalidate];
-     joint = nil;
-     
+         [joint invalidate];
+         joint = nil;
      }
-     */
+     
     
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level7"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
@@ -532,7 +539,7 @@ AudioUtils *audioUtils;
     overlayLayerOpacity7 = 0.3f;
     numberOfEnemies7 = 11;
     asRetryLocation7 = false;
-    //drawGrapplingHook = false;
+    drawGrapplingHook7 = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
     
@@ -603,6 +610,8 @@ AudioUtils *audioUtils;
     if (numberOfEnemies7 == 0)
     {
         [AudioUtils stopEverything];
+        [AudioUtils playLevelCompleteSoundEffect];
+
         pause.visible = false;
         grapplingHookButton.visible = false;
         knifeButton.visible = false;
@@ -658,6 +667,10 @@ AudioUtils *audioUtils;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+    
+    [AudioUtils stopEverything];
+    [AudioUtils playDeathSoundEffect];
+    
     //log
     numberOfDeaths7++;
     logUtils7.totalDeaths++;
@@ -705,7 +718,8 @@ AudioUtils *audioUtils;
         knifeButton.visible = false;
         
         [AudioUtils stopEverything];
-        
+        [AudioUtils playLevelCompleteSoundEffect];
+
         //log
         timeInterval7 = fabs([start7 timeIntervalSinceNow]);
         [self writeToLog7];

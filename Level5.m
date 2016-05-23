@@ -48,6 +48,7 @@ int numberOfSucessKnifes5 = 0;
 bool jumpingFromGrappling5 = false;
 int numberOfSucessGrappling5 = 0;
 
+
 NSDate *start5;
 NSTimeInterval timeInterval5;
 LogUtils *logUtils5;
@@ -430,6 +431,8 @@ AudioUtils *audioUtils;
     
     if(asRetryLocation5)
     {
+        [AudioUtils playLevel5Bg];
+
         ninja.positionInPoints = retryLocation5;
         [ninja setCanJump:true];
         [ninja verticalJump];
@@ -599,7 +602,8 @@ AudioUtils *audioUtils;
         knifeButton.visible = false;
         
         [AudioUtils stopEverything];
-        
+        [AudioUtils playLevelCompleteSoundEffect];
+
         //log
         timeInterval5 = fabs([start5 timeIntervalSinceNow]);
         [self writeToLog5];
@@ -651,6 +655,10 @@ AudioUtils *audioUtils;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+    
+    [AudioUtils stopEverything];
+    [AudioUtils playDeathSoundEffect];
+    
     //log
     numberOfDeaths5++;
     logUtils5.totalDeaths++;
@@ -697,7 +705,8 @@ AudioUtils *audioUtils;
         knifeButton.visible = false;
         
         [AudioUtils stopEverything];
-        
+        [AudioUtils playLevelCompleteSoundEffect];
+
         //log
         timeInterval5 = fabs([start5 timeIntervalSinceNow]);
         [self writeToLog5];

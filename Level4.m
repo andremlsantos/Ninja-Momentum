@@ -49,6 +49,8 @@ int numberOfSucessKnifes4 = 0;
 bool jumpingFromGrappling4 = false;
 int numberOfSucessGrappling4 = 0;
 
+CGPoint grapplingHookNinjapoint;
+
 NSDate *start4;
 NSTimeInterval timeInterval4;
 LogUtils *logUtils4;
@@ -188,25 +190,29 @@ AudioUtils *audioUtils;
     
     [myDrawNode clear];
     
-    /*
+    
      if (drawGrapplingHook4){
+         
+         grapplingHookNinjapoint = ninja.positionInPoints;
+         grapplingHookNinjapoint = ccpCompMult(grapplingHookNinjapoint, ccp(1.0,1.1));
+         
          if(touchedPlatform4 == 1){
-             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:grapplingHookNinjapoint] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
          }
          else if(touchedPlatform4 == 2){
-             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:grapplingHookNinjapoint] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
     
          }
          else if(touchedPlatform4 == 3){
-             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:grapplingHookNinjapoint] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
              
          }
          else if(touchedPlatform4 == 4){
-             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH4.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH4.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
              
          }
      }
-     */
+    
     [_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
     [_1plane2 runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
     [_sky runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
@@ -485,8 +491,15 @@ AudioUtils *audioUtils;
     grapplingHookButton.visible = true;
    // knifeButton.visible = true;
     
+    drawGrapplingHook4 = false;
+    if(joint != nil){
+        [joint invalidate];
+        joint = nil;
+    }
+    
     if(asRetryLocation4)
     {
+        [AudioUtils playLevel4Bg];
         ninja.positionInPoints = retryLocation4;
         [ninja setCanJump:true];
         [ninja verticalJump];
@@ -574,13 +587,13 @@ AudioUtils *audioUtils;
 {
     [[CCDirector sharedDirector] resume];
     
-    /*
+    
      if(joint != nil){
-     [joint invalidate];
-     joint = nil;
+         [joint invalidate];
+         joint = nil;
      
      }
-     */
+     
     
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level4"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
@@ -594,7 +607,7 @@ AudioUtils *audioUtils;
     overlayLayerOpacity4 = 0.3f;
     numberOfEnemies4 = 3;
     asRetryLocation4 = false;
-    //drawGrapplingHook = false;
+    drawGrapplingHook4 = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
     
@@ -662,6 +675,7 @@ AudioUtils *audioUtils;
         knifeButton.visible = false;
         
         [AudioUtils stopEverything];
+        [AudioUtils playLevelCompleteSoundEffect];
 
         //log
         timeInterval4 = fabs([start4 timeIntervalSinceNow]);
@@ -679,6 +693,10 @@ AudioUtils *audioUtils;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+    
+    [AudioUtils stopEverything];
+    [AudioUtils playDeathSoundEffect];
+    
     //log
     numberOfDeaths4++;
     logUtils4.totalDeaths++;
@@ -726,6 +744,7 @@ AudioUtils *audioUtils;
             knifeButton.visible = false;
             
             [AudioUtils stopEverything];
+            [AudioUtils playLevelCompleteSoundEffect];
 
             //log
             timeInterval4 = fabs([start4 timeIntervalSinceNow]);
