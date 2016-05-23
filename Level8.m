@@ -771,8 +771,8 @@ AudioUtils *audioUtils;
     numberOfJumps8 ++;
     
     retryLocation8 = nodeB.positionInPoints;
-    CGPoint mult = ccp(1,1.5);
-    //retryLocation8 = ccpCompMult(retryLocation8, mult);
+    CGPoint mult = ccp(1,1.2);
+    retryLocation8 = ccpCompMult(retryLocation8, mult);
     asRetryLocation8 = true;
     
     [self killNode:nodeB];// matar inimigo

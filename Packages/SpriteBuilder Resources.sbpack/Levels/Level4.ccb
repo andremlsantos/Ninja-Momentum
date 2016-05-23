@@ -1151,7 +1151,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>1045</real>
+											<real>1012</real>
 											<real>160.3543701171875</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1180,6 +1180,8 @@
 										<string>Enemy.ccb</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -2150,8 +2152,6 @@
 										<string>Target.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 						</array>
 						<key>customClass</key>
