@@ -649,7 +649,7 @@ AudioUtils *audioUtils;
 }
 -(void) nextLevel
 {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Victory"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Victory"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
     //reset variaveis
