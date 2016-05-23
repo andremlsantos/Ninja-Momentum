@@ -479,28 +479,9 @@ AudioUtils *audioUtils;
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     }
     
-    float dist1 = ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints);
-    float dist2 = ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints);
-    float dist3 = ccpDistance(ninja.positionInPoints, _platformGH3.positionInPoints);
-    
-    if(dist1 < dist2 && dist1 < dist3)
-    {
-        target1.visible = true;
-        target2.visible = false;
-        target3.visible = false;
-    }
-    else if(dist2 < dist1 && dist2 < dist3)
-    {
-        target1.visible = false;
-        target2.visible = true;
-        target3.visible = false;
-    }
-    else if(dist3 < dist1 && dist3 < dist2)
-    {
-        target1.visible = false;
-        target2.visible = false;
-        target3.visible = true;
-    }
+    target1.visible = true;
+    target2.visible = true;
+    target3.visible = true;
 }
 
 - (void) enableGrapplingHookButton
@@ -650,6 +631,9 @@ AudioUtils *audioUtils;
     numberOfEnemies8 = 19;
     asRetryLocation8 = false;
     drawGrapplingHook8 = false;
+    target1.visible = false;
+    target2.visible = false;
+    target3.visible = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
     

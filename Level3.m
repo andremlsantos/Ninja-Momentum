@@ -574,6 +574,8 @@ AudioUtils *audioUtils;
     numberOfEnemies3 = 2;
     asRetryLocation3 = false;
     drawGrapplingHook2 = false;
+    target1.visible = false;
+    target2.visible = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
     

@@ -78,7 +78,8 @@ OALSimpleAudio *audio;
 
 - (void) credits
 {
-        
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Credits"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
 /*

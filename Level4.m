@@ -649,7 +649,6 @@ AudioUtils *audioUtils;
      if(joint != nil){
          [joint invalidate];
          joint = nil;
-     
      }
      
     
@@ -666,6 +665,10 @@ AudioUtils *audioUtils;
     numberOfEnemies4 = 3;
     asRetryLocation4 = false;
     drawGrapplingHook4 = false;
+    target1.visible = false;
+    target2.visible = false;
+    target3.visible = false;
+    target4.visible = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
     

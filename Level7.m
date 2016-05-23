@@ -545,6 +545,7 @@ AudioUtils *audioUtils;
     ninjaCircleOpacity7 = 0.15f;
     overlayLayerOpacity7 = 0.3f;
     numberOfEnemies7 = 11;
+    target1.visible = false;
     asRetryLocation7 = false;
     drawGrapplingHook7 = false;
     //enteredWater = false;

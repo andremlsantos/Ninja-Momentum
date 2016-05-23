@@ -34,6 +34,8 @@
 		3FFBD2241CEEA0B0008CC27E /* AudioUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FFBD2231CEEA0B0008CC27E /* AudioUtils.m */; };
 		5B121030197484FA004C1E1D /* NinjaMomentumActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* NinjaMomentumActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
+		65378C441CF3C08500BBC18D /* Credits.m in Sources */ = {isa = PBXBuildFile; fileRef = 65378C431CF3C08500BBC18D /* Credits.m */; };
+		65378C491CF3C18F00BBC18D /* Victory.m in Sources */ = {isa = PBXBuildFile; fileRef = 65378C481CF3C18F00BBC18D /* Victory.m */; };
 		654D2D8A1CEBED95003174F9 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D2D891CEBED95003174F9 /* Level2.m */; };
 		654D2D8B1CEBED95003174F9 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D2D891CEBED95003174F9 /* Level2.m */; };
 		654D2D8C1CEBED95003174F9 /* Level2.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D2D891CEBED95003174F9 /* Level2.m */; };
@@ -247,6 +249,10 @@
 		5B121033197485FE004C1E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/Android/Info.plist; sourceTree = "<group>"; };
 		5B121034197485FE004C1E1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Platforms/iOS/Info.plist; sourceTree = "<group>"; };
 		5BA4619E1974C88900785744 /* AndroidManifest.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = AndroidManifest.xml; path = Platforms/Android/AndroidManifest.xml; sourceTree = "<group>"; };
+		65378C421CF3C08500BBC18D /* Credits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credits.h; sourceTree = "<group>"; };
+		65378C431CF3C08500BBC18D /* Credits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credits.m; sourceTree = "<group>"; };
+		65378C471CF3C18F00BBC18D /* Victory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Victory.h; sourceTree = "<group>"; };
+		65378C481CF3C18F00BBC18D /* Victory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Victory.m; sourceTree = "<group>"; };
 		654D2D881CEBED95003174F9 /* Level2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level2.h; sourceTree = "<group>"; };
 		654D2D891CEBED95003174F9 /* Level2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level2.m; sourceTree = "<group>"; };
 		654D2D8D1CEBF3E7003174F9 /* Level3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level3.h; sourceTree = "<group>"; };
@@ -600,6 +606,8 @@
 				65A06EBE1CEFC4420087C6AC /* Level6.h */,
 				65A06EC31CEFCCC50087C6AC /* Level7.h */,
 				65D0D2321CF0C4E500DAA3CF /* Level8.h */,
+				65378C421CF3C08500BBC18D /* Credits.h */,
+				65378C471CF3C18F00BBC18D /* Victory.h */,
 				3F8989F91CEA79B2001C68CC /* LevelItem.h */,
 				2E47431C1CE5375B006BE8DC /* LevelLater.h */,
 				3FB10AC61CECCF79005CB4C8 /* LogUtils.h */,
@@ -621,6 +629,8 @@
 				65A06EBF1CEFC4420087C6AC /* Level6.m */,
 				65A06EC41CEFCCC50087C6AC /* Level7.m */,
 				65D0D2331CF0C4E500DAA3CF /* Level8.m */,
+				65378C431CF3C08500BBC18D /* Credits.m */,
+				65378C481CF3C18F00BBC18D /* Victory.m */,
 				3F8989FA1CEA79B2001C68CC /* LevelItem.m */,
 				2E47431D1CE5375B006BE8DC /* LevelLater.m */,
 				3FB10AC91CECD012005CB4C8 /* LogUtils.m */,
@@ -1068,6 +1078,7 @@
 				3F8989F61CEA78C6001C68CC /* MapLevels.m in Sources */,
 				657BBCCC1CEC8F24002A69B1 /* Level4.m in Sources */,
 				65B088001CA5498C005A8586 /* Ninja.m in Sources */,
+				65378C491CF3C18F00BBC18D /* Victory.m in Sources */,
 				657BBCD11CEC980E002A69B1 /* Level5.m in Sources */,
 				6564A1A51CA59FC90046F5FE /* Knife.m in Sources */,
 				65F6E7D91CBAC12900649A18 /* Ground.m in Sources */,
@@ -1077,6 +1088,7 @@
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				6564A1A21CA595920046F5FE /* Aim.m in Sources */,
 				65A06EC01CEFC4420087C6AC /* Level6.m in Sources */,
+				65378C441CF3C08500BBC18D /* Credits.m in Sources */,
 				65D0D22F1CF0C26200DAA3CF /* Options.m in Sources */,
 				2E47431E1CE5375B006BE8DC /* LevelLater.m in Sources */,
 				65B0880A1CA54DFB005A8586 /* Level1.m in Sources */,

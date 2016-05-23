@@ -2290,8 +2290,6 @@
 										<string>PlataformaGH.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -2635,7 +2633,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>2000</real>
+											<real>2022</real>
 											<real>7.5</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -2664,6 +2662,8 @@
 										<string>Platform/Ground.ccb</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
