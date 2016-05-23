@@ -18,6 +18,7 @@ bool enableSlowMotion3 = false;
 float slowVelocity3 = 0.3f;
 float ninjaCircleOpacity3 = 0.15f;
 float overlayLayerOpacity3 = 0.3f;
+int radiusCirle3 = 0;
 
 bool asRetryLocation3 = false;
 int numberOfEnemies3 = 2;
@@ -801,6 +802,7 @@ AudioUtils *audioUtils;
         [[[CCDirector sharedDirector] scheduler] setTimeScale:1.0f];
         ninjaCircle.opacity = 0.0f;
         overlayLayer.opacity = 0.0f;
+        radiusCirle3 = 0;
         
     }
     ninjaCircle.position = [_contentNode convertToWorldSpace:ninja.position];
@@ -808,20 +810,14 @@ AudioUtils *audioUtils;
 
 -(void) reduceCircle
 {
-    static int i=0;
-    
-   // CCLOG(@"dentro %d", i);
-    
-    
-    
-    if((i%20 == 0 && i!=0)
+    if((radiusCirle3 %20 == 0 && radiusCirle3!=0)
         || [ninja action] == IDDLE
        )
     {
        // CCLOG(@"reset circle");
         
         //parar tempo
-        i = 0;
+        radiusCirle3 = 0;
         [self resetCircle];
         
     }
@@ -830,7 +826,7 @@ AudioUtils *audioUtils;
         ninjaCircle.scaleX -= 0.05f;
         ninjaCircle.scaleY -= 0.05f;
         
-        i++;
+        radiusCirle3++;
         
         enableSlowMotion3 = true;
     }
@@ -901,6 +897,7 @@ AudioUtils *audioUtils;
     
     //parar slow motion
     enableSlowMotion3 = false;
+    radiusCirle3 = 0;
     
     [self unschedule:_cmd];
 }

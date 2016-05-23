@@ -18,6 +18,7 @@ bool enableSlowMotion5 = false;
 float slowVelocity5 = 0.3f;
 float ninjaCircleOpacity5 = 0.15f;
 float overlayLayerOpacity5 = 0.3f;
+int radiusCirle5 = 0;
 
 bool asRetryLocation5 = false;
 int numberOfEnemies5 = 5;

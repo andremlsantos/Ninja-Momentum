@@ -18,6 +18,7 @@ bool enableSlowMotion2 = false;
 float slowVelocity2 = 0.3f;
 float ninjaCircleOpacity2 = 0.15f;
 float overlayLayerOpacity2 = 0.3f;
+int radiusCircle2 = 0;
 
 bool asRetryLocation2 = false;
 int numberOfEnemies2 = 5;
@@ -664,25 +665,6 @@ AudioUtils *audioUtils;
 - (void)killNode:(CCNode *)enemy {
     [enemy removeFromParent];
 }
-//----------------------------------------------------------------------------------------------------
-//---------------------------------------------SLOW MOTION--------------------------------------------
-//----------------------------------------------------------------------------------------------------
--(void)setupSlowMotion
-{
-    if(enableSlowMotion2)
-    {
-        [[[CCDirector sharedDirector] scheduler] setTimeScale:slowVelocity2];
-        ninjaCircle.opacity = ninjaCircleOpacity2;
-        overlayLayer.opacity = overlayLayerOpacity2;
-    } else {
-        [[[CCDirector sharedDirector] scheduler] setTimeScale:1.0f];
-        ninjaCircle.opacity = 0.0f;
-        overlayLayer.opacity = 0.0f;
-        
-    }
-    ninjaCircle.position = [_contentNode convertToWorldSpace:ninja.position];
-}
-
 
 - (void) writeToLog2{
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
@@ -733,14 +715,32 @@ AudioUtils *audioUtils;
 }
 
 
+//----------------------------------------------------------------------------------------------------
+//---------------------------------------------SLOW MOTION--------------------------------------------
+//----------------------------------------------------------------------------------------------------
+-(void)setupSlowMotion
+{
+    if(enableSlowMotion2)
+    {
+        [[[CCDirector sharedDirector] scheduler] setTimeScale:slowVelocity2];
+        ninjaCircle.opacity = ninjaCircleOpacity2;
+        overlayLayer.opacity = overlayLayerOpacity2;
+    } else {
+        [[[CCDirector sharedDirector] scheduler] setTimeScale:1.0f];
+        ninjaCircle.opacity = 0.0f;
+        overlayLayer.opacity = 0.0f;
+        radiusCircle2 = 0;
+        
+    }
+    ninjaCircle.position = [_contentNode convertToWorldSpace:ninja.position];
+}
+
 -(void) reduceCircle
 {
-    static int i=0;
-    
-    if((i%20 == 0 && i!=0) || [ninja action] == IDDLE)
+    if((radiusCircle2 %20 == 0 && radiusCircle2!=0) || [ninja action] == IDDLE)
     {
         //parar tempo
-        i = 0;
+        radiusCircle2 = 0;
         [self resetCircle];
         
     }
@@ -749,7 +749,7 @@ AudioUtils *audioUtils;
         ninjaCircle.scaleX -= 0.05f;
         ninjaCircle.scaleY -= 0.05f;
         
-        i++;
+        radiusCircle2++;
         
         enableSlowMotion2 = true;
     }
@@ -763,6 +763,8 @@ AudioUtils *audioUtils;
     
     //parar slow motion
     enableSlowMotion2 = false;
+    
+    radiusCircle2 = 0;
     
     [self unschedule:_cmd];
 }
