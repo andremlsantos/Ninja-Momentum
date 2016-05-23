@@ -1324,7 +1324,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>672.778076171875</real>
+											<real>630.778076171875</real>
 											<real>160</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1353,6 +1353,8 @@
 										<string>Enemy.ccb</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -1944,8 +1946,6 @@
 										<string>RuralAssets/watchtower.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>

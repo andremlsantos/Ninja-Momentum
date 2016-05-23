@@ -363,6 +363,7 @@ AudioUtils *audioUtils;
     
     if(asRetryLocation2)
     {
+        [AudioUtils playLevel2Bg];
         ninja.positionInPoints = retryLocation2;
         [ninja setCanJump:true];
         [ninja verticalJump];
@@ -525,6 +526,7 @@ AudioUtils *audioUtils;
         //[self nextLevel];
         //log
         [AudioUtils stopEverything];
+        [AudioUtils playLevelCompleteSoundEffect];
 
         timeInterval2 = fabs([start2 timeIntervalSinceNow]);
         [self writeToLog2];
@@ -545,6 +547,10 @@ AudioUtils *audioUtils;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+    
+    [AudioUtils stopEverything];
+    [AudioUtils playDeathSoundEffect];
+    
     //log
     numberOfDeaths2++;
     logUtils2.totalDeaths++;
@@ -581,8 +587,9 @@ AudioUtils *audioUtils;
         
         //ninja pode saltar
         [ninja setCanJump:true];
+        ninja.verticalJumpForce = 300;
         [ninja verticalJump];
-        
+        ninja.verticalJumpForce = 200;
         numberOfEnemies2--;
         if (numberOfEnemies2 == 0)
         {
@@ -591,7 +598,7 @@ AudioUtils *audioUtils;
             knifeButton.visible = false;
             
             [AudioUtils stopEverything];
-
+            [AudioUtils playLevelCompleteSoundEffect];
             //log
             timeInterval2 = fabs([start2 timeIntervalSinceNow]);
             [self writeToLog2];

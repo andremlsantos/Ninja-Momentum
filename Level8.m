@@ -195,25 +195,25 @@ AudioUtils *audioUtils;
         [self disableGrapplingButton];
     }
     
-    /*
-     if (drawGrapplingHook4)
+    
+     if (drawGrapplingHook8)
      {
         if(touchedPlatform8 == 1)
         {
-            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
         }
         else if(touchedPlatform8 == 2)
         {
-        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
      
         }
         else if(touchedPlatform8 == 3)
         {
-        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
      
         }
      }
-     */
+    
     
     if([ninja action] == GRAPPLING)
     {
@@ -487,13 +487,20 @@ AudioUtils *audioUtils;
     //log
     numberOfRetriesPerLevel8 ++;
     logUtils8.totalRetries ++;
+    drawGrapplingHook8 = false;
     
+    if(joint != nil){
+        [joint invalidate];
+        joint = nil;
+    }
     pause.visible = true;
     grapplingHookButton.visible = true;
     knifeButton.visible = true;
     
     if(asRetryLocation8)
     {
+        [AudioUtils playLevel1Bg];
+
         ninja.positionInPoints = retryLocation8;
         [ninja setCanJump:true];
         [ninja verticalJump];
@@ -581,13 +588,13 @@ AudioUtils *audioUtils;
 {
     [[CCDirector sharedDirector] resume];
     
-    /*
+    
      if(joint != nil){
-     [joint invalidate];
-     joint = nil;
+         [joint invalidate];
+         joint = nil;
      
      }
-     */
+     
     
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level8"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
@@ -601,7 +608,7 @@ AudioUtils *audioUtils;
     overlayLayerOpacity8 = 0.3f;
     numberOfEnemies8 = 19;
     asRetryLocation8 = false;
-    //drawGrapplingHook = false;
+    drawGrapplingHook8 = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
     
@@ -676,7 +683,8 @@ AudioUtils *audioUtils;
         knifeButton.visible = false;
         
         [AudioUtils stopEverything];
-        
+        [AudioUtils playLevelCompleteSoundEffect];
+
         //log
         timeInterval8 = fabs([start8 timeIntervalSinceNow]);
         [self writeToLog8];
@@ -728,6 +736,10 @@ AudioUtils *audioUtils;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+    
+    [AudioUtils stopEverything];
+    [AudioUtils playDeathSoundEffect];
+    
     //log
     numberOfDeaths8++;
     logUtils8.totalDeaths++;
@@ -770,12 +782,14 @@ AudioUtils *audioUtils;
     numberOfEnemies8--;
     if (numberOfEnemies8 == 0)
     {
+        
         pause.visible = false;
         grapplingHookButton.visible = false;
         knifeButton.visible = false;
         
         [AudioUtils stopEverything];
-        
+        [AudioUtils playLevelCompleteSoundEffect];
+
         //log
         timeInterval8 = fabs([start8 timeIntervalSinceNow]);
         [self writeToLog8];

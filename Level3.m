@@ -178,16 +178,17 @@ AudioUtils *audioUtils;
     
     [myDrawNode clear];
     
-    /*
+    
     if (drawGrapplingHook2){
+
         if(touchedPlatform == 1){
-            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
         }
         else if(touchedPlatform == 2){
-            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:2.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
         }
     }
-     */
+    
     
     //[_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
     [_2plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
@@ -217,9 +218,7 @@ AudioUtils *audioUtils;
     {
         //acao default = salto
         if (([ninja action] == IDDLE && [ninja canJump]) || ([ninja action] == -1 && [ninja canJump])) {
-            
             [ninja setAction:JUMP];
-
         }
         
         //activar mira
@@ -246,7 +245,7 @@ AudioUtils *audioUtils;
                                                             anchorB:_platformGH1.anchorPointInPoints];
             
             drawGrapplingHook2 = true;
-            //log
+                       //log
             numberOfGrapplingHook3++;
             
             
@@ -265,7 +264,7 @@ AudioUtils *audioUtils;
                                                               bodyB:_platformGH2.physicsBody
                                                             anchorA:ninja.anchorPointInPoints
                                                             anchorB:_platformGH2.anchorPointInPoints];
-            
+
             drawGrapplingHook2 = true;
             numberOfGrapplingHook3++;
             
@@ -430,12 +429,19 @@ AudioUtils *audioUtils;
     startAgainButton.enabled = false;
     retryButton.enabled = false;
     
+    drawGrapplingHook2 = false;
+    if(joint != nil){
+        [joint invalidate];
+        joint = nil;
+    }
+
     pause.visible = true;
     grapplingHookButton.visible = true;
     //knifeButton.visible = true;
     
     if(asRetryLocation3)
     {
+        [AudioUtils playLevel3Bg];
         ninja.positionInPoints = retryLocation3;
         [ninja setCanJump:true];
         [ninja verticalJump];
@@ -524,13 +530,12 @@ AudioUtils *audioUtils;
 {
     [[CCDirector sharedDirector] resume];
     
-    /*
+    
      if(joint != nil){
-     [joint invalidate];
-     joint = nil;
-     
+         [joint invalidate];
+         joint = nil;
      }
-     */
+    
     
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level3"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
@@ -544,7 +549,7 @@ AudioUtils *audioUtils;
     overlayLayerOpacity3 = 0.3f;
     numberOfEnemies3 = 2;
     asRetryLocation3 = false;
-    //drawGrapplingHook = false;
+    drawGrapplingHook2 = false;
     //enteredWater = false;
     //collidedWithWaterEnd = false;
     
@@ -617,6 +622,7 @@ AudioUtils *audioUtils;
         knifeButton.visible = false;
         
         [AudioUtils stopEverything];
+        [AudioUtils playLevelCompleteSoundEffect];
 
         //[self nextLevel];
         timeInterval3 = fabs([start3 timeIntervalSinceNow]);
@@ -634,6 +640,8 @@ AudioUtils *audioUtils;
 //MORRER
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA ground:(CCNode *)nodeB
 {
+    [AudioUtils stopEverything];
+    [AudioUtils playDeathSoundEffect];
     
     //log
     numberOfDeaths3++;
@@ -660,7 +668,7 @@ AudioUtils *audioUtils;
 -(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair ninja:(CCNode *)nodeA enemy:(CCNode *)nodeB
 {
     [AudioUtils stopEffects];
-  //  [AudioUtils playKnifeStab];
+    //[AudioUtils playKnifeStab];
     
         numberOfJumps3 ++;
         if (jumpingFromGrappling){
@@ -685,6 +693,7 @@ AudioUtils *audioUtils;
             grapplingHookButton.visible = false;
             knifeButton.visible = false;
             [AudioUtils stopEverything];
+            [AudioUtils playLevelCompleteSoundEffect];
 
             //log
             timeInterval3 = fabs([start3 timeIntervalSinceNow]);

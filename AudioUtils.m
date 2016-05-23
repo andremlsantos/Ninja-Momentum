@@ -41,6 +41,15 @@ OALSimpleAudio *audio;
 + (void)playThrowKnife{
     [audio playEffect:@"throw_knife.wav"];
 }
+
++ (void)playDeathSoundEffect{
+    [audio playEffect:@"death.mp3"];
+}
+
++ (void) playLevelCompleteSoundEffect{
+    [audio playEffect:@"level_complete.mp3"];
+}
+
 + (void)stopEverything{
     [audio stopEverything];
 }

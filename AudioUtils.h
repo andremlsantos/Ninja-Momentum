@@ -17,6 +17,8 @@
 + (void)playSlowMotion;
 + (void)playKnifeStab;
 + (void)playThrowKnife;
++ (void)playDeathSoundEffect;
++ (void)playLevelCompleteSoundEffect;
 + (void)stopEverything;
 + (void) stopEffects;
 + (void) playLevel1Bg;
