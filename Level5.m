@@ -847,6 +847,7 @@ AudioUtils *audioUtils;
         [[[CCDirector sharedDirector] scheduler] setTimeScale:1.0f];
         ninjaCircle.opacity = 0.0f;
         overlayLayer.opacity = 0.0f;
+        radiusCirle5 =0;
         
     }
     ninjaCircle.position = [_contentNode convertToWorldSpace:ninja.position];
@@ -854,20 +855,14 @@ AudioUtils *audioUtils;
 
 -(void) reduceCircle
 {
-    static int i=0;
-    
-    // CCLOG(@"dentro %d", i);
-    
-    
-    
-    if((i%20 == 0 && i!=0)
+    if((radiusCirle5 %20 == 0 && radiusCirle5!=0)
        || [ninja action] == IDDLE
        )
     {
         // CCLOG(@"reset circle");
         
         //parar tempo
-        i = 0;
+        radiusCirle5 = 0;
         [self resetCircle];
         
     }
@@ -876,7 +871,7 @@ AudioUtils *audioUtils;
         ninjaCircle.scaleX -= 0.05f;
         ninjaCircle.scaleY -= 0.05f;
         
-        i++;
+        radiusCirle5++;
         
         enableSlowMotion5 = true;
     }
@@ -890,6 +885,7 @@ AudioUtils *audioUtils;
     
     //parar slow motion
     enableSlowMotion5 = false;
+    radiusCirle5 = 0;
     
     [self unschedule:_cmd];
 }

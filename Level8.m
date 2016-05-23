@@ -106,8 +106,11 @@ AudioUtils *audioUtils;
     
     //graping hook
     CCNode *_platformGH1;
+    CCSprite * target1;
     CCNode *_platformGH2;
+    CCSprite * target2;
     CCNode *_platformGH3;
+    CCSprite * target3;
     CCPhysicsJoint *joint;
     CCDrawNode *myDrawNode;
     
@@ -169,6 +172,10 @@ AudioUtils *audioUtils;
     pause_reset. visible = false;
     
     pauseLayer.visible = false;
+    
+    target1.visible = false;
+    target2.visible = false;
+    target3.visible = false;
 }
 
 - (void) update:(CCTime)delta
@@ -202,16 +209,25 @@ AudioUtils *audioUtils;
      {
         if(touchedPlatform8 == 1)
         {
-            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            target1.visible = false;
+            target2.visible = false;
+            target3.visible = false;
         }
         else if(touchedPlatform8 == 2)
         {
-        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+        //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            target1.visible = false;
+            target2.visible = false;
+            target3.visible = false;
      
         }
         else if(touchedPlatform8 == 3)
         {
-        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+        //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            target1.visible = false;
+            target2.visible = false;
+            target3.visible = false;
      
         }
      }
@@ -461,6 +477,29 @@ AudioUtils *audioUtils;
         [AudioUtils playSlowMotion];
         
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+    }
+    
+    float dist1 = ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints);
+    float dist2 = ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints);
+    float dist3 = ccpDistance(ninja.positionInPoints, _platformGH3.positionInPoints);
+    
+    if(dist1 < dist2 && dist1 < dist3)
+    {
+        target1.visible = true;
+        target2.visible = false;
+        target3.visible = false;
+    }
+    else if(dist2 < dist1 && dist2 < dist3)
+    {
+        target1.visible = false;
+        target2.visible = true;
+        target3.visible = false;
+    }
+    else if(dist3 < dist1 && dist3 < dist2)
+    {
+        target1.visible = false;
+        target2.visible = false;
+        target3.visible = true;
     }
 }
 
@@ -931,6 +970,7 @@ AudioUtils *audioUtils;
         [[[CCDirector sharedDirector] scheduler] setTimeScale:1.0f];
         ninjaCircle.opacity = 0.0f;
         overlayLayer.opacity = 0.0f;
+        radiusCirle8 = 0;
         
     }
     ninjaCircle.position = [_contentNode convertToWorldSpace:ninja.position];
@@ -938,20 +978,14 @@ AudioUtils *audioUtils;
 
 -(void) reduceCircle
 {
-    static int i=0;
-    
-    // CCLOG(@"dentro %d", i);
-    
-    
-    
-    if((i%20 == 0 && i!=0)
+    if((radiusCirle8 %20 == 0 && radiusCirle8!=0)
        || [ninja action] == IDDLE
        )
     {
         // CCLOG(@"reset circle");
         
         //parar tempo
-        i = 0;
+        radiusCirle8 = 0;
         [self resetCircle];
         
     }
@@ -960,7 +994,7 @@ AudioUtils *audioUtils;
         ninjaCircle.scaleX -= 0.05f;
         ninjaCircle.scaleY -= 0.05f;
         
-        i++;
+        radiusCirle8++;
         
         enableSlowMotion8 = true;
     }
@@ -974,6 +1008,7 @@ AudioUtils *audioUtils;
     
     //parar slow motion
     enableSlowMotion8 = false;
+    radiusCirle8=0;
     
     [self unschedule:_cmd];
 }

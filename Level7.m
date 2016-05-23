@@ -179,7 +179,7 @@ AudioUtils *audioUtils;
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
     
-    [self outsideRoom];
+    //[self outsideRoom];
     
     
      if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling7 )
@@ -866,6 +866,7 @@ AudioUtils *audioUtils;
         [[[CCDirector sharedDirector] scheduler] setTimeScale:1.0f];
         ninjaCircle.opacity = 0.0f;
         overlayLayer.opacity = 0.0f;
+        radiusCirle7 = 0;
         
     }
     ninjaCircle.position = [_contentNode convertToWorldSpace:ninja.position];
@@ -873,20 +874,14 @@ AudioUtils *audioUtils;
 
 -(void) reduceCircle
 {
-    static int i=0;
-    
-    // CCLOG(@"dentro %d", i);
-    
-    
-    
-    if((i%20 == 0 && i!=0)
+    if((radiusCirle7 %20 == 0 && radiusCirle7!=0)
        || [ninja action] == IDDLE
        )
     {
         // CCLOG(@"reset circle");
         
         //parar tempo
-        i = 0;
+        radiusCirle7 = 0;
         [self resetCircle];
         
     }
@@ -895,7 +890,7 @@ AudioUtils *audioUtils;
         ninjaCircle.scaleX -= 0.05f;
         ninjaCircle.scaleY -= 0.05f;
         
-        i++;
+        radiusCirle7++;
         
         enableSlowMotion7 = true;
     }
@@ -906,6 +901,8 @@ AudioUtils *audioUtils;
     //reset tamanho circulo volta ninja
     ninjaCircle.scaleX = 1.0f;
     ninjaCircle.scaleY = 1.0f;
+    
+    radiusCirle7 = 0;
     
     //parar slow motion
     enableSlowMotion7 = false;

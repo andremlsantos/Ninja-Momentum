@@ -96,10 +96,7 @@
 			<true/>
 		</dict>
 		<key>Controls</key>
-		<dict>
-			<key>isDirty</key>
-			<true/>
-		</dict>
+		<dict/>
 		<key>EnemyAnimation</key>
 		<dict>
 			<key>isSmartSpriteSheet</key>
