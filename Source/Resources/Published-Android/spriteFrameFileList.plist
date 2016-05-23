@@ -9,17 +9,18 @@
 	</dict>
 	<key>spriteFrameFiles</key>
 	<array>
-		<string>RuralScene/Background2.plist</string>
-		<string>CityScene/Background2.plist</string>
-		<string>NinjaAnimation.plist</string>
-		<string>ccbResources.plist</string>
-		<string>IndoorScene/Assets.plist</string>
-		<string>CityScene/Assets.plist</string>
 		<string>IndoorScene/Background.plist</string>
+		<string>RuralScene/Background2.plist</string>
+		<string>ccbResources.plist</string>
 		<string>IndoorScene/Background2.plist</string>
 		<string>RuralScene/Assets.plist</string>
-		<string>EnemyAnimation.plist</string>
 		<string>CodexAssets.plist</string>
+		<string>IndoorScene/Assets.plist</string>
+		<string>CityScene/Assets.plist</string>
+		<string>EnemyAnimation.plist</string>
+		<string>Controls.plist</string>
+		<string>CityScene/Background2.plist</string>
+		<string>NinjaAnimation.plist</string>
 	</array>
 </dict>
 </plist>

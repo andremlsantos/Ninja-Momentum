@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>309</integer>
+	<integer>324</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -2750,8 +2750,6 @@
 										<string>IndoorAssets/Lamp1Light.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -6857,7 +6855,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>295</integer>
+				<integer>309</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -6889,8 +6887,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>24.5</real>
-							<real>295.5</real>
+							<real>31.854343414306641</real>
+							<real>293.67190551757812</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -6914,8 +6912,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.51795679330825806</real>
+							<real>0.5786399245262146</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -6938,8 +6936,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>49</real>
-							<real>49</real>
+							<real>123</real>
+							<real>91</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -7185,15 +7183,15 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>298</integer>
+				<integer>312</integer>
 				<key>baseClass</key>
-				<string>CCNodeColor</string>
+				<string>CCBFile</string>
 				<key>children</key>
 				<array/>
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>pausePlayer</string>
+				<string>PauseLayer</string>
 				<key>hidden</key>
 				<true/>
 				<key>memberVarAssignmentName</key>
@@ -7217,35 +7215,11 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>-27.176006317138672</real>
-							<real>0.0</real>
+							<real>93.269340515136719</real>
+							<real>160</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>contentSize</string>
-						<key>type</key>
-						<string>Size</string>
-						<key>value</key>
-						<array>
-							<real>100</real>
-							<real>100</real>
-							<integer>0</integer>
-							<integer>0</integer>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>anchorPoint</string>
-						<key>type</key>
-						<string>Point</string>
-						<key>value</key>
-						<array>
-							<real>0.0</real>
-							<real>0.0</real>
 						</array>
 					</dict>
 					<dict>
@@ -7255,38 +7229,25 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1.1635200977325439</real>
-							<real>3.2612640857696533</real>
+							<real>0.40000000596046448</real>
+							<real>0.40000000596046448</real>
 							<false/>
 							<integer>0</integer>
 						</array>
 					</dict>
 					<dict>
 						<key>name</key>
-						<string>color</string>
+						<string>ccbFile</string>
 						<key>type</key>
-						<string>Color3</string>
+						<string>CCBFile</string>
 						<key>value</key>
-						<array>
-							<real>0.20000000298023224</real>
-							<real>0.20000000298023224</real>
-							<real>0.20000000298023224</real>
-							<real>1</real>
-						</array>
-					</dict>
-					<dict>
-						<key>name</key>
-						<string>opacity</string>
-						<key>type</key>
-						<string>Float</string>
-						<key>value</key>
-						<real>1</real>
+						<string>Pause.ccb</string>
 					</dict>
 				</array>
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>299</integer>
+				<integer>315</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -7318,8 +7279,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>46</real>
-							<real>78.801727294921875</real>
+							<real>89.176002502441406</real>
+							<real>70.181724548339844</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -7343,8 +7304,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.51499998569488525</real>
+							<real>0.63599997758865356</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -7367,8 +7328,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>40</real>
-							<real>40</real>
+							<real>319</real>
+							<real>90</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -7401,7 +7362,7 @@
 						<string>String</string>
 						<key>value</key>
 						<array>
-							<string>reset</string>
+							<string></string>
 							<false/>
 						</array>
 					</dict>
@@ -7413,7 +7374,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>ccbResources/ccbButtonNormal.png</string>
+							<string>Controls/redondosReset.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -7614,7 +7575,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>302</integer>
+				<integer>318</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -7646,8 +7607,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>46</real>
-							<real>162.86369323730469</real>
+							<real>89.176002502441406</real>
+							<real>165.88960266113281</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -7671,8 +7632,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.51504623889923096</real>
+							<real>0.63613152503967285</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -7695,8 +7656,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>49</real>
-							<real>50</real>
+							<real>319</real>
+							<real>90</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -7942,7 +7903,7 @@
 			</dict>
 			<dict>
 				<key>UUID</key>
-				<integer>305</integer>
+				<integer>321</integer>
 				<key>baseClass</key>
 				<string>CCButton</string>
 				<key>children</key>
@@ -7974,8 +7935,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>46</real>
-							<real>250.81993103027344</real>
+							<real>89.176002502441406</real>
+							<real>255.11184692382812</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -7999,8 +7960,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.51499998569488525</real>
+							<real>0.63599997758865356</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -8023,8 +7984,8 @@
 						<string>Size</string>
 						<key>value</key>
 						<array>
-							<real>49</real>
-							<real>49</real>
+							<real>319</real>
+							<real>90</real>
 							<integer>0</integer>
 							<integer>0</integer>
 						</array>
@@ -8267,6 +8228,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

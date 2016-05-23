@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>Controls/1463873452_pause-circle-outline.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1465, 626}, {128, 128}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {128, 128}}</string>
+			<key>sourceSize</key>
+			<string>{128, 128}</string>
+		</dict>
+		<key>Controls/Reset Data.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{933, 126}, {856, 123}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {856, 123}}</string>
+			<key>sourceSize</key>
+			<string>{856, 123}</string>
+		</dict>
+		<key>Controls/Return.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{933, 251}, {856, 123}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {856, 123}}</string>
+			<key>sourceSize</key>
+			<string>{856, 123}</string>
+		</dict>
+		<key>Controls/Unblock Levels.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{933, 376}, {856, 123}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {856, 123}}</string>
+			<key>sourceSize</key>
+			<string>{856, 123}</string>
+		</dict>
+		<key>Controls/faixa a esquerda menu.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {930, 1783}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {930, 1783}}</string>
+			<key>sourceSize</key>
+			<string>{930, 1783}</string>
+		</dict>
+		<key>Controls/options.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{933, 1}, {856, 123}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {856, 123}}</string>
+			<key>sourceSize</key>
+			<string>{856, 123}</string>
+		</dict>
+		<key>Controls/play.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{933, 501}, {856, 123}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {856, 123}}</string>
+			<key>sourceSize</key>
+			<string>{856, 123}</string>
+		</dict>
+		<key>Controls/redondosMenu.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1791, 1}, {638, 180}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {638, 180}}</string>
+			<key>sourceSize</key>
+			<string>{638, 180}</string>
+		</dict>
+		<key>Controls/redondosPause.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1786}, {247, 182}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<true/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {247, 182}}</string>
+			<key>sourceSize</key>
+			<string>{247, 182}</string>
+		</dict>
+		<key>Controls/redondosPlay.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{825, 1786}, {638, 180}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {638, 180}}</string>
+			<key>sourceSize</key>
+			<string>{638, 180}</string>
+		</dict>
+		<key>Controls/redondosReset.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{185, 1786}, {638, 180}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {638, 180}}</string>
+			<key>sourceSize</key>
+			<string>{638, 180}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{2048, 2048}</string>
+		<key>textureFileName</key>
+		<string>Controls.png</string>
+	</dict>
+</dict>
+</plist>

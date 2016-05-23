@@ -98,7 +98,7 @@ AudioUtils *audioUtils;
     CCDrawNode *myDrawNode;
     
     //pause
-    CCNodeColor * pauseLayer;
+    CCSprite * pauseLayer;
     CCButton * pause;
     CCButton * pause_resume;
     CCButton * pause_menu;
@@ -152,7 +152,7 @@ AudioUtils *audioUtils;
     pause_resume. visible = false;
     pause_menu. visible = false;
     pause_reset. visible = false;
-    pauseLayer.opacity = 0.0f;
+    pauseLayer.visible = false;
 }
 
 - (void) update:(CCTime)delta
@@ -897,7 +897,7 @@ AudioUtils *audioUtils;
 {
     [[CCDirector sharedDirector] resume];
     overlayLayer.opacity = 0;
-    pauseLayer.opacity = 0;
+    pauseLayer.visible = false;
     pause.visible = true;
     
     pause_resume. visible = false;
@@ -926,7 +926,7 @@ AudioUtils *audioUtils;
 {
     [[CCDirector sharedDirector] pause];
     overlayLayer.opacity = 0.5f;
-    pauseLayer.opacity = 1.0f;
+    pauseLayer.visible = true;
     pause.visible = false;
     
     pause_resume. visible = true;
