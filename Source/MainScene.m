@@ -76,6 +76,10 @@ OALSimpleAudio *audio;
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
+- (void) credits
+{
+        
+}
 
 /*
  NIVEIS

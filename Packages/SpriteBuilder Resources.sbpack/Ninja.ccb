@@ -633,40 +633,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>35.8828125</real>
-					<real>15.171875</real>
+					<real>35.67181396484375</real>
+					<real>8.191375732421875</real>
 				</array>
 				<array>
-					<real>33.50390625</real>
-					<real>89.332061767578125</real>
+					<real>44.68743896484375</real>
+					<real>74.148406982421875</real>
 				</array>
 				<array>
-					<real>67.49609375</real>
-					<real>88.500030517578125</real>
+					<real>59.67962646484375</real>
+					<real>78.132781982421875</real>
 				</array>
 				<array>
-					<real>68.3984375</real>
-					<real>14.875</real>
+					<real>66.65228271484375</real>
+					<real>5.195281982421875</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>68.3984375</real>
-						<real>14.875</real>
+						<real>66.65228271484375</real>
+						<real>5.195281982421875</real>
 					</array>
 					<array>
-						<real>67.49609375</real>
-						<real>88.500030517578125</real>
+						<real>59.67962646484375</real>
+						<real>78.132781982421875</real>
 					</array>
 					<array>
-						<real>33.50390625</real>
-						<real>89.332061767578125</real>
+						<real>44.68743896484375</real>
+						<real>74.148406982421875</real>
 					</array>
 					<array>
-						<real>35.8828125</real>
-						<real>15.171875</real>
+						<real>35.67181396484375</real>
+						<real>8.191375732421875</real>
 					</array>
 				</array>
 			</array>
@@ -827,7 +827,7 @@
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.26666668057441711</real>
+			<real>1.1000000238418579</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>

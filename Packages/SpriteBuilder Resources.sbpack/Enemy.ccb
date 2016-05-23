@@ -78,8 +78,8 @@
 					<real>5.765625</real>
 				</array>
 				<array>
-					<real>31.375</real>
-					<real>93.933624267578125</real>
+					<real>33.67962646484375</real>
+					<real>93.113250732421875</real>
 				</array>
 				<array>
 					<real>70.0078125</real>
@@ -102,8 +102,8 @@
 						<real>92.933624267578125</real>
 					</array>
 					<array>
-						<real>31.375</real>
-						<real>93.933624267578125</real>
+						<real>33.67962646484375</real>
+						<real>93.113250732421875</real>
 					</array>
 					<array>
 						<real>31.20703125</real>
@@ -204,6 +204,8 @@
 				<array/>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 		<key>seqExpanded</key>
 		<true/>
 	</dict>

@@ -1380,8 +1380,6 @@
 										<string>Ninja.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -2535,7 +2533,7 @@
 										<key>value</key>
 										<array>
 											<real>1301.622802734375</real>
-											<real>241.889892578125</real>
+											<real>249.889892578125</real>
 											<integer>0</integer>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -3276,6 +3274,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
