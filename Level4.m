@@ -101,6 +101,10 @@ AudioUtils *audioUtils;
     CCNode *_platformGH2;
     CCNode *_platformGH3;
     CCNode *_platformGH4;
+    CCSprite * target1;
+    CCSprite * target2;
+    CCSprite * target3;
+    CCSprite * target4;
 
     CCPhysicsJoint *joint;
     CCDrawNode *myDrawNode;
@@ -162,6 +166,10 @@ AudioUtils *audioUtils;
     pause_menu. visible = false;
     pause_reset. visible = false;
     pauseLayer.visible = false;
+    target1.visible = false;
+    target2.visible = false;
+    target3.visible = false;
+    target4.visible = false;
 }
 
 - (void) update:(CCTime)delta
@@ -197,19 +205,34 @@ AudioUtils *audioUtils;
          grapplingHookNinjapoint = ccpCompMult(grapplingHookNinjapoint, ccp(1.0,1.1));
          
          if(touchedPlatform4 == 1){
-             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:grapplingHookNinjapoint] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:grapplingHookNinjapoint] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             target1.visible = false;
+             target2.visible = false;
+             target3.visible = false;
+             target4.visible = false;
          }
          else if(touchedPlatform4 == 2){
-             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:grapplingHookNinjapoint] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:grapplingHookNinjapoint] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             target1.visible = false;
+             target2.visible = false;
+             target3.visible = false;
+             target4.visible = false;
     
          }
          else if(touchedPlatform4 == 3){
-             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:grapplingHookNinjapoint] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:grapplingHookNinjapoint] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             target1.visible = false;
+             target2.visible = false;
+             target3.visible = false;
+             target4.visible = false;
              
          }
          else if(touchedPlatform4 == 4){
-             [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH4.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
-             
+             //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH4.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+             target1.visible = false;
+             target2.visible = false;
+             target3.visible = false;
+             target4.visible = false;
          }
      }
     
@@ -458,6 +481,40 @@ AudioUtils *audioUtils;
         [AudioUtils playSlowMotion];
 
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+    }
+    
+    float dist1 = ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints);
+    float dist2 = ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints);
+    float dist3 = ccpDistance(ninja.positionInPoints, _platformGH3.positionInPoints);
+    float dist4 = ccpDistance(ninja.positionInPoints, _platformGH4.positionInPoints);
+    
+    if(dist1 < dist2 && dist1 < dist3 && dist1 < dist4)
+    {
+        target1.visible = true;
+        target2.visible = false;
+        target3.visible = false;
+        target4.visible = false;
+    }
+    else if(dist2 < dist1 && dist2 < dist3 && dist2 < dist4)
+    {
+        target1.visible = false;
+        target2.visible = true;
+        target3.visible = false;
+        target4.visible = false;
+    }
+    else if(dist3 < dist1 && dist3 < dist2 && dist3 < dist4)
+    {
+        target1.visible = false;
+        target2.visible = false;
+        target3.visible = true;
+        target4.visible = false;
+    }
+    else if(dist4 < dist1 && dist4 < dist2 && dist4 < dist3)
+    {
+        target1.visible = false;
+        target2.visible = false;
+        target3.visible = false;
+        target4.visible = true;
     }
 }
 

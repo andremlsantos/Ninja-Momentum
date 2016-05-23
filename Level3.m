@@ -97,6 +97,9 @@ AudioUtils *audioUtils;
     CCPhysicsJoint *joint;
     CCDrawNode *myDrawNode;
     
+    CCSprite * target1;
+    CCSprite * target2;
+    
     //pause
     CCSprite * pauseLayer;
     CCButton * pause;
@@ -153,6 +156,9 @@ AudioUtils *audioUtils;
     pause_menu. visible = false;
     pause_reset. visible = false;
     pauseLayer.visible = false;
+    
+    target1.visible = false;
+    target2.visible = false;
 }
 
 - (void) update:(CCTime)delta
@@ -178,14 +184,18 @@ AudioUtils *audioUtils;
     
     [myDrawNode clear];
     
-    
     if (drawGrapplingHook2){
 
         if(touchedPlatform == 1){
-            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            target1.visible = false;
+            target2.visible = false;
+
         }
         else if(touchedPlatform == 2){
-            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            target1.visible = false;
+            target2.visible = false;
         }
     }
     
@@ -399,6 +409,19 @@ AudioUtils *audioUtils;
         [AudioUtils stopEffects];
         [AudioUtils playSlowMotion];
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
+    }
+    
+    if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints))
+    {
+        target1.visible = true;
+        target2.visible = false;
+        
+    }
+    else
+    {
+        target1.visible = false;
+        target2.visible = true;
+        
     }
 }
 

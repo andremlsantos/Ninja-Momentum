@@ -101,6 +101,7 @@ AudioUtils *audioUtils;
     
     //graping hook
     CCNode *_platformGH1;
+    CCSprite * target1;
     //CCNode *_platformGH2;
     CCPhysicsJoint *joint;
     CCDrawNode *myDrawNode;
@@ -162,6 +163,8 @@ AudioUtils *audioUtils;
     pause_menu. visible = false;
     pause_reset. visible = false;
     pauseLayer.visible = false;
+    
+    target1.visible = false;
 }
 
 - (void) update:(CCTime)delta
@@ -191,7 +194,8 @@ AudioUtils *audioUtils;
      [myDrawNode clear];
      if (drawGrapplingHook7){
         if(touchedPlatform7 == 1){
-        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+       // [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            target1.visible = false;
         }
      }
       
@@ -393,6 +397,8 @@ AudioUtils *audioUtils;
         
         [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
     }
+    
+    target1.visible = true;
 }
 
 - (void) enableGrapplingHookButton
