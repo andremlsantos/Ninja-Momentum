@@ -40,7 +40,7 @@
 		<key>children</key>
 		<array/>
 		<key>customClass</key>
-		<string></string>
+		<string>Ground</string>
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>
@@ -74,40 +74,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>20.1015625</real>
-					<real>114.51953125</real>
+					<real>40.105747222900391</real>
+					<real>113.84236907958984</real>
 				</array>
 				<array>
-					<real>19.41015625</real>
-					<real>124.23046875</real>
+					<real>40.030445098876953</real>
+					<real>124.67670440673828</real>
 				</array>
 				<array>
-					<real>174.35957336425781</real>
-					<real>125.40237426757812</real>
+					<real>150.39291381835938</real>
+					<real>125.66506958007812</real>
 				</array>
 				<array>
-					<real>174.64299011230469</real>
-					<real>117.28556823730469</real>
+					<real>150.46821594238281</real>
+					<real>114.28478240966797</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>174.64299011230469</real>
-						<real>117.28556823730469</real>
+						<real>150.46821594238281</real>
+						<real>114.28478240966797</real>
 					</array>
 					<array>
-						<real>174.35957336425781</real>
-						<real>125.40237426757812</real>
+						<real>150.39291381835938</real>
+						<real>125.66506958007812</real>
 					</array>
 					<array>
-						<real>19.41015625</real>
-						<real>124.23046875</real>
+						<real>40.030445098876953</real>
+						<real>124.67670440673828</real>
 					</array>
 					<array>
-						<real>20.1015625</real>
-						<real>114.51953125</real>
+						<real>40.105747222900391</real>
+						<real>113.84236907958984</real>
 					</array>
 				</array>
 			</array>

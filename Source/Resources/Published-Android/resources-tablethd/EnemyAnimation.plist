@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>EnemyAnimation/1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{403, 403}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>EnemyAnimation/2.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 403}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>EnemyAnimation/3.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{403, 1}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>EnemyAnimation/inimigo 200 200.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{1024, 1024}</string>
+		<key>textureFileName</key>
+		<string>EnemyAnimation.png</string>
+	</dict>
+</dict>
+</plist>

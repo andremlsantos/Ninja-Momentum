@@ -74,76 +74,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>54.859375</real>
-					<real>5.125030517578125</real>
+					<real>21.078125</real>
+					<real>157.17190551757812</real>
 				</array>
 				<array>
-					<real>0.0</real>
-					<real>199</real>
+					<real>21.49609375</real>
+					<real>167.38284301757812</real>
 				</array>
 				<array>
-					<real>92.28125</real>
-					<real>169.38674926757812</real>
+					<real>249.36334228515625</real>
+					<real>170.67581176757812</real>
 				</array>
 				<array>
-					<real>198.421875</real>
-					<real>173.06643676757812</real>
-				</array>
-				<array>
-					<real>269</real>
-					<real>199</real>
-				</array>
-				<array>
-					<real>215.87109375</real>
-					<real>7.417999267578125</real>
+					<real>249.75396728515625</real>
+					<real>156.66018676757812</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>215.87109375</real>
-						<real>7.417999267578125</real>
+						<real>249.75396728515625</real>
+						<real>156.66018676757812</real>
 					</array>
 					<array>
-						<real>269</real>
-						<real>199</real>
+						<real>249.36334228515625</real>
+						<real>170.67581176757812</real>
 					</array>
 					<array>
-						<real>198.421875</real>
-						<real>173.06643676757812</real>
-					</array>
-				</array>
-				<array>
-					<array>
-						<real>92.28125</real>
-						<real>169.38674926757812</real>
+						<real>21.49609375</real>
+						<real>167.38284301757812</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>199</real>
-					</array>
-					<array>
-						<real>54.859375</real>
-						<real>5.125030517578125</real>
-					</array>
-				</array>
-				<array>
-					<array>
-						<real>54.859375</real>
-						<real>5.125030517578125</real>
-					</array>
-					<array>
-						<real>215.87109375</real>
-						<real>7.417999267578125</real>
-					</array>
-					<array>
-						<real>198.421875</real>
-						<real>173.06643676757812</real>
-					</array>
-					<array>
-						<real>92.28125</real>
-						<real>169.38674926757812</real>
+						<real>21.078125</real>
+						<real>157.17190551757812</real>
 					</array>
 				</array>
 			</array>

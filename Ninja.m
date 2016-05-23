@@ -49,7 +49,7 @@ float oldScale = 0.0f;
     
     
     //RESET FORCES
-    jumpForce = 1800;
+    jumpForce = 2000;
     verticalJumpForce = 200;
     waterForce = 50;
     waterJumpForce = 3000;
@@ -216,9 +216,9 @@ float oldScale = 0.0f;
     [animationManager runAnimationsForSequenceNamed:@"Jump"];
 }
 
-- (void)idleAnimation{
+/*- (void)idleAnimation{
     CCAnimationManager* animationManager = self.animationManager;
     
     [animationManager runAnimationsForSequenceNamed:@"Idle"];
-}
+}*/
 @end

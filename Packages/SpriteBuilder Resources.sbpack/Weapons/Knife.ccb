@@ -137,7 +137,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>NinjaAssets/knife.png</string>
+					<string>NinjaAssets/Kunai-2.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -148,7 +148,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>NinjaAssets/knife.png</string>
+					<string>NinjaAssets/Kunai-2.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -251,6 +251,6 @@
 	<key>stageBorder</key>
 	<integer>3</integer>
 	<key>stageColor</key>
-	<integer>0</integer>
+	<integer>1</integer>
 </dict>
 </plist>

@@ -20,7 +20,7 @@ float ninjaCircleOpacity5 = 0.15f;
 float overlayLayerOpacity5 = 0.3f;
 
 bool asRetryLocation5 = false;
-int numberOfEnemies5 = 4;
+int numberOfEnemies5 = 5;
 
 //auxiliares mira
 float angleXX5 = 0.f, angleYY5 = 0.f;
@@ -522,7 +522,7 @@ AudioUtils *audioUtils;
     slowVelocity5 = 0.3f;
     ninjaCircleOpacity5 = 0.15f;
     overlayLayerOpacity5 = 0.3f;
-    numberOfEnemies5 = 4;
+    numberOfEnemies5 = 5;
     asRetryLocation5 = false;
     //drawGrapplingHook = false;
     //enteredWater = false;
@@ -550,7 +550,7 @@ AudioUtils *audioUtils;
     slowVelocity5 = 0.3f;
     ninjaCircleOpacity5 = 0.15f;
     overlayLayerOpacity5 = 0.3f;
-    numberOfEnemies5 = 4;
+    numberOfEnemies5 = 5;
     asRetryLocation5 = false;
     
     [[CCDirector sharedDirector] resume];

@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>1</integer>
+	<integer>4</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -66,7 +66,7 @@
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
-			<true/>
+			<false/>
 			<key>elasticity</key>
 			<real>0.30000001192092896</real>
 			<key>friction</key>
@@ -74,40 +74,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>0.0</real>
-					<real>0.0</real>
+					<real>31.20703125</real>
+					<real>5.765625</real>
 				</array>
 				<array>
-					<real>0.0</real>
-					<real>50</real>
+					<real>31.375</real>
+					<real>93.933624267578125</real>
 				</array>
 				<array>
-					<real>37</real>
-					<real>50</real>
+					<real>70.0078125</real>
+					<real>92.933624267578125</real>
 				</array>
 				<array>
-					<real>37</real>
-					<real>0.0</real>
+					<real>73.17578125</real>
+					<real>6.1953125</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>37</real>
-						<real>0.0</real>
+						<real>73.17578125</real>
+						<real>6.1953125</real>
 					</array>
 					<array>
-						<real>37</real>
-						<real>50</real>
+						<real>70.0078125</real>
+						<real>92.933624267578125</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>50</real>
+						<real>31.375</real>
+						<real>93.933624267578125</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>0.0</real>
+						<real>31.20703125</real>
+						<real>5.765625</real>
 					</array>
 				</array>
 			</array>
@@ -168,7 +168,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>NinjaAssets/enemy.png</string>
+					<string>EnemyAnimation/inimigo 200 200.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -204,7 +204,7 @@
 				<array/>
 			</dict>
 		</array>
-		<key>selected</key>
+		<key>seqExpanded</key>
 		<true/>
 	</dict>
 	<key>notes</key>
@@ -255,17 +255,17 @@
 			<key>chainedSequenceId</key>
 			<integer>-1</integer>
 			<key>length</key>
-			<real>10</real>
+			<real>2</real>
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
 			<real>0.0</real>
 			<key>position</key>
-			<real>0.0</real>
+			<real>2</real>
 			<key>resolution</key>
 			<real>30</real>
 			<key>scale</key>
-			<real>128</real>
+			<real>331.7640380859375</real>
 			<key>sequenceId</key>
 			<integer>0</integer>
 			<key>soundChannel</key>

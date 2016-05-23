@@ -79,14 +79,14 @@
 				</array>
 				<array>
 					<real>0.0</real>
-					<real>15</real>
+					<real>144</real>
 				</array>
 				<array>
-					<real>284</real>
-					<real>15</real>
+					<real>51</real>
+					<real>144</real>
 				</array>
 				<array>
-					<real>284</real>
+					<real>51</real>
 					<real>0.0</real>
 				</array>
 			</array>
@@ -94,16 +94,16 @@
 			<array>
 				<array>
 					<array>
-						<real>284</real>
+						<real>51</real>
 						<real>0.0</real>
 					</array>
 					<array>
-						<real>284</real>
-						<real>15</real>
+						<real>51</real>
+						<real>144</real>
 					</array>
 					<array>
 						<real>0.0</real>
-						<real>15</real>
+						<real>144</real>
 					</array>
 					<array>
 						<real>0.0</real>
@@ -168,7 +168,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>NinjaAssets/Ground.png</string>
+					<string>NinjaAssets/GHZone.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -282,6 +282,6 @@
 	<key>stageBorder</key>
 	<integer>3</integer>
 	<key>stageColor</key>
-	<integer>0</integer>
+	<integer>1</integer>
 </dict>
 </plist>

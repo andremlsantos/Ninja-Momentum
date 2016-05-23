@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>NinjaAnimation/1.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1207, 1207}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/10.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{403, 1207}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/11.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{805, 805}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/12 keyframe.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1207, 403}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/13.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1207, 1}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/14.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{805, 1207}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/15.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 403}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/16.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1609, 1}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/17.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{805, 1609}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/18.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 805}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/19.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{403, 403}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/2.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1609}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/20.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1207}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/21.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{403, 805}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/22.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1609, 805}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/23 keyframe.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1207, 1609}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/3.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{805, 1}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/4.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{805, 403}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/5.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1207, 805}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/6.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1, 1}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/7.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{403, 1}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/8.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{403, 1609}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+		<key>NinjaAnimation/9.png</key>
+		<dict>
+			<key>frame</key>
+			<string>{{1609, 403}, {400, 400}}</string>
+			<key>offset</key>
+			<string>{0, 0}</string>
+			<key>rotated</key>
+			<false/>
+			<key>sourceColorRect</key>
+			<string>{{0, 0}, {400, 400}}</string>
+			<key>sourceSize</key>
+			<string>{400, 400}</string>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>2</integer>
+		<key>size</key>
+		<string>{2048, 2048}</string>
+		<key>textureFileName</key>
+		<string>NinjaAnimation.png</string>
+	</dict>
+</dict>
+</plist>
