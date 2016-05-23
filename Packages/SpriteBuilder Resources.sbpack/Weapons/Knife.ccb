@@ -251,6 +251,6 @@
 	<key>stageBorder</key>
 	<integer>3</integer>
 	<key>stageColor</key>
-	<integer>1</integer>
+	<integer>2</integer>
 </dict>
 </plist>

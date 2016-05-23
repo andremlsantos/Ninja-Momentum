@@ -1475,7 +1475,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>700.12286376953125</real>
+											<real>685.79107666015625</real>
 											<real>87.960365295410156</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1723,7 +1723,7 @@
 										<string>Position</string>
 										<key>value</key>
 										<array>
-											<real>1796.3016357421875</real>
+											<real>1724.8228759765625</real>
 											<real>50.799999237060547</real>
 											<integer>0</integer>
 											<integer>0</integer>
@@ -1752,6 +1752,8 @@
 										<string>Enemy.ccb</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -3199,7 +3201,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>596.593994140625</real>
+							<real>596.15997314453125</real>
 							<real>177.27999877929688</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -3274,8 +3276,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
