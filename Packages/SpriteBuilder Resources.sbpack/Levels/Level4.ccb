@@ -1518,71 +1518,6 @@
 								<string>ninja</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
-								<key>physicsBody</key>
-								<dict>
-									<key>affectedByGravity</key>
-									<true/>
-									<key>allowsRotation</key>
-									<false/>
-									<key>bodyShape</key>
-									<integer>0</integer>
-									<key>collisionCategories</key>
-									<array/>
-									<key>collisionMask</key>
-									<array/>
-									<key>collisionType</key>
-									<string></string>
-									<key>cornerRadius</key>
-									<real>0.0</real>
-									<key>density</key>
-									<real>1</real>
-									<key>dynamic</key>
-									<true/>
-									<key>elasticity</key>
-									<real>0.30000001192092896</real>
-									<key>friction</key>
-									<real>0.30000001192092896</real>
-									<key>points</key>
-									<array>
-										<array>
-											<real>33.393829345703125</real>
-											<real>17.756149291992188</real>
-										</array>
-										<array>
-											<real>34.43682861328125</real>
-											<real>90.295242309570312</real>
-										</array>
-										<array>
-											<real>69.815704345703125</real>
-											<real>90.474929809570312</real>
-										</array>
-										<array>
-											<real>69.20635986328125</real>
-											<real>16.365524291992188</real>
-										</array>
-									</array>
-									<key>polygons</key>
-									<array>
-										<array>
-											<array>
-												<real>69.20635986328125</real>
-												<real>16.365524291992188</real>
-											</array>
-											<array>
-												<real>69.815704345703125</real>
-												<real>90.474929809570312</real>
-											</array>
-											<array>
-												<real>34.43682861328125</real>
-												<real>90.295242309570312</real>
-											</array>
-											<array>
-												<real>33.393829345703125</real>
-												<real>17.756149291992188</real>
-											</array>
-										</array>
-									</array>
-								</dict>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -1629,6 +1564,8 @@
 										<string>Ninja.ccb</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -2259,8 +2196,6 @@
 										<string>Target.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>

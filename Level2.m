@@ -579,7 +579,7 @@ AudioUtils *audioUtils;
     numberOfJumps2 ++;
 
         retryLocation2 = nodeB.positionInPoints;
-        CGPoint mult = ccp(1,1.5);
+        CGPoint mult = ccp(1,1.2);
         retryLocation2 = ccpCompMult(retryLocation2, mult);
         asRetryLocation2 = true;
         

@@ -700,7 +700,7 @@ AudioUtils *audioUtils;
         }
         retryLocation3 = nodeB.positionInPoints;
         CGPoint mult = ccp(1,1.5);
-        retryLocation3 = ccpCompMult(retryLocation3, mult);
+        //retryLocation3 = ccpCompMult(retryLocation3, mult);
         asRetryLocation3 = true;
         
         [self killNode:nodeB];// matar inimigo

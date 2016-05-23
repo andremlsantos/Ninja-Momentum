@@ -1353,8 +1353,6 @@
 										<string>Enemy.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -1371,71 +1369,6 @@
 								<string>ninja</string>
 								<key>memberVarAssignmentType</key>
 								<integer>1</integer>
-								<key>physicsBody</key>
-								<dict>
-									<key>affectedByGravity</key>
-									<true/>
-									<key>allowsRotation</key>
-									<false/>
-									<key>bodyShape</key>
-									<integer>0</integer>
-									<key>collisionCategories</key>
-									<array/>
-									<key>collisionMask</key>
-									<array/>
-									<key>collisionType</key>
-									<string></string>
-									<key>cornerRadius</key>
-									<real>0.0</real>
-									<key>density</key>
-									<real>1</real>
-									<key>dynamic</key>
-									<true/>
-									<key>elasticity</key>
-									<real>0.30000001192092896</real>
-									<key>friction</key>
-									<real>0.30000001192092896</real>
-									<key>points</key>
-									<array>
-										<array>
-											<real>34.3291015625</real>
-											<real>16.415542602539062</real>
-										</array>
-										<array>
-											<real>32.2431640625</real>
-											<real>91.036666870117188</real>
-										</array>
-										<array>
-											<real>67.62591552734375</real>
-											<real>92.384323120117188</real>
-										</array>
-										<array>
-											<real>67.1923828125</real>
-											<real>17.024917602539062</real>
-										</array>
-									</array>
-									<key>polygons</key>
-									<array>
-										<array>
-											<array>
-												<real>67.1923828125</real>
-												<real>17.024917602539062</real>
-											</array>
-											<array>
-												<real>67.62591552734375</real>
-												<real>92.384323120117188</real>
-											</array>
-											<array>
-												<real>32.2431640625</real>
-												<real>91.036666870117188</real>
-											</array>
-											<array>
-												<real>34.3291015625</real>
-												<real>16.415542602539062</real>
-											</array>
-										</array>
-									</array>
-								</dict>
 								<key>properties</key>
 								<array>
 									<dict>
@@ -1482,6 +1415,8 @@
 										<string>Ninja.ccb</string>
 									</dict>
 								</array>
+								<key>selected</key>
+								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -6817,8 +6752,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
