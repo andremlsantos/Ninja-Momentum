@@ -2724,8 +2724,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>0.12881548702716827</real>
-							<real>0.16392913460731506</real>
+							<real>0.18600000441074371</real>
+							<real>0.18600000441074371</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -2992,6 +2992,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -7298,8 +7300,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

@@ -106,6 +106,7 @@ AudioUtils *audioUtils;
     //CCNode *_platformGH2;
     CCPhysicsJoint *joint;
     CCDrawNode *myDrawNode;
+    CCNode *_touchedPlatform1;
     
     //pause
     CCSprite * pauseLayer;
@@ -191,11 +192,11 @@ AudioUtils *audioUtils;
          [self disableGrapplingButton];
      }
     
-    
      [myDrawNode clear];
+    
      if (drawGrapplingHook7){
         if(touchedPlatform7 == 1){
-       // [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
             target1.visible = false;
         }
      }
@@ -253,7 +254,7 @@ AudioUtils *audioUtils;
     }
     
      //vou ver se cliquei dentro GH
-     else if(CGRectContainsPoint([_platformGH1 boundingBox],touchLocation))
+     else if(CGRectContainsPoint([_touchedPlatform1 boundingBox],touchLocation))
      {
          if([ninja action] == GRAPPLING)
          {
@@ -453,8 +454,6 @@ AudioUtils *audioUtils;
     //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
     
-    CCLOG(@"tries %d", numberTries7);
-    
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
 }
@@ -483,6 +482,8 @@ AudioUtils *audioUtils;
     
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     [ninja setAction:KNIFE];
+    
+    [self resetCircle];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -536,6 +537,7 @@ AudioUtils *audioUtils;
     
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level7"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
+    [ninja setAction:IDDLE];
     
     //reset variaveis
     enableSlowMotion7=false;
@@ -559,7 +561,6 @@ AudioUtils *audioUtils;
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
     
-    CCLOG(@"tries %d", numberTries7);
 }
 -(void) nextLevel
 {
@@ -640,7 +641,6 @@ AudioUtils *audioUtils;
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel8"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        CCLOG(@"tries %d", numberTries7);
         
         //[self nextLevel];
         
@@ -703,7 +703,6 @@ AudioUtils *audioUtils;
     [AudioUtils stopEffects];
     //[AudioUtils playKnifeStab];
     
-    
     //log
     numberOfJumps7 ++;
     
@@ -743,8 +742,6 @@ AudioUtils *audioUtils;
         //desbloquei proximo
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel8"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        CCLOG(@"tries %d", numberTries7);
         
         //[self nextLevel];
         
@@ -792,6 +789,7 @@ AudioUtils *audioUtils;
 }
 
 - (void) writeToLog7{
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *filePath = [[paths objectAtIndex:0]stringByAppendingPathComponent:@"currentLog.txt"];
     NSString *finalFilePath = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];

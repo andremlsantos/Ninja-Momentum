@@ -113,6 +113,10 @@ AudioUtils *audioUtils;
     CCSprite * target3;
     CCPhysicsJoint *joint;
     CCDrawNode *myDrawNode;
+    CCNode *_touchedPlatform1;
+    CCNode *_touchedPlatform2;
+    CCNode *_touchedPlatform3;
+
     
     //pause
     CCSprite * pauseLayer;
@@ -204,32 +208,38 @@ AudioUtils *audioUtils;
         [self disableGrapplingButton];
     }
     
-    
+    [myDrawNode clear];
+
      if (drawGrapplingHook8)
      {
         if(touchedPlatform8 == 1)
         {
-            //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
             target1.visible = false;
             target2.visible = false;
             target3.visible = false;
         }
+         
         else if(touchedPlatform8 == 2)
         {
-        //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            
+        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
             target1.visible = false;
             target2.visible = false;
             target3.visible = false;
+            
      
         }
+         
         else if(touchedPlatform8 == 3)
         {
-        //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+        [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH3.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
             target1.visible = false;
             target2.visible = false;
             target3.visible = false;
      
         }
+         
      }
     
     
@@ -291,9 +301,8 @@ AudioUtils *audioUtils;
     }
     
     //vou ver se cliquei dentro GH
-    else if(CGRectContainsPoint([_platformGH1 boundingBox],touchLocation))
+    else if(CGRectContainsPoint([_touchedPlatform1 boundingBox],touchLocation))
     {
-        CCLOG(@"---------- %d", 111);
         
         if([ninja action] == GRAPPLING)
         {
@@ -310,10 +319,8 @@ AudioUtils *audioUtils;
             touchedPlatform8 = 1;
         }
     }
-    else if(CGRectContainsPoint([_platformGH2 boundingBox],touchLocation))
+    else if(CGRectContainsPoint([_touchedPlatform2 boundingBox],touchLocation))
     {
-        CCLOG(@"---------- %d", 222);
-        
 
         if([ninja action] == GRAPPLING)
         {
@@ -327,13 +334,11 @@ AudioUtils *audioUtils;
             drawGrapplingHook8 = true;
             [self unschedule:@selector(reduceCircle)];
             [self resetCircle];
-            touchedPlatform8 = 1;
+            touchedPlatform8 = 2;
         }
     }
-    else if(CGRectContainsPoint([_platformGH3 boundingBox],touchLocation))
+    else if(CGRectContainsPoint([_touchedPlatform3 boundingBox],touchLocation))
     {
-        CCLOG(@"---------- %d", 333);
-        
 
         if([ninja action] == GRAPPLING)
         {
@@ -347,7 +352,7 @@ AudioUtils *audioUtils;
             drawGrapplingHook8 = true;
             [self unschedule:@selector(reduceCircle)];
             [self resetCircle];
-            touchedPlatform8 = 1;
+            touchedPlatform8 = 3;
         }
     }
     
@@ -536,8 +541,6 @@ AudioUtils *audioUtils;
     //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
     
-    CCLOG(@"tries %d", numberTries8);
-    
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
 }
@@ -566,6 +569,8 @@ AudioUtils *audioUtils;
     
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     [ninja setAction:KNIFE];
+    
+    [self resetCircle];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -620,6 +625,7 @@ AudioUtils *audioUtils;
     
     CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level8"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
+    [ninja setAction:IDDLE];
     
     //reset variaveis
     enableSlowMotion8=false;
@@ -645,7 +651,6 @@ AudioUtils *audioUtils;
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
     
-    CCLOG(@"tries %d", numberTries8);
 }
 -(void) nextLevel
 {
@@ -725,8 +730,6 @@ AudioUtils *audioUtils;
         //desbloquei proximo
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel9"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        CCLOG(@"tries %d", numberTries8);
         
         //[self nextLevel];
         
@@ -830,8 +833,6 @@ AudioUtils *audioUtils;
         //desbloquei proximo
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel9"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        CCLOG(@"tries %d", numberTries8);
         
         //[self nextLevel];
         

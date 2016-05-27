@@ -173,7 +173,7 @@ AudioUtils *audioUtils;
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
     
-    [self outsideRoom];
+    //[self outsideRoom];
     
     /*
      if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling4 || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling4 ){
@@ -447,8 +447,6 @@ AudioUtils *audioUtils;
     //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
     
-    CCLOG(@"tries %d", numberTries5);
-    
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
 }
@@ -477,6 +475,8 @@ AudioUtils *audioUtils;
     
     //fazer reset ao slow motion, caso tenho selecionado outra arma
     [ninja setAction:KNIFE];
+    
+    [self resetCircle];
     [self schedule:@selector(reduceCircle) interval:0.05 repeat:20 delay:0];
 }
 
@@ -540,11 +540,10 @@ AudioUtils *audioUtils;
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
     
-    CCLOG(@"tries %d", numberTries5);
 }
 -(void) nextLevel
 {
-    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level7"];
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Levels/Level6"];
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
     
     //reset variaveis
@@ -620,8 +619,6 @@ AudioUtils *audioUtils;
         //desbloquei proximo
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel6"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        CCLOG(@"tries %d", numberTries5);
         
         //[self nextLevel];
         
@@ -723,8 +720,6 @@ AudioUtils *audioUtils;
         //desbloquei proximo
         [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel6"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
-        CCLOG(@"tries %d", numberTries5);
         
         //[self nextLevel];
         

@@ -10,4 +10,10 @@
 
 @implementation Victory
 
+- (void) _return
+{
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"MainScene"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+}
+
 @end

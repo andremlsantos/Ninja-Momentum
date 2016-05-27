@@ -97,6 +97,8 @@ AudioUtils *audioUtils;
     CCNode *_platformGH2;
     CCPhysicsJoint *joint;
     CCDrawNode *myDrawNode;
+    CCNode *_touchedPlatform1;
+    CCNode *_touchedPlatform2;
     
     CCSprite * target1;
     CCSprite * target2;
@@ -173,7 +175,7 @@ AudioUtils *audioUtils;
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
     
-    [self outsideRoom];
+    //[self outsideRoom];
     
     if(ccpDistance(ninja.positionInPoints, _platformGH1.positionInPoints) < minDistanceToUseGrappling2 || ccpDistance(ninja.positionInPoints, _platformGH2.positionInPoints) <minDistanceToUseGrappling2 ){
         [self enableGrapplingHookButton];
@@ -188,13 +190,13 @@ AudioUtils *audioUtils;
     if (drawGrapplingHook2){
 
         if(touchedPlatform == 1){
-            //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH1.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
             target1.visible = false;
             target2.visible = false;
 
         }
         else if(touchedPlatform == 2){
-            //[myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
+            [myDrawNode drawSegmentFrom:[_contentNode convertToWorldSpace:ninja.positionInPoints] to:[_contentNode convertToWorldSpace:_platformGH2.positionInPoints] radius:1.0f color:[CCColor colorWithRed:0 green:0 blue:0]];
             target1.visible = false;
             target2.visible = false;
         }
@@ -245,7 +247,7 @@ AudioUtils *audioUtils;
     }
     
     //vou ver se cliquei dentro GH
-    else if(CGRectContainsPoint([_platformGH1 boundingBox],touchLocation))
+    else if(CGRectContainsPoint([_touchedPlatform1 boundingBox],touchLocation))
     {
         if([ninja action] == GRAPPLING)
         {
@@ -266,7 +268,7 @@ AudioUtils *audioUtils;
         }
     }
     
-    else if(CGRectContainsPoint([_platformGH2 boundingBox],touchLocation))
+    else if(CGRectContainsPoint([_touchedPlatform2 boundingBox],touchLocation))
     {
         if([ninja action] == GRAPPLING)
         {
@@ -479,8 +481,6 @@ AudioUtils *audioUtils;
     //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
     
-    CCLOG(@"tries %d", numberTries3);
-    
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
 }
@@ -587,7 +587,6 @@ AudioUtils *audioUtils;
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
     
-    CCLOG(@"tries %d", numberTries3);
 }
 -(void) nextLevel
 {
@@ -737,7 +736,6 @@ AudioUtils *audioUtils;
             [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel4"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
-            CCLOG(@"tries %d", numberTries3);
             
             //[self nextLevel];
             

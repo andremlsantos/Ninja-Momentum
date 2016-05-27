@@ -156,7 +156,7 @@ AudioUtils *audioUtils;
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
     
-    [self outsideRoom];
+    //[self outsideRoom];
     //[_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
     [_2plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
     [_3plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
@@ -378,8 +378,6 @@ AudioUtils *audioUtils;
     //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries] forKey:@"triesLevel1"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
     
-    CCLOG(@"tries %d", numberTries2);
-    
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
 }
@@ -472,7 +470,6 @@ AudioUtils *audioUtils;
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
     
-    CCLOG(@"tries %d", numberTries2);
 }
 -(void) nextLevel
 {
@@ -588,9 +585,7 @@ AudioUtils *audioUtils;
         
         //ninja pode saltar
         [ninja setCanJump:true];
-        ninja.verticalJumpForce = 300;
         [ninja verticalJump];
-        ninja.verticalJumpForce = 200;
         numberOfEnemies2--;
         if (numberOfEnemies2 == 0)
         {
@@ -616,7 +611,6 @@ AudioUtils *audioUtils;
             [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel3"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
-            CCLOG(@"tries %d", numberTries2);
             
             //[self nextLevel];
             
@@ -775,8 +769,6 @@ AudioUtils *audioUtils;
 {
     if(ninja.position.x > [self contentSize].width || ninja.position.y > [self contentSize].height)
     {
-        CCLOG(@"ninja fora bounds");
-        
         retryButton.visible = true;
         startAgainButton.visible = true;
         retryButton.enabled = true;

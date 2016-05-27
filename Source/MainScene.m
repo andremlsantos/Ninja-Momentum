@@ -82,6 +82,12 @@ OALSimpleAudio *audio;
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
+- (void) vic
+{
+    CCScene *gameplayScene = [CCBReader loadAsScene:@"Victory"];
+    [[CCDirector sharedDirector] replaceScene:gameplayScene];
+}
+
 /*
  NIVEIS
  */

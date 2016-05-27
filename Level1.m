@@ -156,7 +156,7 @@ AudioUtils *audioUtils;
     //reposicionar mira ninja
     [ninja positionAimAt:ccp(0, 0)];
     
-    [self outsideRoom];
+    //[self outsideRoom];
     //[_1plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.04f*ninja.physicsBody.velocity.x,0)]];
     [_2plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.02f*ninja.physicsBody.velocity.x,0)]];
     [_3plane runAction:[CCActionMoveBy actionWithDuration:delta position: ccp(-0.008f*ninja.physicsBody.velocity.x,0)]];
@@ -376,9 +376,7 @@ AudioUtils *audioUtils;
     numberTries1++;
     //[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%d", numberTries1] forKey:@"triesLevel1"];
     //[[NSUserDefaults standardUserDefaults] synchronize];
-    
-    CCLOG(@"tries %d", numberTries1);
-    
+        
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
 }
@@ -470,7 +468,6 @@ AudioUtils *audioUtils;
     overlayLayer2.opacity = 0.0f;
     textMomentum.opacity = 0.0f;
     
-    CCLOG(@"tries %d", numberTries1);
 }
 -(void) nextLevel
 {
@@ -611,8 +608,6 @@ AudioUtils *audioUtils;
             //desbloquei proximo
             [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"unblockedLevel2"];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            CCLOG(@"tries %d", numberTries1);
             
             //[self nextLevel];
             
@@ -771,8 +766,6 @@ AudioUtils *audioUtils;
 {
     if(ninja.position.x > [self contentSize].width || ninja.position.y > [self contentSize].height)
     {
-        CCLOG(@"ninja fora bounds");
-        
         retryButton.visible = true;
         startAgainButton.visible = true;
         retryButton.enabled = true;
