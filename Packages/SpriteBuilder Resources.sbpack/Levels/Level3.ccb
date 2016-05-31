@@ -1476,8 +1476,6 @@
 										<string>Target.ccb</string>
 									</dict>
 								</array>
-								<key>selected</key>
-								<true/>
 							</dict>
 							<dict>
 								<key>UUID</key>
@@ -1881,7 +1879,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>220.974609375</real>
+							<real>318.974609375</real>
 							<real>188.46368408203125</real>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -1959,8 +1957,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>562.9599609375</real>
-							<real>174.69490051269531</real>
+							<real>660.9599609375</real>
+							<real>183.73185729980469</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -2004,6 +2002,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
