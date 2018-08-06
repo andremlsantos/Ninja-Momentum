@@ -5,7 +5,7 @@ Control a ninja and kill all the enemies at some level. To do so, you must accur
 
 <div align="center">
   <a href="https://www.youtube.com/watch?v=mL0xlFPGyGE">
-  <img src="andremlsantos.com/images/ninja0.png" width="500px" height="350px" alt="Ninja Momentum"></a>
+  <img src="http://www.andremlsantos.com/images/ninja1.png" width="500px" height="350px" alt="Ninja Momentum"></a>
 </div>
 
 
